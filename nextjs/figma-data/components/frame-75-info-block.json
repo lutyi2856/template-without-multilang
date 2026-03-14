@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "name": "Шаблон сайта",
+    "fileKey": "JPVOauS3F3bEIy1msJXPeR",
+    "component": {
+      "id": "10:190",
+      "name": "Frame 75"
+    },
+    "dateRetrieved": "2026-01-23",
+    "status": "complete"
+  },
+  "component": {
+    "id": "10:190",
+    "name": "Frame 75",
+    "type": "FRAME",
+    "dimensions": {
+      "width": 912,
+      "height": 608
+    },
+    "fills": ["linear-gradient(180deg, rgba(46, 54, 93, 1) 0%, rgba(70, 85, 157, 1) 100%)"],
+    "borderRadius": "25px"
+  },
+  "structure": {
+    "11:134": {
+      "name": "Vector",
+      "type": "IMAGE-SVG",
+      "opacity": 0.3,
+      "fills": ["#607BD4"]
+    },
+    "11:4": {
+      "name": "Frame 57",
+      "type": "FRAME",
+      "layout": "column",
+      "gap": "20px",
+      "position": { "x": 51.4, "y": 44.88 },
+      "dimensions": { "width": 732.97 }
+    },
+    "11:5": {
+      "name": "Text",
+      "type": "FRAME",
+      "layout": "column",
+      "gap": "20px"
+    },
+    "11:6": {
+      "name": "Group 17",
+      "type": "GROUP",
+      "dimensions": { "width": 542.76, "height": 116 }
+    },
+    "11:7": {
+      "name": "На 32% доступнее других стоматологий",
+      "type": "TEXT",
+      "textStyle": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 600,
+        "fontSize": 50,
+        "lineHeight": 1.193,
+        "letterSpacing": "-3%",
+        "color": "#FFFFFF"
+      }
+    },
+    "11:18": {
+      "name": "Описание",
+      "type": "TEXT",
+      "textStyle": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 400,
+        "fontSize": 19,
+        "lineHeight": 1.25,
+        "color": "#FFFFFF"
+      }
+    },
+    "11:19": {
+      "name": "Button",
+      "type": "FRAME",
+      "dimensions": { "width": 252, "height": 54 },
+      "borderRadius": "15px",
+      "border": "1px solid #FFFFFF"
+    },
+    "11:20": {
+      "name": "Получить консультацию",
+      "type": "TEXT",
+      "textStyle": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 600,
+        "fontSize": 16,
+        "lineHeight": 1.193,
+        "letterSpacing": "-1%",
+        "color": "#FFFFFF"
+      }
+    },
+    "8:50": {
+      "name": "Frame 50",
+      "type": "FRAME",
+      "layout": "row",
+      "gap": "5px",
+      "position": { "x": 51.4, "y": 526 }
+    },
+    "8:51": {
+      "name": "Frame 48",
+      "type": "FRAME",
+      "fills": ["#607BD4"],
+      "borderRadius": "41px",
+      "padding": "10px"
+    },
+    "8:52": {
+      "name": "20+ клиник",
+      "type": "TEXT",
+      "textStyle": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 500,
+        "fontSize": 15,
+        "lineHeight": 1.177,
+        "letterSpacing": "-1%",
+        "color": "#FFFFFF"
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "id": "123:416",
+  "name": "case",
+  "key": "65dcf81f747f776ce25bb48a7a5d2ce3b4faade9",
+  "type": "COMPONENT",
+  "brotherGodData": {
+    "id": "123:416",
+    "key": "65dcf81f747f776ce25bb48a7a5d2ce3b4faade9",
+    "name": "case",
+    "componentSetId": null,
+    "description": "Component metadata from Figma metadata.components section"
+  },
+  "layout": "layout_9AQ8JN",
+  "fills": "9",
+  "borderRadius": "25px",
+  "structure": {
+    "beforeAfterSlider": {
+      "id": "95:1956",
+      "name": "Frame 2131328600",
+      "type": "FRAME",
+      "children": [
+        {
+          "id": "95:1957",
+          "name": "Vector 24",
+          "type": "IMAGE-SVG"
+        },
+        {
+          "id": "95:1958",
+          "name": "Group 42315",
+          "type": "IMAGE-SVG"
+        },
+        {
+          "id": "123:409",
+          "name": "Frame 2131328592",
+          "type": "FRAME",
+          "label": "До",
+          "children": [
+            {
+              "id": "123:411",
+              "name": "До",
+              "type": "TEXT",
+              "text": "До"
+            }
+          ]
+        },
+        {
+          "id": "123:413",
+          "name": "Frame 2131328593",
+          "type": "FRAME",
+          "label": "После",
+          "children": [
+            {
+              "id": "123:415",
+              "name": "После",
+              "type": "TEXT",
+              "text": "После"
+            }
+          ]
+        }
+      ]
+    },
+    "content": {
+      "id": "143:2620",
+      "name": "Frame 2131328718",
+      "type": "FRAME",
+      "children": [
+        {
+          "id": "143:2712",
+          "name": "Frame 2131328719",
+          "type": "FRAME",
+          "children": [
+            {
+              "id": "122:610",
+              "name": "title",
+              "type": "TEXT",
+              "text": "Тотальное преображение улыбки: 28 виниров и коронок"
+            },
+            {
+              "id": "123:398",
+              "name": "info",
+              "type": "FRAME",
+              "children": [
+                {
+                  "id": "122:602",
+                  "name": "Frame 2131328638",
+                  "type": "FRAME",
+                  "section": "Лечащие врачи",
+                  "children": [
+                    {
+                      "id": "123:408",
+                      "name": "Frame 2131328646",
+                      "type": "FRAME",
+                      "doctors": [
+                        {
+                          "id": "122:604",
+                          "name": "Frame 2131328637",
+                          "avatar": "122:605",
+                          "name": "122:608",
+                          "specialty": "122:609"
+                        },
+                        {
+                          "id": "123:401",
+                          "name": "Frame 2131328638",
+                          "avatar": "123:402",
+                          "name": "123:405",
+                          "specialty": "123:406"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "123:583",
+                  "name": "Frame 2131328647",
+                  "type": "FRAME",
+                  "section": "Оказанные услуги",
+                  "children": [
+                    {
+                      "id": "123:585",
+                      "name": "Frame 2131328640",
+                      "type": "FRAME",
+                      "services": [
+                        {
+                          "id": "123:586",
+                          "name": "Frame 2131328592",
+                          "text": "Имплантация зубов"
+                        },
+                        {
+                          "id": "123:589",
+                          "name": "Frame 2131328639",
+                          "text": "Лечение кариеса"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "122:626",
+                  "name": "Frame 2131328643",
+                  "type": "FRAME",
+                  "section": "Клиника",
+                  "children": [
+                    {
+                      "id": "122:620",
+                      "name": "Frame 2131328592",
+                      "type": "FRAME",
+                      "clinic": {
+                        "id": "122:622",
+                        "text": "Клиника на Чайковского"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "typography": {
+    "title": {
+      "style": "style_46AU49",
+      "fontSize": 28,
+      "fontWeight": 500,
+      "lineHeight": 1.3
+    },
+    "sectionLabel": {
+      "style": "style_VSX2LE",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "color": "#8F8F8F"
+    },
+    "doctorName": {
+      "style": "style_3YUHSX",
+      "fontSize": 16,
+      "fontWeight": 500
+    },
+    "service": {
+      "style": "style_0IMCCY",
+      "fontSize": 16,
+      "fontWeight": 400
+    }
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "text": "#191E35",
+    "sectionLabel": "#8F8F8F",
+    "serviceBadge": "#F5F7F9",
+    "clinicDot": "#526AC2"
+  },
+  "borderRadius": {
+    "card": "25px",
+    "badge": "10px",
+    "avatar": "117.98px"
+  },
+  "imageNodes": [
+    {
+      "id": "95:1957",
+      "name": "Vector 24",
+      "type": "IMAGE-SVG",
+      "description": "Slider control vector"
+    },
+    {
+      "id": "95:1958",
+      "name": "Group 42315",
+      "type": "IMAGE-SVG",
+      "description": "Slider control group"
+    },
+    {
+      "id": "122:605",
+      "name": "doctor",
+      "type": "IMAGE-SVG",
+      "description": "Doctor avatar"
+    },
+    {
+      "id": "123:402",
+      "name": "doctor",
+      "type": "IMAGE-SVG",
+      "description": "Doctor avatar"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Gilroy Cyrillic Test</title>
+  <style>
+    @font-face {
+      font-family: 'Gilroy';
+      src: url('/fonts/Gilroy-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    body { font-family: 'Gilroy', sans-serif; font-size: 24px; padding: 40px; }
+    .test { margin: 20px 0; }
+    .label { color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Gilroy Cyrillic Test</h1>
+  <div class="test">
+    <div class="label">Latin:</div>
+    <div>The quick brown fox jumps over the lazy dog</div>
+  </div>
+  <div class="test">
+    <div class="label">Cyrillic (Russian):</div>
+    <div>Привет мир! Съешь ещё этих мягких французских булок.</div>
+  </div>
+  <div class="test">
+    <div class="label">If Cyrillic shows in Gilroy style = supported. If in system font = not supported.</div>
+  </div>
+</body>
+</html>

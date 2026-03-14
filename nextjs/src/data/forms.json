@@ -1,0 +1,32 @@
+{
+  "callback": {
+    "type": "trigger",
+    "endpoint": "jet-fb/v1/callback",
+    "fields": [
+      {
+        "name": "phone",
+        "type": "tel",
+        "label": "Телефон",
+        "required": true
+      }
+    ]
+  },
+  "sidebar-calc": {
+    "type": "trigger",
+    "endpoint": "jet-fb/v1/sidebar-calc",
+    "fields": [
+      {
+        "name": "problem",
+        "type": "textarea",
+        "label": "Какая у вас проблема?",
+        "required": false
+      },
+      {
+        "name": "phone",
+        "type": "tel",
+        "label": "Телефон",
+        "required": true
+      }
+    ]
+  }
+}

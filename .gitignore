@@ -1,0 +1,96 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# WordPress
+wp-content/uploads/*
+wp-content/upgrade/*
+wp-content/backup-db/*
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/*
+wp-content/debug.log
+wp-config.php
+# сключаем wp-content, но оставляем mu-plugins
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/mu-plugins/**
+
+# Docker
+.docker/
+override.yml
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+next-env.d.ts
+# Additional environment files
+env.local
+nextjs/.env.local
+
+# Docker local overrides
+docker-compose.override.yml
+
+# Next.js TypeScript definitions
+next-env.d.ts
+
+# Temporary documentation files (auto-generated, should not be committed)
+*_SUMMARY.md
+*_COMPLETE.md
+*_CHECKLIST.md
+*_GUIDE.md
+*_WORKFLOW.md
+ANSWER_TO_*.md
+QUICK_START_*.md
+RULES_*.md
+HYBRID_*.md
+PROJECT_*.md
+
+# SQL dumps
+local_db_*.sql
+
+# Archives & backups
+*.tar.gz
+*.zip
+uploads-backup/
+
+# Debug/test scripts
+testgql*.js
+test_gql*.sh
+verify_gql.sh
+check_*.sh
+fix_sql.sh
+
+# Build artifacts
+required-server-files.json
+
+# Personal IDE config
+.cursor/mcp.json
+.cursor/settings.json

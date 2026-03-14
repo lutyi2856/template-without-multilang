@@ -1,0 +1,746 @@
+[
+  {
+    "number": 1,
+    "name": "Кан Станислав Александрович",
+    "description": "Главврач, ортодонт - гнатолог",
+    "slug": "kan-stanislav-aleksandrovich",
+    "pageUrl": "https://kan.uz/kan-stanislav-aleksandrovich",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-12-2-scaled-e1753341623216.jpg",
+    "experience": "2007",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_4ec0dae *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_4ec0dae .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_4ec0dae .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_4ec0dae .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_4ec0dae .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_4ec0dae .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_expand,\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_4ec0dae_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_4ec0dae_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_4ec0dae_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Специализация:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          ортодонтическое лечение (исправление прикуса, выравнивание зубов) пациентов любого возраста с применением современных брекет-систем, элайнеров Invisalign.",
+      "диагностика и лечение проблем с височно-нижнечелюстными суставами.",
+      "подготовка к протезированию, эстетика и дизайн улыбки.",
+      "Ташкентская медицинская академия, факультет стоматологии.",
+      "Ортодонтическая Школа ANDC 2007-2008.",
+      "Микроимпланты в ортодонтии. Кенг Хи Мун 2008.",
+      "Course of microimplants in the Kyunpook Medical University, Daegu,Korea. Professor Hyo-sang Park.",
+      "Курс профессора Вон Муна «Нехирургическом расширении средней зоны лица с помощью Аппарата скелетного расширения верхней челюсти (MSE)».",
+      "Tweed cource.",
+      "Специализация в клинике Yeil Orthodontic clinic ,«Биомеханика в клинической ортодонтии». Dr. Noeun Kwon.",
+      "Course of microimplants in the Kyunpook Medical University, Daegu,Korea. Professor Hyo-sang Park.",
+      "Курс по «По лечению аномалии класс III без удаления техникой многопетлевой дуги (MEAW)» Prof Kim Jeong Il.",
+      "Курс по «Лечению дисфункций Височно-нижнечелюстного сустава, орофациальная боль». J. Okeson.",
+      "Курс « Концепция лечения нарушений без ортогнатической хирургии и удаления зубов, основанная на этиопатогенезе и контроле окклюзионной плоскости , Prof Sadao Sato.",
+      "Годовое обучение “FACE” – Сан-Себастьян. Испания 2022-2023.",
+      "ортодонтическое лечение (исправление прикуса, выравнивание зубов) пациентов любого возраста с применением современных брекет-систем, элайнеров Invisalign.",
+      "диагностика и лечение проблем с височно-нижнечелюстными суставами.",
+      "подготовка к протезированию, эстетика и дизайн улыбки.",
+      "Ташкентская медицинская академия, факультет стоматологии.",
+      "Ортодонтическая Школа ANDC 2007-2008.",
+      "Микроимпланты в ортодонтии. Кенг Хи Мун 2008.",
+      "Course of microimplants in the Kyunpook Medical University, Daegu,Korea. Professor Hyo-sang Park.",
+      "Курс профессора Вон Муна «Нехирургическом расширении средней зоны лица с помощью Аппарата скелетного расширения верхней челюсти (MSE)».",
+      "Tweed cource.",
+      "Специализация в клинике Yeil Orthodontic clinic ,«Биомеханика в клинической ортодонтии». Dr. Noeun Kwon.",
+      "Course of microimplants in the Kyunpook Medical University, Daegu,Korea. Professor Hyo-sang Park.",
+      "Курс по «По лечению аномалии класс III без удаления техникой многопетлевой дуги (MEAW)» Prof Kim Jeong Il.",
+      "Курс по «Лечению дисфункций Височно-нижнечелюстного сустава, орофациальная боль». J. Okeson.",
+      "Курс « Концепция лечения нарушений без ортогнатической хирургии и удаления зубов, основанная на этиопатогенезе и контроле окклюзионной плоскости , Prof Sadao Sato.",
+      "Годовое обучение “FACE” – Сан-Себастьян. Испания 2022-2023."
+    ],
+    "specializations": [
+      "Главврач, ортодонт - гнатолог",
+      "ортодонт",
+      "хирург",
+      "гнатолог"
+    ],
+    "beforeAfter": [
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/09/kan-stanislav-aleksandrovich-1.webp",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/20230515_083356-300x300.webp"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_5140-300x300.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_9980-276x300.webp"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_5140-768x768.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_9980-768x836.webp"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/20230515_083356-768x768.webp",
+        "after": "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-do-768x387.jpeg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-posle-768x387.jpeg",
+        "after": "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-do-768x387.jpeg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-posle-768x387.jpeg",
+        "after": "https://kan.uz/wp-content/uploads/2024/09/kan-stanislav-aleksandrovich-1.webp"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_3953-768x432.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_3954-768x432.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_4794-768x432.png",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_4795-768x432.png"
+      }
+    ],
+    "pageTitle": "Кан Станислав Александрович",
+    "totalImages": 16,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/09/kan-stanislav-aleksandrovich-1.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/20230515_083356-300x300.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5140-300x300.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_9980-276x300.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5140-768x768.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_9980-768x836.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/20230515_083356-768x768.webp",
+      "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-do-768x387.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-posle-768x387.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-do-768x387.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-posle-768x387.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/09/kan-stanislav-aleksandrovich-1.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3953-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3954-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_4794-768x432.png",
+      "https://kan.uz/wp-content/uploads/2024/10/img_4795-768x432.png"
+    ]
+  },
+  {
+    "number": 2,
+    "name": "Кан Анна Александровна",
+    "description": "Стоматолог - ортопед",
+    "slug": "kan-anna-aleksandrovna",
+    "pageUrl": "https://kan.uz/kan-anna-aleksandrovna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-1-scaled-e1753340032329.jpg",
+    "experience": "13",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_33530605 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_33530605 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_33530605 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_33530605 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_33530605 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_33530605 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_33530605 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_33530605 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_33530605 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_33530605 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_33530605 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_33530605 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_33530605 .ue_expand,\n#uc_uc_icon_accordion_elementor_33530605 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_33530605 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_33530605 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_33530605 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_33530605_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_33530605_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_33530605_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_33530605_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Специализация:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          Стоматолог-терапевт.",
+      "Стоматолог-ортопед.",
+      "Государственный институт усовершенствования врачей (2020-2021), г. Ташкент.",
+      "ANDC резидентура (2011-2014), г. Ташкент.",
+      "Ташкентская медицинская академия (2004-2009)."
+    ],
+    "specializations": [
+      "Стоматолог - ортопед",
+      "терапевт",
+      "ортопед"
+    ],
+    "beforeAfter": [
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/11/img_5030-971x1024.webp",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_4270-207x300.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_4268-169x300.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_4266-225x300.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_4265-227x300.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_5197-768x432.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_5196-e1759487857483-768x292.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_5204-768x432.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_5203-768x432.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_5204-768x432.jpg"
+      }
+    ],
+    "pageTitle": "Кан Анна Александровна",
+    "totalImages": 11,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/11/img_5030-971x1024.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/img_4270-207x300.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_4268-169x300.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_4266-225x300.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_4265-227x300.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5197-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5196-e1759487857483-768x292.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5204-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5203-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5204-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5203-768x432.jpg"
+    ]
+  },
+  {
+    "number": 3,
+    "name": "Ким Дмитрий Моисеевич",
+    "description": "Стоматолог - эндодонтист",
+    "slug": "kim-dmitrij-moiseevich",
+    "pageUrl": "https://kan.uz/kim-dmitrij-moiseevich",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-2-scaled-e1753339774305.jpg",
+    "experience": "",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_55c6398f *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_55c6398f .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_55c6398f .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_55c6398f .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_55c6398f .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_55c6398f .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_55c6398f .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_55c6398f .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f .ue_expand,\n#uc_uc_icon_accordion_elementor_55c6398f .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_55c6398f_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_55c6398f_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_55c6398f_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Специализация:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          Стоматолог эндодонтист",
+      "Ташкентская медицинская академия, факультет стоматологии.",
+      "Ортодонтическая Школа ANDC 2007-2008.",
+      "Микроимпланты в ортодонтии. Кенг Хи Мун 2008.",
+      "Course of microimplants in the Kyunpook Medical University, Daegu,Korea. Professor Hyo-sang Park.",
+      "Курс профессора Вон Муна «Нехирургическом расширении средней зоны лица с помощью Аппарата скелетного расширения верхней челюсти (MSE)».",
+      "Tweed cource.",
+      "Специализация в клинике Yeil Orthodontic clinic ,«Биомеханика в клинической ортодонтии». Dr. Noeun Kwon.",
+      "Course of microimplants in the Kyunpook Medical University, Daegu,Korea. Professor Hyo-sang Park.",
+      "Курс по «По лечению аномалии класс III без удаления техникой многопетлевой дуги (MEAW)» Prof Kim Jeong Il.",
+      "Курс по «Лечению дисфункций Височно-нижнечелюстного сустава, орофациальная боль». J. Okeson.",
+      "Курс « Концепция лечения нарушений без ортогнатической хирургии и удаления зубов, основанная на этиопатогенезе и контроле окклюзионной плоскости , Prof Sadao Sato.",
+      "Годовое обучение “FACE” – Сан-Себастьян. Испания 2022-2023."
+    ],
+    "specializations": [
+      "Стоматолог - эндодонтист",
+      "ортодонт",
+      "хирург",
+      "эндодонтист"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Ким Дмитрий Моисеевич",
+    "totalImages": 5,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/10/kim-dmitrij-moiseevich.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5154-225x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5155-225x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5156-225x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5157-225x400.jpg"
+    ]
+  },
+  {
+    "number": 4,
+    "name": "Югай Елена Игоревна",
+    "description": "Стоматолог-терапевт, детский стоматолог",
+    "slug": "yugaj-elena-igorevna",
+    "pageUrl": "https://kan.uz/yugaj-elena-igorevna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-5-2-scaled-e1753340212660.jpg",
+    "experience": "2006",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_expand,\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_4a6f4fd9_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_4a6f4fd9_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_4a6f4fd9_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Стаж работы:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          2006-2010 Республиканский научный учебно-производственный центра проф.Бекметова . Ташкент.",
+      "2010-2019 клиника Аполлония . Ташкент.",
+      "2020-2021 клиника Miso . Москва.",
+      "2022- по наст время KAN dental clinic.",
+      "В 2005 году закончила Первый Ташкентский Государственный Медицинский Институт , факультет Стоматология.",
+      "2008-2009 прохождение курса обучения в ANDC dental school Ташкент.",
+      "2011 прохождение базового курса по ортодонтической стоматологии ANDC dental school Ташкент.",
+      "2013 повышение квалификации по специальности Терапевтическая стоматология ТашИУВ.",
+      "2019 повышение квалификации по специальности Стоматология общей практики Москва РУДН.",
+      "2019-2021 прохождение Ординатуры по специальности Ортопедическая Стоматология РУДН Москва.",
+      "2021 участие в конгрессе по Цифровой стоматологии , Москва.",
+      "Февраль 2022 Курс по лечению постоянных зубов у детей и подростков А.Болячин Москва.",
+      "Февраль 2022 Мастер класс по Реставрации фронтальной группы зубов Р.Карпенко Москва.",
+      "Март 2022 Мастер класс по Реставрации жевательной группы зубов И.Рузин Ташкент.",
+      "Май 2022 Травмы. Реставрации. И.Саркаров Ташкент.",
+      "Июль 2022 Рентгендиагностика в стоматологии. Д.Рогацкин Ташкент.",
+      "Январь 2023 Фронтальные реставрации В.Щербаков Ташкент.",
+      "Март 2023 Коронки на временные зубы. О.Царькова Москва.",
+      "Июнь 2023 Реставрации жевательных зубов, контактного пункта Р.Карпенко Ташкент."
+    ],
+    "specializations": [
+      "Стоматолог-терапевт, детский стоматолог",
+      "ортодонт",
+      "терапевт",
+      "ортопед",
+      "детский стоматолог"
+    ],
+    "beforeAfter": [
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/11/img_0139-940x1024.webp",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_5143-400x358.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_5144-300x400.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_5145-300x400.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_5649-768x432.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_5648-768x432.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_5651-768x432.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_5652-768x432.jpg"
+      }
+    ],
+    "pageTitle": "Югай Елена Игоревна",
+    "totalImages": 8,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/11/img_0139-940x1024.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5143-400x358.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5144-300x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5145-300x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5649-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5648-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5651-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5652-768x432.jpg"
+    ]
+  },
+  {
+    "number": 5,
+    "name": "Тулегенова Асель Турахановна",
+    "description": "Стоматолог - гигиенист",
+    "slug": "tulegenova-asel-turahanovna",
+    "pageUrl": "https://kan.uz/tulegenova-asel-turahanovna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-3-scaled-e1753340309701.jpg",
+    "experience": "2013",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_6202c8bb *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_6202c8bb .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_6202c8bb .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_6202c8bb .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_6202c8bb .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_6202c8bb .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_expand,\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_6202c8bb_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_6202c8bb_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_6202c8bb_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Опыт работы:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          2018-2019 ассистент гигиенист в Smalto dental clinic.",
+      "2019- по настоящее время в KAN dental clinic старший гигиенист.",
+      "В 2013 году окончила Олмазор Тибиет колледж направления медсестра общего профиля.",
+      "2015-2016 прохождение курса hygienist school в ANDC dental school.",
+      "2023 август профессиональная гигиена по протоколу GBT.",
+      "2023 август домашнее отбеливание по системе Opalescence."
+    ],
+    "specializations": [
+      "Стоматолог - гигиенист",
+      "гигиенист"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Тулегенова Асель Турахановна",
+    "totalImages": 7,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/10/tulegenova-asel-turahanovna.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_6434-scaled-e1728931747537-354x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_6520-1-303x400.png",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3947-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3963-768x432.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3950-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3965-768x432.jpeg"
+    ]
+  },
+  {
+    "number": 6,
+    "name": "Пак Ольга Вениаминовна",
+    "description": "Стоматолог - терапевт",
+    "slug": "pak-olga-veniaminovna",
+    "pageUrl": "https://kan.uz/pak-olga-veniaminovna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-13-2-scaled-e1753340586650.jpg",
+    "experience": "2008",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_1647b176 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_1647b176 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_1647b176 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_1647b176 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_1647b176 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_1647b176 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_1647b176 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_1647b176 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176 .ue_expand,\n#uc_uc_icon_accordion_elementor_1647b176 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_1647b176_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_1647b176_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1647b176_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Стаж работы:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          с 2008-2010гг. Ассистент врача стоматолога",
+      "с 2008- 2022гг. клиника Диадент Сервис.",
+      "с 2022-по настоящее время КAN Dental Clinic",
+      "В 2008 году закончила Ташкентскую Медицинскую Академию ,факультет – стоматология.",
+      "Октябрь 2010г. Прохождение лекционного курса по отбеливанию зубов от компании Ultradent.А.Крылова Ташкент.",
+      "2011г. Прохождение курса специализации  по специальности Терапевтическая стоматология ТашИУВ.",
+      "Апрель 2011г. Прохождение лекционного курса по восстановлению контактных пунктов. Адгезивные системы и изоляция рабочего поля от компании Ultradent. А.Крылова Ташкент.",
+      "2011-2012гг.Прохождение базового курса по ортопедической стоматологии..В ANDCdental schoolТашкент.",
+      "2012-2013гг. Прохождение  базового курса по терапевтической стоматологии. В ANDC dental school Ташкент.",
+      "Октябрь 2022г. Участие в первом Евроазиатском эндоконгрессе. Ташкент.",
+      "Январь 2023г. Авторский лекционный курс по реставрации фронтальной группы зубов.В.Щербаков  Ташкент.",
+      "Февраль 2023г. Участие на лекционно –демонстрационном курсе: Перелечивание и апикальная хирургия. И.Мер Ташкент.",
+      "Март 2023г. Прохождение лекционного курса: Практические нюансы в каждодневной эндодонтии. М. Соломонов. Ташкент.",
+      "Июнь 2023г.Прохождение практического курса: Искусство прямых реставраций. Р.Карпенко Ташкент."
+    ],
+    "specializations": [
+      "Стоматолог - терапевт",
+      "терапевт",
+      "хирург",
+      "ортопед"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Пак Ольга Вениаминовна",
+    "totalImages": 8,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/10/pak-olga-veniaminovna.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_0532-300x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_0533-185x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_0537-300x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5393-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5394-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5396-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5397-768x432.jpg"
+    ]
+  },
+  {
+    "number": 7,
+    "name": "Ким Екатерина Александровна",
+    "description": "Стоматолог - терапевт",
+    "slug": "kim-ekaterina-aleksandrovna",
+    "pageUrl": "https://kan.uz/kim-ekaterina-aleksandrovna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-14-2-scaled-e1753340668917.jpg",
+    "experience": "2020",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_2021fbf8 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_2021fbf8 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_2021fbf8 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_2021fbf8 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_2021fbf8 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_2021fbf8 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_expand,\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_2021fbf8_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_2021fbf8_item1 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\n\n  \n    \n        \n      \n    \n    \n        \n    Образование и развитие:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          Закончила Национальный Медицинский Университет им. А.А. Богомольца, г. Киев, Украина в 2020 году.",
+      "Практический курс «Моделирование жевательной поверхности зубов из композита», Улугбек Гафуров.",
+      "Онлайн мастер-класс «Direct posterior restorations. Simplifying occlusal surface and bonding», Максим Белоград.",
+      "Лекционно-демонстрационный и практический курс «Информативная жевательная реставрация», Иван Рузин.",
+      "Лекционно-демонстрационный курс и практический курс «Травмы и посттравматические реставрации. Особенности морфологии и текстуры.», Ильдар Саркаров.",
+      "Лекционный курс «Анатомия и радиоанатомия челюстей. 2D и 3D визуализация нижнечелюстного канала для эндодонтистов и имплантологов», Дмитрий Рогацкин.",
+      "Демонстрационный семинар «Эффективная обработка корневых каналов зубов различных групп», Илья Мер",
+      "Euroasian endo congress.",
+      "Семинар «Современные подходы к устранению дисколоритов зубов», Андрей Акулович.",
+      "Лекционный и практический курс «Большая энциклопедия по реставрации передних зубов от А до Я», Денис Крутиков.",
+      "Zen course «Фронтальные реставрации», Виктор Щербаков.",
+      "Жевательные реставрации, 2 класс, Роман Карпенко.",
+      "Фронтальные реставрации, Мария Логвиненко."
+    ],
+    "specializations": [
+      "Стоматолог - терапевт",
+      "терапевт",
+      "имплантолог",
+      "эндодонтист",
+      "гигиенист"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Ким Екатерина Александровна",
+    "totalImages": 7,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/10/kim-ekaterina-aleksandrovna.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7845-306x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7846-300x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5589-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5590-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5592-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5593-768x432.jpg"
+    ]
+  },
+  {
+    "number": 8,
+    "name": "Аскаров Мансур Анварович",
+    "description": "Стоматолог - хирург, имплантолог",
+    "slug": "askarov-mansur-anvarovich",
+    "pageUrl": "https://kan.uz/askarov-mansur-anvarovich",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-10-2-scaled-e1753340804176.jpg",
+    "experience": "2016",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_38444246 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_38444246 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_38444246 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_38444246 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_38444246 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_38444246 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_38444246 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_38444246 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_38444246 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_38444246 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_38444246 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_38444246 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_38444246 .ue_expand,\n#uc_uc_icon_accordion_elementor_38444246 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_38444246 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_38444246 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_38444246 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_38444246_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_38444246_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_38444246_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_38444246_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Стаж работы:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          С 2016 по 2019 год работал в «Центр имплантологии доктора Зорина» Санкт-Петербург.",
+      "С 2020 года по настоящее время является ассистентом кафедры челюстно-лицевой хирургии Ташкентского Государственного стоматологического института. Пишет диссертационную работу на тему “Оптимизация удаления третьих моляров нижней челюсти при сложных анатомических условиях”",
+      "С 2020 года по настоящее время челюстно-лицевой хирург, имплантолог в клинике «abclinic.uz»",
+      "С 2023 года по настоящее время стоматолог-хирург, имплантолог в клинике «KAN dental clinic»",
+      "В 2016 году окончил стоматологический факультет и в 2019 году ординатуру по направлению челюстно-лицевая хирургия в первом Санкт-Петербургском Государственном медицинском университете имени академика Павлова. В 2018 году проходил магистерскую программу по направлению менеджмент в СПбПУ Петра Великого."
+    ],
+    "specializations": [
+      "Стоматолог - хирург, имплантолог",
+      "хирург",
+      "имплантолог"
+    ],
+    "beforeAfter": [
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_7439-1024x683.webp",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/skan-6_page-0001-400x281.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/skan-8_page-0001-400x281.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_7429-768x432.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_7430-768x432.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_7481-768x432.jpg"
+      }
+    ],
+    "pageTitle": "Аскаров Мансур Анварович",
+    "totalImages": 7,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/10/img_7439-1024x683.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/skan-6_page-0001-400x281.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/skan-8_page-0001-400x281.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7429-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7430-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7481-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7482-768x432.jpg"
+    ]
+  },
+  {
+    "number": 9,
+    "name": "Тулкунов Ойбек Ахмаджанович",
+    "description": "Стоматолог - Терапевт, Эндодонтист, Ортопед",
+    "slug": "tulkunov-ojbek-ahmadzhanovich",
+    "pageUrl": "https://kan.uz/tulkunov-ojbek-ahmadzhanovich",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/img_0205-e1753342253463.jpg",
+    "experience": "",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_3b2b43b *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_3b2b43b .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_3b2b43b .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_3b2b43b .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_3b2b43b .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_3b2b43b .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_expand,\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_3b2b43b_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_3b2b43b_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_3b2b43b_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Специализация:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          Терапевт, Эндодонтист, Ортопед, специалист по лечению под микроскопом.",
+      "Лечение кариеса любой сложности под микроскопом",
+      "Эндодонтическое лечение под микроскопом",
+      "Протезирование зубов под увеличением",
+      "2017 г.закончил Ташкентский Государственный Стоматологический Институт",
+      "2019 г. закончил клиническую ординатуру по ортопедической стоматологии в ТГСИ (Ташкентский Государственный Стоматологической Институт)",
+      "2017 г.семинар-практикум прямая реставрация зубов композитными винирами Дмитрий Копилов Москва",
+      "2018 г.Семинар «БИОЭСТЕТИЧЕСКАЯ РЕСТАВРАЦИЯ ФРОНТАЛЬНЫХ ЗУБОВ:ИСПОЛЬЗОВАНИЕ КОНЦЕПЦИИ НАТУРАЛЬНЫХ СЛОЕВ.ВДОХНОВЕНИЕ И УВЕРЕННОСТЬ»Москва. Дидье Дидчи",
+      "2019 г.Семинар «Физиологическая окклюзия и пути её достижения в привычном и реконструктивном прикусе»РОМАН НОВИЧЕНКО",
+      "2019 г. Семинар Реконструкция Улыбки Александр Бабуров",
+      "2019 г. Семинар - практика Endo Young by Vesna VitaliyУкраина",
+      "2019 г.Семинар «Реабилитация пациентов с помощью керамических виниров» протоколы АБС КЛИНИКСергей МаланьинМОСКВА",
+      "2021 г. Семинар «Эндодонтические аспекты восстановления зубов со штифтами под ортопедическую конструкцию»Михаил Соломонов Москва",
+      "2022 г.Семинар-практика «Временное протезирование»Гиви ОрджоникидзеМосква",
+      "2022 г. Семинар «Реставрация фронталных зубов»Ильдар СаркаровТашкент",
+      "2022 г. Семинар «Эндодонтическое лечение, современные протоколы» Илья МерТашкент",
+      "2022 г.Семинар «Эндодонтичекое Перелечевание зубов, клинико- биологические аспекты» Михаил СоломоновТашкент",
+      "2023 г. Семинар «Точность и Эстетика в ортопедическом приеме»Доменико МассирониТашкент",
+      "2023 г.Семинар «БИОЛОГИЧЕСКИЕ АСПЕКТЫПРОФИЛАКТИКИ И ЛЕЧЕНИЯЗАБОЛЕВАНИЙ ПУЛЬПЫ, ПЕРИАПИКАЛЬНЫХ ЗАБОЛЕВАНИЙ»Доктор медицины MD, DDSDomenico RicucciТашкент"
+    ],
+    "specializations": [
+      "Стоматолог - Терапевт, Эндодонтист, Ортопед",
+      "терапевт",
+      "ортопед",
+      "эндодонтист"
+    ],
+    "beforeAfter": [
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_8291-e1728661706307.webp",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_3747-267x400.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img-a9eb1787917bed66f60910b8f1db0095-v-300x400.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_7441-768x432.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_7442-768x432.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_7444-768x432.jpg"
+      }
+    ],
+    "pageTitle": "Тулкунов Ойбек Ахмаджанович",
+    "totalImages": 7,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/10/img_8291-e1728661706307.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3747-267x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img-a9eb1787917bed66f60910b8f1db0095-v-300x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7441-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7442-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7444-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_7445-768x432.jpg"
+    ]
+  },
+  {
+    "number": 10,
+    "name": "Ким Виталий Эдуардович",
+    "description": "Стоматолог-ортопед",
+    "slug": "kim-vitalij-eduardovich",
+    "pageUrl": "https://kan.uz/kim-vitalij-eduardovich",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-6-2-scaled-e1753341184238.jpg",
+    "experience": "",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_1d424cce *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_1d424cce .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_1d424cce .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_1d424cce .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_1d424cce .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_1d424cce .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_1d424cce .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_1d424cce .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce .ue_expand,\n#uc_uc_icon_accordion_elementor_1d424cce .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_1d424cce_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_1d424cce_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1d424cce_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Опыт работы:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          2014 г.закончил ташкентскую медицинскую академию",
+      "2016 г.закончил клиническую ординатуру по ортопедической стоматологии в ТГСИ ( Ташкентский государственный стоматологический институт )",
+      "С 2016 г. является ассистентом кафедры госпитальной ортопедической стоматологии в ТГСИ",
+      "2020 - 2023 гг. клиника «Ortho cure»",
+      "С 2019 г. по сегодняшний день клиника «L-dent»",
+      "С 2023 г. по сегодняшний день «КAN Dental Clinic»Стоматолог-ортопед",
+      "2018 г. «Ёш педагоглар мактаби»Да касбий ва педагогик махоратлар, интеллектуал салохияти ва билим даражасини ошириш буйча таълим олди.",
+      "2018 г. Anniversary Academic conference of ANDC under the theme of the comprehensive contemporary dentistry sponsored by DSI and IACD",
+      "2018 г.Адгезивные керамические реставрации ( лектор Кмн. Чавушьян К. Д.)",
+      "2019 г.3 -й международный конгресс стоматологов «Актуальные проблемы стоматологии и челюстно - лицевой хирургии»",
+      "2019 г. «Физиологическая окклюзия и пути ее достижения в привычном прикусе и реконструктивном прикусе»Роман Новиченко",
+      "2019 г. «семинар реконструкция улыбки»Александр Бобуров",
+      "2019 г. «Тиббиет олий таълим муассасаларида мутахассислар тайёрлаш сифатини ошириш масаладарига инновацион йондашиш»",
+      "2019 г.3 международный симпозиум \"Функция и эстетика\"",
+      "«Функция и эстетика»Александр Будовский",
+      "«Цифровая эстетика» Едиль Борибай",
+      "«Поведение мягких тканей при получении оттиска»Владимир Адилханян",
+      "«Минимально инвазивные решения с новой много - компонентной системой connect в эстетической значимой зоне»Михаил Дзюба",
+      "«Цифровая стоматология в современной лаборатории и клинике»Петр Нагадовски",
+      "«Создание безупречного дизайна улыбки»Галип гюрель",
+      "2021 г.«Actual problems of dentistry and maxillofacial surgery» ТГСИ",
+      "2021 г. Российский университет дружбы народов. Провел лекционно (семинарские) занятия",
+      "2022 г.«Жевательные реставрации» Рузин И.А.",
+      "2024 г.«Искусство препарирования»Iwata Jun"
+    ],
+    "specializations": [
+      "Стоматолог-ортопед",
+      "хирург",
+      "ортопед"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Ким Виталий Эдуардович",
+    "totalImages": 4,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2024/10/img_7442.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3589.heic",
+      "https://kan.uz/wp-content/uploads/2024/10/2024-10-14-23.44.17-300x400.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3642-225x400.jpg"
+    ]
+  },
+  {
+    "number": 11,
+    "name": "Ким Анастасия Радиковна",
+    "description": "Стоматолог - Ортодонт",
+    "slug": "kim-anastasiya-radikovna",
+    "pageUrl": "https://kan.uz/kim-anastasiya-radikovna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/08/montazhnaya-oblast-15-2-scaled-e1757590584403.jpg",
+    "experience": "2020",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_67465376 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_67465376 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_67465376 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_67465376 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_67465376 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_67465376 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_67465376 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_67465376 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_67465376 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_67465376 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_67465376 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_67465376 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_67465376 .ue_expand,\n#uc_uc_icon_accordion_elementor_67465376 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_67465376 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_67465376 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_67465376 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_67465376_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_67465376_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_67465376_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_67465376_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Специализация:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          ортодонтическое лечение (исправление прикуса, выравнивание зубов) пациентов любого возраста с применением современных брекет-систем, элайнеров",
+      "диагностика и лечение проблем с височно-нижнечелюстными суставами.",
+      "подготовка к протезированию, эстетика и дизайн улыбки.",
+      "2013-2018 окончила Ташкентский государственный стоматологический институт, факультет стоматологии.",
+      "2018-2020 Ортодонтическая резидентура ANDC."
+    ],
+    "specializations": [
+      "Стоматолог - Ортодонт",
+      "ортодонт"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Ким Анастасия Радиковна",
+    "totalImages": 5,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2025/01/ar-prib-1-scaled-e1736313752146-747x1024.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5197-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5196-e1759487857483-768x292.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5204-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5203-768x432.jpg"
+    ]
+  },
+  {
+    "number": 12,
+    "name": "Шоисломов Шахзод Шорахматович",
+    "description": "Стоматолог - Терапевт",
+    "slug": "shahzod-shorahmatovich",
+    "pageUrl": "https://kan.uz/shahzod-shorahmatovich",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-4-scaled-e1753341279602.jpg",
+    "experience": "2020",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_7eaaee0e *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_7eaaee0e .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_7eaaee0e .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_7eaaee0e .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_7eaaee0e .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_7eaaee0e .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_expand,\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_7eaaee0e_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_7eaaee0e_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_7eaaee0e_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Специализация:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          Терапевтическая стоматология",
+      "Реставрация зубов",
+      "Эндодонтия",
+      "Микрохирургия",
+      "Российская Федерация Республика Крым 2016-2019 Медицинская академия имени С.И. ГеоргиевскогоТашкентский Государственный Стоматологичекий Институт Город Ташкент 2019-2021Ташкентский институт усовершенствования врачей Город Ташкент 20212024г. И. Мер «Современные протоколы сохранения зубов и микрохирургия»2023г. И. Рузин «Фронтальные реставрации»2022г. И. Мер «Эффективная обработка корневых каналов зубов различных групп»2022г. И. Аббосов «Композитные виниры. Реставрация фронтальных зубов.»2020г. У. Гафуров «Моделировка зубов из композитов + Дентальное фотографирование»",
+      "ортодонтическое лечение (исправление прикуса, выравнивание зубов) пациентов любого возраста с применением современных брекет-систем, элайнеров Invisalign.",
+      "диагностика и лечение проблем с височно-нижнечелюстными суставами.",
+      "подготовка к протезированию, эстетика и дизайн улыбки.",
+      "Ташкентская медицинская академия, факультет стоматологии.",
+      "Ортодонтическая Школа ANDC 2007-2008.",
+      "Микроимпланты в ортодонтии. Кенг Хи Мун 2008.",
+      "Course of microimplants in the Kyunpook Medical University, Daegu,Korea. Professor Hyo-sang Park.",
+      "Курс профессора Вон Муна «Нехирургическом расширении средней зоны лица с помощью Аппарата скелетного расширения верхней челюсти (MSE)».",
+      "Tweed cource.",
+      "Специализация в клинике Yeil Orthodontic clinic ,«Биомеханика в клинической ортодонтии». Dr. Noeun Kwon.",
+      "Course of microimplants in the Kyunpook Medical University, Daegu,Korea. Professor Hyo-sang Park.",
+      "Курс по «По лечению аномалии класс III без удаления техникой многопетлевой дуги (MEAW)» Prof Kim Jeong Il.",
+      "Курс по «Лечению дисфункций Височно-нижнечелюстного сустава, орофациальная боль». J. Okeson.",
+      "Курс « Концепция лечения нарушений без ортогнатической хирургии и удаления зубов, основанная на этиопатогенезе и контроле окклюзионной плоскости , Prof Sadao Sato.",
+      "Годовое обучение “FACE” – Сан-Себастьян. Испания 2022-2023."
+    ],
+    "specializations": [
+      "Стоматолог - Терапевт",
+      "ортодонт",
+      "терапевт",
+      "хирург",
+      "гнатолог"
+    ],
+    "beforeAfter": [
+      {
+        "before": "https://kan.uz/wp-content/uploads/2025/01/shahzod-683x1024.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_5140-768x768.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_9980-768x836.webp",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/20230515_083356-768x768.webp"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-do-768x387.jpeg",
+        "after": "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-posle-768x387.jpeg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-do-768x387.jpeg",
+        "after": "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-posle-768x387.jpeg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/09/kan-stanislav-aleksandrovich-1.webp",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_3953-768x432.jpg"
+      },
+      {
+        "before": "https://kan.uz/wp-content/uploads/2024/10/img_3954-768x432.jpg",
+        "after": "https://kan.uz/wp-content/uploads/2024/10/img_4794-768x432.png"
+      }
+    ],
+    "pageTitle": "Шахзод Шорахматович",
+    "totalImages": 13,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2025/01/shahzod-683x1024.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_5140-768x768.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_9980-768x836.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/20230515_083356-768x768.webp",
+      "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-do-768x387.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-posle-768x387.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-do-768x387.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/09/kim-ekaterina-aleksandrovna-posle-768x387.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/09/kan-stanislav-aleksandrovich-1.webp",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3953-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_3954-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_4794-768x432.png",
+      "https://kan.uz/wp-content/uploads/2024/10/img_4795-768x432.png"
+    ]
+  },
+  {
+    "number": 13,
+    "name": "Абед Зухра Жалаловна",
+    "description": "Стоматолог - ортодонт",
+    "slug": "abed-zuhra-zhalalovna",
+    "pageUrl": "https://kan.uz/abed-zuhra-zhalalovna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/05/montazhnaya-oblast-7-scaled-e1749529528442.jpg",
+    "experience": "",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_1faf90f8 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_1faf90f8 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_1faf90f8 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_1faf90f8 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_1faf90f8 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_1faf90f8 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_expand,\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_1faf90f8_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_1faf90f8_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1faf90f8_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Сфера профессиональных интересов включает:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          • ортодонтическую диагностику и составление индивидуального плана лечения• выравнивание зубов с помощью брекет-систем и элайнеров• коррекцию прикуса с учётом биомеханики и работы височно-нижнечелюстного сустава• комплексный подход к реабилитации пациентов в мультидисциплинарной командеСтавит в приоритет бережное отношение, понимание потребностей пациента и точную реализацию каждого этапа лечения.\n     \n    \n     \n    \n  \n\n\n\n\n  \n    \n        \n      \n    \n    \n        \n    Образование и развитие:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          2017–2022 гг.Бакалавриат, Ташкентский государственный стоматологический институт, факультет стоматологии",
+      "2022–2024 гг.Магистратура по ортодонтии, ТГСИ",
+      "2022–2024 гг.Модули:«Ортодонтическая диагностика и планирование»«Изгибы ортодонтических дуг»«Биомеханика в ортодонтии и ВНЧС»Автор: Хусанова Зафара",
+      "2023 г.Курс «Биомеханика в ортодонтии», Kwangchul Choy",
+      "2024 г.Модуль по элайнерам «Хочу работать на элайнерах», Александра Раменская",
+      "2025 г.Курс «ВНЧС — окклюзия в фокусе», Пулат Кочкаров"
+    ],
+    "specializations": [
+      "Стоматолог - ортодонт",
+      "ортодонт"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Абед Зухра Жалаловна",
+    "totalImages": 5,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2025/03/photo_2025-03-19_22-12-48-e1749529451930-627x1024.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_6073-768x432.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_6093-768x432.jpeg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_6089-e1730311884258-768x407.jpg",
+      "https://kan.uz/wp-content/uploads/2024/10/img_6081-e1730311905164-768x410.jpg"
+    ]
+  },
+  {
+    "number": 14,
+    "name": "Мамадияров Хусан Донияровича",
+    "description": "Стоматолог - Терапевт",
+    "slug": "abdalieva-uldaulet-parahatovna",
+    "pageUrl": "https://kan.uz/abdalieva-uldaulet-parahatovna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-8-2-scaled-e1753341925337.jpg",
+    "experience": "",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_1fcbd847 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_expand,\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Специализация:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          • первичное и повторное эндодонтическое лечение• восстановление сильно разрушенных зубов• лечение в сложных анатомических ситуациях с использованием микроскопа и современных протоколов• комплексное лечение с учётом эстетики и функциональностиВ работе сочетает клиническую точность, современные методики и бережное отношение к пациенту. \n     \n    \n     \n    \n  \n\n\n\n\n  \n    \n        \n      \n    \n    \n        \n    Образование и развитие:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          2016–2019 гг.Джизакский медицинский колледж, специальность — медицинский брат",
+      "2019–2024 гг.Ташкентский государственный стоматологический институт, факультет стоматологииКурсы:",
+      "Практический курс «Первичная эндодонтия. Просто о сложном и важном», Карина Добриян",
+      "Семинар «Лечение зубов под ЗАКС», Галина Ерошкина",
+      "Практический курс «Everyday Endodontics», Юрий Кочаров",
+      "Эндопрактикум «Перелечивание корневых каналов», Карина Добриян",
+      "Теоретико-демонстрационный курс «Повторное эндодонтическое лечение: борьба с биоплёнкой, биологически обоснованные методы», Доменико Рикуччи",
+      "Лекционно-демонстрационный курс «Большой апдейт в эндодонтии», Йоши Тераучи",
+      "Лекционный курс «Искусство общения с пациентом: секреты, которые меняют всё», Виталий Поволоцкий"
+    ],
+    "specializations": [
+      "Стоматолог - Терапевт",
+      "терапевт"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Абдалиева Улдаулет Парахатовна",
+    "totalImages": 1,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-8-2-scaled-e1753341925337-772x1024.jpg"
+    ]
+  },
+  {
+    "number": 15,
+    "name": "Тураева Азиза Хайитовна",
+    "description": "Стоматолог - пародонтолог - гигиенист",
+    "slug": "abdalieva-uldaulet-parahatovna",
+    "pageUrl": "https://kan.uz/abdalieva-uldaulet-parahatovna",
+    "cardPhoto": "https://kan.uz/wp-content/uploads/2025/07/img_0206-2-e1753342193208.jpg",
+    "experience": "",
+    "education": [
+      "/* widget: Icon Accordion */\n\n#uc_uc_icon_accordion_elementor_1fcbd847 *{\n\tbox-sizing: border-box;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_container .uc-heading\n{\n\tcursor:pointer;\n    display:flex;\n    align-items:center;\n    transition:0.3s;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_container .uc-heading span.bbb\n{\n\tdisplay:block;\n\t\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_ac_box.uc-item-active span.uc_dactive\n{\n\tdisplay:none;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_ac_box:not(.uc-item-active) span.uc_active\n{\n\tdisplay:none;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_icon_holder,\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_icon_spacing\n{\n  flex-grow:0;\n  flex-shrink:0; \n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_content{\n\tdisplay: none;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_icon\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n  transition:0.3s;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_icon svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_expand_inside\n{\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  line-height:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_expand_inside svg\n{\n  height:1em;\n  width:1em;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_expand,\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_expand_spacing\n{\n  flex-grow:0;\n  flex-shrink:0;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .ue_title\n{\n  flex-grow:1;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_ac_box:last-child\n{\n  margin-bottom:0px;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847 .uc_ac_box\n{\n  overflow:hidden;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847_item1 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847_item1 .uc-heading\n{\n  background-color:;\n}\n#uc_uc_icon_accordion_elementor_1fcbd847_item2 .ue_icon\n{\n  background-color:;\n}\n\n#uc_uc_icon_accordion_elementor_1fcbd847_item2 .uc-heading\n{\n  background-color:;\n}\n\n\n\n\n\n    \t\n            \n\t\t\n\n  \n    \n        \n      \n    \n    \n        \n    Специализация:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          • первичное и повторное эндодонтическое лечение• восстановление сильно разрушенных зубов• лечение в сложных анатомических ситуациях с использованием микроскопа и современных протоколов• комплексное лечение с учётом эстетики и функциональностиВ работе сочетает клиническую точность, современные методики и бережное отношение к пациенту. \n     \n    \n     \n    \n  \n\n\n\n\n  \n    \n        \n      \n    \n    \n        \n    Образование и развитие:\n    \n    \n        \n    \n      \n      \n      \n      \n    \n        \n  \n  \n  \n  \n  \n          2016–2019 гг.Джизакский медицинский колледж, специальность — медицинский брат",
+      "2019–2024 гг.Ташкентский государственный стоматологический институт, факультет стоматологииКурсы:",
+      "Практический курс «Первичная эндодонтия. Просто о сложном и важном», Карина Добриян",
+      "Семинар «Лечение зубов под ЗАКС», Галина Ерошкина",
+      "Практический курс «Everyday Endodontics», Юрий Кочаров",
+      "Эндопрактикум «Перелечивание корневых каналов», Карина Добриян",
+      "Теоретико-демонстрационный курс «Повторное эндодонтическое лечение: борьба с биоплёнкой, биологически обоснованные методы», Доменико Рикуччи",
+      "Лекционно-демонстрационный курс «Большой апдейт в эндодонтии», Йоши Тераучи",
+      "Лекционный курс «Искусство общения с пациентом: секреты, которые меняют всё», Виталий Поволоцкий"
+    ],
+    "specializations": [
+      "Стоматолог - пародонтолог - гигиенист",
+      "терапевт"
+    ],
+    "beforeAfter": [],
+    "pageTitle": "Абдалиева Улдаулет Парахатовна",
+    "totalImages": 1,
+    "allImageUrls": [
+      "https://kan.uz/wp-content/uploads/2025/07/montazhnaya-oblast-8-2-scaled-e1753341925337-772x1024.jpg"
+    ]
+  }
+]

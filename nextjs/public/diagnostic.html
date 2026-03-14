@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Diagnostic</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .result {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #526AC2;
+        }
+        .error {
+            border-left-color: #e74c3c;
+        }
+        .success {
+            border-left-color: #2ecc71;
+        }
+        button {
+            background: #526AC2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #3d5aa8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click Diagnostic Tool</h1>
+    <p>This page will help diagnose why links are unclickable on the homepage.</p>
+    
+    <button onclick="runDiagnostics()">Run Diagnostics</button>
+    <button onclick="checkHomepage()">Check Homepage</button>
+    
+    <div id="results"></div>
+
+    <script>
+        function addResult(message, type = 'result') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `result ${type}`;
+            div.innerHTML = message;
+            results.appendChild(div);
+        }
+
+        function runDiagnostics() {
+            document.getElementById('results').innerHTML = '';
+            
+            // Check 1: Fixed position elements
+            addResult('<strong>Check 1: Fixed Position Elements</strong>');
+            const fixedElements = Array.from(document.querySelectorAll('*')).filter(el => {
+                const style = window.getComputedStyle(el);
+                return style.position === 'fixed';
+            });
+            addResult(`Found ${fixedElements.length} fixed position elements:`, 'result');
+            fixedElements.forEach(el => {
+                const style = window.getComputedStyle(el);
+                addResult(`- ${el.tagName}.${el.className} (z-index: ${style.zIndex})`, 'result');
+            });
+            
+            // Check 2: High z-index elements
+            addResult('<strong>Check 2: High Z-Index Elements (z-index > 40)</strong>');
+            const highZElements = Array.from(document.querySelectorAll('*')).filter(el => {
+                const zIndex = parseInt(window.getComputedStyle(el).zIndex);
+                return !isNaN(zIndex) && zIndex > 40;
+            });
+            addResult(`Found ${highZElements.length} high z-index elements`, 'result');
+            highZElements.forEach(el => {
+                const style = window.getComputedStyle(el);
+                addResult(`- ${el.tagName}.${el.className} (z-index: ${style.zIndex}, position: ${style.position})`, 'result');
+            });
+            
+            // Check 3: Pointer events
+            addResult('<strong>Check 3: Elements with pointer-events: none</strong>');
+            const noPointerElements = Array.from(document.querySelectorAll('*')).filter(el => {
+                return window.getComputedStyle(el).pointerEvents === 'none';
+            });
+            addResult(`Found ${noPointerElements.length} elements with pointer-events: none`, 'result');
+            
+            // Check 4: Element at center of viewport
+            addResult('<strong>Check 4: Element at Center of Viewport</strong>');
+            const centerX = window.innerWidth / 2;
+            const centerY = 400;
+            const elementAtCenter = document.elementFromPoint(centerX, centerY);
+            if (elementAtCenter) {
+                const style = window.getComputedStyle(elementAtCenter);
+                addResult(`Element at (${centerX}, ${centerY}): ${elementAtCenter.tagName}.${elementAtCenter.className}`, 'result');
+                addResult(`- Position: ${style.position}`, 'result');
+                addResult(`- Z-Index: ${style.zIndex}`, 'result');
+                addResult(`- Pointer Events: ${style.pointerEvents}`, 'result');
+            }
+        }
+
+        function checkHomepage() {
+            document.getElementById('results').innerHTML = '';
+            addResult('<strong>Opening Homepage in New Tab...</strong>');
+            
+            const newWindow = window.open('http://localhost:3000', '_blank');
+            
+            setTimeout(() => {
+                addResult('Please check the console in the new tab for diagnostic information.', 'result');
+                addResult('Run this in the console:', 'result');
+                addResult(`
+                    <pre style="background: #f0f0f0; padding: 10px; border-radius: 3px;">
+// Check for blocking elements
+console.log('=== DIAGNOSTIC RESULTS ===');
+console.log('1. Fixed elements:', Array.from(document.querySelectorAll('*')).filter(el => getComputedStyle(el).position === 'fixed').map(el => el.tagName + '.' + el.className));
+console.log('2. Element at center:', document.elementFromPoint(window.innerWidth/2, 400)?.tagName + '.' + document.elementFromPoint(window.innerWidth/2, 400)?.className);
+console.log('3. BVI elements:', document.querySelectorAll('[class*="bvi"]').length);
+console.log('4. Dropdown containers:', document.querySelectorAll('.dropdown-container').length);
+console.log('5. High z-index elements:', Array.from(document.querySelectorAll('*')).filter(el => {const z = parseInt(getComputedStyle(el).zIndex); return !isNaN(z) && z > 40;}).map(el => ({tag: el.tagName, class: el.className, zIndex: getComputedStyle(el).zIndex})));
+                    </pre>
+                `, 'result');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

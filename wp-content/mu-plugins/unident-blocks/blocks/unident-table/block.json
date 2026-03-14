@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-table",
+  "title": "Таблица (KB)",
+  "description": "Заголовок + shortcode TablePress или HTML таблица",
+  "category": "unident-blocks",
+  "icon": "editor-table",
+  "keywords": ["таблица", "table", "tablepress"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

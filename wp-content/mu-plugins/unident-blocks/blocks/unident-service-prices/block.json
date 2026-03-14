@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-service-prices",
+  "title": "Таблица цен услуги (KB)",
+  "description": "Таблица цен с фокусной ценой и кнопками записи",
+  "category": "unident-blocks",
+  "icon": "list-view",
+  "keywords": ["цены", "таблица", "услуга"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

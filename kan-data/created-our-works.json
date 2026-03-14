@@ -1,0 +1,242 @@
+[
+  {
+    "postId": 862,
+    "slug": "kan-stanislav-aleksandrovich-case-1",
+    "title": "Ортодонтическая коррекция и дизайн улыбки",
+    "doctorSlug": "kan-stanislav-aleksandrovich",
+    "doctorPostId": 807,
+    "beforeImageId": 860,
+    "afterImageId": 861,
+    "pairIndex": 0
+  },
+  {
+    "postId": 865,
+    "slug": "kan-stanislav-aleksandrovich-case-2",
+    "title": "Создание эстетичной улыбки",
+    "doctorSlug": "kan-stanislav-aleksandrovich",
+    "doctorPostId": 807,
+    "beforeImageId": 863,
+    "afterImageId": 864,
+    "pairIndex": 1
+  },
+  {
+    "postId": 868,
+    "slug": "kan-stanislav-aleksandrovich-case-3",
+    "title": "Коррекция выступающих клыков и глубокого прикуса",
+    "doctorSlug": "kan-stanislav-aleksandrovich",
+    "doctorPostId": 807,
+    "beforeImageId": 866,
+    "afterImageId": 867,
+    "pairIndex": 2
+  },
+  {
+    "postId": 871,
+    "slug": "kan-anna-aleksandrovna-case-1",
+    "title": "Новый взгляд на улыбку",
+    "doctorSlug": "kan-anna-aleksandrovna",
+    "doctorPostId": 811,
+    "beforeImageId": 869,
+    "afterImageId": 870,
+    "pairIndex": 0
+  },
+  {
+    "postId": 874,
+    "slug": "kan-anna-aleksandrovna-case-2",
+    "title": "Путь к новой улыбке",
+    "doctorSlug": "kan-anna-aleksandrovna",
+    "doctorPostId": 811,
+    "beforeImageId": 872,
+    "afterImageId": 873,
+    "pairIndex": 1
+  },
+  {
+    "postId": 877,
+    "slug": "yugaj-elena-igorevna-case-1",
+    "title": "Скрытый кариес под пломбой",
+    "doctorSlug": "yugaj-elena-igorevna",
+    "doctorPostId": 819,
+    "beforeImageId": 875,
+    "afterImageId": 876,
+    "pairIndex": 0
+  },
+  {
+    "postId": 880,
+    "slug": "yugaj-elena-igorevna-case-2",
+    "title": "Своевременное обращение к стоматологу",
+    "doctorSlug": "yugaj-elena-igorevna",
+    "doctorPostId": 819,
+    "beforeImageId": 878,
+    "afterImageId": 879,
+    "pairIndex": 1
+  },
+  {
+    "postId": 883,
+    "slug": "tulegenova-asel-turahanovna-case-1",
+    "title": "Профессиональная гигиена полости рта",
+    "doctorSlug": "tulegenova-asel-turahanovna",
+    "doctorPostId": 823,
+    "beforeImageId": 881,
+    "afterImageId": 882,
+    "pairIndex": 0
+  },
+  {
+    "postId": 886,
+    "slug": "tulegenova-asel-turahanovna-case-2",
+    "title": "Профгигиена зубов для детей",
+    "doctorSlug": "tulegenova-asel-turahanovna",
+    "doctorPostId": 823,
+    "beforeImageId": 884,
+    "afterImageId": 885,
+    "pairIndex": 1
+  },
+  {
+    "postId": 889,
+    "slug": "pak-olga-veniaminovna-case-1",
+    "title": "Сюрпризы под старыми пломбами",
+    "doctorSlug": "pak-olga-veniaminovna",
+    "doctorPostId": 827,
+    "beforeImageId": 887,
+    "afterImageId": 888,
+    "pairIndex": 0
+  },
+  {
+    "postId": 892,
+    "slug": "pak-olga-veniaminovna-case-2",
+    "title": "Восстановление природного вида зуба",
+    "doctorSlug": "pak-olga-veniaminovna",
+    "doctorPostId": 827,
+    "beforeImageId": 890,
+    "afterImageId": 891,
+    "pairIndex": 1
+  },
+  {
+    "postId": 895,
+    "slug": "kim-ekaterina-aleksandrovna-case-1",
+    "title": "Проблема старых пломб",
+    "doctorSlug": "kim-ekaterina-aleksandrovna",
+    "doctorPostId": 831,
+    "beforeImageId": 893,
+    "afterImageId": 894,
+    "pairIndex": 0
+  },
+  {
+    "postId": 898,
+    "slug": "kim-ekaterina-aleksandrovna-case-2",
+    "title": "Лечение кариеса с восстановлением эстетики",
+    "doctorSlug": "kim-ekaterina-aleksandrovna",
+    "doctorPostId": 831,
+    "beforeImageId": 896,
+    "afterImageId": 897,
+    "pairIndex": 1
+  },
+  {
+    "postId": 901,
+    "slug": "askarov-mansur-anvarovich-case-1",
+    "title": "Имплантация зуба без костной пластики",
+    "doctorSlug": "askarov-mansur-anvarovich",
+    "doctorPostId": 835,
+    "beforeImageId": 899,
+    "afterImageId": 900,
+    "pairIndex": 0
+  },
+  {
+    "postId": 904,
+    "slug": "askarov-mansur-anvarovich-case-2",
+    "title": "Восстановление улыбки в короткие сроки",
+    "doctorSlug": "askarov-mansur-anvarovich",
+    "doctorPostId": 835,
+    "beforeImageId": 902,
+    "afterImageId": 903,
+    "pairIndex": 1
+  },
+  {
+    "postId": 907,
+    "slug": "tulkunov-ojbek-ahmadzhanovich-case-1",
+    "title": "Скрытый кариес под здоровой эмалью",
+    "doctorSlug": "tulkunov-ojbek-ahmadzhanovich",
+    "doctorPostId": 837,
+    "beforeImageId": 905,
+    "afterImageId": 906,
+    "pairIndex": 0
+  },
+  {
+    "postId": 910,
+    "slug": "tulkunov-ojbek-ahmadzhanovich-case-2",
+    "title": "Невидимый кариес глубоко внутри зуба",
+    "doctorSlug": "tulkunov-ojbek-ahmadzhanovich",
+    "doctorPostId": 837,
+    "beforeImageId": 908,
+    "afterImageId": 909,
+    "pairIndex": 1
+  },
+  {
+    "postId": 913,
+    "slug": "kim-anastasiya-radikovna-case-1",
+    "title": "Новый взгляд на улыбку",
+    "doctorSlug": "kim-anastasiya-radikovna",
+    "doctorPostId": 847,
+    "beforeImageId": 911,
+    "afterImageId": 912,
+    "pairIndex": 0
+  },
+  {
+    "postId": 916,
+    "slug": "kim-anastasiya-radikovna-case-2",
+    "title": "Путь к новой улыбке",
+    "doctorSlug": "kim-anastasiya-radikovna",
+    "doctorPostId": 847,
+    "beforeImageId": 914,
+    "afterImageId": 915,
+    "pairIndex": 1
+  },
+  {
+    "postId": 919,
+    "slug": "shahzod-shorahmatovich-case-1",
+    "title": "Эстетическая реставрация зубов",
+    "doctorSlug": "shahzod-shorahmatovich",
+    "doctorPostId": 851,
+    "beforeImageId": 917,
+    "afterImageId": 918,
+    "pairIndex": 0
+  },
+  {
+    "postId": 922,
+    "slug": "shahzod-shorahmatovich-case-2",
+    "title": "Создание эстетичной улыбки",
+    "doctorSlug": "shahzod-shorahmatovich",
+    "doctorPostId": 851,
+    "beforeImageId": 920,
+    "afterImageId": 921,
+    "pairIndex": 1
+  },
+  {
+    "postId": 925,
+    "slug": "shahzod-shorahmatovich-case-3",
+    "title": "Коррекция выступающих клыков и глубокого прикуса",
+    "doctorSlug": "shahzod-shorahmatovich",
+    "doctorPostId": 851,
+    "beforeImageId": 923,
+    "afterImageId": 924,
+    "pairIndex": 2
+  },
+  {
+    "postId": 928,
+    "slug": "abed-zuhra-zhalalovna-case-1",
+    "title": "Лечение пульпита молочного зуба",
+    "doctorSlug": "abed-zuhra-zhalalovna",
+    "doctorPostId": 855,
+    "beforeImageId": 926,
+    "afterImageId": 927,
+    "pairIndex": 0
+  },
+  {
+    "postId": 931,
+    "slug": "abed-zuhra-zhalalovna-case-2",
+    "title": "Восстановление зуба после травмы",
+    "doctorSlug": "abed-zuhra-zhalalovna",
+    "doctorPostId": 855,
+    "beforeImageId": 929,
+    "afterImageId": 930,
+    "pairIndex": 1
+  }
+]

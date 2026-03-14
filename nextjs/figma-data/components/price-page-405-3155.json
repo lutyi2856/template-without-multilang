@@ -1,0 +1,93 @@
+{
+  "id": "405:3155",
+  "name": "price/ 1440",
+  "type": "FRAME",
+  "fileKey": "eEN4I9HdQ3JiW708BuOMRc",
+  "description": "Страница цен (price page) — полный FRAME с Menu, Breadcrumbs, секцией цен, CTA, footer",
+  "source": "Framelink get_figma_data + Figma get_design_context + get_variable_defs",
+  "collectedAt": "2026-02-16",
+  "layoutFromFramelink": {
+    "root": {
+      "layoutId": "layout_WDC4RG",
+      "width": 1440,
+      "height": 3638,
+      "mode": "none",
+      "fills": "9"
+    },
+    "menu": {
+      "layoutId": "layout_MEGYIM",
+      "width": 1440,
+      "height": 176.69,
+      "x": 0.29,
+      "y": 0.69
+    },
+    "topBar": {
+      "layoutId": "layout_5WHMA9",
+      "width": 1440,
+      "height": 50.69
+    },
+    "topBarContent": {
+      "layoutId": "layout_VUUNSH",
+      "gap": 225,
+      "mode": "row",
+      "alignItems": "center"
+    },
+    "navItem": {
+      "layoutId": "layout_2UIB0M",
+      "gap": 4,
+      "mode": "row"
+    },
+    "iconSize": {
+      "layoutId": "layout_KFDQXA",
+      "width": 25,
+      "height": 25
+    },
+    "dropdownArrow": {
+      "layoutId": "layout_6QVVXC",
+      "width": 6.1,
+      "height": 3.05
+    }
+  },
+  "variableDefsFromFigma": {
+    "colors": {
+      "1": "#D9E4F7",
+      "2": "#607BD4",
+      "3": "#526AC2",
+      "4": "#191E35",
+      "6": "#F9F9F9",
+      "7": "#EEF3F9",
+      "8": "#F5F7F9",
+      "9": "#FFFFFF",
+      "10": "#8F8F8F"
+    },
+    "H2": "Font(Gilroy, SemiBold, 45px, weight 600, lineHeight 100, letterSpacing -1%)",
+    "Borders": "#D8D8D8"
+  },
+  "structure": {
+    "children": [
+      { "id": "405:3156", "name": "Menu", "type": "INSTANCE", "componentId": "109:133" },
+      { "id": "405:3157", "name": "Breadcrumbs", "type": "FRAME" },
+      { "id": "405:3158", "name": "Price section content", "type": "FRAME" },
+      { "id": "405:3185", "name": "footer", "type": "INSTANCE", "componentId": "131:1618" }
+    ],
+    "priceSectionNodeIds": ["406:4026", "406:4027", "406:4054", "406:4084", "406:4106", "406:4128", "406:4144", "406:4160", "406:4176", "406:4284"],
+    "ctaBlock": {
+      "id": "406:4283",
+      "layoutId": "layout_M6SUOP",
+      "dimensions": { "width": 1380, "height": 554 },
+      "borderRadius": 25,
+      "fills": "5"
+    }
+  },
+  "imageSvgNodesForDownload": [
+    { "nodeId": "406:4084", "fileName": "price-divider.svg", "description": "Vector 153 — пунктирная линия в таблице цен" },
+    { "nodeId": "406:4284", "fileName": "price-cta-vector.svg", "description": "Vector — декоративный overlay в CTA блоке" },
+    { "nodeId": "405:3160", "fileName": "price-breadcrumb-separator.svg", "description": "Frame 2131328721 — разделитель хлебных крошек" }
+  ],
+  "crossValidation": {
+    "layoutNumbersSource": "Framelink globalVars",
+    "structureSource": "Framelink nodes",
+    "designTokensSource": "Figma get_variable_defs",
+    "priorityOnConflict": "Framelink for layout dimensions/gap/padding"
+  }
+}

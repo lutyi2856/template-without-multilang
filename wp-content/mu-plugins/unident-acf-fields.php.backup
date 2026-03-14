@@ -1,0 +1,435 @@
+<?php
+/**
+ * Plugin Name: УниДент - ACF Fields
+ * Description: Регистрация ACF полей для меню, header settings и других элементов
+ * Version: 1.0.0
+ * Author: koystrubvs
+ * Text Domain: unident-acf-fields
+ */
+
+// Prevent direct access
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+/**
+ * Register ACF Options Page для Header Settings
+ */
+function unident_register_header_settings_page() {
+    if (function_exists('acf_add_options_page')) {
+        acf_add_options_page(array(
+            'page_title'    => 'Настройки шапки сайта',
+            'menu_title'    => 'Настройки шапки',
+            'menu_slug'     => 'header-settings',
+            'capability'    => 'edit_posts',
+            'position'      => 2,
+            'icon_url'      => 'dashicons-admin-generic',
+            'redirect'      => false,
+            'post_id'       => 'options',
+            'autoload'      => true,
+            'update_button' => 'Сохранить настройки',
+            'updated_message' => 'Настройки шапки обновлены!',
+        ));
+    }
+}
+add_action('acf/init', 'unident_register_header_settings_page');
+
+/**
+ * Manual GraphQL registration for Header Settings ACF Option Page
+ * 
+ * NOTE: WPGraphQL ACF v2 does NOT automatically expose ACF Option Pages!
+ * Manual registration is REQUIRED for Option Pages to appear in GraphQL schema.
+ */
+function unident_register_header_settings_in_graphql() {
+    if (!function_exists('register_graphql_field')) {
+        return;
+    }
+
+    // Register the HeaderSettings GraphQL type with FLAT structure (no nested types)
+    // CRITICAL FIX: WPGraphQL auto-maps simple fields from $source, but NOT nested types!
+    register_graphql_object_type('HeaderSettings', [
+        'description' => __('Settings for the site header from ACF Option Page', 'unident-acf-fields'),
+        'fields' => [
+            'phone' => [
+                'type' => 'String',
+                'description' => __('Contact phone number', 'unident-acf-fields'),
+                // Auto-mapped from $source['phone'] ✅
+            ],
+            'email' => [
+                'type' => 'String',
+                'description' => __('Contact email', 'unident-acf-fields'),
+                // Auto-mapped from $source['email'] ✅
+            ],
+            // FLAT structure instead of nested WorkingHours type
+            'workingHoursWeekdays' => [
+                'type' => 'String',
+                'description' => __('Working hours on weekdays', 'unident-acf-fields'),
+                // Auto-mapped from $source['workingHoursWeekdays']
+            ],
+            'workingHoursWeekend' => [
+                'type' => 'String',
+                'description' => __('Working hours on weekend', 'unident-acf-fields'),
+                // Auto-mapped from $source['workingHoursWeekend']
+            ],
+            'locationsCount' => [
+                'type' => 'Int',
+                'description' => __('Number of clinic locations', 'unident-acf-fields'),
+                // Auto-mapped from $source['locationsCount']
+            ],
+            'reviewsCount' => [
+                'type' => 'Int',
+                'description' => __('Total number of reviews', 'unident-acf-fields'),
+                // Auto-mapped from $source['reviewsCount']
+            ],
+        ],
+    ]);
+
+    // Register the headerSettings field on RootQuery
+    register_graphql_field('RootQuery', 'headerSettings', [
+        'type' => 'HeaderSettings',
+        'description' => __('Settings for the site header', 'unident-acf-fields'),
+        'resolve' => function() {
+            // Get ACF fields from options page
+            // Note: ACF Group fields are stored as separate options with underscore prefix
+            $phone = get_option('options_phone');
+            $email = get_option('options_email');
+            $weekdays = get_option('options_working_hours_weekdays');
+            $weekend = get_option('options_working_hours_weekend');
+            $locations_count = get_option('options_locations_count');
+            $reviews_count = get_option('options_reviews_count');
+
+            // Debug log
+            error_log('[HeaderSettings Resolver] weekdays from DB: ' . var_export($weekdays, true));
+            error_log('[HeaderSettings Resolver] weekend from DB: ' . var_export($weekend, true));
+            error_log('[HeaderSettings Resolver] locations_count from DB: ' . var_export($locations_count, true));
+            error_log('[HeaderSettings Resolver] reviews_count from DB: ' . var_export($reviews_count, true));
+
+            // CRITICAL: Return FLAT structure for auto-mapping
+            $result = [
+                'phone' => $phone ?: null,
+                'email' => $email ?: null,
+                'workingHoursWeekdays' => $weekdays ?: null,
+                'workingHoursWeekend' => $weekend ?: null,
+                'locationsCount' => $locations_count ? (int) $locations_count : null,
+                'reviewsCount' => $reviews_count ? (int) $reviews_count : null,
+            ];
+
+            error_log('[HeaderSettings Resolver] Returning: ' . json_encode($result));
+
+            return $result;
+        }
+    ]);
+}
+// Priority 100 to execute AFTER WPGraphQL ACF auto-registration
+add_action('graphql_register_types', 'unident_register_header_settings_in_graphql', 100);
+
+/**
+ * Register ACF Fields для Header Settings Option Page
+ */
+function unident_register_header_settings_fields() {
+    if (function_exists('acf_add_local_field_group')) {
+        acf_add_local_field_group(array(
+            'key' => 'group_header_settings',
+            'title' => 'Настройки шапки сайта',
+            'fields' => array(
+                // Promo Post
+                array(
+                    'key' => 'field_promo_post',
+                    'label' => 'Промо-пост',
+                    'name' => 'promo_post',
+                    'type' => 'post_object',
+                    'instructions' => 'Выберите промо-акцию для отображения в шапке',
+                    'required' => 0,
+                    'post_type' => array('promotions'),
+                    'return_format' => 'object',
+                    'multiple' => 0,
+                    'allow_null' => 1,
+                    'show_in_graphql' => 1,
+                ),
+                // Phone
+                array(
+                    'key' => 'field_phone',
+                    'label' => 'Телефон',
+                    'name' => 'phone',
+                    'type' => 'text',
+                    'instructions' => 'Контактный телефон для отображения в шапке',
+                    'required' => 1,
+                    'default_value' => '8 999 999-99-99',
+                    'show_in_graphql' => 1,
+                ),
+                // Email
+                array(
+                    'key' => 'field_email',
+                    'label' => 'Email',
+                    'name' => 'email',
+                    'type' => 'email',
+                    'instructions' => 'Контактный email',
+                    'required' => 0,
+                    'show_in_graphql' => 1,
+                ),
+                // Working Hours
+                array(
+                    'key' => 'field_working_hours',
+                    'label' => 'Часы работы',
+                    'name' => 'working_hours',
+                    'type' => 'group',
+                    'layout' => 'block',
+                    'show_in_graphql' => 1,
+                    'graphql_field_name' => 'workingHours',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_weekdays',
+                            'label' => 'Будние дни',
+                            'name' => 'weekdays',
+                            'type' => 'text',
+                            'default_value' => 'Пн-Сб 10:00-22:00',
+                        ),
+                        array(
+                            'key' => 'field_weekend',
+                            'label' => 'Выходные',
+                            'name' => 'weekend',
+                            'type' => 'text',
+                            'default_value' => 'Вс 9:00-16:00',
+                        ),
+                    ),
+                ),
+                // Locations Count
+                array(
+                    'key' => 'field_locations_count',
+                    'label' => 'Количество филиалов',
+                    'name' => 'locations_count',
+                    'type' => 'number',
+                    'instructions' => 'Количество клиник для отображения в шапке',
+                    'required' => 0,
+                    'default_value' => 3,
+                    'min' => 1,
+                    'show_in_graphql' => 1,
+                ),
+                // Reviews Count
+                array(
+                    'key' => 'field_reviews_count',
+                    'label' => 'Количество отзывов',
+                    'name' => 'reviews_count',
+                    'type' => 'number',
+                    'instructions' => 'Общее количество отзывов для бейджа',
+                    'required' => 0,
+                    'default_value' => 1294,
+                    'min' => 0,
+                    'show_in_graphql' => 1,
+                ),
+                // Social Links
+                array(
+                    'key' => 'field_social_links',
+                    'label' => 'Социальные сети',
+                    'name' => 'social_links',
+                    'type' => 'repeater',
+                    'instructions' => 'Ссылки на социальные сети для отображения в шапке',
+                    'layout' => 'table',
+                    'button_label' => 'Добавить соцсеть',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_social_name',
+                            'label' => 'Название',
+                            'name' => 'name',
+                            'type' => 'text',
+                            'required' => 1,
+                        ),
+                        array(
+                            'key' => 'field_social_url',
+                            'label' => 'URL',
+                            'name' => 'url',
+                            'type' => 'url',
+                            'required' => 1,
+                        ),
+                        array(
+                            'key' => 'field_social_icon',
+                            'label' => 'Иконка',
+                            'name' => 'icon',
+                            'type' => 'image',
+                            'return_format' => 'url',
+                            'preview_size' => 'thumbnail',
+                        ),
+                    ),
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'options_page',
+                        'operator' => '==',
+                        'value' => 'header-settings',
+                    ),
+                ),
+            ),
+            'style' => 'default',
+            'active' => true,
+            'show_in_graphql' => 1,
+            'graphql_field_name' => 'headerSettings',
+        ));
+    }
+}
+add_action('acf/init', 'unident_register_header_settings_fields');
+
+/**
+ * Register ACF Fields для Menu Items
+ */
+function unident_register_menu_item_fields() {
+    if (function_exists('acf_add_local_field_group')) {
+        acf_add_local_field_group(array(
+            'key' => 'group_menu_item_settings',
+            'title' => 'Настройки пункта меню',
+            'fields' => array(
+                // Badge Count
+                array(
+                    'key' => 'field_badge_count',
+                    'label' => 'Счетчик (бейдж)',
+                    'name' => 'badge_count',
+                    'type' => 'number',
+                    'instructions' => 'Число для отображения в бейдже (например, количество акций или отзывов)',
+                    'required' => 0,
+                    'min' => 0,
+                ),
+                // Icon
+                array(
+                    'key' => 'field_menu_icon',
+                    'label' => 'Иконка',
+                    'name' => 'icon',
+                    'type' => 'image',
+                    'instructions' => 'Иконка для отображения рядом с пунктом меню',
+                    'required' => 0,
+                    'return_format' => 'url',
+                    'preview_size' => 'thumbnail',
+                ),
+                // Mega Menu Enabled
+                array(
+                    'key' => 'field_mega_menu_enabled',
+                    'label' => 'Включить мега-меню',
+                    'name' => 'mega_menu_enabled',
+                    'type' => 'true_false',
+                    'instructions' => 'Включить мега-меню с категориями и услугами',
+                    'required' => 0,
+                    'default_value' => 0,
+                    'ui' => 1,
+                ),
+                // Mega Menu Categories
+                array(
+                    'key' => 'field_mega_menu_categories',
+                    'label' => 'Категории для мега-меню',
+                    'name' => 'mega_menu_categories',
+                    'type' => 'taxonomy',
+                    'instructions' => 'Выберите категории услуг для отображения в мега-меню',
+                    'required' => 0,
+                    'taxonomy' => 'service_categories',
+                    'field_type' => 'multi_select',
+                    'return_format' => 'object',
+                    'multiple' => 1,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_mega_menu_enabled',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                ),
+                // Show Promo in Mega Menu
+                array(
+                    'key' => 'field_show_promo_in_mega_menu',
+                    'label' => 'Показывать промо в мега-меню',
+                    'name' => 'show_promo',
+                    'type' => 'true_false',
+                    'instructions' => 'Отображать промо-блок внутри мега-меню',
+                    'required' => 0,
+                    'default_value' => 0,
+                    'ui' => 1,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_mega_menu_enabled',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'nav_menu_item',
+                        'operator' => '==',
+                        'value' => 'all',
+                    ),
+                ),
+            ),
+            'style' => 'default',
+            'active' => true,
+            'show_in_graphql' => 1,
+            'graphql_field_name' => 'menuItemSettings',
+        ));
+    }
+}
+add_action('acf/init', 'unident_register_menu_item_fields');
+
+/**
+ * Register ACF Fields для CPT Promotions
+ */
+function unident_register_promotion_fields() {
+    if (function_exists('acf_add_local_field_group')) {
+        acf_add_local_field_group(array(
+            'key' => 'group_promotion_fields',
+            'title' => 'Детали акции',
+            'fields' => array(
+                array(
+                    'key' => 'field_promo_price',
+                    'label' => 'Цена',
+                    'name' => 'price',
+                    'type' => 'text',
+                    'instructions' => 'Цена со скидкой (например, "3750₽")',
+                    'required' => 0,
+                ),
+                array(
+                    'key' => 'field_promo_price_period',
+                    'label' => 'Период оплаты',
+                    'name' => 'price_period',
+                    'type' => 'text',
+                    'instructions' => 'Период оплаты (например, "/мес")',
+                    'required' => 0,
+                    'default_value' => '/мес',
+                ),
+                array(
+                    'key' => 'field_promo_link',
+                    'label' => 'Ссылка',
+                    'name' => 'link',
+                    'type' => 'url',
+                    'instructions' => 'Ссылка на страницу акции',
+                    'required' => 0,
+                ),
+                array(
+                    'key' => 'field_promo_valid_until',
+                    'label' => 'Действует до',
+                    'name' => 'valid_until',
+                    'type' => 'date_picker',
+                    'instructions' => 'Дата окончания акции',
+                    'required' => 0,
+                    'display_format' => 'd.m.Y',
+                    'return_format' => 'Y-m-d',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'promotions',
+                    ),
+                ),
+            ),
+            'style' => 'default',
+            'active' => true,
+            'show_in_graphql' => 1,
+        ));
+    }
+}
+add_action('acf/init', 'unident_register_promotion_fields');

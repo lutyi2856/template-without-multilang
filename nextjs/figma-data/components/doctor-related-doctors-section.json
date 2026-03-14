@@ -1,0 +1,26 @@
+{
+  "id": "404:2914",
+  "name": "doctors",
+  "type": "FRAME",
+  "source": "full-figma-data-2026-02-04.yaml",
+  "description": "Секция «Другие специалисты» на странице врача",
+  "figmaUrl": "https://www.figma.com/design/eEN4I9HdQ3JiW708BuOMRc/?node-id=404-2914",
+  "content": {
+    "heading": "Другие специалисты",
+    "headingNodeId": "404:2917",
+    "description": "Каждый наш доктор — это профессионал, который регулярно повышает свою квалификацию с помощью образовательных программ в России и зарубежом.",
+    "descriptionNodeId": "404:2918"
+  },
+  "structure": {
+    "section": "404:2914",
+    "headerFrame": "404:2915",
+    "titleDescriptionFrame": "404:2916",
+    "cardsContainer": "404:2924",
+    "doctorCardComponentId": "123:909"
+  },
+  "typography": {
+    "heading": "style_NPKHXQ (45px SemiBold)",
+    "description": "style_NFB4D2 (18px Regular)"
+  },
+  "implementation": "DoctorRelatedDoctorsSection + DoctorsSectionClient (title/description from props)"
+}

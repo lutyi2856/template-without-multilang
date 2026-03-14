@@ -1,0 +1,98 @@
+{
+  "nodeId": "406:4839",
+  "name": "акции/ 1440",
+  "fileKey": "eEN4I9HdQ3JiW708BuOMRc",
+  "date": "2026-02-21",
+  "sources": {
+    "designContext": "user-Figma get_design_context",
+    "screenshot": "user-Figma get_screenshot",
+    "framelinkLayout": "unavailable (MCP not connected)"
+  },
+  "structure": {
+    "page": "406:4839",
+    "menu": "406:4840",
+    "breadcrumbs": "406:4842",
+    "title": "406:4848",
+    "cardsGrid": "406:5400",
+    "footer": "406:5409",
+    "promotionCards": ["406:5403", "406:5404", "406:5405", "406:5406", "406:5407", "406:5408"]
+  },
+  "keyNodes": {
+    "406:4839": {
+      "name": "акции/ 1440",
+      "type": "FRAME",
+      "dimensions": "1440×3434px",
+      "fills": "9"
+    },
+    "406:4842": {
+      "name": "Breadcumbs",
+      "children": ["Главная", "Frame 2131328721 (IMAGE-SVG)", "Акции"]
+    },
+    "406:4848": {
+      "name": "Акции",
+      "style": "H2",
+      "typography": "45px Gilroy SemiBold, line-height 1.19, letter-spacing -1%"
+    },
+    "406:5400": {
+      "name": "Frame 2131328769",
+      "description": "Сетка карточек акций",
+      "layout": "grid, 3 columns, gap ~20px",
+      "children": ["406:5403", "406:5404", "406:5405", "406:5406", "406:5407", "406:5408"]
+    },
+    "406:5403": {
+      "name": "promotion_card",
+      "componentId": "124:793",
+      "dimensions": "448×608px",
+      "borderRadius": 25,
+      "fills": "8"
+    }
+  },
+  "typography": {
+    "title": "45px Gilroy SemiBold (600), line-height 1.19, letter-spacing -1%",
+    "breadcrumbs": "14px Gilroy Medium (500), line-height 1.177, letter-spacing -1%",
+    "promotionCard": "см. components/promotion.json"
+  },
+  "colors": {
+    "fills": {
+      "9": "#FFFFFF",
+      "4": "#191E35",
+      "8": "#F5F7F9"
+    },
+    "borderRadius": {
+      "card": 25,
+      "button": 10,
+      "badge": 10
+    }
+  },
+  "layout": {
+    "pageWidth": 1440,
+    "pageHeight": 3434,
+    "cardsGrid": {
+      "gap": 20,
+      "columns": 3,
+      "cardSize": "448×608px"
+    }
+  },
+  "imageNodes": {
+    "forDownload": [
+      {
+        "nodeId": "124:781",
+        "description": "image 10 — SVG иллюстрация в promotion_card",
+        "fileName": "promotion-illustration.svg",
+        "componentRef": "124:793"
+      }
+    ],
+    "breadcrumbSeparator": {
+      "nodeId": "259:2443",
+      "description": "Frame 2131328721 — разделитель breadcrumbs (4×8px)",
+      "fileName": "breadcrumb-separator.svg"
+    },
+    "note": "Скачать через Framelink download_figma_images когда MCP доступен"
+  },
+  "relatedComponents": {
+    "promotion_card": "124:793",
+    "promotion": "95:2548",
+    "header": "109:264",
+    "footer": "131:1618"
+  }
+}

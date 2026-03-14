@@ -1,0 +1,55 @@
+/**
+ * Block: FAQ (unident-faq) — WordPress preview
+ * Headless: стили в React компоненте
+ */
+
+.unident-faq {
+	margin: 0;
+}
+
+.unident-faq .unident-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0 0 20px 0;
+}
+
+.unident-faq .unident-faq-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.unident-faq .unident-faq-item {
+	border-bottom: 1px solid var(--color-border, #D8D8D8);
+}
+
+.unident-faq .unident-faq-question {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 0;
+	background: none;
+	border: none;
+	font-size: clamp(1rem, 0.97rem + 0.09vw, 1.125rem);
+	font-weight: 500;
+	text-align: left;
+	cursor: pointer;
+	color: var(--color-dark, #191E35);
+}
+
+.unident-faq .unident-faq-answer {
+	padding-bottom: 16px;
+}
+
+.unident-faq .unident-faq-answer-content {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+}
+
+.unident-faq .unident-faq-answer-content p {
+	margin: 0 0 0.5em 0;
+}

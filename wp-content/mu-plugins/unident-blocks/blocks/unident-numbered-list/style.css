@@ -1,0 +1,112 @@
+/**
+ * Block: Нумерованный список (unident-numbered-list)
+ * Unident colors: primary #526AC2
+ */
+
+.unident-numbered-list {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.unident-block.unident-numbered-list .unident-title,
+.unident-block.unident-numbered-list .unident-subtitle,
+.unident-block.unident-numbered-list .unident-subtitle-small {
+	margin: 0;
+}
+
+.unident-numbered-list .unident-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+}
+
+.unident-numbered-list .unident-subtitle {
+	font-size: clamp(1.25rem, 1.18rem + 0.19vw, 1.375rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+}
+
+.unident-numbered-list .unident-subtitle-small {
+	font-size: clamp(1.125rem, 1.06rem + 0.19vw, 1.25rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+}
+
+.unident-numbered-list .unident-description {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}
+
+.unident-numbered-list .unident-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	counter-reset: none;
+}
+
+.unident-numbered-list .unident-list-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.unident-numbered-list .unident-list-item:last-child {
+	margin-bottom: 0;
+}
+
+.unident-block.unident-numbered-list .unident-num {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 25px;
+	width: 25px;
+	height: 25px;
+	margin-top: 2px;
+	font-size: 12px;
+	font-weight: 400;
+	color: #FFFFFF;
+	background-color: var(--color-primary, #526AC2);
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.unident-numbered-list .unident-text {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1.125rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+}
+
+.unident-numbered-list--marked .unident-icon {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+	margin-top: 2px;
+}
+
+.unident-numbered-list--marked .unident-icon svg {
+	width: 25px;
+	height: 25px;
+}
+
+.unident-numbered-list--marked.unident-numbered-list--marker-dot .unident-icon,
+.unident-numbered-list--marked.unident-numbered-list--marker-dot .unident-icon svg {
+	width: 10px;
+	height: 10px;
+}
+
+.unident-numbered-list--marked.unident-numbered-list--marker-dot .unident-icon {
+	margin-top: 9px;
+}

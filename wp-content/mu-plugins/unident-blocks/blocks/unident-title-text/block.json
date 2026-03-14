@@ -1,0 +1,19 @@
+{
+  "name": "acf/unident-title-text",
+  "title": "Заголовок + текст (KB)",
+  "description": "Блок с заголовком и текстовым описанием",
+  "category": "unident-blocks",
+  "icon": "text-page",
+  "keywords": ["заголовок", "текст", "title"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true
+  },
+  "style": ["file:./style.css"]
+}

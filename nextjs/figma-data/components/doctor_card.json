@@ -1,0 +1,370 @@
+{
+  "metadata": {
+    "name": "Шаблон сайта",
+    "fileKey": "JPVOauS3F3bEIy1msJXPeR",
+    "component": {
+      "id": "123:909",
+      "key": "52ecf69d817a84b19a1dae1802fd3bebdbb20989",
+      "name": "doctor_card"
+    },
+    "dateRetrieved": "2025-12-30",
+    "status": "complete"
+  },
+  "globalVars": {
+    "colors": {
+      "1": "#D9E4F7",
+      "3": "#526AC2",
+      "4": "#191E35",
+      "7": "#EEF3F9",
+      "9": "#FFFFFF"
+    },
+    "fonts": {
+      "primary": "Gilroy"
+    }
+  },
+  "component": {
+    "id": "123:909",
+    "name": "doctor_card",
+    "type": "COMPONENT",
+    "dimensions": {
+      "width": 330,
+      "height": 598
+    },
+    "fills": ["#FFFFFF"],
+    "strokes": {
+      "colors": ["#D8D8D8"],
+      "strokeWeight": "1px"
+    },
+    "borderRadius": "25px"
+  },
+  "structure": {
+    "95:2356": {
+      "name": "Frame 2131328615",
+      "type": "FRAME",
+      "description": "Основной контейнер информации (снизу)",
+      "layout": "column",
+      "gap": "20px",
+      "position": { "x": 24.5, "y": 307.5 },
+      "dimensions": { "width": 281 }
+    },
+    "95:2344": {
+      "name": "Frame 111",
+      "type": "FRAME",
+      "description": "Блок информации о враче",
+      "layout": "column",
+      "gap": "15px",
+      "height": 144.57
+    },
+    "95:2345": {
+      "name": "Любимов Павел Олегович",
+      "type": "TEXT",
+      "description": "Имя врача",
+      "text": "Любимов Павел Олегович",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 600,
+        "fontSize": 22,
+        "lineHeight": "1.19299992648038em",
+        "letterSpacing": "-1%",
+        "textAlign": "LEFT"
+      },
+      "color": "#191E35",
+      "dimensions": { "width": 229.55, "height": 49.57 }
+    },
+    "95:2346": {
+      "name": "info",
+      "type": "FRAME",
+      "description": "Контейнер дополнительной информации",
+      "layout": "column",
+      "gap": "15px"
+    },
+    "95:2348": {
+      "name": "Сертифицированный пластический хирург...",
+      "type": "TEXT",
+      "description": "Описание врача",
+      "text": "Сертифицированный пластический хирург, профессор, доктор медицинских наук, действительный член РОПРЕХ",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 400,
+        "fontSize": 16,
+        "lineHeight": "1.25em",
+        "textAlign": "LEFT"
+      },
+      "color": "#191E35",
+      "dimensions": { "width": 293.15 }
+    },
+    "123:887": {
+      "name": "Frame 2131328591",
+      "type": "FRAME",
+      "description": "Блок клиники",
+      "layout": "row",
+      "alignItems": "center",
+      "gap": "6px",
+      "dimensions": { "width": 280 }
+    },
+    "123:894": {
+      "name": "Frame 2131328649",
+      "type": "IMAGE-SVG",
+      "description": "ИКОНКА КЛИНИКИ (синий круг)",
+      "downloadedAs": "clinic-icon.svg",
+      "path": "public/images/figma/clinic-icon.svg",
+      "dimensions": { "width": 19, "height": 19 }
+    },
+    "123:889": {
+      "name": "Клиника на Чайковского",
+      "type": "TEXT",
+      "description": "Название клиники",
+      "text": "Клиника на Чайковского",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 500,
+        "fontSize": 16,
+        "lineHeight": "1.1765880584716797em",
+        "textAlign": "LEFT"
+      },
+      "color": "#191E35"
+    },
+    "95:2349": {
+      "name": "Button",
+      "type": "FRAME",
+      "description": "Кнопка записи",
+      "layout": "row",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "gap": "5px",
+      "fills": ["#526AC2"],
+      "borderRadius": "15px"
+    },
+    "95:2352": {
+      "name": "Записаться",
+      "type": "TEXT",
+      "description": "Текст кнопки",
+      "text": "Записаться",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 600,
+        "fontSize": 16,
+        "lineHeight": "1.100000023841858em",
+        "textAlign": "CENTER"
+      },
+      "color": "#FFFFFF"
+    },
+    "95:2355": {
+      "name": "doc-picture",
+      "type": "RECTANGLE",
+      "description": "Изображение врача",
+      "position": { "x": 24.5, "y": 0 },
+      "dimensions": { "width": 279.9, "height": 279.9 },
+      "fills": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "gradient": "linear-gradient(180deg, rgba(255, 255, 255, 0) 72%, rgba(255, 255, 255, 1) 100%)"
+        },
+        {
+          "type": "IMAGE",
+          "imageRef": "a6682d97e27d05df0575958a8f526a2357f12efc",
+          "scaleMode": "FILL",
+          "downloadedAs": "doctor-figma.png",
+          "path": "public/images/doctors/"
+        }
+      ]
+    },
+    "124:612": {
+      "name": "Frame 2131328651",
+      "type": "FRAME",
+      "description": "Контейнер бейджей",
+      "position": { "x": 19.37, "y": 17 },
+      "dimensions": { "width": 291.26, "height": 75.07 }
+    },
+    "95:2364": {
+      "name": "experience",
+      "type": "FRAME",
+      "description": "Бейдж стажа",
+      "layout": "column",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "gap": "6.824480056762695px",
+      "padding": "21.838336944580078px 16.378753662109375px",
+      "position": { "x": 0, "y": 0 },
+      "dimensions": { "width": 75.07, "height": 75.07 },
+      "fills": ["#EEF3F9"],
+      "borderRadius": "0px 0px 68.24480438232422px 68.24480438232422px"
+    },
+    "95:2367": {
+      "name": "36",
+      "type": "TEXT",
+      "description": "Число лет стажа",
+      "text": "36",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 500,
+        "fontSize": 19.108545303344727,
+        "lineHeight": "1em",
+        "letterSpacing": "-4%",
+        "textAlign": "LEFT"
+      },
+      "color": "#191E35"
+    },
+    "95:2368": {
+      "name": "лет",
+      "type": "TEXT",
+      "description": "Текст 'лет'",
+      "text": "лет",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 500,
+        "fontSize": 8.189376831054688,
+        "lineHeight": "1.2999999767094776em",
+        "letterSpacing": "2%",
+        "textCase": "UPPER",
+        "textAlign": "LEFT"
+      },
+      "color": "#191E35"
+    },
+    "95:2369": {
+      "name": "стаж",
+      "type": "TEXT",
+      "description": "Текст 'стаж'",
+      "text": "стаж",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 500,
+        "fontSize": 9.554272651672363,
+        "lineHeight": "1em",
+        "textAlign": "CENTER"
+      },
+      "color": "#191E35"
+    },
+    "95:2357": {
+      "name": "rating",
+      "type": "FRAME",
+      "description": "Бейдж рейтинга",
+      "layout": "column",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "gap": "6.114435195922852px",
+      "padding": "19.566194534301758px 9.171652793884277px",
+      "position": { "x": 224, "y": 0 },
+      "dimensions": { "width": 67.26, "height": 67.26 },
+      "fills": ["#D9E4F7"],
+      "borderRadius": "61.14435577392578px 0px 61.14435577392578px 61.14435577392578px"
+    },
+    "95:2360": {
+      "name": "4,7",
+      "type": "TEXT",
+      "description": "Число рейтинга",
+      "text": "4,7",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 500,
+        "fontSize": 17.120420455932617,
+        "lineHeight": "1em",
+        "letterSpacing": "-4%",
+        "textAlign": "LEFT"
+      },
+      "color": "#191E35"
+    },
+    "95:2361": {
+      "name": "Frame 411",
+      "type": "IMAGE-SVG",
+      "description": "ИКОНКА ЗВЕЗДЫ",
+      "downloadedAs": "star-icon.svg",
+      "path": "public/images/figma/star-icon.svg",
+      "dimensions": { "width": 8.56, "height": 9.78 }
+    },
+    "95:2363": {
+      "name": "Doctu.ru",
+      "type": "TEXT",
+      "description": "Источник рейтинга",
+      "text": "Doctu.ru",
+      "typography": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 500,
+        "fontSize": 8.560210227966309,
+        "lineHeight": "1em",
+        "textAlign": "CENTER"
+      },
+      "color": "#191E35",
+      "dimensions": { "width": 48.92 }
+    },
+    "123:906": {
+      "name": "Frame 2131328650",
+      "type": "IMAGE-SVG",
+      "description": "КНОПКА ВИДЕО (play icon)",
+      "note": "Не скачивали отдельно, используем lucide-react Play icon",
+      "position": { "x": 252.54, "y": 200.26 },
+      "dimensions": { "width": 60, "height": 60 },
+      "fills": ["#526AC2"],
+      "borderRadius": "100px"
+    }
+  },
+  "downloadedAssets": {
+    "icons": [
+      {
+        "nodeId": "123:894",
+        "name": "clinic-icon.svg",
+        "path": "public/images/figma/clinic-icon.svg",
+        "dimensions": "19x19"
+      },
+      {
+        "nodeId": "95:2361",
+        "name": "star-icon.svg",
+        "path": "public/images/figma/star-icon.svg",
+        "dimensions": "8.56x9.78"
+      }
+    ],
+    "images": [
+      {
+        "nodeId": "95:2355",
+        "name": "doctor-1.png",
+        "path": "public/images/doctors/doctor-1.png",
+        "dimensions": "1000x1000",
+        "imageRef": "a6682d97e27d05df0575958a8f526a2357f12efc"
+      },
+      {
+        "name": "doctor-2.png",
+        "path": "public/images/doctors/doctor-2.png",
+        "note": "Copy of doctor-1.png"
+      },
+      {
+        "name": "doctor-3.png",
+        "path": "public/images/doctors/doctor-3.png",
+        "note": "Copy of doctor-1.png"
+      },
+      {
+        "name": "doctor-4.png",
+        "path": "public/images/doctors/doctor-4.png",
+        "note": "Copy of doctor-1.png"
+      }
+    ]
+  },
+  "implementation": {
+    "component": "nextjs/src/components/figma/doctor-card/doctor-card.tsx",
+    "types": "nextjs/src/components/figma/doctor-card/types.ts",
+    "mockData": "nextjs/src/components/figma/doctor-card/mock-data.ts",
+    "section": "nextjs/src/components/sections/doctors-section.tsx"
+  },
+  "fixes": [
+    {
+      "date": "2025-12-30",
+      "issue": "Пробел между '36' и 'лет'",
+      "fix": "Увеличен gap с 1.4px до 2px"
+    },
+    {
+      "date": "2025-12-30",
+      "issue": "Пробел между рейтингом и звездой",
+      "fix": "Увеличен gap с 2.4px до 3px"
+    },
+    {
+      "date": "2025-12-30",
+      "issue": "Неправильная иконка звезды",
+      "fix": "Заменена lucide-react Star на SVG из Figma (node 95:2361)"
+    },
+    {
+      "date": "2025-12-30",
+      "issue": "Неправильная иконка клиники",
+      "fix": "Заменена MapPin на синий круг SVG из Figma (node 123:894)"
+    }
+  ]
+}
+

@@ -1,0 +1,122 @@
+services:
+  wordpress-new:
+    build:
+      context: .
+      dockerfile: Dockerfile.wordpress
+    container_name: wp-new-wordpress
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: db-new
+      WORDPRESS_DB_USER: ${DB_USER:-wp_user}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:-wp_password}
+      WORDPRESS_DB_NAME: ${DB_NAME:-wp_production}
+      WORDPRESS_HOME_URL: ${WORDPRESS_HOME_URL:-https://wp.vitmax.pro}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', getenv('WORDPRESS_HOME_URL') ?: 'https://wp.vitmax.pro');
+        define('WP_SITEURL', getenv('WORDPRESS_HOME_URL') ?: 'https://wp.vitmax.pro');
+        if ( ! defined( 'WP_ENVIRONMENT_TYPE' ) ) {
+          define( 'WP_ENVIRONMENT_TYPE', 'production' );
+        }
+    volumes:
+      - wp-new-content:/var/www/html/wp-content
+      - ./php/php.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+    depends_on:
+      db-new:
+        condition: service_healthy
+    networks:
+      - wp-new-network
+      - coolify
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wp-vitmax.rule=Host(`wp.vitmax.pro`)"
+      - "traefik.http.routers.wp-vitmax.entrypoints=http"
+      - "traefik.http.services.wp-vitmax.loadbalancer.server.port=80"
+      - "coolify.managed=true"
+
+  db-new:
+    image: mariadb:11
+    container_name: wp-new-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root_password}
+      MYSQL_DATABASE: ${DB_NAME:-wp_production}
+      MYSQL_USER: ${DB_USER:-wp_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-wp_password}
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    volumes:
+      - wp-new-db-data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --init-connect='SET NAMES utf8mb4'
+    networks:
+      - wp-new-network
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pma-new:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: wp-new-pma
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db-new
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root_password}
+      UPLOAD_LIMIT: 300M
+    depends_on:
+      - db-new
+    networks:
+      - wp-new-network
+      - coolify
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pma-vitmax.rule=Host(`pma.vitmax.pro`)"
+      - "traefik.http.routers.pma-vitmax.entrypoints=http"
+      - "traefik.http.services.pma-vitmax.loadbalancer.server.port=80"
+      - "coolify.managed=true"
+
+  nextjs:
+    build:
+      context: ./nextjs
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_GRAPHQL_ENDPOINT: http://85.234.107.148:8002/graphql
+        NEXT_PUBLIC_WP_URL: http://85.234.107.148:8002
+        NEXT_PUBLIC_SITE_URL: http://85.234.107.148:3000
+    container_name: wp-new-nextjs
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      FAUST_SECRET_KEY: ${FAUST_SECRET_KEY:-your-secret-key}
+      NEXT_PUBLIC_WP_URL: http://85.234.107.148:8002
+      NEXT_PUBLIC_GRAPHQL_ENDPOINT: http://85.234.107.148:8002/graphql
+    depends_on:
+      wordpress-new:
+        condition: service_started
+    networks:
+      - wp-new-network
+      - coolify
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.demo-vitmax.rule=Host(`demo.vitmax.pro`)"
+      - "traefik.http.routers.demo-vitmax.entrypoints=http"
+      - "traefik.http.services.demo-vitmax.loadbalancer.server.port=3000"
+      - "coolify.managed=true"
+
+volumes:
+  wp-new-db-data:
+    driver: local
+  wp-new-content:
+    driver: local
+
+networks:
+  wp-new-network:
+    driver: bridge
+  coolify:
+    external: true

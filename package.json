@@ -1,0 +1,36 @@
+{
+  "scripts": {
+    "process-doctor-images": "node scripts/reprocess-doctor-images.js",
+    "extract-kan-services-prices": "node scripts/extract-kan-services-prices.mjs",
+    "extract-kan-nashi-raboty-works": "node scripts/extract-kan-nashi-raboty-works.mjs",
+    "extract-external-reviews": "node scripts/extract-external-reviews.mjs",
+    "extract-2gis-reviews": "node scripts/extract-external-reviews.mjs --2gis-only",
+    "extract-google-reviews": "node scripts/extract-external-reviews.mjs --google-only",
+    "import-kan-nashi-raboty-works": "docker cp scripts/import-kan-nashi-raboty-works.php wp-new-wordpress:/var/www/html/scripts/ && docker cp kan-data/nashi-raboty-works.json wp-new-wordpress:/var/www/html/scripts/ && docker cp kan-data/created-doctors.json wp-new-wordpress:/var/www/html/scripts/ && docker exec wp-new-wordpress wp eval-file /var/www/html/scripts/import-kan-nashi-raboty-works.php --allow-root",
+    "build-reviews-table": "node kan-data/scripts/build-reviews-table.mjs",
+    "analyze-price-duplicates": "node scripts/analyze-price-duplicates.mjs",
+    "analyze-price-duplicates-wp": "docker cp scripts/analyze-price-duplicates-wp.php wp-new-wordpress:/var/www/html/scripts/ && docker exec wp-new-wordpress wp eval-file /var/www/html/scripts/analyze-price-duplicates-wp.php --allow-root 2>nul && docker cp wp-new-wordpress:/var/www/html/kan-data/price-analysis-wp.json kan-data/",
+    "import-kan-services-prices": "docker cp kan-data wp-new-wordpress:/var/www/html/kan-data && docker cp scripts/import-kan-services-prices.php wp-new-wordpress:/var/www/html/scripts/ && docker exec wp-new-wordpress wp eval-file /var/www/html/scripts/import-kan-services-prices.php --allow-root",
+    "migrate-doctor-education": "docker cp scripts/. wp-new-wordpress:/var/www/html/scripts/ && docker exec wp-new-wordpress wp eval-file /var/www/html/scripts/migrate-doctor-education.php --allow-root",
+    "remove-review-author-image-meta": "docker cp scripts/. wp-new-wordpress:/var/www/html/scripts/ && docker exec wp-new-wordpress wp eval-file /var/www/html/scripts/remove-review-author-image-meta.php --allow-root",
+    "import-kan-doctors-education": "docker cp kan-data wp-new-wordpress:/var/www/html/kan-data && docker cp scripts/. wp-new-wordpress:/var/www/html/scripts/ && docker exec wp-new-wordpress wp eval-file /var/www/html/scripts/import-kan-doctors-education.php --allow-root"
+  },
+  "devDependencies": {
+    "apify-client": "^2.22.2",
+    "canvas": "^3.2.0",
+    "dotenv": "^16.6.1",
+    "pdf-img-convert": "^2.0.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.2.2",
+    "pdf2json": "^3.1.4",
+    "playwright": "^1.58.2",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "sharp": "^0.34.5",
+    "tesseract.js": "^7.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "@imgly/background-removal-node": "^1.4.5"
+  }
+}

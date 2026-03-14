@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "name": "Шаблон сайта",
+    "fileKey": "JPVOauS3F3bEIy1msJXPeR",
+    "component": {
+      "id": "93:307",
+      "name": "advantages"
+    },
+    "dateRetrieved": "2026-01-29",
+    "status": "complete",
+    "source": "Full file request (workaround for 429 rate limit)"
+  },
+  "globalVars": {
+    "colors": {
+      "1": "#D9E4F7",
+      "2": "#607BD4",
+      "3": "#526AC2",
+      "4": "#191E35",
+      "5": "linear-gradient(180deg, rgba(46, 54, 93, 1) 0%, rgba(70, 85, 157, 1) 100%)",
+      "6": "#F9F9F9",
+      "7": "#EEF3F9",
+      "8": "#F5F7F9",
+      "9": "#FFFFFF",
+      "10": "#8F8F8F"
+    },
+    "fonts": {
+      "primary": "Gilroy"
+    }
+  },
+  "component": {
+    "id": "93:307",
+    "name": "advantages",
+    "type": "FRAME",
+    "dimensions": {
+      "width": 1380,
+      "height": 624
+    },
+    "fills": ["#F9F9F9"],
+    "borderRadius": "25px",
+    "layout": {
+      "mode": "none",
+      "sizing": {
+        "horizontal": "fixed",
+        "vertical": "fixed"
+      }
+    }
+  },
+  "structure": {
+    "95:1422": {
+      "name": "Frame 2131328582",
+      "type": "FRAME",
+      "description": "Контейнер заголовка и описания",
+      "layout": {
+        "mode": "column",
+        "gap": "20px"
+      },
+      "dimensions": {
+        "width": 822
+      },
+      "children": {
+        "93:308": {
+          "name": "Нам доверили уже 1 204 пациента",
+          "type": "TEXT",
+          "text": "Нам доверили уже 1 204 пациента",
+          "textStyle": "H2",
+          "fills": ["#191E35"],
+          "layout": {
+            "mode": "none",
+            "sizing": {
+              "horizontal": "fill",
+              "vertical": "fixed"
+            },
+            "dimensions": {
+              "height": 54
+            }
+          }
+        },
+        "93:311": {
+          "name": "Описание",
+          "type": "TEXT",
+          "text": "Унидент — многопрофильная научная стоматология с сертификатом качества Росздравнадзора. Мы стремимся сделать высококачественную стоматологическую помощь доступной.",
+          "textStyle": "style_GM4D8I",
+          "fills": ["#191E35"],
+          "layout": {
+            "mode": "none",
+            "sizing": {
+              "horizontal": "fixed",
+              "vertical": "hug"
+            },
+            "dimensions": {
+              "width": 663.46
+            }
+          }
+        }
+      }
+    },
+    "95:1436": {
+      "name": "Button",
+      "type": "FRAME",
+      "description": "Кнопка 'Подробнее'",
+      "strokes": {
+        "colors": ["#526AC2"],
+        "strokeWeight": "1px"
+      },
+      "borderRadius": "15px",
+      "layout": {
+        "mode": "row"
+      },
+      "children": {
+        "95:1437": {
+          "name": "Подробнее",
+          "type": "TEXT",
+          "text": "Подробнее",
+          "textStyle": "style_Y5EL9U",
+          "fills": ["#526AC2"]
+        }
+      }
+    },
+    "130:1231": {
+      "name": "Frame 2131328666",
+      "type": "FRAME",
+      "description": "Контейнер карточек преимуществ",
+      "layout": {
+        "mode": "none"
+      },
+      "children": {
+        "130:1204": {
+          "name": "advantage",
+          "type": "INSTANCE",
+          "componentId": "130:1203",
+          "borderRadius": "25px",
+          "description": "Преимущество #1",
+          "children": {
+            "I130:1204;93:310": {
+              "name": "Rectangle 2",
+              "type": "RECTANGLE",
+              "fills": ["#FFFFFF"]
+            },
+            "I130:1204;95:1424": {
+              "name": "arcticons:dms-telemedicine",
+              "type": "FRAME",
+              "fills": ["#EEF3F9"],
+              "borderRadius": "135.19210815429688px",
+              "children": {
+                "I130:1204;95:1435": {
+                  "name": "01",
+                  "type": "TEXT",
+                  "text": "01",
+                  "textStyle": "style_1WIWLN",
+                  "fills": [
+                    "linear-gradient(180deg, rgba(46, 54, 93, 1) 0%, rgba(70, 85, 157, 1) 100%)"
+                  ]
+                }
+              }
+            },
+            "I130:1204;95:1429": {
+              "name": "Frame 111",
+              "type": "FRAME",
+              "children": {
+                "I130:1204;95:1430": {
+                  "name": "Честные цены, без хитрых уловок",
+                  "type": "TEXT",
+                  "text": "Честные цены, без хитрых уловок",
+                  "textStyle": "style_ZJD43E",
+                  "fills": ["#191E35"],
+                  "layout": {
+                    "dimensions": {
+                      "width": 321.92,
+                      "height": 65
+                    }
+                  }
+                },
+                "I130:1204;95:1431": {
+                  "name": "info",
+                  "type": "FRAME",
+                  "children": {
+                    "I130:1204;95:1432": {
+                      "name": "1",
+                      "type": "FRAME",
+                      "children": {
+                        "I130:1204;95:1433": {
+                          "name": "Описание преимущества",
+                          "type": "TEXT",
+                          "text": "Фиксируем цены в плане, не повышаем в процессе. Экономим на офисе — команда работает на удаленке.",
+                          "textStyle": "style_W4JCJL",
+                          "fills": ["#191E35"],
+                          "layout": {
+                            "dimensions": {
+                              "width": 357.76
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "130:1213": {
+          "name": "advantage",
+          "type": "INSTANCE",
+          "componentId": "130:1203",
+          "borderRadius": "25px",
+          "description": "Преимущество #2",
+          "children": {
+            "I130:1213;95:1435": {
+              "name": "02",
+              "type": "TEXT",
+              "text": "02"
+            },
+            "I130:1213;95:1430": {
+              "name": "Общаемся по-человечески",
+              "type": "TEXT",
+              "text": "Общаемся по-человечески"
+            },
+            "I130:1213;95:1433": {
+              "name": "Описание",
+              "type": "TEXT",
+              "text": "Легко и просто: на звонки отвечает специалист, в мессенджерах и соцсетях отвечаем быстро. Почти как с друзьями."
+            }
+          }
+        },
+        "130:1222": {
+          "name": "advantage",
+          "type": "INSTANCE",
+          "componentId": "130:1203",
+          "borderRadius": "25px",
+          "description": "Преимущество #3",
+          "children": {
+            "I130:1222;95:1435": {
+              "name": "03",
+              "type": "TEXT",
+              "text": "03"
+            },
+            "I130:1222;95:1430": {
+              "name": "Слушаем, объясняем, лечим с умом",
+              "type": "TEXT",
+              "text": "Слушаем, объясняем, лечим с умом"
+            },
+            "I130:1222;95:1433": {
+              "name": "Описание",
+              "type": "TEXT",
+              "text": "Не давим, не пугаем и не лечим «на глаз». Объясняем каждое решение понятным языком и опираемся на точную диагностику."
+            }
+          }
+        }
+      }
+    }
+  },
+  "textStyles": {
+    "H2": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 600,
+      "fontSize": 45,
+      "lineHeight": "1.193em",
+      "letterSpacing": "-1%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP"
+    },
+    "style_GM4D8I": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 400,
+      "fontSize": 18,
+      "lineHeight": "1.2em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP"
+    },
+    "style_Y5EL9U": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 600,
+      "fontSize": 16,
+      "lineHeight": "1.193em",
+      "letterSpacing": "-1%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP"
+    },
+    "style_ZJD43E": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 28,
+      "lineHeight": "1.177em",
+      "letterSpacing": "-1%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP"
+    },
+    "style_W4JCJL": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 400,
+      "fontSize": 16,
+      "lineHeight": "1.25em",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP"
+    },
+    "style_1WIWLN": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 18,
+      "lineHeight": "1.177em",
+      "letterSpacing": "-3%",
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP"
+    }
+  },
+  "content": {
+    "title": "Нам доверили уже 1 204 пациента",
+    "description": "Унидент — многопрофильная научная стоматология с сертификатом качества Росздравнадзора. Мы стремимся сделать высококачественную стоматологическую помощь доступной.",
+    "button": {
+      "text": "Подробнее",
+      "style": "outline",
+      "color": "#526AC2"
+    },
+    "advantages": [
+      {
+        "number": "01",
+        "title": "Честные цены, без хитрых уловок",
+        "description": "Фиксируем цены в плане, не повышаем в процессе. Экономим на офисе — команда работает на удаленке."
+      },
+      {
+        "number": "02",
+        "title": "Общаемся по-человечески",
+        "description": "Легко и просто: на звонки отвечает специалист, в мессенджерах и соцсетях отвечаем быстро. Почти как с друзьями."
+      },
+      {
+        "number": "03",
+        "title": "Слушаем, объясняем, лечим с умом",
+        "description": "Не давим, не пугаем и не лечим «на глаз». Объясняем каждое решение понятным языком и опираемся на точную диагностику."
+      }
+    ]
+  }
+}

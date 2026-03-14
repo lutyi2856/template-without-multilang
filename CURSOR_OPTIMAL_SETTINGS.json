@@ -1,0 +1,154 @@
+{
+  "// Privacy": "Защита данных",
+  "cursor.privacy.mode": true,
+  "cursor.telemetry.enabled": false,
+  "cursor.sendCodeSnippets": false,
+
+  "// AI Model": "Оптимальная модель для проекта",
+  "cursor.ai.model": "claude-sonnet-4.5",
+  "cursor.ai.temperature": 0.3,
+  "cursor.ai.maxTokens": 8000,
+
+  "// Context": "Оптимизация контекста",
+  "cursor.context.maxLines": 100000,
+  "cursor.context.auto": true,
+  "cursor.context.includeGitignored": false,
+
+  "// Indexing": "Быстрая индексация",
+  "cursor.index.autoIndex": true,
+  "cursor.index.includeGitignored": false,
+  "cursor.index.refreshInterval": 300000,
+
+  "// Performance": "Производительность",
+  "cursor.performance.memoryLimit": 4096,
+  "cursor.performance.cacheSize": 1024,
+  "cursor.performance.backgroundAgentEnabled": true,
+
+  "// Linting": "Автоисправление",
+  "cursor.lint.autoFix": true,
+  "cursor.lint.iterateOnLints": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "// Chat": "Настройки чата",
+  "cursor.chat.saveHistory": true,
+  "cursor.chat.autoContext": true,
+  "cursor.chat.suggestions": true,
+
+  "// Editor": "Настройки редактора",
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "editor.renderWhitespace": "selection",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+
+  "// Files": "Файлы",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.cache": true
+  },
+
+  "// Git": "Настройки Git",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.suggestSmartCommit": false,
+
+  "// Terminal": "Настройки терминала",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+
+  "// TypeScript": "Настройки TypeScript",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "// ESLint": "Настройки ESLint",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.run": "onSave",
+
+  "// Tailwind CSS": "Настройки Tailwind",
+  "tailwindCSS.experimental.classRegex": [
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+
+  "// Prettier": "Настройки Prettier",
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": true,
+  "prettier.tabWidth": 2,
+
+  "// Workbench": "Настройки интерфейса",
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.startupEditor": "welcomePage",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 10,
+
+  "// Search": "Настройки поиска",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true
+  },
+  "search.useIgnoreFiles": true,
+  "search.smartCase": true,
+
+  "// Explorer": "Настройки проводника",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": true,
+
+  "// Breadcrumbs": "Навигация",
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.filePath": "on",
+  "breadcrumbs.symbolPath": "on",
+
+  "// Emmet": "Настройки Emmet",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  "// Security": "Безопасность",
+  "security.workspace.trust.untrustedFiles": "prompt"
+}
+

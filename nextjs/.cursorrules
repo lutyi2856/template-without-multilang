@@ -1,0 +1,553 @@
+# Правила генерации компонентов из Figma для Next.js + Shadcn UI + Tailwind CSS
+
+## Контекст проекта
+
+Это headless WordPress + Next.js 14 проект с Shadcn UI и Tailwind CSS.
+Компоненты генерируются из Figma дизайнов через MCP серверы.
+
+## Figma файл проекта
+
+**Основной файл:** https://www.figma.com/design/TEsGy1a92Gwh3GnYD7NY8m/Шаблон-сайта--Copy-?node-id=0-1&p=f&t=1QkvyNQWvZ0zjSTp-0
+
+## Figma Integration (Важно!)
+
+**Система кэширования:** `figma-data/`
+
+Перед работой с Figma ВСЕГДА проверяй кэш:
+- **Главный кэш:** `figma-data/FIGMA_CACHE.md`
+- **Правила работы:** `figma-data/FIGMA_WORKFLOW.md`
+- **Памятка для AI:** `figma-data/AI_ASSISTANT_GUIDE.md`
+
+**Процесс:**
+1. Проверить кэш перед запросом Figma MCP
+2. Запросить только если данных нет
+3. Скачать ВСЕ иконки за один раз
+4. Сохранить в кэш
+5. Обновить FIGMA_CACHE.md
+
+См. правила в `.cursor/rules/figma.mdc`.
+
+## Структура компонентов
+
+### Расположение файлов
+
+- **Базовые UI компоненты** → `src/components/ui/` (Shadcn UI компоненты)
+- **Компоненты из Figma** → `src/components/figma/` (автогенерируемые)
+- **Кастомные компоненты** → `src/components/design-system/` (обертки и специфичные компоненты)
+
+### Naming Convention
+
+- **Файлы:** `kebab-case.tsx` (например: `hero-section.tsx`, `product-card.tsx`)
+- **Компоненты:** `PascalCase` (например: `HeroSection`, `ProductCard`)
+- **Props интерфейсы:** `ComponentNameProps` (например: `HeroSectionProps`)
+- **Вспомогательные типы:** `ComponentNameType` или `ComponentNameConfig`
+
+## TypeScript Requirements
+
+### Обязательные правила TypeScript
+
+1. **Всегда использовать явные типы:**
+   ```typescript
+   // ✅ Хорошо
+   interface HeroSectionProps {
+     title: string;
+     subtitle?: string;
+     imageUrl: string;
+   }
+   
+   // ❌ Плохо
+   function HeroSection({ title, subtitle, imageUrl }: any) { }
+   ```
+
+2. **Использовать interface для props (не type):**
+   ```typescript
+   // ✅ Хорошо
+   interface CardProps {
+     children: React.ReactNode;
+   }
+   
+   // ❌ Плохо
+   type CardProps = {
+     children: React.ReactNode;
+   }
+   ```
+
+3. **Типизировать все функции:**
+   ```typescript
+   // ✅ Хорошо
+   function formatPrice(price: number): string {
+     return `$${price.toFixed(2)}`;
+   }
+   
+   // ❌ Плохо
+   function formatPrice(price) {
+     return `$${price.toFixed(2)}`;
+   }
+   ```
+
+4. **Использовать React.FC только когда необходимо:**
+   ```typescript
+   // ✅ Предпочтительно
+   export function Button({ children, onClick }: ButtonProps) { }
+   
+   // ⚠️ Можно, но не обязательно
+   export const Button: React.FC<ButtonProps> = ({ children, onClick }) => { }
+   ```
+
+## Генерация кода из Figma
+
+### Workflow
+
+1. **Получить ссылку на Figma фрейм** (правый клик → Copy link)
+2. **Запросить генерацию:** "Сгенерируй React компонент из этого Figma дизайна: [ссылка]"
+3. **Cursor AI автоматически:**
+   - Извлечет дизайн-контекст через Figma MCP
+   - Создаст TypeScript компонент
+   - Применит Tailwind CSS классы
+   - Сохранит в `src/components/figma/`
+
+### Структура сгенерированного компонента
+
+```typescript
+/**
+ * ComponentName - краткое описание компонента
+ * 
+ * Сгенерирован из Figma: [ссылка на фрейм]
+ * 
+ * @example
+ * <ComponentName title="Hello" description="World" />
+ */
+
+import { cn } from '@/lib/utils';
+
+interface ComponentNameProps {
+  title: string;
+  description?: string;
+  className?: string;
+}
+
+export function ComponentName({ 
+  title, 
+  description,
+  className 
+}: ComponentNameProps) {
+  return (
+    <div className={cn('base-classes', className)}>
+      <h2 className="text-2xl font-bold">{title}</h2>
+      {description && <p className="text-muted-foreground">{description}</p>}
+    </div>
+  );
+}
+```
+
+### Обязательные элементы компонента
+
+1. ✅ **JSDoc комментарий** с описанием и ссылкой на Figma
+2. ✅ **Import cn() утилиты** для объединения классов
+3. ✅ **TypeScript interface** для props
+4. ✅ **Named export** (не default export)
+5. ✅ **className prop** для возможности кастомизации
+6. ✅ **Использование cn()** для объединения классов
+
+## Tailwind CSS Guidelines
+
+### Базовые правила
+
+1. **Использовать только Tailwind классы** (не inline styles)
+   ```typescript
+   // ✅ Хорошо
+   <div className="flex items-center justify-between p-4">
+   
+   // ❌ Плохо
+   <div style={{ display: 'flex', padding: '16px' }}>
+   ```
+
+2. **Mobile-first подход:**
+   ```typescript
+   // ✅ Хорошо - от мобильного к десктопу
+   <div className="text-sm md:text-base lg:text-lg">
+   
+   // ❌ Плохо - от десктопа к мобильному
+   <div className="text-lg md:text-base sm:text-sm">
+   ```
+
+3. **Использовать CSS переменные для цветов:**
+   ```typescript
+   // ✅ Хорошо - использовать переменные из themes
+   <div className="bg-background text-foreground">
+   <button className="bg-primary text-primary-foreground">
+   
+   // ❌ Плохо - хардкод цветов
+   <div className="bg-white text-black">
+   <button className="bg-blue-500 text-white">
+   ```
+
+4. **Использовать cn() для условных классов:**
+   ```typescript
+   // ✅ Хорошо
+   <div className={cn(
+     'base-classes',
+     variant === 'primary' && 'bg-primary text-primary-foreground',
+     variant === 'secondary' && 'bg-secondary text-secondary-foreground',
+     className
+   )}>
+   
+   // ❌ Плохо
+   <div className={`base-classes ${variant === 'primary' ? 'bg-primary' : ''} ${className}`}>
+   ```
+
+### Responsive Design Breakpoints
+
+- `sm:` - 640px (small tablets)
+- `md:` - 768px (tablets)
+- `lg:` - 1024px (desktops)
+- `xl:` - 1280px (large desktops)
+- `2xl:` - 1536px (extra large screens)
+
+**Пример адаптивного компонента:**
+```typescript
+<section className="
+  px-4 py-8              // mobile
+  md:px-6 md:py-12       // tablet
+  lg:px-8 lg:py-16       // desktop
+  xl:px-12 xl:py-20      // large desktop
+">
+  <h1 className="
+    text-2xl              // mobile
+    md:text-3xl           // tablet
+    lg:text-4xl           // desktop
+    xl:text-5xl           // large desktop
+  ">
+    Title
+  </h1>
+</section>
+```
+
+## Shadcn UI Integration
+
+### Использование существующих компонентов
+
+Всегда проверяйте, есть ли готовый Shadcn UI компонент перед созданием нового:
+
+```typescript
+// ✅ Хорошо - использовать Shadcn UI компоненты
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardContent } from '@/components/ui/card';
+
+export function Example() {
+  return (
+    <Card>
+      <CardHeader>Header</CardHeader>
+      <CardContent>
+        <Button>Click me</Button>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+### Расширение Shadcn UI компонентов
+
+```typescript
+// ✅ Хорошо - расширять существующие компоненты
+import { Button, ButtonProps } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+interface IconButtonProps extends ButtonProps {
+  icon: React.ReactNode;
+}
+
+export function IconButton({ icon, children, className, ...props }: IconButtonProps) {
+  return (
+    <Button className={cn('flex items-center gap-2', className)} {...props}>
+      {icon}
+      {children}
+    </Button>
+  );
+}
+```
+
+## WordPress Integration
+
+### Получение данных через GraphQL
+
+Компоненты должны быть готовы к получению данных из WordPress:
+
+```typescript
+interface PostCardProps {
+  title: string;
+  excerpt: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText: string;
+    }
+  };
+  date: string;
+  author: {
+    node: {
+      name: string;
+    }
+  };
+}
+
+export function PostCard({ 
+  title, 
+  excerpt, 
+  featuredImage, 
+  date, 
+  author 
+}: PostCardProps) {
+  return (
+    <article className="...">
+      {featuredImage && (
+        <img 
+          src={featuredImage.node.sourceUrl} 
+          alt={featuredImage.node.altText} 
+        />
+      )}
+      <h2>{title}</h2>
+      <p>{excerpt}</p>
+      <time>{date}</time>
+      <span>{author.node.name}</span>
+    </article>
+  );
+}
+```
+
+## Accessibility Requirements
+
+### Обязательные правила доступности
+
+1. **Семантичный HTML:**
+   ```typescript
+   // ✅ Хорошо
+   <nav>, <header>, <main>, <footer>, <article>, <section>
+   
+   // ❌ Плохо
+   <div className="nav">, <div className="header">
+   ```
+
+2. **Alt текст для изображений:**
+   ```typescript
+   // ✅ Хорошо
+   <img src="..." alt="Описание изображения" />
+   
+   // ❌ Плохо
+   <img src="..." alt="" /> или <img src="..." />
+   ```
+
+3. **ARIA labels для интерактивных элементов:**
+   ```typescript
+   // ✅ Хорошо
+   <button aria-label="Закрыть модальное окно">
+     <XIcon />
+   </button>
+   
+   // ❌ Плохо
+   <button>
+     <XIcon />
+   </button>
+   ```
+
+4. **Keyboard navigation:**
+   ```typescript
+   // ✅ Хорошо - поддержка клавиатуры
+   <div 
+     role="button" 
+     tabIndex={0}
+     onClick={handleClick}
+     onKeyDown={(e) => e.key === 'Enter' && handleClick()}
+   >
+   ```
+
+## Performance Optimization
+
+### Оптимизация изображений
+
+```typescript
+// ✅ Хорошо - использовать Next.js Image
+import Image from 'next/image';
+
+<Image
+  src="/image.jpg"
+  alt="Description"
+  width={800}
+  height={600}
+  loading="lazy"
+  quality={85}
+/>
+
+// ❌ Плохо - обычный img тег
+<img src="/image.jpg" alt="Description" />
+```
+
+### Ленивая загрузка компонентов
+
+```typescript
+// ✅ Хорошо - для тяжелых компонентов
+import dynamic from 'next/dynamic';
+
+const HeavyComponent = dynamic(() => import('./heavy-component'), {
+  loading: () => <p>Загрузка...</p>,
+  ssr: false
+});
+```
+
+## Code Quality
+
+### Запрещенные практики
+
+❌ **НЕ использовать:**
+- `any` тип (использовать `unknown` или конкретные типы)
+- inline styles (использовать Tailwind CSS)
+- `var` (использовать `const` или `let`)
+- default export для компонентов (использовать named export)
+- `@ts-ignore` (исправлять проблемы, не игнорировать)
+
+### Рекомендуемые практики
+
+✅ **ИСПОЛЬЗОВАТЬ:**
+- Деструктуризацию props
+- Early returns для читаемости
+- Мемоизацию для дорогих вычислений (React.memo, useMemo)
+- Custom hooks для переиспользуемой логики
+- Const assertions для литералов
+
+## Testing (Future)
+
+Компоненты должны быть готовы к тестированию:
+
+```typescript
+// Структура компонента, готовая к тестированию
+export function Button({ children, onClick, variant = 'default' }: ButtonProps) {
+  return (
+    <button
+      data-testid="button"
+      className={cn(buttonVariants({ variant }))}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+## Примеры компонентов
+
+### Простой компонент
+
+```typescript
+/**
+ * Badge - простой badge компонент для меток
+ */
+
+import { cn } from '@/lib/utils';
+
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: 'default' | 'primary' | 'secondary';
+  className?: string;
+}
+
+export function Badge({ 
+  children, 
+  variant = 'default',
+  className 
+}: BadgeProps) {
+  return (
+    <span className={cn(
+      'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium',
+      variant === 'default' && 'bg-muted text-muted-foreground',
+      variant === 'primary' && 'bg-primary text-primary-foreground',
+      variant === 'secondary' && 'bg-secondary text-secondary-foreground',
+      className
+    )}>
+      {children}
+    </span>
+  );
+}
+```
+
+### Сложный компонент
+
+```typescript
+/**
+ * HeroSection - главный баннер страницы с фоном
+ * 
+ * Сгенерирован из Figma: [ссылка]
+ */
+
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+interface HeroSectionProps {
+  title: string;
+  subtitle?: string;
+  backgroundImage?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  className?: string;
+}
+
+export function HeroSection({
+  title,
+  subtitle,
+  backgroundImage,
+  ctaText = 'Узнать больше',
+  ctaHref = '#',
+  className
+}: HeroSectionProps) {
+  return (
+    <section className={cn('relative min-h-screen flex items-center', className)}>
+      {backgroundImage && (
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+      )}
+      
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            {title}
+          </h1>
+          
+          {subtitle && (
+            <p className="text-lg md:text-xl text-white/90 mb-8">
+              {subtitle}
+            </p>
+          )}
+          
+          <Button size="lg" asChild>
+            <a href={ctaHref}>{ctaText}</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+```
+
+## Итог
+
+При генерации компонентов из Figma:
+
+1. ✅ Извлекай дизайн-контекст через Figma MCP
+2. ✅ Создавай TypeScript компонент с явными типами
+3. ✅ Используй Tailwind CSS (mobile-first)
+4. ✅ Используй Shadcn UI компоненты как базу
+5. ✅ Следуй правилам именования и структуре
+6. ✅ Добавляй JSDoc комментарии
+7. ✅ Делай компоненты доступными (a11y)
+8. ✅ Оптимизируй изображения через Next.js Image
+9. ✅ Экспортируй как named export
+10. ✅ Сохраняй в `src/components/figma/`
+

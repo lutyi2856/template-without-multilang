@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-toc",
+  "title": "Содержание",
+  "description": "Блок содержания статьи с якорными ссылками",
+  "category": "unident-blocks",
+  "icon": "list-view",
+  "keywords": ["содержание", "оглавление", "toc", "навигация"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true
+  }
+}

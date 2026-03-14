@@ -1,0 +1,109 @@
+{
+  "id": "96:52",
+  "name": "Card",
+  "type": "FRAME",
+  "description": "Секция «Наши клиники на карте Москвы» — левая панель (слайдер карточек клиник) + карта",
+  "layout": "layout_0Q7YIQ",
+  "structure": {
+    "heading": {
+      "id": "95:1222",
+      "name": "Наши клиники на карте Москвы",
+      "type": "TEXT",
+      "layout": "layout_HO8XLX",
+      "text": "Наши клиники на карте Москвы",
+      "textStyle": "style_NPKHXQ",
+      "fills": "4"
+    },
+    "leftSideImage": {
+      "id": "95:2723",
+      "name": "left-side",
+      "type": "IMAGE-SVG",
+      "layout": "layout_W3PQEX",
+      "borderRadius": 25
+    },
+    "clinicCard": {
+      "id": "143:2503",
+      "name": "clinic_card",
+      "type": "INSTANCE",
+      "componentId": "143:2502",
+      "layout": "layout_1N3FA3",
+      "fills": "9",
+      "borderRadius": 25,
+      "children": {
+        "image": {
+          "id": "I143:2503;143:2478",
+          "name": "image",
+          "type": "IMAGE-SVG",
+          "layout": "layout_BWCAR3",
+          "fills": "4",
+          "borderRadius": 25
+        },
+        "clinicName": {
+          "id": "I143:2503;143:2482",
+          "name": "Клиника на Чайковского",
+          "type": "TEXT",
+          "text": "Клиника на Чайковского",
+          "textStyle": "style_HB3SZ4",
+          "fills": "4"
+        },
+        "address": {
+          "id": "I143:2503;143:2489",
+          "name": "Чайковского, 21",
+          "type": "TEXT",
+          "text": "Чайковского, 21",
+          "textStyle": "style_1UXX80",
+          "fills": "4"
+        },
+        "phone": {
+          "id": "I143:2503;143:2494",
+          "name": "+7 4922 77-99-49",
+          "type": "TEXT",
+          "text": "+7 4922 77-99-49",
+          "textStyle": "style_1UXX80",
+          "fills": "4"
+        },
+        "workingHours": {
+          "id": "I143:2503;143:2499",
+          "name": "Пн-Сб 8:00 - 20:00 Вс 9:00 - 15:00",
+          "type": "TEXT",
+          "text": "Пн-Сб 8:00 - 20:00\nВс 9:00 - 15:00",
+          "textStyle": "style_1UXX80",
+          "fills": "4"
+        },
+        "button": {
+          "id": "I143:2503;143:2501",
+          "name": "Контакты и схема проезда",
+          "type": "TEXT",
+          "text": "Контакты и схема проезда",
+          "textStyle": "style_OQJCVA",
+          "fills": "3"
+        }
+      }
+    },
+    "arrowLeft": {
+      "id": "129:1089",
+      "name": "arrow",
+      "type": "IMAGE-SVG",
+      "layout": "layout_LD08J9",
+      "fills": "9",
+      "borderRadius": 44,
+      "componentId": "122:583"
+    },
+    "arrowRight": {
+      "id": "129:1092",
+      "name": "arrow",
+      "type": "IMAGE-SVG",
+      "layout": "layout_RXU30C",
+      "fills": "9",
+      "borderRadius": 40,
+      "componentId": "122:583"
+    }
+  },
+  "imageNodes": [
+    { "nodeId": "95:2723", "fileName": "clinics-map-left-side.svg", "description": "Левая панель (фон/декор)" },
+    { "nodeId": "I143:2503;143:2478", "fileName": "clinic-card-image.svg", "description": "Фото здания клиники в карточке" },
+    { "nodeId": "129:1089", "fileName": "clinics-slider-arrow-left.svg", "description": "Стрелка влево слайдера" },
+    { "nodeId": "129:1092", "fileName": "clinics-slider-arrow-right.svg", "description": "Стрелка вправо слайдера" }
+  ],
+  "source": "full-figma-data-2026-02-04.yaml (Figma API 429 at fetch time)"
+}

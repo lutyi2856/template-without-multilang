@@ -1,0 +1,163 @@
+{
+  "nodeId": "412:3463",
+  "name": "сontacts/ 1440",
+  "fileKey": "eEN4I9HdQ3JiW708BuOMRc",
+  "date": "2026-02-21",
+  "sources": {
+    "designContext": "user-Figma get_design_context (returned hint only)",
+    "screenshot": "user-Figma get_screenshot",
+    "variableDefs": "user-Figma get_variable_defs",
+    "structure": "full-figma-data-2026-02-04.yaml",
+    "framelinkLayout": "unavailable (MCP not connected)"
+  },
+  "structure": {
+    "page": "412:3463",
+    "menu": "412:3464",
+    "breadcrumbs": "412:3465",
+    "titleBlock": "412:3471",
+    "title": "412:3472",
+    "mainContent": "412:4384",
+    "contactCard": "412:4320",
+    "mapCard": "412:3886",
+    "clinicsSection": "412:4256",
+    "clinicsTitle": "412:3887",
+    "clinicsGrid": "412:4153"
+  },
+  "keyNodes": {
+    "412:3463": {
+      "name": "сontacts/ 1440",
+      "type": "FRAME",
+      "fills": "9"
+    },
+    "412:3464": {
+      "name": "Menu",
+      "type": "INSTANCE",
+      "componentId": "109:133",
+      "description": "Шапка, навигация, поиск, контакты"
+    },
+    "412:3465": {
+      "name": "Breadcumbs",
+      "children": ["412:3467 Главная", "412:3468 IMAGE-SVG разделитель", "412:3470 Контакты"]
+    },
+    "412:3471": {
+      "name": "Frame 2131328757",
+      "description": "Блок заголовка",
+      "children": ["412:3472"]
+    },
+    "412:3472": {
+      "name": "Контакты",
+      "type": "TEXT",
+      "style": "H2",
+      "text": "Контакты",
+      "fills": "4",
+      "typography": "45px Gilroy SemiBold, line-height 1.19, letter-spacing -1%"
+    },
+    "412:4384": {
+      "name": "Frame 2131328763",
+      "description": "Основной блок: контакты + карта"
+    },
+    "412:4320": {
+      "name": "Card",
+      "type": "FRAME",
+      "description": "Блок контактной информации",
+      "fills": "8",
+      "borderRadius": 25,
+      "children": [
+        "412:4350 Frame 71 — телефон 8 999 999-99-99, «По вопросам ....»",
+        "412:4366 Frame 73 — email unident@mail.ru",
+        "412:4373 Frame 74 — email unident@mail.ru",
+        "412:4357 Frame 72 — WhatsApp 8 999 999-99-99, «Написать в WhatsApp»"
+      ]
+    },
+    "412:3886": {
+      "name": "Card",
+      "type": "IMAGE-SVG",
+      "description": "Карта с маркерами клиник",
+      "borderRadius": 25
+    },
+    "412:4256": {
+      "name": "Frame 2131328760",
+      "description": "Секция «Клиники и схемы проезда»"
+    },
+    "412:3887": {
+      "name": "Клиники и схемы проезда",
+      "type": "TEXT",
+      "style": "style_NPKHXQ",
+      "fills": "4"
+    },
+    "412:4153": {
+      "name": "Frame 2131328759",
+      "description": "Сетка карточек клиник"
+    }
+  },
+  "contactItems": [
+    {
+      "nodeId": "412:4350",
+      "icon": "412:4351",
+      "value": "8 999 999-99-99",
+      "label": "По вопросам ...."
+    },
+    {
+      "nodeId": "412:4366",
+      "icon": "412:4367",
+      "value": "unident@mail.ru",
+      "label": "По вопросам ...."
+    },
+    {
+      "nodeId": "412:4373",
+      "icon": "412:4374",
+      "value": "unident@mail.ru",
+      "label": "По вопросам ...."
+    },
+    {
+      "nodeId": "412:4357",
+      "icon": "412:4358",
+      "value": "8 999 999-99-99",
+      "label": "Написать в WhatsApp"
+    }
+  ],
+  "typography": {
+    "title": "45px Gilroy SemiBold (600), line-height 1.19, letter-spacing -1%",
+    "breadcrumbs": "14px Gilroy Medium (500), line-height 1.177, letter-spacing -1%",
+    "contactValue": "style_6HL3KY",
+    "contactLabel": "style_DOLR4O (16px Medium)"
+  },
+  "variableDefs": {
+    "colors": {
+      "1": "#D9E4F7",
+      "2": "#607BD4",
+      "3": "#526AC2",
+      "4": "#191E35",
+      "6": "#F9F9F9",
+      "8": "#F5F7F9",
+      "9": "#FFFFFF",
+      "10": "#8F8F8F"
+    },
+    "H2": "Font(family: Gilroy, style: SemiBold, size: 45, weight: 600, lineHeight: 100, letterSpacing: -1)"
+  },
+  "colors": {
+    "fills": {
+      "9": "#FFFFFF",
+      "4": "#191E35",
+      "8": "#F5F7F9"
+    },
+    "borderRadius": {
+      "card": 25
+    }
+  },
+  "imageNodes": {
+    "forDownload": [
+      { "nodeId": "412:3468", "description": "Разделитель breadcrumbs", "fileName": "breadcrumb-separator-contacts.svg" },
+      { "nodeId": "412:4351", "description": "Иконка телефона Frame 70", "fileName": "contacts-phone-icon.svg" },
+      { "nodeId": "412:4367", "description": "Иконка email Frame 70", "fileName": "contacts-email-icon.svg" },
+      { "nodeId": "412:4374", "description": "Иконка email Frame 70 (дубль)", "fileName": "contacts-email-icon-2.svg" },
+      { "nodeId": "412:4358", "description": "Иконка WhatsApp Frame 70", "fileName": "contacts-whatsapp-icon.svg" }
+    ]
+  },
+  "relatedComponents": {
+    "header": "109:133 (Menu)",
+    "breadcrumbs": "см. components/breadcrumbs.json",
+    "clinic_card": "143:2502",
+    "footer": "131:1618"
+  }
+}

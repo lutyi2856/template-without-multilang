@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-universal",
+  "title": "Универсальный блок",
+  "description": "Заголовок + компоненты в произвольном порядке (текст, список, изображение)",
+  "category": "unident-blocks",
+  "icon": "layout",
+  "keywords": ["универсальный", "текст", "изображение", "список"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true
+  }
+}

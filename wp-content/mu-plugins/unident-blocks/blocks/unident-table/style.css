@@ -1,0 +1,47 @@
+/**
+ * Block: Таблица (unident-table)
+ */
+
+.unident-table {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.unident-table .unident-table-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}
+
+.unident-table .unident-description {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}
+
+.unident-table-content {
+	overflow-x: auto;
+	border-radius: 25px;
+}
+
+.unident-table-content table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.unident-table-content th,
+.unident-table-content td {
+	padding: 12px 16px;
+	border: 1px solid var(--color-border, #D8D8D8);
+}
+
+.unident-table-content th {
+	background: var(--color-bg-elements, #F5F7F9);
+	font-weight: 600;
+}

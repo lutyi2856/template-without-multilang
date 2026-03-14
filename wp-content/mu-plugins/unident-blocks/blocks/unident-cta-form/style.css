@@ -1,0 +1,39 @@
+/**
+ * Block: CTA с формой (unident-cta-form)
+ */
+
+.unident-cta-form {
+	margin: 0;
+}
+
+.unident-cta-form .unident-cta-form-inner {
+	background: var(--color-bg-elements, #F5F7F9);
+	background-size: cover;
+	background-position: center;
+	border-radius: 25px;
+	padding: 40px;
+}
+
+.unident-cta-form .unident-cta-form-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0 0 16px 0;
+}
+
+.unident-cta-form .unident-cta-form-desc {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0 0 24px 0;
+}
+
+.unident-cta-form .unident-cta-form-placeholder {
+	padding: 20px;
+	background: rgba(255,255,255,0.7);
+	border-radius: 15px;
+	font-size: 14px;
+	color: #666;
+}

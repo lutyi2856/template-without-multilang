@@ -1,0 +1,54 @@
+[
+  {
+    "url": "https://kan.uz/chto-takoe-doverie/",
+    "title": "Что такое доверие?",
+    "slug": "chto-takoe-doverie",
+    "doctorSlugs": [
+      "kan-anna-aleksandrovna",
+      "kan-stanislav-aleksandrovich",
+      "tulegenova-asel-turahanovna"
+    ],
+    "serviceCategorySlugs": [
+      "hirurgiya-i-implantaciya",
+      "ispravlenie-prikusa",
+      "otbelivanie-zubov",
+      "terapevticheskoe-i-endodonticheskoe-lechenie",
+      "ortopediya-koronki"
+    ],
+    "beforeUrl": "https://kan.uz/wp-content/uploads/2024/10/img_5299.jpg",
+    "afterUrl": "https://kan.uz/wp-content/uploads/2024/10/img_5298.jpg"
+  },
+  {
+    "url": "https://kan.uz/novyj-vzglyad-na-ulybku-nazimy/",
+    "title": "Новый взгляд на улыбку Назимы",
+    "slug": "novyj-vzglyad-na-ulybku-nazimy",
+    "doctorSlugs": [
+      "kan-anna-aleksandrovna",
+      "askarov-mansur-anvarovich",
+      "kim-dmitrij-moiseevich",
+      "tulegenova-asel-turahanovna"
+    ],
+    "serviceCategorySlugs": [
+      "terapevticheskoe-i-endodonticheskoe-lechenie",
+      "hirurgiya-i-implantaciya",
+      "otbelivanie-zubov",
+      "ortopediya-koronki"
+    ],
+    "beforeUrl": "https://kan.uz/wp-content/uploads/2024/10/img_5303.jpg",
+    "afterUrl": "https://kan.uz/wp-content/uploads/2024/10/img_5302.jpg"
+  },
+  {
+    "url": "https://kan.uz/preobrazhenie-ulybki/",
+    "title": "Преображение улыбки нашей пациентки",
+    "slug": "preobrazhenie-ulybki",
+    "doctorSlugs": [
+      "kan-stanislav-aleksandrovich"
+    ],
+    "serviceCategorySlugs": [
+      "hirurgiya-i-implantaciya",
+      "ispravlenie-prikusa"
+    ],
+    "beforeUrl": "https://kan.uz/wp-content/uploads/2024/10/img_5306.jpg",
+    "afterUrl": "https://kan.uz/wp-content/uploads/2024/10/img_5307.jpg"
+  }
+]

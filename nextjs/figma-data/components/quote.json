@@ -1,0 +1,174 @@
+{
+  "id": "95:1468",
+  "name": "quote",
+  "type": "FRAME",
+  "description": "Блок с цитатой главного врача",
+  "layout": "layout_T2X8ZK",
+  "borderRadius": 25,
+  "structure": {
+    "background": {
+      "id": "95:1469",
+      "name": "Rectangle 40147",
+      "type": "RECTANGLE",
+      "layout": "layout_6NMJZN",
+      "fills": "8",
+      "borderRadius": 25,
+      "description": "Фон блока (#F5F7F9)"
+    },
+    "decorativeImage": {
+      "id": "143:2899",
+      "name": "image",
+      "type": "IMAGE-SVG",
+      "layout": "layout_9UM2KD",
+      "fills": "fill_UJ3WQQ",
+      "borderRadius": 25,
+      "description": "Декоративное изображение"
+    },
+    "quoteText": {
+      "id": "95:1472",
+      "name": "Цитата главного врача",
+      "type": "TEXT",
+      "layout": "layout_D53AT8",
+      "text": "«Меня зовут [Имя Фамилия], я главный врач стоматологии УниДент в Санкт-Петербурге.\n\nМы создали клинику, чтобы у вас был доступ к честной, современной и действительно качественной стоматологии. Здесь не лечат «на глаз» и не навязывают лишнего — всё по науке и с уважением к людям.\n\nЕсли у вас есть вопросы или идеи, как сделать клинику ещё лучше — я всегда на связи.»",
+      "textStyle": "style_XV6NGF",
+      "fills": "fill_KWX9TJ",
+      "description": "Текст цитаты"
+    },
+    "authorInfo": {
+      "id": "276:2095",
+      "name": "Group 1321317181",
+      "type": "GROUP",
+      "layout": "layout_MEZ1PB",
+      "children": {
+        "photo": {
+          "id": "95:1470",
+          "name": "image 2115",
+          "type": "RECTANGLE",
+          "layout": "layout_UDWDOB",
+          "fills": "fill_EREX2Q",
+          "description": "Фото врача"
+        },
+        "divider": {
+          "id": "95:1476",
+          "name": "Line 34",
+          "type": "LINE",
+          "layout": "layout_CBV5AX",
+          "strokes": "2",
+          "strokeWeight": 0.7663043737411499,
+          "strokeDashes": [4, 4],
+          "description": "Пунктирная линия разделитель (#607BD4)"
+        },
+        "authorFrame": {
+          "id": "276:2094",
+          "name": "Frame 2131328728",
+          "type": "FRAME",
+          "layout": "layout_JP6A9H",
+          "children": {
+            "avatar": {
+              "id": "276:2083",
+              "name": "Frame 2131328727",
+              "type": "IMAGE-SVG",
+              "layout": "layout_EP7XAV",
+              "borderRadius": 500,
+              "description": "Аватар врача (круглый)"
+            },
+            "nameAndPosition": {
+              "id": "95:1473",
+              "name": "Group 366",
+              "type": "GROUP",
+              "layout": "layout_VT70GI",
+              "children": {
+                "nameFrame": {
+                  "id": "276:2081",
+                  "name": "Frame 2131328726",
+                  "type": "FRAME",
+                  "layout": "layout_DMLTAT",
+                  "children": {
+                    "name": {
+                      "id": "95:1474",
+                      "name": "Фамилия Имя Отчество",
+                      "type": "TEXT",
+                      "layout": "layout_3VMQ92",
+                      "text": "Фамилия\nИмя Отчество",
+                      "textStyle": "style_3ZG8X4",
+                      "fills": "fill_KWX9TJ",
+                      "description": "Имя врача"
+                    },
+                    "position": {
+                      "id": "95:1475",
+                      "name": "Генеральный директор сети клиник «Унидент»",
+                      "type": "TEXT",
+                      "layout": "layout_3VMQ92",
+                      "text": "Генеральный директор сети клиник «Унидент»",
+                      "textStyle": "style_O8IGPN",
+                      "fills": "10",
+                      "description": "Должность"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "quoteText": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 24,
+      "lineHeight": 1.2,
+      "letterSpacing": "-1%",
+      "style": "style_XV6NGF"
+    },
+    "authorName": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 600,
+      "fontSize": 32,
+      "lineHeight": 1.0,
+      "letterSpacing": "-1%",
+      "style": "style_3ZG8X4"
+    },
+    "authorPosition": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 16,
+      "lineHeight": 1.5,
+      "textAlign": "LEFT",
+      "style": "style_O8IGPN"
+    }
+  },
+  "colors": {
+    "background": "#F5F7F9",
+    "quoteText": "#222222",
+    "authorName": "#222222",
+    "authorPosition": "#8F8F8F",
+    "divider": "#607BD4",
+    "decorativeImage": "#973838"
+  },
+  "layout": {
+    "borderRadius": 25,
+    "backgroundFills": "8",
+    "strokeDashes": [4, 4],
+    "strokeWeight": 0.7663043737411499
+  },
+  "imageElements": {
+    "decorativeImage": {
+      "id": "143:2899",
+      "type": "IMAGE-SVG",
+      "description": "Декоративное изображение"
+    },
+    "authorPhoto": {
+      "id": "95:1470",
+      "type": "RECTANGLE",
+      "description": "Фото врача"
+    },
+    "authorAvatar": {
+      "id": "276:2083",
+      "type": "IMAGE-SVG",
+      "borderRadius": 500,
+      "description": "Аватар врача (круглый)"
+    }
+  }
+}

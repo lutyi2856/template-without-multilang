@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-faq",
+  "title": "FAQ (KB)",
+  "description": "FAQ аккордеон",
+  "category": "unident-blocks",
+  "icon": "editor-help",
+  "keywords": ["faq", "аккордеон", "вопросы"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

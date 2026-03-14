@@ -1,0 +1,139 @@
+{
+  "fetchedAt": "2026-03-12T14:54:13.968Z",
+  "source": "google",
+  "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu",
+  "extractedVia": "Apify api-ninja/google-maps-reviews-scraper",
+  "reviewCount": 13,
+  "reviews": [
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "месяц назад",
+      "content": "Хочу выразить сердечную благодарность Азизе Хайитовне за профессиональный подход и чуткое, ответственное отношение к своей работе. Искренняя забота по отношению ко мне как пациенту, внимание к мелочам, понимание своего дела на высочайшем уровне, и умение популярно и доходчиво делиться своими знаниями, всё это делает визит на приём к доктору Азизе Хайитовне, не только ощутимой пользой, а ещё и удовольствием от общения со специалистом своего дела и просто прекрасным человеком.\nВсем, кто желает иметь жемчужиной белизны улыбку, кто хочет научиться грамотно поддерживать здоровье и чистоту своих зубов, всем рекомендую посетить кабинет Азизы Хайитовны Тураевой в клинике Kan Dental.",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "месяц назад",
+      "content": "Ужасная клиника. Специализируются на детской стоматологии тоже,на деле 40 минут мучили ребёнка,обкололи обезболивающим всю десну и в итоге врач(если можно так назвать) сказал,что не будет ничего делать ребёнку и мы ушли. Причина их отказа в том что ребёнок плачет у стоматолога в кресле и врачу тяжело,на мой же взгляд у стоматолога просто нет опыта работы с детьми.\nКрайне не советую.",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "9 месяцев назад",
+      "content": "Недавно проходила процедуру профессиональной гигиены у стоматолога-гигиениста Азизы Хаитовны и осталась в полном восторге! Врач — настоящий профессионал своего дела: подробно проконсультировала по правилам ухода за полостью рта, объяснила, какие средства лучше использовать, и ответила на все мои вопросы.\nОчень порадовало, что был сделан фотопротокол зубов до и после — наглядный результат впечатляет! Сама процедура прошла максимально комфортно и абсолютно безболезненно.",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "8 месяцев назад",
+      "content": "Это любовь! Настолько аккуратного, внимательного и профессионального подхода я ещё не встречала. Сюда хочется возвращаться не со страхом, а с уверенностью, что всё пройдёт идеально.\n\nОгромная благодарность терапевту Хусану Донияровичу — просто золото, а не врач. Настолько бережный, чёткий, всё объясняет, показывает, лечит максимально аккуратно. Если и ходить к терапевту, то только к нему!\n\nИ отдельное спасибо хирургу Мансуру Анваровичу — руки просто волшебные. Удаление прошло так легко, что я вообще не поняла, в какой момент всё случилось. После его работы ни страха, ни боли — только облегчение.\n\nВ клинике приятная атмосфера, доброжелательные администраторы и классный подход к каждому пациенту. Сюда приходишь не как в больницу, а как в место заботы о себе. Рекомендую от души! 💛",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "11 месяцев назад",
+      "content": "Хочу выразить огромную благодарность врачу Хусану Донияровичу за его невероятный профессионализм и внимательный подход! Обратилась с непростой проблемой — зуб, который другие врачи считали безнадежным и предлагали удалить. Но Хусан Дониярович не только смог его спасти, но и провел лечение так аккуратно и безболезненно, что я даже не заметила, как закончился прием🫠\n\nОчень приятно, когда врач не просто делает свою работу, а действительно заботится. Все подробно объяснил, успокоил и подарил уверенность, что зуб можно сохранить. Теперь только к нему! Спасибо!",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "год назад",
+      "content": "Добрый день. Сегодня была у вас на проф.гигиене зубов. Очень понравилась процедура.\nВрач очень внимательно работала, добросовестно👍\nХотелось бы родным подарить подарочный сертификат на эту процедуру. В будущем не планируете такие делать?",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "2 года назад",
+      "content": "Огромная благодарность хирургу Мансуру Анваровичу!\nЯ так долго не решалась на удаление зуба мудрости и думала, что будет больно.\nОн удалил зуб буквально за 15 минут и совершенно безболезненно! Волшебник!",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "год назад",
+      "content": "“Раньше я всегда боялась походов к стоматологу, но врач Екатерина Александровна справилась с этой задачей на ура. Процедура прошла безболезненно и быстро, результатом я более чем довольна. Огромное спасибо за профессионализм и высокий уровень сервиса! Теперь я точно знаю, что нашла свою клинику и буду рекомендовать ее друзьям и знакомым.”",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "неделю назад",
+      "content": "",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "3 недели назад",
+      "content": "",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "месяц назад",
+      "content": "",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "год назад",
+      "content": "",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    },
+    {
+      "source": "google",
+      "authorName": "Аноним",
+      "authorImageUrl": null,
+      "date": "год назад",
+      "content": "",
+      "rating": null,
+      "clinicAnswer": null,
+      "sourceUrl": "https://www.google.com/maps/place/Kan+Dental+Clinic/@41.324343,69.3235313,17z/data=!4m8!3m7!1s0x38aef5ff8d720db1:0xb34f9cfec67171bd!8m2!3d41.324343!4d69.3235313!9m1!1b1!16s%2Fg%2F11vf6wt68y?entry=ttu"
+    }
+  ]
+}

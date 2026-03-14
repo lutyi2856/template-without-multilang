@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-text",
+  "title": "Текстовый блок",
+  "description": "Заголовок и текстовое содержание",
+  "category": "unident-blocks",
+  "icon": "text-page",
+  "keywords": ["текст", "заголовок", "text"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true
+  }
+}

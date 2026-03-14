@@ -1,0 +1,75 @@
+/**
+ * Block: Показания (unident-readings)
+ */
+
+.unident-readings {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.unident-readings .unident-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}
+
+.unident-readings .unident-description {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}
+
+.unident-readings .unident-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.unident-readings .unident-list-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.unident-readings .unident-list-item:last-child {
+	margin-bottom: 0;
+}
+
+.unident-readings .unident-icon {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+	margin-top: 2px;
+}
+
+.unident-readings .unident-icon svg {
+	width: 25px;
+	height: 25px;
+}
+
+.unident-readings--dot .unident-icon,
+.unident-readings--dot .unident-icon svg {
+	width: 10px;
+	height: 10px;
+}
+
+.unident-readings--dot .unident-icon {
+	margin-top: 9px;
+}
+
+.unident-readings .unident-text {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+}

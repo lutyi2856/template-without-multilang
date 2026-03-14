@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-image-text",
+  "title": "Картинка с текстом (KB)",
+  "description": "Изображение с текстом, layout left/right",
+  "category": "unident-blocks",
+  "icon": "format-image",
+  "keywords": ["картинка", "изображение", "image", "текст"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

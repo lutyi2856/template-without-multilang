@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-quote",
+  "title": "Цитата (KB)",
+  "description": "Блок цитаты с заголовком и текстом",
+  "category": "unident-blocks",
+  "icon": "format-quote",
+  "keywords": ["цитата", "quote", "blockquote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

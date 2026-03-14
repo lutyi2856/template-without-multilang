@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 106" width="208" height="106">
+  <g fill="currentColor">
+    <!-- K: spine + upper arm + lower arm -->
+    <rect x="15" y="22" width="11" height="62"/>
+    <polygon points="26,47 67,22 67,32 26,57"/>
+    <polygon points="26,57 67,74 67,84 26,67"/>
+    <!-- A: two strokes meeting at top peak, no crossbar -->
+    <polygon points="73,84 96,22 107,22 84,84"/>
+    <polygon points="96,22 107,22 130,84 119,84"/>
+    <!-- N: left spine + diagonal + right spine -->
+    <rect x="137" y="22" width="11" height="62"/>
+    <polygon points="148,22 159,22 182,84 171,84"/>
+    <rect x="182" y="22" width="11" height="62"/>
+  </g>
+</svg>

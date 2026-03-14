@@ -1,0 +1,301 @@
+{
+  "nodeId": "95:2548",
+  "name": "promotion",
+  "type": "FRAME",
+  "description": "Секция с акциями (promotion cards slider)",
+  
+  "structure": {
+    "container": {
+      "id": "95:2548",
+      "name": "promotion",
+      "type": "FRAME",
+      "borderRadius": "25px",
+      "layout": "layout_JDO66C",
+      "fills": "7"
+    },
+    "cardsContainer": {
+      "id": "95:2549",
+      "name": "promotion",
+      "type": "FRAME",
+      "layout": "layout_GPR4SU"
+    },
+    "cards": [
+      {
+        "id": "124:794",
+        "name": "promotion_card",
+        "type": "INSTANCE",
+        "componentId": "124:793",
+        "fills": "fill_5YIUPE",
+        "borderRadius": "25px",
+        "layout": "layout_UQ6H4W"
+      }
+    ]
+  },
+  
+  "layouts": {
+    "layout_JDO66C": {
+      "mode": "none",
+      "sizing": {
+        "horizontal": "fixed",
+        "vertical": "fixed"
+      }
+    },
+    "layout_GPR4SU": {
+      "mode": "row",
+      "alignItems": "center",
+      "gap": "10px",
+      "sizing": {
+        "horizontal": "hug",
+        "vertical": "hug"
+      }
+    },
+    "layout_UQ6H4W": {
+      "mode": "none",
+      "sizing": {},
+      "dimensions": {
+        "width": "408px",
+        "height": "608px"
+      }
+    }
+  },
+  
+  "promotionCardComponent": {
+    "id": "124:793",
+    "name": "promotion_card",
+    "type": "COMPONENT",
+    "dimensions": {
+      "width": "408px",
+      "height": "608px"
+    },
+    "borderRadius": "25px",
+    "fills": "9",
+    "layout": "layout_C2J4CM",
+    
+    "children": [
+      {
+        "id": "124:772",
+        "name": "Frame 111",
+        "type": "FRAME",
+        "layout": "layout_3N4OWR",
+        "children": [
+          {
+            "id": "124:773",
+            "name": "Название акции\\в две строки...",
+            "type": "TEXT",
+            "textStyle": "style_3RWC5S",
+            "fills": "4"
+          },
+          {
+            "id": "124:774",
+            "name": "Описание в две строки, или в одну строку",
+            "type": "TEXT",
+            "textStyle": "style_1M1AO6",
+            "fills": "4"
+          }
+        ]
+      },
+      {
+        "id": "124:775",
+        "name": "Frame 107",
+        "type": "FRAME",
+        "layout": "layout_QVL9NN",
+        "children": [
+          {
+            "id": "124:776",
+            "name": "Frame 115",
+            "type": "FRAME",
+            "layout": "layout_WCYDH1",
+            "children": [
+              {
+                "id": "124:777",
+                "name": "Frame 114",
+                "type": "FRAME",
+                "layout": "layout_GZ3UZR",
+                "children": [
+                  {
+                    "id": "124:778",
+                    "name": "21 900Р",
+                    "type": "TEXT",
+                    "textStyle": "style_56952B",
+                    "fills": "10",
+                    "textDecoration": "strikethrough"
+                  },
+                  {
+                    "id": "124:779",
+                    "name": "17 900Р",
+                    "type": "TEXT",
+                    "textStyle": "style_56952B",
+                    "fills": "4"
+                  }
+                ]
+              },
+              {
+                "id": "124:780",
+                "name": "записаться",
+                "type": "TEXT",
+                "textStyle": "style_GACSX0",
+                "fills": "9",
+                "strokes": "9",
+                "cornerRadius": "10px"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "124:781",
+        "name": "image 10",
+        "type": "RECTANGLE",
+        "description": "SVG image (illustration)"
+      },
+      {
+        "id": "124:782",
+        "name": "Frame 116",
+        "type": "FRAME",
+        "layout": "layout_8D1VZJ",
+        "children": [
+          {
+            "id": "124:783",
+            "name": "Акция",
+            "type": "TEXT",
+            "textStyle": "style_LSCAMY",
+            "fills": "4"
+          }
+        ],
+        "fills": "2",
+        "borderRadius": "10px"
+      },
+      {
+        "id": "124:784",
+        "name": "Frame 117",
+        "type": "FRAME",
+        "layout": "layout_OT3CZD",
+        "children": [
+          {
+            "id": "124:785",
+            "name": "Имплантация зубов",
+            "type": "TEXT",
+            "textStyle": "style_HOG73R",
+            "fills": "4"
+          }
+        ],
+        "fills": "9",
+        "strokes": "9",
+        "borderRadius": "10px"
+      }
+    ]
+  },
+  
+  "textStyles": {
+    "style_3RWC5S": {
+      "name": "Название акции (promotion title)",
+      "fontFamily": "Gilroy",
+      "fontWeight": "600",
+      "fontSize": "22px",
+      "lineHeight": "1.19299992648038em",
+      "letterSpacing": "-1%"
+    },
+    "style_1M1AO6": {
+      "name": "Описание акции (promotion description)",
+      "fontFamily": "Gilroy",
+      "fontWeight": "400",
+      "fontSize": "16px",
+      "lineHeight": "1.25em"
+    },
+    "style_56952B": {
+      "name": "Цена акции (promotion price)",
+      "fontFamily": "Gilroy",
+      "fontWeight": "500",
+      "fontSize": "28px",
+      "lineHeight": "1.4000000272478377em"
+    },
+    "style_GACSX0": {
+      "name": "Кнопка 'Записаться' (button text)",
+      "fontFamily": "Gilroy",
+      "fontWeight": "600",
+      "fontSize": "16px",
+      "lineHeight": "1.100000023841858em"
+    },
+    "style_LSCAMY": {
+      "name": "Бейдж 'Акция' (badge text)",
+      "fontFamily": "Gilroy",
+      "fontWeight": "500",
+      "fontSize": "14px",
+      "lineHeight": "1.1770000457763672em",
+      "letterSpacing": "-1%"
+    },
+    "style_HOG73R": {
+      "name": "Бейдж 'Категория' (category badge)",
+      "fontFamily": "Gilroy",
+      "fontWeight": "500",
+      "fontSize": "16px",
+      "lineHeight": "1.1765880584716797em"
+    }
+  },
+  
+  "fills": {
+    "1": "#D9E4F7",
+    "2": "#607BD4",
+    "3": "#526AC2",
+    "4": "#191E35",
+    "5": "linear-gradient(180deg, rgba(46, 54, 93, 1) 0%, rgba(70, 85, 157, 1) 100%)",
+    "6": "#F9F9F9",
+    "7": "#EEF3F9",
+    "8": "#F5F7F9",
+    "9": "#FFFFFF",
+    "10": "#8F8F8F"
+  },
+  
+  "specificFills": {
+    "fill_5YIUPE": "#14294E"
+  },
+  
+  "designProperties": {
+    "containerBg": "#EEF3F9",
+    "cardBg": "#FFFFFF",
+    "cardSpecialBg": "#14294E",
+    "titleColor": "#191E35",
+    "descriptionColor": "#191E35",
+    "priceOldColor": "#8F8F8F",
+    "priceNewColor": "#191E35",
+    "buttonBg": "#FFFFFF",
+    "buttonText": "#FFFFFF",
+    "buttonBorder": "#FFFFFF",
+    "badgePromoBg": "#607BD4",
+    "badgePromoText": "#191E35",
+    "badgeCategoryBg": "#FFFFFF",
+    "badgeCategoryText": "#191E35",
+    "badgeCategoryBorder": "#FFFFFF",
+    "borderRadius": {
+      "card": "25px",
+      "button": "10px",
+      "badge": "10px"
+    },
+    "gap": {
+      "cards": "10px",
+      "textElements": "15px"
+    }
+  },
+  
+  "implementation": {
+    "component": "PromotionCard",
+    "slider": "EmblaCarousel с multi-card pattern (см. multi-card-slider-pattern skill)",
+    "cptSource": "WordPress CPT 'promotions' через WPGraphQL",
+    "fields": [
+      "title (название акции)",
+      "description (описание)",
+      "priceOld (старая цена)",
+      "priceNew (новая цена)",
+      "category (категория/специализация)",
+      "image (SVG illustration)",
+      "link (ссылка на полную страницу акции)"
+    ],
+    "notes": [
+      "Карточки акций показываются в слайдере",
+      "Каждая карточка кликабельна → переход на страницу акции",
+      "Используется темный вариант карточки (fill_5YIUPE: #14294E)",
+      "Бейдж 'Акция' всегда виден на карточке",
+      "Бейдж категории опционален"
+    ]
+  }
+}

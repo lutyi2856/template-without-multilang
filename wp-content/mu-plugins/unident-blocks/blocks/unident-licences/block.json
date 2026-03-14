@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-licences",
+  "title": "Наши лицензии",
+  "description": "Карусель карточек лицензий (4 в ряд)",
+  "category": "unident-blocks",
+  "icon": "media-document",
+  "keywords": ["лицензии", "licences", "карусель", "слайдер"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 4
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

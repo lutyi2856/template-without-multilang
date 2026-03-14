@@ -1,0 +1,165 @@
+{
+  "id": "401:2205",
+  "name": "doctor/ 1440",
+  "type": "FRAME",
+  "layout": {
+    "mode": "none",
+    "width": 1440,
+    "height": 5886
+  },
+  "fills": "9",
+  "source": "full-figma-data-2026-02-04.yaml",
+  "figmaUrl": "https://www.figma.com/design/JPVOauS3F3bEIy1msJXPeR/?node-id=401-2205",
+  "description": "Страница карточки врача (профиль врача) — десктоп 1440px",
+  "children": [
+    {
+      "id": "401:2206",
+      "name": "Menu",
+      "type": "INSTANCE",
+      "componentId": "109:133",
+      "description": "Шапка с TopBar, навигацией, поиском, контактами"
+    },
+    {
+      "id": "401:2207",
+      "name": "Breadcumbs",
+      "type": "FRAME",
+      "layout": "layout_O25E14",
+      "children": [
+        {
+          "id": "401:2208",
+          "name": "Frame 2131328722",
+          "children": [
+            { "id": "401:2209", "name": "Главная", "type": "TEXT", "text": "Главная" },
+            { "id": "401:2210", "name": "Frame 2131328721", "type": "IMAGE-SVG", "description": "Разделитель" },
+            { "id": "401:2212", "name": "Врачи", "type": "TEXT", "text": "Врачи" },
+            { "id": "401:2844", "name": "Frame 2131328722", "type": "IMAGE-SVG", "description": "Разделитель" },
+            { "id": "401:2846", "name": "Любимов Павел Олегович", "type": "TEXT", "text": "Любимов Павел Олегович" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "401:2848",
+      "name": "Frame 2131328731",
+      "type": "FRAME",
+      "layout": "layout_15XSQI",
+      "fills": "fill_AAVKNA",
+      "fillDescription": "gradient: linear-gradient(0deg, rgba(238,243,249,1) 5%, rgba(253,253,253,1) 100%)",
+      "description": "Hero-блок с фото врача, бейджами, кнопками",
+      "children": [
+        { "id": "401:2213", "name": "Любимов Павел Олегович", "type": "TEXT", "textStyle": "H2", "fills": "4" },
+        { "id": "401:3097", "name": "108934 1", "type": "RECTANGLE", "fills": "fill_UWFNB1", "description": "Фото врача (IMAGE)" },
+        { "id": "401:3105", "name": "experience", "type": "FRAME", "children": ["36 лет", "стаж"], "borderRadius": "0 0 97px 97px" },
+        { "id": "401:3111", "name": "rating", "type": "FRAME", "children": ["4,7", "Frame 411 (star SVG)", "Рейтинг"], "fills": "1", "borderRadius": "97px 0 97px 97px" },
+        { "id": "401:3119", "name": "Button", "type": "FRAME", "text": "Записаться на прием", "fills": "3" },
+        {
+          "id": "401:3125",
+          "name": "Frame 2131328732",
+          "description": "Бейджи специализации",
+          "children": [
+            { "id": "401:3121", "text": "Детский врач", "icon": "mdi:kids-room" },
+            { "id": "440:4232", "text": "Главный врач" },
+            { "id": "401:3123", "text": "Ортодент" }
+          ]
+        },
+        {
+          "id": "401:3136",
+          "name": "Frame 2131328733",
+          "description": "Принимает по адресу",
+          "children": [
+            { "id": "401:3133", "text": "Принимает по адресу:", "fills": "fill_9R7H03" },
+            { "id": "401:3134", "text": "Название филиала", "type": "Button" }
+          ]
+        },
+        {
+          "id": "401:3139",
+          "name": "Frame 2131328734",
+          "description": "Направления в работе",
+          "children": [
+            { "id": "401:3140", "text": "Направления в работе:", "fills": "fill_9R7H03" },
+            { "id": "401:3132", "text": "Реставрации, Лечение кариеса, Лечение пульпита, Лечение периодонтита" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "402:2392",
+      "name": "info (fixed)",
+      "type": "FRAME",
+      "description": "Sticky боковая панель с инфо о враче и ценами",
+      "children": [
+        {
+          "id": "402:2391",
+          "name": "info",
+          "children": [
+            { "id": "402:2383", "name": "doctor", "children": ["402:2384 (IMAGE-SVG avatar)", "Любимов Павел Олегович"] },
+            { "id": "402:2390", "name": "price", "children": ["Консультация с врачом 3500₽", "poster 1"] },
+            { "id": "402:2393", "name": "Frame 2131328732", "children": ["Главный врач", "Ортодент"] }
+          ]
+        },
+        { "id": "401:3151", "name": "Button", "text": "Записаться на прием", "fills": "3" }
+      ]
+    },
+    {
+      "id": "404:2456",
+      "name": "Frame 2131328747",
+      "description": "Контент: О враче, Ключевые направления, Образование и др.",
+      "children": [
+        {
+          "id": "403:2387",
+          "name": "Frame 2131328737",
+          "description": "О враче",
+          "children": [
+            { "id": "401:3154", "text": "О враче", "textStyle": "style_NPKHXQ" },
+            { "id": "401:3155", "text": "Павел Олегович владеет всеми современными методиками...", "textStyle": "style_KJWZVD" }
+          ]
+        },
+        {
+          "id": "403:2388",
+          "name": "Frame 2131328738",
+          "description": "Ключевые направления",
+          "children": [
+            { "id": "403:2389", "text": "Ключевые направления", "textStyle": "style_NPKHXQ" },
+            { "id": "404:2417", "description": "Список с галочками (Frame 2131328739 IMAGE-SVG)", "items": "Дентальная имплантация в полном объёме." }
+          ]
+        },
+        {
+          "id": "404:2418",
+          "name": "Frame 2131328739",
+          "description": "Образование",
+          "children": [
+            { "id": "404:2419", "text": "Образование", "textStyle": "style_NPKHXQ" },
+            { "id": "404:2420", "description": "Годы + вузы (2006, МГМСУ и др.)" }
+          ]
+        }
+      ]
+    }
+  ],
+  "typography": {
+    "H2": "45px Gilroy SemiBold (600), line-height 1.19, letter-spacing -1%",
+    "style_NPKHXQ": "45px Gilroy SemiBold (600), line-height 1.19, letter-spacing -3%",
+    "style_KJWZVD": "18px Gilroy Regular (400), line-height 1.3, letter-spacing -1%",
+    "style_LSCAMY": "14px Gilroy SemiBold",
+    "style_E0N4EN": "label/link style",
+    "style_1SJ7K0": "16px Gilroy SemiBold (кнопки)"
+  },
+  "colors": {
+    "fills_4": "#191E35 (основной текст)",
+    "fills_9": "#FFFFFF (белый)",
+    "fills_3": "#526AC2 (кнопки primary)",
+    "fills_1": "#D9E4F7 (бейдж рейтинга)",
+    "fills_7": "#EEF3F9 (фон info блок)",
+    "fill_9R7H03": "#717171 (вторичный текст)",
+    "fill_AAVKNA": "gradient(0deg, #EEF3F9 5%, #FDFDFD 100%)",
+    "fill_UWFNB1": "IMAGE (фото врача)"
+  },
+  "imageNodes": [
+    { "nodeId": "401:3097", "description": "Фото врача (RECTANGLE с fill_UWFNB1, imageRef)" },
+    { "nodeId": "401:3115", "description": "Иконка звезды в rating" },
+    { "nodeId": "440:4234", "description": "mdi:kids-room иконка" },
+    { "nodeId": "401:2210", "description": "Разделитель хлебных крошек" },
+    { "nodeId": "401:2844", "description": "Разделитель хлебных крошек" },
+    { "nodeId": "402:2384", "description": "doctor IMAGE-SVG аватар" },
+    { "nodeId": "403:2739", "description": "Frame 2131328739 — галочка в списке направлений" }
+  ]
+}

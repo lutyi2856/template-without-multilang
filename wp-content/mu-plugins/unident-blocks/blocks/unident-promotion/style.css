@@ -1,0 +1,19 @@
+/* unident-promotion — placeholder styles for WP admin preview */
+.unident-promotion .unident-promotion-container {
+	display: flex;
+	gap: 1rem;
+	overflow-x: auto;
+}
+.unident-promotion .unident-promotion-slide {
+	flex: 0 0 100%;
+	min-width: 300px;
+}
+.unident-promotion .unident-promotion-slide-link {
+	display: block;
+}
+.unident-promotion .unident-promotion-slide-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 25px;
+}

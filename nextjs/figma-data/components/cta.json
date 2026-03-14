@@ -1,0 +1,184 @@
+{
+  "id": "93:336",
+  "name": "cta",
+  "type": "FRAME",
+  "description": "Блок Call To Action с формой записи на консультацию",
+  "layout": "layout_3RXS8T",
+  "fills": "5",
+  "borderRadius": 25,
+  "structure": {
+    "decorativeVector": {
+      "id": "143:1752",
+      "name": "Vector",
+      "type": "IMAGE-SVG",
+      "layout": "layout_EHIVYA",
+      "fills": "fill_NGDNTB"
+    },
+    "contentFrame": {
+      "id": "124:884",
+      "name": "Frame 2131328652",
+      "type": "FRAME",
+      "layout": "layout_7V652U",
+      "children": {
+        "textBlock": {
+          "id": "95:2670",
+          "name": "Frame 2131328619",
+          "type": "FRAME",
+          "layout": "layout_WRM5PE",
+          "children": {
+            "heading": {
+              "id": "93:337",
+              "name": "Консультация, снимок и план лечения бесплатно",
+              "type": "TEXT",
+              "layout": "layout_X1XFIV",
+              "text": "Консультация, снимок и план лечения бесплатно",
+              "textStyle": "H2",
+              "fills": "9"
+            },
+            "description": {
+              "id": "93:338",
+              "name": "Оставьте свой номер, мы свяжемся и подберём для вас удобное время приёма. Или позвоните нам сами — +7 499 643-44-05",
+              "type": "TEXT",
+              "layout": "layout_K4K6O8",
+              "text": "Оставьте свой номер, мы свяжемся и подберём для вас удобное время приёма. Или позвоните нам сами — +7 499 643-44-05",
+              "textStyle": "style_XDLWRB",
+              "fills": "9"
+            }
+          }
+        },
+        "buttonsFrame": {
+          "id": "95:2672",
+          "name": "Frame 2131328620",
+          "type": "FRAME",
+          "layout": "layout_DPWWOP",
+          "children": {
+            "phoneButton": {
+              "id": "95:2673",
+              "name": "Button",
+              "type": "FRAME",
+              "layout": "layout_3OIDU4",
+              "fills": "9",
+              "borderRadius": 15,
+              "children": {
+                "text": {
+                  "id": "95:2674",
+                  "name": "Телефон",
+                  "type": "TEXT",
+                  "layout": "layout_7T7FUJ",
+                  "text": "Телефон",
+                  "textStyle": "style_DOLR4O",
+                  "fills": "10"
+                }
+              }
+            },
+            "appointmentButton": {
+              "id": "95:2675",
+              "name": "Button",
+              "type": "FRAME",
+              "layout": "layout_3OIDU4",
+              "strokes": "9",
+              "strokeWeight": 1,
+              "borderRadius": 15,
+              "children": {
+                "text": {
+                  "id": "95:2676",
+                  "name": "Записаться",
+                  "type": "TEXT",
+                  "layout": "layout_YEC00G",
+                  "text": "Записаться",
+                  "textStyle": "style_OQJCVA",
+                  "fills": "9"
+                }
+              }
+            }
+          }
+        },
+        "privacyText": {
+          "id": "124:882",
+          "name": "Отправляя заявку, вы соглашаетесь с политикой конфиденциальности",
+          "type": "TEXT",
+          "layout": "layout_4DQ567",
+          "text": "Отправляя заявку, вы соглашаетесь с политикой конфиденциальности",
+          "textStyle": "style_H4SRC0",
+          "fills": "9"
+        }
+      }
+    },
+    "decorativeImage": {
+      "id": "276:2100",
+      "name": "ChatGPT Image 13 окт. 2025 г., 15_08_51 1",
+      "type": "RECTANGLE",
+      "layout": "layout_YF20KL",
+      "fills": "fill_VY5IN2"
+    }
+  },
+  "typography": {
+    "heading": {
+      "textStyle": "H2",
+      "description": "45px, Gilroy SemiBold (600), line-height: 1.193, letter-spacing: -3%"
+    },
+    "description": {
+      "textStyle": "style_XDLWRB",
+      "description": "18px, Gilroy Regular (400), line-height: 1.2"
+    },
+    "phoneButton": {
+      "textStyle": "style_DOLR4O",
+      "description": "16px, Gilroy Medium (500)"
+    },
+    "appointmentButton": {
+      "textStyle": "style_OQJCVA",
+      "description": "16px, Gilroy SemiBold (600), line-height: 1.193, letter-spacing: -1%"
+    },
+    "privacyText": {
+      "textStyle": "style_H4SRC0",
+      "description": "14px, Gilroy Regular (400)"
+    }
+  },
+  "colors": {
+    "background": {
+      "fills": "5",
+      "description": "linear-gradient(180deg, rgba(46, 54, 93, 1) 0%, rgba(70, 85, 157, 1) 100%)"
+    },
+    "text": {
+      "fills": "9",
+      "description": "#FFFFFF (white)"
+    },
+    "phoneButtonText": {
+      "fills": "10",
+      "description": "#8F8F8F (gray)"
+    },
+    "phoneButtonBackground": {
+      "fills": "9",
+      "description": "#FFFFFF (white)"
+    },
+    "appointmentButtonBorder": {
+      "strokes": "9",
+      "description": "#FFFFFF (white, 1px)"
+    }
+  },
+  "borderRadius": {
+    "main": 25,
+    "buttons": 15
+  },
+  "content": {
+    "heading": "Консультация, снимок и план лечения бесплатно",
+    "description": "Оставьте свой номер, мы свяжемся и подберём для вас удобное время приёма. Или позвоните нам сами — +7 499 643-44-05",
+    "phoneButton": "Телефон",
+    "appointmentButton": "Записаться",
+    "privacyText": "Отправляя заявку, вы соглашаетесь с политикой конфиденциальности"
+  },
+  "imageElements": {
+    "decorativeVector": {
+      "id": "143:1752",
+      "type": "IMAGE-SVG",
+      "name": "Vector",
+      "status": "⏳ Требуется скачивание"
+    },
+    "decorativeImage": {
+      "id": "276:2100",
+      "type": "RECTANGLE",
+      "name": "ChatGPT Image 13 окт. 2025 г., 15_08_51 1",
+      "status": "⏳ Требуется скачивание"
+    }
+  }
+}

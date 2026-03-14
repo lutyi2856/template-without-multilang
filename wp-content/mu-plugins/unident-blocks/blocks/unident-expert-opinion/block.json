@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-expert-opinion",
+  "title": "Мнение эксперта",
+  "description": "Цитата врача с карточкой из связи (relationship) и опциональным кастомным изображением",
+  "category": "unident-blocks",
+  "icon": "admin-comments",
+  "keywords": ["врач", "мнение", "эксперт", "цитата", "expert"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true
+  }
+}

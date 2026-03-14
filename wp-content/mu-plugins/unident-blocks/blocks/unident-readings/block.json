@@ -1,0 +1,19 @@
+{
+  "name": "acf/unident-readings",
+  "title": "Показания (KB)",
+  "description": "Блок показания с маркированным списком и иконками",
+  "category": "unident-blocks",
+  "icon": "yes-alt",
+  "keywords": ["показания", "список", "readings", "checkmark"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true
+  },
+  "style": ["file:./style.css"]
+}

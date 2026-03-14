@@ -1,0 +1,3186 @@
+metadata:
+  name: Шаблон сайта (Copy)
+  components:
+    '109:133':
+      id: '109:133'
+      key: 016f377d723e6639136058405966625e32fe4cd7
+      name: Menu
+    '131:1618':
+      id: '131:1618'
+      key: 35d2803354e9706e9c914c9184f629d34a635441
+      name: footer
+    '125:689':
+      id: '125:689'
+      key: 1d5e5724612639b93285b7077e21f092dac36207
+      name: article_card
+  componentSets: {}
+nodes:
+  - id: '414:3935'
+    name: blog/ 1440
+    type: FRAME
+    layout: layout_47NE6G
+    fills: '9'
+    children:
+      - id: '414:3936'
+        name: Menu
+        type: INSTANCE
+        layout: layout_VMNKWZ
+        componentId: '109:133'
+        children:
+          - id: I414:3936;109:4
+            name: Frame 64
+            type: FRAME
+            layout: layout_ZRB2O6
+            children:
+              - id: I414:3936;109:5
+                name: Rectangle 1
+                type: RECTANGLE
+                layout: layout_ZRB2O6
+                fills: '6'
+              - id: I414:3936;186:1066
+                name: Frame 2131328720
+                type: FRAME
+                layout: layout_CEBR3U
+                children:
+                  - id: I414:3936;109:6
+                    name: Frame 59
+                    type: FRAME
+                    layout: layout_86L104
+                    children:
+                      - id: I414:3936;109:7
+                        name: Frame 47
+                        type: FRAME
+                        layout: layout_QBVIJV
+                        children:
+                          - id: I414:3936;109:8
+                            name: Русский
+                            type: TEXT
+                            layout: layout_UYEAKS
+                            text: Русский
+                            textStyle: style_82JFRC
+                            fills: '10'
+                          - id: I414:3936;109:9
+                            name: Vector 39
+                            type: IMAGE-SVG
+                            layout: layout_14APUN
+                            strokes: '10'
+                            strokeWeight: 1px
+                      - id: I414:3936;109:10
+                        name: Frame 51
+                        type: FRAME
+                        layout: layout_RTR7K0
+                        children:
+                          - id: I414:3936;109:11
+                            name: iconamoon:eye-thin
+                            type: IMAGE-SVG
+                            layout: layout_EEN2C5
+                            fills: '9'
+                          - id: I414:3936;109:15
+                            name: Версия для слабовидящих
+                            type: TEXT
+                            layout: layout_UYEAKS
+                            text: Версия для слабовидящих
+                            textStyle: style_82JFRC
+                            fills: '10'
+                      - id: I414:3936;143:981
+                        name: Frame 53
+                        type: FRAME
+                        layout: layout_RTR7K0
+                        children:
+                          - id: I414:3936;143:982
+                            name: bx:map-pin
+                            type: IMAGE-SVG
+                            layout: layout_EEN2C5
+                            fills: '9'
+                          - id: I414:3936;143:986
+                            name: Карта сайта
+                            type: TEXT
+                            layout: layout_UYEAKS
+                            text: Карта сайта
+                            textStyle: style_82JFRC
+                            fills: '10'
+                  - id: I414:3936;143:1122
+                    name: Frame 2131328705
+                    type: FRAME
+                    layout: layout_GRAB70
+                    fills: '9'
+                    borderRadius: 25px
+                    children:
+                      - id: I414:3936;109:18
+                        name: Frame 53
+                        type: FRAME
+                        layout: layout_L91OEI
+                        children:
+                          - id: I414:3936;109:19
+                            name: fluent:sparkle-28-filled
+                            type: IMAGE-SVG
+                            layout: layout_MGUJZI
+                            fills: '9'
+                          - id: I414:3936;109:21
+                            name: "Имплантация\_за 3750 ₽/мес."
+                            type: TEXT
+                            layout: layout_UYEAKS
+                            text: "Имплантация\_за 3750 ₽/мес."
+                            textStyle: style_82JFRC
+                            fills: '4'
+                  - id: I414:3936;109:22
+                    name: Frame 56
+                    type: IMAGE-SVG
+                    layout: layout_RAIH3B
+          - id: I414:3936;109:47
+            name: Frame 65
+            type: FRAME
+            layout: layout_NS7K4I
+            fills: '9'
+            effects: effect_85DJW7
+            children:
+              - id: I414:3936;109:48
+                name: Group 1
+                type: GROUP
+                layout: layout_GOSIMS
+                children:
+                  - id: I414:3936;109:49
+                    name: УниДент
+                    type: TEXT
+                    layout: layout_63HPTS
+                    text: УниДент
+                    textStyle: style_UR08LT
+                    fills: '4'
+                  - id: I414:3936;109:50
+                    name: Vector
+                    type: IMAGE-SVG
+                    layout: layout_OYKIGH
+                    fills: '5'
+              - id: I414:3936;109:51
+                name: Frame 46
+                type: FRAME
+                layout: layout_82YVJ4
+                children:
+                  - id: I414:3936;109:52
+                    name: Frame 47
+                    type: FRAME
+                    layout: layout_QBVIJV
+                    children:
+                      - id: I414:3936;109:53
+                        name: Frame 66
+                        type: IMAGE-SVG
+                        layout: layout_6RV3JS
+                      - id: I414:3936;109:58
+                        name: Услуги
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Услуги
+                        textStyle: style_UGI133
+                        fills: '4'
+                  - id: I414:3936;109:59
+                    name: Frame 49
+                    type: FRAME
+                    layout: layout_QBVIJV
+                    children:
+                      - id: I414:3936;109:60
+                        name: О клинике
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: О клинике
+                        textStyle: style_UGI133
+                        fills: '4'
+                      - id: I414:3936;109:61
+                        name: Vector 39
+                        type: IMAGE-SVG
+                        layout: layout_14APUN
+                        fills: '4'
+                        strokes: '4'
+                        strokeWeight: 1px
+                  - id: I414:3936;109:62
+                    name: Врачи
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: Врачи
+                    textStyle: style_UGI133
+                    fills: '4'
+                  - id: I414:3936;109:63
+                    name: Frame 50
+                    type: FRAME
+                    layout: layout_QBVIJV
+                    children:
+                      - id: I414:3936;109:64
+                        name: Акции
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Акции
+                        textStyle: style_UGI133
+                        fills: '4'
+                      - id: I414:3936;109:65
+                        name: Frame 66
+                        type: FRAME
+                        layout: layout_6RV3JS
+                        children:
+                          - id: I414:3936;109:66
+                            name: Frame 68
+                            type: FRAME
+                            layout: layout_ZJP5WV
+                            children:
+                              - id: I414:3936;109:67
+                                name: Frame 2131328540
+                                type: FRAME
+                                layout: layout_R407FK
+                                fills: '3'
+                                borderRadius: 7.6068115234375px
+                                children:
+                                  - id: I414:3936;109:68
+                                    name: '3'
+                                    type: TEXT
+                                    layout: layout_UYEAKS
+                                    text: '3'
+                                    textStyle: style_176I18
+                                    fills: '9'
+                  - id: I414:3936;109:69
+                    name: Кейсы
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: Кейсы
+                    textStyle: style_UGI133
+                    fills: '4'
+                  - id: I414:3936;109:70
+                    name: Цены
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: Цены
+                    textStyle: style_UGI133
+                    fills: '4'
+                  - id: I414:3936;109:71
+                    name: Frame 51
+                    type: FRAME
+                    layout: layout_GYX4MM
+                    children:
+                      - id: I414:3936;109:72
+                        name: Отзывы
+                        type: TEXT
+                        layout: layout_2E7FT3
+                        text: Отзывы
+                        textStyle: style_UGI133
+                        fills: '4'
+                      - id: I414:3936;109:73
+                        name: Frame 66
+                        type: FRAME
+                        layout: layout_E2QZ8B
+                        children:
+                          - id: I414:3936;109:74
+                            name: Frame 68
+                            type: FRAME
+                            layout: layout_WU0U1Y
+                            children:
+                              - id: I414:3936;109:75
+                                name: Frame 2131328540
+                                type: FRAME
+                                layout: layout_PW6WC7
+                                borderRadius: 7.6068115234375px
+                                children:
+                                  - id: I414:3936;109:76
+                                    name: '1294'
+                                    type: TEXT
+                                    layout: layout_UYEAKS
+                                    text: '1294'
+                                    textStyle: style_SCBZDZ
+                                    fills: '3'
+                  - id: I414:3936;109:77
+                    name: Frame 48
+                    type: FRAME
+                    layout: layout_QBVIJV
+                    children:
+                      - id: I414:3936;109:78
+                        name: Пациентам
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Пациентам
+                        textStyle: style_UGI133
+                        fills: '4'
+                      - id: I414:3936;109:79
+                        name: Vector 39
+                        type: IMAGE-SVG
+                        layout: layout_14APUN
+                        fills: '4'
+                        strokes: '4'
+                        strokeWeight: 1px
+                  - id: I414:3936;109:80
+                    name: Контакты
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: Контакты
+                    textStyle: style_UGI133
+                    fills: '4'
+              - id: I414:3936;109:81
+                name: Frame 52
+                type: FRAME
+                layout: layout_UU6QQW
+                fills: fill_DQZKAQ
+                borderRadius: 27px
+                children:
+                  - id: I414:3936;109:82
+                    name: mynaui:search
+                    type: IMAGE-SVG
+                    layout: layout_EEN2C5
+                    fills: '9'
+                  - id: I414:3936;109:84
+                    name: Имплантация зубов...
+                    type: TEXT
+                    layout: layout_UR86UI
+                    text: Имплантация зубов...
+                    textStyle: style_LM7CMC
+                    fills: '10'
+              - id: I414:3936;109:85
+                name: Vector 43
+                type: IMAGE-SVG
+                layout: layout_SU4951
+                strokes: '10'
+                strokeWeight: 1px
+                opacity: 0.20000000298023224
+              - id: I414:3936;109:86
+                name: Frame 74
+                type: FRAME
+                layout: layout_7JRR2B
+                children:
+                  - id: I414:3936;109:87
+                    name: Frame 73
+                    type: FRAME
+                    layout: layout_HMMOMW
+                    children:
+                      - id: I414:3936;109:88
+                        name: Frame 70
+                        type: IMAGE-SVG
+                        layout: layout_SCYQT6
+                        fills: '9'
+                        strokes: '8'
+                        strokeWeight: 1px
+                        borderRadius: 52px
+                      - id: I414:3936;109:92
+                        name: Frame 69
+                        type: FRAME
+                        layout: layout_ECG4E3
+                        children:
+                          - id: I414:3936;109:93
+                            name: 3 клиники рядом с метро
+                            type: TEXT
+                            layout: layout_NDQFTC
+                            text: 3 клиники рядом с метро
+                            textStyle: style_UGI133
+                            fills: '4'
+                          - id: I414:3936;109:94
+                            name: Схема проезда
+                            type: TEXT
+                            layout: layout_JGM7BS
+                            text: Схема проезда
+                            textStyle: style_MFVC6B
+                            fills: fill_YU79HO
+                  - id: I414:3936;109:95
+                    name: Frame 71
+                    type: FRAME
+                    layout: layout_HMMOMW
+                    children:
+                      - id: I414:3936;109:96
+                        name: Frame 70
+                        type: IMAGE-SVG
+                        layout: layout_SCYQT6
+                        fills: '9'
+                        strokes: '8'
+                        strokeWeight: 1px
+                        borderRadius: 52px
+                      - id: I414:3936;109:99
+                        name: Frame 69
+                        type: FRAME
+                        layout: layout_E8A67V
+                        children:
+                          - id: I414:3936;109:100
+                            name: 8 999 999-99-99
+                            type: TEXT
+                            layout: layout_R2ZEU3
+                            text: 8 999 999-99-99
+                            textStyle: style_UGI133
+                            fills: '4'
+                          - id: I414:3936;109:101
+                            name: Ежедневно с 8:00 до 10:00
+                            type: TEXT
+                            layout: layout_R2ZEU3
+                            text: Ежедневно с 8:00 до 10:00
+                            textStyle: style_MFVC6B
+                            fills: fill_YU79HO
+                  - id: I414:3936;109:102
+                    name: Frame 74
+                    type: FRAME
+                    layout: layout_HMMOMW
+                    children:
+                      - id: I414:3936;109:103
+                        name: Frame 70
+                        type: IMAGE-SVG
+                        layout: layout_SCYQT6
+                        fills: '9'
+                        strokes: '8'
+                        strokeWeight: 1px
+                        borderRadius: 52px
+                      - id: I414:3936;109:106
+                        name: Frame 2131328542
+                        type: FRAME
+                        layout: layout_8US9ZJ
+                        children:
+                          - id: I414:3936;109:107
+                            name: Frame 2131328543
+                            type: FRAME
+                            layout: layout_KCOIU6
+                            children:
+                              - id: I414:3936;109:108
+                                name: Frame 69
+                                type: FRAME
+                                layout: layout_UYCWQD
+                                children:
+                                  - id: I414:3936;109:109
+                                    name: 10:00 - 22:00
+                                    type: TEXT
+                                    layout: layout_UYEAKS
+                                    text: 10:00 - 22:00
+                                    textStyle: style_UGI133
+                                    fills: '4'
+                                  - id: I414:3936;109:110
+                                    name: Пн-Сб
+                                    type: TEXT
+                                    layout: layout_UYEAKS
+                                    text: Пн-Сб
+                                    textStyle: style_MFVC6B
+                                    fills: fill_YU79HO
+                              - id: I414:3936;109:111
+                                name: Frame 71
+                                type: FRAME
+                                layout: layout_L91OEI
+                                children:
+                                  - id: I414:3936;109:112
+                                    name: 9:00 - 16:00
+                                    type: TEXT
+                                    layout: layout_UYEAKS
+                                    text: 9:00 - 16:00
+                                    textStyle: style_UGI133
+                                    fills: '4'
+                                  - id: I414:3936;109:113
+                                    name: Вс
+                                    type: TEXT
+                                    layout: layout_UYEAKS
+                                    text: Вс
+                                    textStyle: style_MFVC6B
+                                    fills: fill_YU79HO
+                  - id: I414:3936;109:114
+                    name: Frame 54
+                    type: FRAME
+                    layout: layout_UAKRLH
+                    fills: '3'
+                    borderRadius: 15px
+                    children:
+                      - id: I414:3936;109:115
+                        name: Связаться с нами
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Связаться с нами
+                        textStyle: style_LM7CMC
+                        fills: '9'
+              - id: I414:3936;109:116
+                name: Group 380280
+                type: GROUP
+                layout: layout_CKZI0C
+                children:
+                  - id: I414:3936;109:117
+                    name: Group 49151
+                    type: IMAGE-SVG
+                    layout: layout_I4X3BL
+                  - id: I414:3936;109:132
+                    name: 5,0
+                    type: TEXT
+                    layout: layout_2BO2OE
+                    text: 5,0
+                    textStyle: style_8CSYK9
+                    fills: '4'
+      - id: '414:3937'
+        name: Breadcumbs
+        type: FRAME
+        layout: layout_5ALE62
+        children:
+          - id: '414:3938'
+            name: Frame 2131328722
+            type: FRAME
+            layout: layout_BZMC1S
+            opacity: 0.5
+            children:
+              - id: '414:3939'
+                name: Главная
+                type: TEXT
+                layout: layout_UYEAKS
+                text: Главная
+                textStyle: style_MFVC6B
+                fills: '4'
+              - id: '414:3940'
+                name: Frame 2131328721
+                type: IMAGE-SVG
+                layout: layout_XMPWTP
+              - id: '414:3942'
+                name: Блог
+                type: TEXT
+                layout: layout_UYEAKS
+                text: Блог
+                textStyle: style_MFVC6B
+                fills: '4'
+      - id: '414:3943'
+        name: Frame 2131328757
+        type: FRAME
+        layout: layout_K9B3DD
+        children:
+          - id: '414:3944'
+            name: Блог
+            type: TEXT
+            layout: layout_IKDN9K
+            text: Блог
+            textStyle: H2
+            fills: '4'
+      - id: '414:3945'
+        name: footer
+        type: INSTANCE
+        layout: layout_1ANOE2
+        fills: fill_77XOIH
+        effects: effect_85DJW7
+        componentId: '131:1618'
+        children:
+          - id: I414:3945;95:1227
+            name: Group 1
+            type: GROUP
+            layout: layout_7NJIPW
+            children:
+              - id: I414:3945;95:1228
+                name: УниДент
+                type: TEXT
+                layout: layout_63HPTS
+                text: УниДент
+                textStyle: style_UR08LT
+                fills: '9'
+              - id: I414:3945;95:1229
+                name: Vector
+                type: IMAGE-SVG
+                layout: layout_OYKIGH
+                fills: '9'
+          - id: I414:3945;95:1230
+            name: Frame 46
+            type: FRAME
+            layout: layout_VCP8YG
+            children:
+              - id: I414:3945;95:1231
+                name: Frame 47
+                type: FRAME
+                layout: layout_QBVIJV
+                children:
+                  - id: I414:3945;95:1232
+                    name: Frame 66
+                    type: IMAGE-SVG
+                    layout: layout_6RV3JS
+                  - id: I414:3945;95:1237
+                    name: Услуги
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: Услуги
+                    textStyle: style_UGI133
+                    fills: '9'
+              - id: I414:3945;95:1238
+                name: Frame 49
+                type: FRAME
+                layout: layout_QBVIJV
+                children:
+                  - id: I414:3945;95:1239
+                    name: О клинике
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: О клинике
+                    textStyle: style_UGI133
+                    fills: '9'
+                  - id: I414:3945;95:1240
+                    name: Vector 39
+                    type: IMAGE-SVG
+                    layout: layout_14APUN
+                    fills: '9'
+                    strokes: '9'
+                    strokeWeight: 1px
+              - id: I414:3945;95:1241
+                name: Врачи
+                type: TEXT
+                layout: layout_UYEAKS
+                text: Врачи
+                textStyle: style_UGI133
+                fills: '9'
+              - id: I414:3945;95:1242
+                name: Frame 50
+                type: FRAME
+                layout: layout_QBVIJV
+                children:
+                  - id: I414:3945;95:1243
+                    name: Акции
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: Акции
+                    textStyle: style_UGI133
+                    fills: '9'
+              - id: I414:3945;95:1248
+                name: Кейсы
+                type: TEXT
+                layout: layout_UYEAKS
+                text: Кейсы
+                textStyle: style_UGI133
+                fills: '9'
+          - id: I414:3945;96:379
+            name: Frame 2131328630
+            type: FRAME
+            layout: layout_HG9ZPE
+            children:
+              - id: I414:3945;95:1249
+                name: Цены
+                type: TEXT
+                layout: layout_R2ZEU3
+                text: Цены
+                textStyle: style_UGI133
+                fills: '9'
+              - id: I414:3945;95:1250
+                name: Frame 51
+                type: FRAME
+                layout: layout_GYX4MM
+                children:
+                  - id: I414:3945;95:1251
+                    name: Отзывы
+                    type: TEXT
+                    layout: layout_2E7FT3
+                    text: Отзывы
+                    textStyle: style_UGI133
+                    fills: '9'
+              - id: I414:3945;95:1256
+                name: Frame 48
+                type: FRAME
+                layout: layout_FLVRLI
+                children:
+                  - id: I414:3945;95:1257
+                    name: Пациентам
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: Пациентам
+                    textStyle: style_UGI133
+                    fills: '9'
+                  - id: I414:3945;95:1258
+                    name: Vector 39
+                    type: IMAGE-SVG
+                    layout: layout_14APUN
+                    fills: '9'
+                    strokes: '9'
+                    strokeWeight: 1px
+              - id: I414:3945;95:1259
+                name: Контакты
+                type: TEXT
+                layout: layout_R2ZEU3
+                text: Контакты
+                textStyle: style_UGI133
+                fills: '9'
+          - id: I414:3945;131:856
+            name: Frame 2131328667
+            type: FRAME
+            layout: layout_WHLP4S
+            children:
+              - id: I414:3945;95:1265
+                name: Frame 74
+                type: FRAME
+                layout: layout_1GGLUF
+                children:
+                  - id: I414:3945;95:1293
+                    name: Frame 54
+                    type: FRAME
+                    layout: layout_NBG6FC
+                    strokes: '8'
+                    strokeWeight: 1px
+                    borderRadius: 15px
+                    children:
+                      - id: I414:3945;95:1294
+                        name: Связаться с нами
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Связаться с нами
+                        textStyle: style_4712ZA
+                        fills: '9'
+              - id: I414:3945;131:853
+                name: Frame 2131328631
+                type: FRAME
+                layout: layout_1GGLUF
+                children:
+                  - id: I414:3945;131:854
+                    name: Frame 54
+                    type: FRAME
+                    layout: layout_KXR7Y1
+                    strokes: '8'
+                    strokeWeight: 1px
+                    borderRadius: 15px
+                    children:
+                      - id: I414:3945;131:855
+                        name: Записаться на прием
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Записаться на прием
+                        textStyle: style_4712ZA
+                        fills: '9'
+          - id: I414:3945;96:380
+            name: >-
+              2022 © ООО "Унидент" Сеть стоматологических клиник "Унидент" Все
+              права защищены
+            type: TEXT
+            layout: layout_8I3ATZ
+            text: |-
+              2022 © ООО "Унидент"
+              Сеть стоматологических клиник "Унидент"
+              Все права защищены
+            textStyle: style_X8WBF3
+            fills: '9'
+            opacity: 0.5
+          - id: I414:3945;131:860
+            name: >-
+              Имеются противопоказания, необходима консультация специалиста. Все
+              права защищены. Обращаем ваше внимание на то, что данный интернет
+              сайт носит исключительно информационный характер и ни при каких
+              условиях не является публичной офертой, определяемой положением
+              Статьи 437 Гражданского кодекса
+            type: TEXT
+            layout: layout_94NXVZ
+            text: >-
+              Имеются противопоказания, необходима консультация специалиста. Все
+              права защищены. Обращаем ваше внимание на то, что данный интернет
+              сайт носит исключительно информационный характер и ни при каких
+              условиях не является публичной офертой, определяемой положением
+              Статьи 437 Гражданского кодекса
+            textStyle: style_X8WBF3
+            fills: '9'
+            opacity: 0.5
+          - id: I414:3945;96:381
+            name: Политика конфиденциальности Лицензии и правовая информация
+            type: TEXT
+            layout: layout_DUZMTF
+            text: |-
+              Политика конфиденциальности
+              Лицензии и правовая информация
+            textStyle: style_X8WBF3
+            fills: '9'
+            opacity: 0.5
+          - id: I414:3945;131:857
+            name: Vector 162
+            type: IMAGE-SVG
+            layout: layout_XZTWLS
+            strokes: '10'
+            strokeWeight: 1px
+          - id: I414:3945;131:863
+            name: social media
+            type: GROUP
+            layout: layout_YVFN3J
+            children:
+              - id: I414:3945;131:894
+                name: Frame 2131328698
+                type: FRAME
+                layout: layout_M1OZK4
+                children:
+                  - id: I414:3945;96:378
+                    name: Frame 2131328629
+                    type: FRAME
+                    layout: layout_5U8XEG
+                    children:
+                      - id: I414:3945;95:1266
+                        name: Frame 73
+                        type: FRAME
+                        layout: layout_HMMOMW
+                        children:
+                          - id: I414:3945;95:1267
+                            name: Frame 70
+                            type: IMAGE-SVG
+                            layout: layout_SCYQT6
+                            fills: '2'
+                            strokes: stroke_H30YHY
+                            borderRadius: 52px
+                          - id: I414:3945;95:1271
+                            name: Frame 69
+                            type: FRAME
+                            layout: layout_ECG4E3
+                            children:
+                              - id: I414:3945;95:1272
+                                name: Адрес
+                                type: TEXT
+                                layout: layout_NDQFTC
+                                text: Адрес
+                                textStyle: style_UGI133
+                                fills: '9'
+                              - id: I414:3945;95:1273
+                                name: Схема проезда
+                                type: TEXT
+                                layout: layout_JGM7BS
+                                text: Схема проезда
+                                textStyle: style_MFVC6B
+                                fills: fill_AT9J7T
+                      - id: I414:3945;95:1274
+                        name: Frame 71
+                        type: FRAME
+                        layout: layout_HMMOMW
+                        children:
+                          - id: I414:3945;95:1275
+                            name: Frame 70
+                            type: IMAGE-SVG
+                            layout: layout_SCYQT6
+                            fills: '2'
+                            strokes: stroke_H30YHY
+                            borderRadius: 52px
+                          - id: I414:3945;95:1278
+                            name: Frame 69
+                            type: FRAME
+                            layout: layout_E8A67V
+                            children:
+                              - id: I414:3945;95:1279
+                                name: 8 999 999-99-99
+                                type: TEXT
+                                layout: layout_R2ZEU3
+                                text: 8 999 999-99-99
+                                textStyle: style_UGI133
+                                fills: '9'
+                              - id: I414:3945;95:1280
+                                name: Ежедневно с 8:00 до 10:00
+                                type: TEXT
+                                layout: layout_R2ZEU3
+                                text: Ежедневно с 8:00 до 10:00
+                                textStyle: style_MFVC6B
+                                fills: fill_AT9J7T
+                      - id: I414:3945;95:1281
+                        name: Frame 74
+                        type: FRAME
+                        layout: layout_HMMOMW
+                        children:
+                          - id: I414:3945;95:1282
+                            name: Frame 70
+                            type: IMAGE-SVG
+                            layout: layout_SCYQT6
+                            fills: '2'
+                            strokes: stroke_H30YHY
+                            borderRadius: 52px
+                          - id: I414:3945;95:1285
+                            name: Frame 2131328542
+                            type: FRAME
+                            layout: layout_8US9ZJ
+                            children:
+                              - id: I414:3945;95:1286
+                                name: Frame 2131328543
+                                type: FRAME
+                                layout: layout_KCOIU6
+                                children:
+                                  - id: I414:3945;95:1287
+                                    name: Frame 69
+                                    type: FRAME
+                                    layout: layout_UYCWQD
+                                    children:
+                                      - id: I414:3945;95:1288
+                                        name: 10:00 - 22:00
+                                        type: TEXT
+                                        layout: layout_UYEAKS
+                                        text: 10:00 - 22:00
+                                        textStyle: style_UGI133
+                                        fills: '9'
+                                      - id: I414:3945;95:1289
+                                        name: Пн-Сб
+                                        type: TEXT
+                                        layout: layout_UYEAKS
+                                        text: Пн-Сб
+                                        textStyle: style_MFVC6B
+                                        fills: fill_AT9J7T
+                                  - id: I414:3945;95:1290
+                                    name: Frame 71
+                                    type: FRAME
+                                    layout: layout_L91OEI
+                                    children:
+                                      - id: I414:3945;95:1291
+                                        name: 9:00 - 16:00
+                                        type: TEXT
+                                        layout: layout_UYEAKS
+                                        text: 9:00 - 16:00
+                                        textStyle: style_UGI133
+                                        fills: '9'
+                                      - id: I414:3945;95:1292
+                                        name: Вс
+                                        type: TEXT
+                                        layout: layout_UYEAKS
+                                        text: Вс
+                                        textStyle: style_MFVC6B
+                                        fills: fill_AT9J7T
+                  - id: I414:3945;131:893
+                    name: Frame 2131328697
+                    type: IMAGE-SVG
+                    layout: layout_3WRU4C
+      - id: '414:3946'
+        name: Button
+        type: FRAME
+        layout: layout_0133NG
+        strokes: '3'
+        strokeWeight: 1px
+        borderRadius: 15px
+        children:
+          - id: '414:3947'
+            name: streamline-ultimate:loading-bold
+            type: IMAGE-SVG
+            layout: layout_8Y3VO4
+            fills: '9'
+          - id: '414:3949'
+            name: Загрузить больше
+            type: TEXT
+            layout: layout_UYEAKS
+            text: Загрузить больше
+            textStyle: style_4712ZA
+            fills: '3'
+      - id: '414:3950'
+        name: tags
+        type: FRAME
+        layout: layout_62CIV4
+        children:
+          - id: '414:3951'
+            name: Button
+            type: FRAME
+            layout: layout_BB33UE
+            fills: '3'
+            borderRadius: 15px
+            children:
+              - id: '414:3952'
+                name: Все статьи
+                type: TEXT
+                layout: layout_21GX5D
+                text: Все статьи
+                textStyle: style_LM7CMC
+                fills: '9'
+          - id: '414:3953'
+            name: Button
+            type: FRAME
+            layout: layout_LH7UAG
+            fills: '6'
+            borderRadius: 15px
+            children:
+              - id: '414:3954'
+                name: Имплантация
+                type: TEXT
+                layout: layout_FP46WB
+                text: Имплантация
+                textStyle: style_KHFIK2
+                fills: '10'
+          - id: '414:3955'
+            name: Button
+            type: FRAME
+            layout: layout_LH7UAG
+            fills: '6'
+            borderRadius: 15px
+            children:
+              - id: '414:3956'
+                name: Диагностика
+                type: TEXT
+                layout: layout_FP46WB
+                text: Диагностика
+                textStyle: style_KHFIK2
+                fills: '10'
+          - id: '414:3957'
+            name: Button
+            type: FRAME
+            layout: layout_LH7UAG
+            fills: '6'
+            borderRadius: 15px
+            children:
+              - id: '414:3958'
+                name: Имплантация
+                type: TEXT
+                layout: layout_FP46WB
+                text: Имплантация
+                textStyle: style_KHFIK2
+                fills: '10'
+          - id: '414:3959'
+            name: Button
+            type: FRAME
+            layout: layout_LH7UAG
+            fills: '6'
+            borderRadius: 15px
+            children:
+              - id: '414:3960'
+                name: Диагностика
+                type: TEXT
+                layout: layout_FP46WB
+                text: Диагностика
+                textStyle: style_KHFIK2
+                fills: '10'
+      - id: '414:4364'
+        name: Frame 2131328474
+        type: FRAME
+        layout: layout_ZF05FJ
+        children:
+          - id: '414:4365'
+            name: article_card
+            type: INSTANCE
+            layout: layout_V6GFTJ
+            fills: '2'
+            borderRadius: 25px
+            componentId: '125:689'
+            children:
+              - id: I414:4365;95:2636
+                name: card
+                type: FRAME
+                layout: layout_SVT0CS
+                borderRadius: 22.953048706054688px
+              - id: I414:4365;125:686
+                name: image
+                type: RECTANGLE
+                layout: layout_53MVAD
+                fills: fill_F5WNR6
+              - id: I414:4365;124:888
+                name: text
+                type: FRAME
+                layout: layout_8DQALB
+                children:
+                  - id: I414:4365;95:2638
+                    name: Виды имплантации зубов - трактат об имплантации
+                    type: TEXT
+                    layout: layout_2QRMEF
+                    text: Виды имплантации зубов - трактат об имплантации
+                    textStyle: style_OBOERL
+                    fills: '9'
+                  - id: I414:4365;95:2640
+                    name: 25.05.2025
+                    type: TEXT
+                    layout: layout_SBTVIW
+                    text: 25.05.2025
+                    textStyle: style_QN7R50
+                    fills: '9'
+              - id: I414:4365;95:2641
+                name: tags
+                type: FRAME
+                layout: layout_TEUGMH
+                children:
+                  - id: I414:4365;95:2642
+                    name: Frame 266
+                    type: FRAME
+                    layout: layout_UQNWRI
+                    fills: '9'
+                    borderRadius: 10px
+                    children:
+                      - id: I414:4365;95:2643
+                        name: Имплантация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Имплантация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+                  - id: I414:4365;95:2644
+                    name: Frame 267
+                    type: FRAME
+                    layout: layout_Q05VQ2
+                    fills: '9'
+                    borderRadius: 10px
+                    children:
+                      - id: I414:4365;95:2645
+                        name: Седация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Седация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+          - id: '414:4366'
+            name: article_card
+            type: FRAME
+            layout: layout_V6GFTJ
+            fills: '8'
+            borderRadius: 25px
+            children:
+              - id: '414:4367'
+                name: card
+                type: FRAME
+                layout: layout_SVT0CS
+                borderRadius: 22.953048706054688px
+                children:
+                  - id: '414:4368'
+                    name: Frame 2131328646
+                    type: FRAME
+                    layout: layout_OIHULH
+                    children:
+                      - id: '414:4369'
+                        name: Frame 2131328637
+                        type: FRAME
+                        layout: layout_94DSGM
+                        children:
+                          - id: '414:4370'
+                            name: doctor
+                            type: IMAGE-SVG
+                            layout: layout_OK9Y77
+                            fills: '9'
+                            borderRadius: 117.97684478759766px
+                          - id: '414:4372'
+                            name: Frame 2131328636
+                            type: FRAME
+                            layout: layout_KE3TJ3
+                            children:
+                              - id: '414:4373'
+                                name: Отвечает врач
+                                type: TEXT
+                                layout: layout_R2ZEU3
+                                text: Отвечает врач
+                                textStyle: style_H3C7ZB
+                                fills: '4'
+                              - id: '414:4374'
+                                name: Любимов Павел Олегович
+                                type: TEXT
+                                layout: layout_R2ZEU3
+                                text: Любимов Павел Олегович
+                                textStyle: style_5XJ7XT
+                                fills: '4'
+              - id: '414:4381'
+                name: text
+                type: FRAME
+                layout: layout_ZG4X1Q
+                children:
+                  - id: '414:4382'
+                    name: Виды имплантации зубов - трактат об имплантации
+                    type: TEXT
+                    layout: layout_2QRMEF
+                    text: Виды имплантации зубов - трактат об имплантации
+                    textStyle: style_OBOERL
+                    fills: '4'
+                  - id: '414:4383'
+                    name: 25.05.2025
+                    type: TEXT
+                    layout: layout_SBTVIW
+                    text: 25.05.2025
+                    textStyle: style_QN7R50
+                    fills: '4'
+              - id: '414:4384'
+                name: tags
+                type: FRAME
+                layout: layout_TEUGMH
+                children:
+                  - id: '414:4385'
+                    name: Frame 266
+                    type: FRAME
+                    layout: layout_UQNWRI
+                    fills: '9'
+                    borderRadius: 44.98797607421875px
+                    children:
+                      - id: '414:4386'
+                        name: Имплантация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Имплантация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+          - id: '414:4387'
+            name: article_card
+            type: INSTANCE
+            layout: layout_V6GFTJ
+            fills: '7'
+            borderRadius: 25px
+            componentId: '125:689'
+            children:
+              - id: I414:4387;95:2636
+                name: card
+                type: FRAME
+                layout: layout_SVT0CS
+                borderRadius: 22.953048706054688px
+              - id: I414:4387;125:686
+                name: image
+                type: RECTANGLE
+                layout: layout_53MVAD
+                fills: fill_QV5AYA
+              - id: I414:4387;124:888
+                name: text
+                type: FRAME
+                layout: layout_8DQALB
+                children:
+                  - id: I414:4387;95:2638
+                    name: Виды имплантации зубов - трактат об имплантации
+                    type: TEXT
+                    layout: layout_2QRMEF
+                    text: Виды имплантации зубов - трактат об имплантации
+                    textStyle: style_OBOERL
+                    fills: '4'
+                  - id: I414:4387;95:2640
+                    name: 25.05.2025
+                    type: TEXT
+                    layout: layout_SBTVIW
+                    text: 25.05.2025
+                    textStyle: style_QN7R50
+                    fills: '4'
+              - id: I414:4387;95:2641
+                name: tags
+                type: FRAME
+                layout: layout_TEUGMH
+                children:
+                  - id: I414:4387;95:2642
+                    name: Frame 266
+                    type: FRAME
+                    layout: layout_UQNWRI
+                    fills: '9'
+                    borderRadius: 10px
+                    children:
+                      - id: I414:4387;95:2643
+                        name: Имплантация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Имплантация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+                  - id: I414:4387;95:2644
+                    name: Frame 267
+                    type: FRAME
+                    layout: layout_Q05VQ2
+                    fills: '9'
+                    borderRadius: 10px
+                    children:
+                      - id: I414:4387;95:2645
+                        name: Седация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Седация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+          - id: '414:4439'
+            name: article_card
+            type: FRAME
+            layout: layout_V6GFTJ
+            fills: '8'
+            borderRadius: 25px
+            children:
+              - id: '414:4440'
+                name: card
+                type: FRAME
+                layout: layout_SVT0CS
+                borderRadius: 22.953048706054688px
+                children:
+                  - id: '414:4441'
+                    name: Frame 2131328646
+                    type: FRAME
+                    layout: layout_OIHULH
+                    children:
+                      - id: '414:4442'
+                        name: Frame 2131328637
+                        type: FRAME
+                        layout: layout_94DSGM
+                        children:
+                          - id: '414:4443'
+                            name: doctor
+                            type: IMAGE-SVG
+                            layout: layout_OK9Y77
+                            fills: '9'
+                            borderRadius: 117.97684478759766px
+                          - id: '414:4445'
+                            name: Frame 2131328636
+                            type: FRAME
+                            layout: layout_KE3TJ3
+                            children:
+                              - id: '414:4446'
+                                name: Отвечает врач
+                                type: TEXT
+                                layout: layout_R2ZEU3
+                                text: Отвечает врач
+                                textStyle: style_H3C7ZB
+                                fills: '4'
+                              - id: '414:4447'
+                                name: Любимов Павел Олегович
+                                type: TEXT
+                                layout: layout_R2ZEU3
+                                text: Любимов Павел Олегович
+                                textStyle: style_5XJ7XT
+                                fills: '4'
+              - id: '414:4454'
+                name: text
+                type: FRAME
+                layout: layout_ZG4X1Q
+                children:
+                  - id: '414:4455'
+                    name: Виды имплантации зубов - трактат об имплантации
+                    type: TEXT
+                    layout: layout_2QRMEF
+                    text: Виды имплантации зубов - трактат об имплантации
+                    textStyle: style_OBOERL
+                    fills: '4'
+                  - id: '414:4456'
+                    name: 25.05.2025
+                    type: TEXT
+                    layout: layout_SBTVIW
+                    text: 25.05.2025
+                    textStyle: style_QN7R50
+                    fills: '4'
+              - id: '414:4457'
+                name: tags
+                type: FRAME
+                layout: layout_TEUGMH
+                children:
+                  - id: '414:4458'
+                    name: Frame 266
+                    type: FRAME
+                    layout: layout_UQNWRI
+                    fills: '9'
+                    borderRadius: 44.98797607421875px
+                    children:
+                      - id: '414:4459'
+                        name: Имплантация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Имплантация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+          - id: '414:4438'
+            name: article_card
+            type: INSTANCE
+            layout: layout_V6GFTJ
+            fills: '2'
+            borderRadius: 25px
+            componentId: '125:689'
+            children:
+              - id: I414:4438;95:2636
+                name: card
+                type: FRAME
+                layout: layout_SVT0CS
+                borderRadius: 22.953048706054688px
+              - id: I414:4438;125:686
+                name: image
+                type: RECTANGLE
+                layout: layout_53MVAD
+                fills: fill_F5WNR6
+              - id: I414:4438;124:888
+                name: text
+                type: FRAME
+                layout: layout_8DQALB
+                children:
+                  - id: I414:4438;95:2638
+                    name: Виды имплантации зубов - трактат об имплантации
+                    type: TEXT
+                    layout: layout_2QRMEF
+                    text: Виды имплантации зубов - трактат об имплантации
+                    textStyle: style_OBOERL
+                    fills: '9'
+                  - id: I414:4438;95:2640
+                    name: 25.05.2025
+                    type: TEXT
+                    layout: layout_SBTVIW
+                    text: 25.05.2025
+                    textStyle: style_QN7R50
+                    fills: '9'
+              - id: I414:4438;95:2641
+                name: tags
+                type: FRAME
+                layout: layout_TEUGMH
+                children:
+                  - id: I414:4438;95:2642
+                    name: Frame 266
+                    type: FRAME
+                    layout: layout_UQNWRI
+                    fills: '9'
+                    borderRadius: 10px
+                    children:
+                      - id: I414:4438;95:2643
+                        name: Имплантация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Имплантация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+                  - id: I414:4438;95:2644
+                    name: Frame 267
+                    type: FRAME
+                    layout: layout_Q05VQ2
+                    fills: '9'
+                    borderRadius: 10px
+                    children:
+                      - id: I414:4438;95:2645
+                        name: Седация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Седация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+          - id: '414:4460'
+            name: article_card
+            type: INSTANCE
+            layout: layout_V6GFTJ
+            fills: '7'
+            borderRadius: 25px
+            componentId: '125:689'
+            children:
+              - id: I414:4460;95:2636
+                name: card
+                type: FRAME
+                layout: layout_SVT0CS
+                borderRadius: 22.953048706054688px
+              - id: I414:4460;125:686
+                name: image
+                type: RECTANGLE
+                layout: layout_53MVAD
+                fills: fill_QV5AYA
+              - id: I414:4460;124:888
+                name: text
+                type: FRAME
+                layout: layout_8DQALB
+                children:
+                  - id: I414:4460;95:2638
+                    name: Виды имплантации зубов - трактат об имплантации
+                    type: TEXT
+                    layout: layout_2QRMEF
+                    text: Виды имплантации зубов - трактат об имплантации
+                    textStyle: style_OBOERL
+                    fills: '4'
+                  - id: I414:4460;95:2640
+                    name: 25.05.2025
+                    type: TEXT
+                    layout: layout_SBTVIW
+                    text: 25.05.2025
+                    textStyle: style_QN7R50
+                    fills: '4'
+              - id: I414:4460;95:2641
+                name: tags
+                type: FRAME
+                layout: layout_TEUGMH
+                children:
+                  - id: I414:4460;95:2642
+                    name: Frame 266
+                    type: FRAME
+                    layout: layout_UQNWRI
+                    fills: '9'
+                    borderRadius: 10px
+                    children:
+                      - id: I414:4460;95:2643
+                        name: Имплантация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Имплантация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+                  - id: I414:4460;95:2644
+                    name: Frame 267
+                    type: FRAME
+                    layout: layout_Q05VQ2
+                    fills: '9'
+                    borderRadius: 10px
+                    children:
+                      - id: I414:4460;95:2645
+                        name: Седация
+                        type: TEXT
+                        layout: layout_UYEAKS
+                        text: Седация
+                        textStyle: style_9KQYC4
+                        fills: '4'
+      - id: '414:4423'
+        name: article_card
+        type: FRAME
+        layout: layout_9TX3VJ
+        fills: '7'
+        borderRadius: 25px
+        children:
+          - id: '414:4425'
+            name: image
+            type: RECTANGLE
+            layout: layout_01AWWR
+            fills: fill_I5SM82
+          - id: '414:4489'
+            name: Frame 2131328766
+            type: FRAME
+            layout: layout_M94AJA
+            children:
+              - id: '414:4427'
+                name: Виды имплантации зубов - трактат об имплантации
+                type: TEXT
+                layout: layout_QAH5CU
+                text: Виды имплантации зубов - трактат об имплантации
+                textStyle: style_PHERU3
+                fills: '4'
+              - id: '414:4487'
+                name: >-
+                  Имплантация или несъемное протезирование может оказаться
+                  слишком обременительным в финансовом отношении, но каждому
+                  доступны съемные зубные протезы.
+                type: TEXT
+                layout: layout_SKO96Z
+                text: >-
+                  Имплантация или несъемное протезирование может оказаться
+                  слишком обременительным в финансовом отношении, но каждому
+                  доступны съемные зубные протезы.
+                textStyle: style_SQK9NG
+                fills: '4'
+              - id: '414:4426'
+                name: text
+                type: FRAME
+                layout: layout_NZTVGH
+                children:
+                  - id: '414:4428'
+                    name: 25.05.2025
+                    type: TEXT
+                    layout: layout_SBTVIW
+                    text: 25.05.2025
+                    textStyle: style_QN7R50
+                    fills: '4'
+              - id: '414:4482'
+                name: Button
+                type: FRAME
+                layout: layout_M8CS0L
+                fills: '3'
+                borderRadius: 15px
+                children:
+                  - id: '414:4483'
+                    name: Читать статью
+                    type: TEXT
+                    layout: layout_UYEAKS
+                    text: Читать статью
+                    textStyle: style_AQKWHA
+                    fills: '9'
+          - id: '415:4491'
+            name: Frame 2131328642
+            type: IMAGE-SVG
+            layout: layout_6GBB4N
+          - id: '417:4299'
+            name: Frame 2131328732
+            type: FRAME
+            layout: layout_RLIH4V
+            children:
+              - id: '417:4300'
+                name: Button
+                type: FRAME
+                layout: layout_OZEAY2
+                fills: '9'
+                borderRadius: 15px
+                children:
+                  - id: '417:4301'
+                    name: Имплантация
+                    type: TEXT
+                    layout: layout_DCRVRT
+                    text: Имплантация
+                    textStyle: style_JENSBZ
+                    fills: '4'
+              - id: '417:4302'
+                name: Button
+                type: FRAME
+                layout: layout_FOX0XG
+                fills: '9'
+                borderRadius: 15px
+                children:
+                  - id: '417:4303'
+                    name: Седация
+                    type: TEXT
+                    layout: layout_NDP9G6
+                    text: Седация
+                    textStyle: style_JENSBZ
+                    fills: '4'
+globalVars:
+  styles:
+    '1':
+      - '#D9E4F7'
+    '2':
+      - '#607BD4'
+    '3':
+      - '#526AC2'
+    '4':
+      - '#191E35'
+    '5':
+      - type: GRADIENT_LINEAR
+        gradient: >-
+          linear-gradient(180deg, rgba(46, 54, 93, 1) 0%, rgba(70, 85, 157, 1)
+          100%)
+    '6':
+      - '#F9F9F9'
+    '7':
+      - '#EEF3F9'
+    '8':
+      - '#F5F7F9'
+    '9':
+      - '#FFFFFF'
+    '10':
+      - '#8F8F8F'
+    layout_47NE6G:
+      mode: none
+      sizing: {}
+      dimensions:
+        width: 1440
+        height: 2598
+    layout_VMNKWZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0.29
+        'y': 1.82
+      dimensions:
+        width: 1440
+        height: 176.69
+    layout_ZRB2O6:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 1440
+        height: 50.69
+    layout_CEBR3U:
+      mode: row
+      alignItems: center
+      gap: 225px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 29
+        'y': 5.32
+    layout_86L104:
+      mode: row
+      alignItems: center
+      gap: 28px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_QBVIJV:
+      mode: row
+      alignItems: center
+      gap: 4px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_UYEAKS:
+      mode: none
+      sizing:
+        horizontal: hug
+        vertical: hug
+    style_82JFRC:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 15
+      lineHeight: 1.1770000457763672em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_14APUN:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 6.1
+        height: 3.05
+    layout_RTR7K0:
+      mode: row
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_EEN2C5:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 25
+        height: 25
+    layout_1OZOU3:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2.08
+        'y': 5.21
+      dimensions:
+        width: 20.83
+        height: 14.58
+    layout_OZNDCG:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 7.29
+        'y': 4.17
+      dimensions:
+        width: 6.25
+        height: 6.25
+    layout_KUZ9AN:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 20.83
+        height: 14.58
+    layout_6LOLNG:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8.76
+        'y': 3.15
+      dimensions:
+        width: 7.48
+        height: 14.03
+    layout_CD2DPO:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3.15
+        'y': 11.15
+      dimensions:
+        width: 18.71
+        height: 10.7
+    layout_GRAB70:
+      mode: column
+      gap: 10px
+      padding: 5px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 254
+    layout_L91OEI:
+      mode: row
+      alignItems: center
+      alignSelf: stretch
+      gap: 5px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_MGUJZI:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 20
+        height: 20
+    layout_VKJ92F:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2.14
+        'y': 2.15
+      dimensions:
+        width: 15.72
+        height: 15.71
+    layout_RAIH3B:
+      mode: row
+      alignItems: center
+      gap: 7px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_LPDBZA:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 37
+        height: 37
+    layout_CIL7W7:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 37
+        height: 37
+    layout_4Y05EZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8.16
+        'y': 8.16
+      dimensions:
+        width: 20
+        height: 20
+    layout_LE6WY3:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.47
+        'y': 3.59
+      dimensions:
+        width: 16.75
+        height: 16.25
+    layout_QKUGKG:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 8.6
+        'y': 15.69
+      dimensions:
+        width: 0.7
+        height: 0.56
+    layout_BIPVZO:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 16.75
+        height: 14.31
+    layout_QG28ZY:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.67
+        'y': 1.67
+      dimensions:
+        width: 16.67
+        height: 16.67
+    layout_ZI45RA:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.25
+        'y': 5
+      dimensions:
+        width: 17.37
+        height: 10.32
+    layout_NS7K4I:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 50.69
+      dimensions:
+        width: 1440
+        height: 126
+    effect_85DJW7:
+      boxShadow: 0px 4px 51.099998474121094px 0px rgba(181, 181, 181, 0.19)
+    layout_GOSIMS:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 30
+        'y': 16.23
+      dimensions:
+        width: 140.02
+        height: 34
+    layout_63HPTS:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 29.02
+        'y': 0
+      dimensions:
+        width: 111
+        height: 34
+    style_UR08LT:
+      fontFamily: Gilroy
+      fontWeight: 600
+      fontSize: 28.139101028442383
+      lineHeight: 1.1929999560089264em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_OYKIGH:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 5.65
+      dimensions:
+        width: 22.7
+        height: 21.35
+    layout_82YVJ4:
+      mode: row
+      alignItems: center
+      gap: 40px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 30
+        'y': 85.47
+    layout_6RV3JS:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 19
+        height: 19
+    layout_2SAGRZ:
+      mode: column
+      alignItems: flex-end
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 0
+        'y': 4.5
+      dimensions:
+        width: 18.37
+    layout_PM265R:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 18.37
+        height: 0
+    layout_VEP4Y8:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 15.01
+        height: 0
+    layout_O51TPG:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 8.87
+        height: 0
+    style_UGI133:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 18
+      lineHeight: 1.1770000457763672em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_ZJP5WV:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2.92
+        'y': 2.92
+      dimensions:
+        width: 13.16
+        height: 13.16
+    layout_R407FK:
+      mode: column
+      justifyContent: center
+      alignItems: center
+      gap: 10px
+      padding: 2px 3px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      locationRelativeToParent:
+        x: -1.03
+        'y': -1.03
+      dimensions:
+        width: 15.21
+        height: 15.21
+    style_176I18:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 9.1800537109375
+      lineHeight: 1.1770000864327221em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_GYX4MM:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 98
+        height: 21
+    layout_2E7FT3:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 63
+        height: 21
+    layout_E2QZ8B:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 71.9
+        'y': -9.5
+      dimensions:
+        width: 32
+        height: 19
+    layout_WU0U1Y:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2.9
+        'y': 3.24
+      dimensions:
+        width: 38
+        height: 13
+    layout_PW6WC7:
+      mode: column
+      justifyContent: center
+      alignItems: center
+      gap: 10px
+      padding: 2px 3px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      locationRelativeToParent:
+        x: -0.9
+        'y': -1.19
+      dimensions:
+        width: 20
+        height: 15
+    style_SCBZDZ:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 12
+      lineHeight: 1.1770000457763672em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_UU6QQW:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      locationRelativeToParent:
+        x: 1111
+        'y': 74.03
+      dimensions:
+        width: 301
+        height: 44
+    fill_DQZKAQ:
+      - '#F5F7F9'
+    layout_1N3U88:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 4.17
+        'y': 4.17
+      dimensions:
+        width: 16.64
+        height: 16.67
+    layout_UR86UI:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 241.14
+    style_LM7CMC:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 16
+      lineHeight: 1.1770000457763672em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_SU4951:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 63.9
+      dimensions:
+        width: 1440
+        height: 0
+    layout_7JRR2B:
+      mode: row
+      alignItems: center
+      gap: 38px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 407
+        'y': 7.73
+    layout_HMMOMW:
+      mode: row
+      alignItems: center
+      gap: 11px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_SCYQT6:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 38
+        height: 38
+    layout_CUMX1Z:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 6.98
+        'y': 6.98
+      dimensions:
+        width: 24.04
+        height: 24.04
+    layout_HQCRSB:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3.76
+        'y': 1.5
+      dimensions:
+        width: 16.53
+        height: 21.04
+    layout_KE2232:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 9.02
+        'y': 6.76
+      dimensions:
+        width: 6.01
+        height: 6.01
+    layout_ECG4E3:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 229
+        height: 39
+    layout_NDQFTC:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 228.98
+        height: 21
+    layout_JGM7BS:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 23
+      dimensions:
+        width: 180
+        height: 16
+    style_MFVC6B:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 14
+      lineHeight: 1.1770000457763672em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    fill_YU79HO:
+      - rgba(20, 41, 78, 0.35)
+    layout_N2IZ1B:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 3.03
+        'y': 3.02
+      dimensions:
+        width: 18
+        height: 17.99
+    layout_E8A67V:
+      mode: column
+      gap: 2px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 180
+    layout_R2ZEU3:
+      mode: none
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_TAZ3H1:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2
+        'y': 2
+      dimensions:
+        width: 20.03
+        height: 20.03
+    layout_8US9ZJ:
+      mode: row
+      alignItems: center
+      gap: 8px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_KCOIU6:
+      mode: column
+      justifyContent: center
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 154
+    layout_UYCWQD:
+      mode: row
+      alignItems: center
+      gap: 2px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 109
+    layout_UAKRLH:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 181
+        height: 44
+    layout_CKZI0C:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 225.55
+        'y': 11.73
+      dimensions:
+        width: 143.46
+        height: 40
+    layout_I4X3BL:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 58.14
+        'y': 5.16
+      dimensions:
+        width: 85.32
+        height: 32.06
+    layout_C1KYY6:
+      mode: row
+      alignItems: center
+      gap: 1.5018411874771118px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+    layout_56H2NF:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 9.82
+        height: 9.82
+    layout_CDBG40:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 15.25
+      dimensions:
+        width: 85.32
+        height: 16.81
+    layout_P37YUJ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': -0.0
+      dimensions:
+        width: 85.32
+        height: 16.81
+    layout_6VVUXR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': -0.0
+      dimensions:
+        width: 17.15
+        height: 16.36
+    fill_VK51OJ:
+      - '#FF3334'
+    layout_QC7SY9:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 4.51
+        'y': 3.54
+      dimensions:
+        width: 6.77
+        height: 9.73
+    layout_IO31XL:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 19.86
+        'y': 0
+      dimensions:
+        width: 13.54
+        height: 16.36
+    fill_UM7951:
+      - '#DF0202'
+    layout_ZZI8IM:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 24.38
+        'y': 4.42
+      dimensions:
+        width: 4.97
+        height: 4.42
+    layout_YVPONR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 40.18
+        'y': 1.77
+      dimensions:
+        width: 45.14
+        height: 15.04
+    layout_2BO2OE:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 48
+        height: 40
+    style_8CSYK9:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 34.23000717163086
+      lineHeight: 1.1765880164592506em
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_5ALE62:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 179.97
+      dimensions:
+        width: 1440
+        height: 44
+    layout_BZMC1S:
+      mode: row
+      alignItems: center
+      gap: 10px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 29.38
+        'y': 14
+    layout_XMPWTP:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 4
+        height: 8
+    layout_YJAATW:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: -0.0
+        'y': 0.95
+      dimensions:
+        width: 3.05
+        height: 6.1
+    layout_K9B3DD:
+      mode: column
+      gap: 20px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 29
+        'y': 254.41
+      dimensions:
+        width: 881
+    layout_IKDN9K:
+      mode: none
+      sizing:
+        horizontal: fill
+        vertical: fixed
+      dimensions:
+        height: 54
+    H2:
+      fontFamily: Gilroy
+      fontWeight: 600
+      fontSize: 45
+      lineHeight: 1.1929999457465277em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_1ANOE2:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 2136.41
+      dimensions:
+        width: 1440
+        height: 462
+    fill_77XOIH:
+      - '#2F375F'
+    layout_7NJIPW:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 30.88
+        'y': 16.76
+      dimensions:
+        width: 140.02
+        height: 34
+    layout_VCP8YG:
+      mode: column
+      justifyContent: center
+      gap: 21px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 31.29
+        'y': 86.43
+      dimensions:
+        width: 217
+    layout_HG9ZPE:
+      mode: column
+      gap: 21px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 266.29
+        'y': 86.43
+      dimensions:
+        width: 108.1
+    layout_FLVRLI:
+      mode: row
+      alignItems: center
+      alignSelf: stretch
+      gap: 4px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_WHLP4S:
+      mode: column
+      gap: 10px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 1205.23
+        'y': 22.42
+      dimensions:
+        width: 205
+    layout_1GGLUF:
+      mode: row
+      alignItems: center
+      alignSelf: stretch
+      gap: 38px
+      sizing:
+        horizontal: fill
+        vertical: fixed
+    layout_NBG6FC:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 205
+        height: 52
+    style_4712ZA:
+      fontFamily: Gilroy
+      fontWeight: 600
+      fontSize: 16
+      lineHeight: 1.1929999589920044em
+      letterSpacing: '-1%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_KXR7Y1:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 205
+        height: 53
+    layout_8I3ATZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 31.29
+        'y': 327.59
+      dimensions:
+        width: 278
+        height: 66
+    style_X8WBF3:
+      fontFamily: Gilroy
+      fontWeight: 400
+      fontSize: 14
+      lineHeight: 1.5820249829973494em
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_94NXVZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 465.29
+        'y': 327.59
+      dimensions:
+        width: 560.75
+        height: 88
+    layout_DUZMTF:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1172.04
+        'y': 327.59
+      dimensions:
+        width: 230
+        height: 44
+    layout_XZTWLS:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 31.29
+        'y': 303.91
+      dimensions:
+        width: 1378
+        height: 0
+    layout_YVFN3J:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 924.23
+        'y': 22.42
+      dimensions:
+        width: 281
+        height: 234
+    layout_M1OZK4:
+      mode: column
+      gap: 29px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 281
+    layout_5U8XEG:
+      mode: column
+      justifyContent: center
+      alignSelf: stretch
+      gap: 20px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    stroke_H30YHY:
+      colors:
+        - rgba(245, 247, 249, 0)
+      strokeWeight: 1px
+    fill_AT9J7T:
+      - rgba(255, 255, 255, 0.35)
+    layout_3WRU4C:
+      mode: row
+      alignItems: center
+      gap: 10px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_TPH7YO:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 45
+        height: 45
+    layout_PM9HEP:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 45
+        height: 45
+    layout_41JXG1:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 9.77
+        'y': 9.58
+      dimensions:
+        width: 26
+        height: 26
+    layout_LYWDZV:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 2.17
+        'y': 2.17
+      dimensions:
+        width: 21.67
+        height: 21.67
+    layout_SOE4OR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 9.1
+        'y': 15.16
+      dimensions:
+        width: 26.8
+        height: 14.69
+    layout_HWQAKZ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: -0.11
+        'y': 0.26
+      dimensions:
+        width: 45
+        height: 45
+    layout_3LYIDD:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 10.5
+        'y': 10.5
+      dimensions:
+        width: 24
+        height: 24
+    layout_XKZ752:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 1.76
+        'y': 4.31
+      dimensions:
+        width: 20.1
+        height: 19.5
+    layout_R0RO8Z:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 10.32
+        'y': 18.83
+      dimensions:
+        width: 0.84
+        height: 0.67
+    layout_KP949Q:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0
+        'y': 0
+      dimensions:
+        width: 20.1
+        height: 17.17
+    layout_0133NG:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 10px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      locationRelativeToParent:
+        x: 595
+        'y': 2001.41
+      dimensions:
+        width: 250
+        height: 60
+    layout_8Y3VO4:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 21.29
+        height: 21.29
+    layout_HAZBWX:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 0.44
+        'y': 0.44
+      dimensions:
+        width: 20.41
+        height: 20.41
+    layout_62CIV4:
+      mode: row
+      alignItems: center
+      gap: 15px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 26.34
+        'y': 855.41
+    layout_BB33UE:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 154
+        height: 48
+    layout_21GX5D:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 80.44
+    layout_LH7UAG:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 186
+        height: 48
+    layout_FP46WB:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 162.06
+    style_KHFIK2:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 16
+      lineHeight: 1.1770000457763672em
+      letterSpacing: '-1%'
+      textAlignHorizontal: CENTER
+      textAlignVertical: TOP
+    layout_ZF05FJ:
+      mode: row
+      alignItems: center
+      wrap: true
+      gap: 11.017463684082031px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      locationRelativeToParent:
+        x: 30
+        'y': 943.41
+      dimensions:
+        width: 1380
+        height: 983
+    layout_V6GFTJ:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 451.72
+        height: 486.6
+    layout_SVT0CS:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: -0.15
+        'y': 0.23
+      dimensions:
+        width: 452
+        height: 486
+    layout_53MVAD:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: -0.15
+        'y': 0
+      dimensions:
+        width: 452
+        height: 486.23
+    fill_F5WNR6:
+      - type: GRADIENT_LINEAR
+        gradient: >-
+          linear-gradient(180deg, rgba(206, 186, 230, 0) 50%, rgba(82, 106, 194,
+          1) 95%)
+      - type: IMAGE
+        imageRef: 7d866bb6098d3481bf2a366658a3bb328c5871d9
+        scaleMode: STRETCH
+        objectFit: fill
+        isBackground: false
+        imageDownloadArguments:
+          needsCropping: true
+          requiresImageDimensions: false
+          cropTransform:
+            - - 0.43492424488067627
+              - 0
+              - 0.28253430128097534
+            - - 0
+              - 0.7019691467285156
+              - 0.030807610601186752
+          filenameSuffix: 7fbff3
+    layout_8DQALB:
+      mode: column
+      gap: 13px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 28.66
+        'y': 381.23
+      dimensions:
+        width: 410.85
+    layout_2QRMEF:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 378.31
+        height: 52
+    style_OBOERL:
+      fontFamily: Gilroy
+      fontWeight: 600
+      fontSize: 22
+      lineHeight: 1.19299992648038em
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_SBTVIW:
+      mode: none
+      sizing:
+        horizontal: fill
+        vertical: fixed
+      dimensions:
+        height: 19.16
+    style_QN7R50:
+      fontFamily: Gilroy
+      fontWeight: 400
+      fontSize: 12.853707313537598
+      lineHeight: 1.1599999821933213em
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_TEUGMH:
+      mode: column
+      gap: 11.017463684082031px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 15.61
+        'y': 15
+      dimensions:
+        width: 130.37
+    layout_UQNWRI:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 9.181219100952148px
+      padding: 9.181219100952148px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 122.11
+        height: 32.13
+    style_9KQYC4:
+      fontFamily: Gilroy
+      fontWeight: 400
+      fontSize: 14.689950942993164
+      lineHeight: 1.4em
+      letterSpacing: '-1.0000000000000002%'
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_Q05VQ2:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 9.181219100952148px
+      padding: 9.181219100952148px
+      sizing:
+        horizontal: hug
+        vertical: fixed
+      dimensions:
+        height: 32.13
+    layout_OIHULH:
+      mode: row
+      gap: 20px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 15.75
+        'y': 393.56
+    layout_94DSGM:
+      mode: row
+      alignItems: center
+      gap: 10px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 221
+    layout_OK9Y77:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 65
+        height: 65
+    layout_Y879WA:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: -0.54
+        'y': -0.54
+      dimensions:
+        width: 65.23
+        height: 65.23
+    fill_1GHVRB:
+      - type: GRADIENT_LINEAR
+        gradient: >-
+          linear-gradient(180deg, rgba(255, 255, 255, 0) 72%, rgba(255, 255,
+          255, 1) 100%)
+      - type: IMAGE
+        imageRef: a6682d97e27d05df0575958a8f526a2357f12efc
+        scaleMode: FILL
+        objectFit: cover
+        isBackground: false
+        imageDownloadArguments:
+          needsCropping: false
+          requiresImageDimensions: false
+    layout_KE3TJ3:
+      mode: column
+      gap: 3px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 230
+    style_H3C7ZB:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 12
+      lineHeight: 1.2999999523162842em
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    style_5XJ7XT:
+      fontFamily: Gilroy
+      fontWeight: 600
+      fontSize: 18
+      lineHeight: 1.2999999788072374em
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_ZG4X1Q:
+      mode: column
+      gap: 13px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      locationRelativeToParent:
+        x: 15.61
+        'y': 58.23
+      dimensions:
+        width: 410.85
+    fill_QV5AYA:
+      - type: GRADIENT_LINEAR
+        gradient: >-
+          linear-gradient(180deg, rgba(222, 242, 199, 0) 50%, rgba(238, 243,
+          249, 1) 95%)
+      - type: IMAGE
+        imageRef: 6bf751dc5f686cba5f837810a0977a6a19201756
+        scaleMode: FILL
+        objectFit: cover
+        isBackground: false
+        imageDownloadArguments:
+          needsCropping: false
+          requiresImageDimensions: false
+    layout_9TX3VJ:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 29
+        'y': 328.41
+      dimensions:
+        width: 1383
+        height: 487
+    layout_01AWWR:
+      mode: none
+      sizing: {}
+      locationRelativeToParent:
+        x: 650.05
+        'y': 0
+      dimensions:
+        width: 732.95
+        height: 486.23
+    fill_I5SM82:
+      - type: GRADIENT_LINEAR
+        gradient: >-
+          linear-gradient(180deg, rgba(238, 243, 249, 0) 50%, rgba(238, 243,
+          249, 1) 95%)
+      - type: IMAGE
+        imageRef: 6bf751dc5f686cba5f837810a0977a6a19201756
+        scaleMode: STRETCH
+        objectFit: fill
+        isBackground: false
+        imageDownloadArguments:
+          needsCropping: true
+          requiresImageDimensions: false
+          cropTransform:
+            - - 0.9811288714408875
+              - 0
+              - -4.884981308350689e-15
+            - - 0
+              - 0.6889466643333435
+              - 0.15552666783332825
+          filenameSuffix: '426706'
+    layout_M94AJA:
+      mode: column
+      gap: 20px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      locationRelativeToParent:
+        x: 16
+        'y': 75.31
+      dimensions:
+        width: 690
+        height: 274
+    layout_QAH5CU:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 482.17
+        height: 69
+    style_PHERU3:
+      fontFamily: Gilroy
+      fontWeight: 600
+      fontSize: 28
+      lineHeight: 1.192999976021903em
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_SKO96Z:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 652.21
+        height: 65
+    style_SQK9NG:
+      fontFamily: Gilroy
+      fontWeight: 400
+      fontSize: 18
+      lineHeight: 1.2000000211927626em
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    layout_NZTVGH:
+      mode: column
+      gap: 13px
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 410.85
+    layout_M8CS0L:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 281
+        height: 60
+    style_AQKWHA:
+      fontFamily: Gilroy
+      fontWeight: 600
+      fontSize: 16
+      lineHeight: 1.100000023841858em
+      textAlignHorizontal: CENTER
+      textAlignVertical: TOP
+    layout_6GBB4N:
+      mode: row
+      alignItems: center
+      gap: 10px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 31.05
+        'y': 448.72
+    layout_P9HHW0:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 10
+        height: 10
+    layout_RLIH4V:
+      mode: row
+      alignItems: center
+      gap: 15px
+      sizing:
+        horizontal: hug
+        vertical: hug
+      locationRelativeToParent:
+        x: 16
+        'y': 15.31
+    layout_OZEAY2:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 109
+        height: 40
+    layout_DCRVRT:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 101.55
+    style_JENSBZ:
+      fontFamily: Gilroy
+      fontWeight: 500
+      fontSize: 14
+      lineHeight: 1.1770000457763672em
+      letterSpacing: '-1%'
+      textAlignHorizontal: CENTER
+      textAlignVertical: TOP
+    layout_FOX0XG:
+      mode: row
+      justifyContent: center
+      alignItems: center
+      gap: 5px
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 96
+        height: 40
+    layout_NDP9G6:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 75.52

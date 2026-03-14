@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-anchor-nav",
+  "title": "Навигация по якорям (KB)",
+  "description": "Горизонтальная навигация по разделам страницы",
+  "category": "unident-blocks",
+  "icon": "list-view",
+  "keywords": ["навигация", "якоря", "содержание"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

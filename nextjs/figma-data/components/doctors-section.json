@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "name": "Шаблон сайта",
+    "fileKey": "JPVOauS3F3bEIy1msJXPeR",
+    "section": {
+      "id": "95:2472",
+      "name": "doctors",
+      "displayName": "Команда, которая помогает вам 🫶"
+    },
+    "dateRetrieved": "2026-02-04",
+    "status": "complete",
+    "source": "extracted from full-figma-data-2026-02-04.yaml"
+  },
+  "globalVars": {
+    "colors": {
+      "1": "#D9E4F7",
+      "3": "#526AC2",
+      "4": "#191E35",
+      "7": "#EEF3F9",
+      "9": "#FFFFFF"
+    },
+    "fonts": {
+      "primary": "Gilroy"
+    }
+  },
+  "section": {
+    "id": "95:2472",
+    "name": "doctors",
+    "type": "FRAME",
+    "layout": "layout_LADUYU",
+    "children": [
+      {
+        "id": "95:2471",
+        "name": "Frame 2131328616",
+        "type": "FRAME",
+        "layout": "layout_U1KGPR",
+        "description": "Контейнер заголовка, описания и навигации",
+        "children": [
+          {
+            "id": "95:1989",
+            "name": "Frame 2131328609",
+            "type": "FRAME",
+            "layout": "layout_02L8YK",
+            "description": "Контейнер заголовка и описания",
+            "children": [
+              {
+                "id": "93:329",
+                "name": "Команда, которая помогает вам 🫶",
+                "type": "TEXT",
+                "layout": "layout_32BYQB",
+                "text": "Команда, которая помогает вам 🫶",
+                "textStyle": "style_NPKHXQ",
+                "fills": "4",
+                "typography": {
+                  "fontSize": "45px",
+                  "fontWeight": "SemiBold (600)",
+                  "lineHeight": "1.193",
+                  "letterSpacing": "-3%"
+                }
+              },
+              {
+                "id": "95:1988",
+                "name": "Описание",
+                "type": "TEXT",
+                "layout": "layout_7NQN1W",
+                "text": "Каждый наш доктор — это профессионал, который регулярно повышает свою квалификацию с помощью образовательных программ в России и зарубежом.",
+                "textStyle": "style_NFB4D2",
+                "fills": "4",
+                "typography": {
+                  "fontSize": "18px",
+                  "fontWeight": "Regular (400)",
+                  "lineHeight": "1.2"
+                }
+              }
+            ]
+          },
+          {
+            "id": "95:1990",
+            "name": "Button",
+            "type": "FRAME",
+            "layout": "layout_JVVVBV",
+            "description": "Кнопка 'Все специалисты'",
+            "strokes": "3",
+            "strokeWeight": "1px",
+            "borderRadius": "15px",
+            "children": [
+              {
+                "id": "95:1991",
+                "name": "Все специалисты",
+                "type": "TEXT",
+                "layout": "layout_YEC00G",
+                "text": "Все специалисты",
+                "textStyle": "style_DOLR4O",
+                "fills": "3",
+                "typography": {
+                  "fontSize": "16px",
+                  "fontWeight": "Medium (500)"
+                }
+              }
+            ]
+          },
+          {
+            "id": "143:2612",
+            "name": "Frame 2131328710",
+            "type": "IMAGE-SVG",
+            "layout": "layout_0Q206I",
+            "description": "Навигация слайдера (стрелки влево/вправо)"
+          }
+        ]
+      },
+      {
+        "id": "95:2011",
+        "name": "doctors",
+        "type": "FRAME",
+        "layout": "layout_7LP0ND",
+        "description": "Контейнер карточек врачей (слайдер)",
+        "children": [
+          {
+            "id": "123:910",
+            "name": "doctor_card",
+            "type": "INSTANCE",
+            "layout": "layout_B18PP2",
+            "componentId": "123:909",
+            "description": "Карточка врача #1",
+            "fills": "9",
+            "strokes": "Borders",
+            "strokeWeight": "1px",
+            "borderRadius": "25px"
+          },
+          {
+            "id": "123:941",
+            "name": "doctor_card",
+            "type": "INSTANCE",
+            "layout": "layout_B18PP2",
+            "componentId": "123:909",
+            "description": "Карточка врача #2",
+            "fills": "9",
+            "strokes": "Borders",
+            "strokeWeight": "1px",
+            "borderRadius": "25px"
+          },
+          {
+            "id": "123:973",
+            "name": "doctor_card",
+            "type": "INSTANCE",
+            "layout": "layout_B18PP2",
+            "componentId": "123:909",
+            "description": "Карточка врача #3",
+            "fills": "9",
+            "strokes": "Borders",
+            "strokeWeight": "1px",
+            "borderRadius": "25px"
+          }
+        ]
+      }
+    ]
+  },
+  "structure": {
+    "summary": "Секция 'Команда, которая помогает вам' содержит заголовок, описание, кнопку 'Все специалисты', навигацию слайдера и контейнер с карточками врачей (используется компонент doctor_card 123:909)"
+  },
+  "typography": {
+    "heading": {
+      "fontSize": "45px",
+      "fontWeight": "SemiBold (600)",
+      "lineHeight": "1.193",
+      "letterSpacing": "-3%",
+      "style": "style_NPKHXQ"
+    },
+    "description": {
+      "fontSize": "18px",
+      "fontWeight": "Regular (400)",
+      "lineHeight": "1.2",
+      "style": "style_NFB4D2"
+    },
+    "button": {
+      "fontSize": "16px",
+      "fontWeight": "Medium (500)",
+      "style": "style_DOLR4O"
+    }
+  },
+  "colors": {
+    "heading": "#191E35",
+    "description": "#191E35",
+    "buttonText": "#526AC2",
+    "buttonBorder": "#526AC2",
+    "cardBackground": "#FFFFFF",
+    "cardBorder": "#D8D8D8"
+  },
+  "layout": {
+    "section": "FRAME",
+    "headerContainer": "Frame 2131328616",
+    "cardsContainer": "Frame doctors (95:2011)",
+    "borderRadius": {
+      "button": "15px",
+      "card": "25px"
+    }
+  },
+  "components": {
+    "doctorCard": {
+      "id": "123:909",
+      "name": "doctor_card",
+      "description": "Компонент карточки врача (используется как instance в слайдере)",
+      "reference": "components/doctor_card.json"
+    },
+    "sliderNavigation": {
+      "id": "143:2612",
+      "name": "Frame 2131328710",
+      "type": "IMAGE-SVG",
+      "description": "Навигация слайдера (стрелки влево/вправо)"
+    }
+  },
+  "content": {
+    "heading": "Команда, которая помогает вам 🫶",
+    "description": "Каждый наш доктор — это профессионал, который регулярно повышает свою квалификацию с помощью образовательных программ в России и зарубежом.",
+    "buttonText": "Все специалисты"
+  }
+}

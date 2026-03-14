@@ -1,0 +1,22 @@
+/* unident-slider-image — placeholder styles for WP admin preview */
+.unident-slider-image .unident-title {
+	margin: 0 0 1rem;
+}
+.unident-slider-image .unident-description {
+	margin: 0 0 1rem;
+}
+.unident-slider-image .unident-slider-container {
+	display: flex;
+	gap: 1rem;
+	overflow-x: auto;
+}
+.unident-slider-image .unident-slide {
+	flex: 0 0 auto;
+	min-width: 300px;
+}
+.unident-slider-image .unident-slide-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 25px;
+}

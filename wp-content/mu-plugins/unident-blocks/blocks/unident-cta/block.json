@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-cta",
+  "title": "CTA (KB)",
+  "description": "Призыв к действию с кнопками",
+  "category": "unident-blocks",
+  "icon": "megaphone",
+  "keywords": ["cta", "запись", "кнопки"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

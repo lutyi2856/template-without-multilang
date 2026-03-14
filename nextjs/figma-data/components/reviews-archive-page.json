@@ -1,0 +1,44 @@
+{
+  "nodeId": "262:3146",
+  "name": "reviews/ 1440",
+  "fileKey": "eEN4I9HdQ3JiW708BuOMRc",
+  "date": "2026-02-15",
+  "structure": {
+    "reviewsArchive": "262:3146",
+    "breadcrumbs": "262:3149",
+    "breadcrumbsFrame": "262:3150",
+    "titleBlock": "405:3700",
+    "title": "262:3155",
+    "description": "262:3921",
+    "statsText": "440:4236",
+    "ratingBlock": "262:3922",
+    "ratingCards": "262:3931",
+    "buttonsFrame": "440:4237",
+    "cardsContainer": "262:3916",
+    "loadMoreButton": "404:3150",
+    "writeReviewButton": "440:4240"
+  },
+  "keyNodes": {
+    "262:3149": { "name": "Breadcumbs", "children": ["262:3150"] },
+    "262:3150": { "name": "Frame 2131328722", "items": ["Главная", "Отзывы"] },
+    "405:3700": { "name": "Frame 2131328758", "children": ["262:3155", "262:3921"] },
+    "262:3155": { "name": "Отзывы", "style": "H2" },
+    "262:3921": { "name": "description", "text": "В нашей стоматологии оказывается..." },
+    "440:4236": { "name": "stats", "text": "За квартал мы получили 263 отзыва. Из них 257 хороших и 6 не очень" },
+    "262:3922": { "name": "Общий рейтинг", "children": ["262:3924", "262:3925", "262:3926"] },
+    "262:3931": { "name": "rating cards", "componentId": "121:302", "count": 4 },
+    "440:4237": { "name": "buttons", "items": ["Все отзывы", "Написать отзыв"] },
+    "262:3916": { "name": "cards", "componentId": "122:536", "count": 3 },
+    "404:3150": { "name": "Загрузить больше", "strokes": "3", "borderRadius": 15 }
+  },
+  "typography": {
+    "title": "45px Gilroy SemiBold, H2",
+    "description": "18px Gilroy Regular",
+    "stats": "H2 style",
+    "loadMore": "16px Gilroy Medium"
+  },
+  "colors": {
+    "fills": { "4": "#191E35", "8": "#F5F7F9", "9": "#FFFFFF", "10": "#8F8F8F", "3": "#526AC2" },
+    "borderRadius": { "cards": 25, "button": 15 }
+  }
+}

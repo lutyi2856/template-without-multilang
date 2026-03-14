@@ -1,0 +1,22 @@
+.unident-anchor-nav-inner {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	padding: 16px 0;
+}
+
+.unident-anchor-link {
+	display: inline-block;
+	padding: 8px 16px;
+	background: #F5F7F9;
+	border-radius: 10px;
+	text-decoration: none;
+	color: #191E35;
+	font-size: 14px;
+	font-weight: 500;
+	transition: background 0.2s;
+}
+
+.unident-anchor-link:hover {
+	background: #D9E4F7;
+}

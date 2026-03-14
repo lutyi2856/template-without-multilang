@@ -1,0 +1,31 @@
+[
+    {
+        "postId": 1670,
+        "slug": "chto-takoe-doverie",
+        "title": "Что такое доверие?",
+        "doctorPostIds": [
+            811,
+            807,
+            823
+        ]
+    },
+    {
+        "postId": 1673,
+        "slug": "novyj-vzglyad-na-ulybku-nazimy",
+        "title": "Новый взгляд на улыбку Назимы",
+        "doctorPostIds": [
+            811,
+            835,
+            814,
+            823
+        ]
+    },
+    {
+        "postId": 1676,
+        "slug": "preobrazhenie-ulybki",
+        "title": "Преображение улыбки нашей пациентки",
+        "doctorPostIds": [
+            807
+        ]
+    }
+]

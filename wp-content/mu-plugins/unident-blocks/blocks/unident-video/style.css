@@ -1,0 +1,77 @@
+/**
+ * Block: Видео (unident-video)
+ */
+
+.unident-video {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.unident-video .unident-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}
+
+.unident-video .unident-description {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}
+
+.unident-media-rows {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.unident-media-row {
+	display: grid;
+	gap: 20px;
+}
+
+.unident-media-item {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.unident-media-wrap {
+	position: relative;
+	overflow: hidden;
+	border-radius: 25px;
+}
+
+.unident-media-wrap video {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.unident-media-img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.unident-item-headline {
+	font-size: clamp(1.125rem, 1.06rem + 0.19vw, 1.25rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}
+
+.unident-item-description {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}

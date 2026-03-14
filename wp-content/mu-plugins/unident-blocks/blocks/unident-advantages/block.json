@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-advantages",
+  "title": "Преимущества (KB)",
+  "description": "Список преимуществ с номерами",
+  "category": "unident-blocks",
+  "icon": "star-filled",
+  "keywords": ["преимущества", "advantages", "список"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false
+  },
+  "style": ["file:./style.css"]
+}

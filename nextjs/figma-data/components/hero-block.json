@@ -1,0 +1,546 @@
+{
+  "metadata": {
+    "name": "Шаблон сайта",
+    "fileKey": "JPVOauS3F3bEIy1msJXPeR",
+    "component": {
+      "id": "95:1356",
+      "name": "Hero Block (1 screen)"
+    },
+    "dateRetrieved": "2026-01-23",
+    "status": "complete (from MCP API)"
+  },
+  "component": {
+    "id": "95:1356",
+    "name": "1 screen",
+    "type": "FRAME",
+    "layout": {
+      "mode": "row",
+      "justifyContent": "space-between",
+      "alignItems": "center",
+      "gap": 20,
+      "sizing": {
+        "horizontal": "fill",
+        "vertical": "hug"
+      }
+    }
+  },
+  "structure": {
+    "infoBlock": {
+      "id": "10:190",
+      "name": "Frame 75",
+      "type": "FRAME",
+      "dimensions": {
+        "width": 912,
+        "height": 608
+      },
+      "fills": ["linear-gradient(180deg, rgba(46, 54, 93, 1) 0%, rgba(70, 85, 157, 1) 100%)"],
+      "borderRadius": "25px",
+      "children": {
+        "decorativeVector": {
+          "id": "11:134",
+          "name": "Vector",
+          "type": "IMAGE-SVG",
+          "fills": ["#607BD4"],
+          "opacity": 0.3,
+          "position": {
+            "x": 506,
+            "y": 48
+          },
+          "dimensions": {
+            "width": 442.34,
+            "height": 415.97
+          }
+        },
+        "contentFrame": {
+          "id": "11:4",
+          "name": "Frame 57",
+          "type": "FRAME",
+          "layout": "column",
+          "gap": 20,
+          "position": {
+            "x": 51.4,
+            "y": 44.88
+          },
+          "dimensions": {
+            "width": 732.97
+          },
+          "children": {
+            "textBlock": {
+              "id": "11:5",
+              "name": "Text",
+              "type": "FRAME",
+              "layout": "column",
+              "gap": 20,
+              "children": {
+                "heading": {
+                  "id": "11:7",
+                  "name": "На 32% доступнее других стоматологий",
+                  "type": "TEXT",
+                  "text": "На 32% доступнее других стоматологий",
+                  "textStyle": {
+                    "fontFamily": "Gilroy",
+                    "fontWeight": 600,
+                    "fontSize": 50,
+                    "lineHeight": 1.193,
+                    "letterSpacing": "-3%",
+                    "color": "#FFFFFF"
+                  },
+                  "dimensions": {
+                    "width": 542.76,
+                    "height": 116
+                  }
+                },
+                "description": {
+                  "id": "11:18",
+                  "name": "Описание",
+                  "type": "TEXT",
+                  "text": "Итоговые планы лечения пациентов в нашей клинике получаются ниже средних цен на рынке стоматологических услуг Москвы и Подмосковья.",
+                  "textStyle": {
+                    "fontFamily": "Gilroy",
+                    "fontWeight": 400,
+                    "fontSize": 19,
+                    "lineHeight": 1.25,
+                    "color": "#FFFFFF"
+                  },
+                  "dimensions": {
+                    "width": 542.76
+                  }
+                }
+              }
+            },
+            "button": {
+              "id": "11:19",
+              "name": "Button",
+              "type": "FRAME",
+              "layout": "row",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "gap": 5,
+              "dimensions": {
+                "width": 252,
+                "height": 54
+              },
+              "borderRadius": "15px",
+              "border": "1px solid #FFFFFF",
+              "children": {
+                "text": {
+                  "id": "11:20",
+                  "name": "Получить консультацию",
+                  "type": "TEXT",
+                  "text": "Получить консультацию",
+                  "textStyle": {
+                    "fontFamily": "Gilroy",
+                    "fontWeight": 600,
+                    "fontSize": 16,
+                    "lineHeight": 1.193,
+                    "letterSpacing": "-1%",
+                    "color": "#FFFFFF"
+                  }
+                }
+              }
+            },
+            "counters": {
+              "id": "8:50",
+              "name": "Frame 50",
+              "type": "FRAME",
+              "layout": "row",
+              "alignItems": "center",
+              "gap": 5,
+              "position": {
+                "x": 51.4,
+                "y": 526
+              },
+              "children": [
+                {
+                  "id": "8:51",
+                  "name": "Frame 48",
+                  "type": "FRAME",
+                  "layout": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "gap": 10,
+                  "padding": 10,
+                  "fills": ["#607BD4"],
+                  "borderRadius": "41px",
+                  "children": {
+                    "text": {
+                      "id": "8:52",
+                      "name": "20+ клиник",
+                      "type": "TEXT",
+                      "text": "20+ клиник",
+                      "textStyle": {
+                        "fontFamily": "Gilroy",
+                        "fontWeight": 500,
+                        "fontSize": 15,
+                        "lineHeight": 1.177,
+                        "letterSpacing": "-1%",
+                        "color": "#FFFFFF"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "8:53",
+                  "name": "Frame 49",
+                  "type": "FRAME",
+                  "layout": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "gap": 10,
+                  "padding": 10,
+                  "fills": ["#607BD4"],
+                  "borderRadius": "41px",
+                  "children": {
+                    "text": {
+                      "id": "8:54",
+                      "name": "50+ врачей",
+                      "type": "TEXT",
+                      "text": "50+ врачей",
+                      "textStyle": {
+                        "fontFamily": "Gilroy",
+                        "fontWeight": 500,
+                        "fontSize": 15,
+                        "lineHeight": 1.177,
+                        "letterSpacing": "-1%",
+                        "color": "#FFFFFF"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "8:55",
+                  "name": "Frame 50",
+                  "type": "FRAME",
+                  "layout": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "gap": 10,
+                  "padding": 10,
+                  "fills": ["#607BD4"],
+                  "borderRadius": "41px",
+                  "children": {
+                    "text": {
+                      "id": "8:56",
+                      "name": "2 клиники в Москве",
+                      "type": "TEXT",
+                      "text": "2 клиники в Москве",
+                      "textStyle": {
+                        "fontFamily": "Gilroy",
+                        "fontWeight": 500,
+                        "fontSize": 15,
+                        "lineHeight": 1.177,
+                        "letterSpacing": "-1%",
+                        "color": "#FFFFFF"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "doctorImage": {
+              "id": "11:24",
+              "name": "cosmetology-doctor-mask 1",
+              "type": "IMAGE-SVG",
+              "position": {
+                "x": 510.31,
+                "y": 91.88
+              },
+              "dimensions": {
+                "width": 375.72,
+                "height": 563.71
+              },
+              "fills": {
+                "type": "IMAGE",
+                "imageRef": "fc8ec0d39462e9894dc8ec8c624ac49346a35577",
+                "scaleMode": "FILL",
+                "objectFit": "cover"
+              }
+            }
+          }
+        }
+      }
+    },
+    "actionCard": {
+      "id": "10:191",
+      "name": "Frame 76",
+      "type": "FRAME",
+      "dimensions": {
+        "width": 447,
+        "height": 608
+      },
+      "fills": ["#FFFFFF"],
+      "borderRadius": "25px",
+      "children": {
+        "badgeAndCountdown": {
+          "id": "11:61",
+          "name": "Frame 110",
+          "type": "FRAME",
+          "layout": "row",
+          "alignItems": "center",
+          "gap": 9,
+          "position": {
+            "x": 26,
+            "y": 23
+          },
+          "children": {
+            "badge": {
+              "id": "11:56",
+              "name": "Frame 54",
+              "type": "FRAME",
+              "layout": "row",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "gap": 5,
+              "dimensions": {
+                "width": 90,
+                "height": 35
+              },
+              "fills": ["#526AC2"],
+              "borderRadius": "27px",
+              "children": {
+                "text": {
+                  "id": "11:57",
+                  "name": "Акция",
+                  "type": "TEXT",
+                  "text": "Акция",
+                  "textStyle": {
+                    "fontFamily": "Gilroy",
+                    "fontWeight": 500,
+                    "fontSize": 14,
+                    "lineHeight": 1.177,
+                    "letterSpacing": "-1%",
+                    "color": "#FFFFFF"
+                  }
+                }
+              }
+            },
+            "countdown": {
+              "id": "11:59",
+              "name": "Frame 55",
+              "type": "FRAME",
+              "layout": "row",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "gap": 5,
+              "dimensions": {
+                "width": 147,
+                "height": 35
+              },
+              "fills": ["#FFFFFF"],
+              "borderRadius": "27px",
+              "children": {
+                "icon": {
+                  "id": "34:12",
+                  "name": "Frame 2131328541",
+                  "type": "IMAGE-SVG",
+                  "dimensions": {
+                    "width": 19.14,
+                    "height": 19.14
+                  }
+                },
+                "text": {
+                  "id": "11:60",
+                  "name": "Осталось 6д 3ч",
+                  "type": "TEXT",
+                  "text": "Осталось 6д 3ч",
+                  "textStyle": {
+                    "fontFamily": "SFT Schrifted Sans TRIAL",
+                    "fontWeight": 300,
+                    "fontSize": 14,
+                    "lineHeight": 1.19,
+                    "letterSpacing": "-1%",
+                    "color": "#8D8D8D"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "content": {
+          "id": "11:125",
+          "name": "Frame 111",
+          "type": "FRAME",
+          "layout": "column",
+          "gap": 20,
+          "position": {
+            "x": 26.2,
+            "y": 78.28
+          },
+          "dimensions": {
+            "width": 400
+          },
+          "children": {
+            "title": {
+              "id": "11:58",
+              "name": "Имплант OSSTEM с установкой",
+              "type": "TEXT",
+              "text": "Имплант OSSTEM\nс установкой",
+              "textStyle": {
+                "fontFamily": "Gilroy",
+                "fontWeight": 600,
+                "fontSize": 32,
+                "lineHeight": 1.193,
+                "letterSpacing": "-1%",
+                "color": "#191E35"
+              },
+              "dimensions": {
+                "width": 289.47,
+                "height": 70.8
+              }
+            },
+            "features": {
+              "id": "11:41",
+              "name": "info",
+              "type": "FRAME",
+              "layout": "column",
+              "children": [
+                {
+                  "id": "11:42",
+                  "name": "1",
+                  "type": "FRAME",
+                  "children": {
+                    "icon": {
+                      "id": "11:43",
+                      "name": "point",
+                      "type": "IMAGE-SVG"
+                    },
+                    "text": {
+                      "id": "11:45",
+                      "name": "высокая биосовместимость с костной тканью",
+                      "type": "TEXT",
+                      "text": "высокая биосовместимость с костной тканью",
+                      "textStyle": {
+                        "fontFamily": "Gilroy",
+                        "fontWeight": 400,
+                        "fontSize": 20,
+                        "lineHeight": 1.25,
+                        "color": "#191E35"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "11:46",
+                  "name": "2",
+                  "type": "FRAME",
+                  "children": {
+                    "icon": {
+                      "id": "11:47",
+                      "name": "point",
+                      "type": "IMAGE-SVG"
+                    },
+                    "text": {
+                      "id": "11:49",
+                      "name": "индивидуальный подбор модели импланта",
+                      "type": "TEXT",
+                      "text": "индивидуальный подбор модели импланта",
+                      "textStyle": {
+                        "fontFamily": "Gilroy",
+                        "fontWeight": 400,
+                        "fontSize": 20,
+                        "lineHeight": 1.25,
+                        "color": "#191E35"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "11:50",
+                  "name": "3",
+                  "type": "FRAME",
+                  "children": {
+                    "icon": {
+                      "id": "11:51",
+                      "name": "point",
+                      "type": "IMAGE-SVG"
+                    },
+                    "text": {
+                      "id": "11:53",
+                      "name": "надежный южнокорейский бренд",
+                      "type": "TEXT",
+                      "text": "надежный южнокорейский бренд",
+                      "textStyle": {
+                        "fontFamily": "Gilroy",
+                        "fontWeight": 400,
+                        "fontSize": 20,
+                        "lineHeight": 1.25,
+                        "color": "#191E35"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "price": {
+              "id": "11:124",
+              "name": "17 900Р",
+              "type": "TEXT",
+              "text": "17 900Р",
+              "textStyle": {
+                "fontFamily": "Gilroy",
+                "fontWeight": 600,
+                "fontSize": 28,
+                "lineHeight": 1.4,
+                "color": "#191E35"
+              }
+            }
+          }
+        },
+        "button": {
+          "id": "11:127",
+          "name": "Button",
+          "type": "FRAME",
+          "layout": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": 5,
+          "position": {
+            "x": 26,
+            "y": 376
+          },
+          "dimensions": {
+            "width": 172,
+            "height": 54
+          },
+          "borderRadius": "15px",
+          "border": "1px solid #526AC2",
+          "children": {
+            "text": {
+              "id": "11:128",
+              "name": "Подробнее",
+              "type": "TEXT",
+              "text": "Подробнее",
+              "textStyle": {
+                "fontFamily": "Gilroy",
+                "fontWeight": 600,
+                "fontSize": 16,
+                "lineHeight": 1.193,
+                "letterSpacing": "-1%",
+                "color": "#526AC2"
+              }
+            }
+          }
+        },
+        "productImage": {
+          "id": "11:54",
+          "name": "enhanced_implantat-osstem-no-bg-preview",
+          "type": "RECTANGLE",
+          "position": {
+            "x": 198,
+            "y": 373.43
+          },
+          "dimensions": {
+            "width": 248.84,
+            "height": 265.54
+          },
+          "fills": {
+            "type": "IMAGE",
+            "imageRef": "dab71615df73e5368b9e0650ae8b3818b74869f6",
+            "scaleMode": "STRETCH",
+            "objectFit": "fill"
+          }
+        }
+      }
+    }
+  }
+}

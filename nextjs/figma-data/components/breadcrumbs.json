@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "name": "Шаблон сайта",
+    "nodeId": "259:2439",
+    "componentName": "Breadcumbs"
+  },
+  "nodes": [
+    {
+      "id": "259:2439",
+      "name": "Breadcumbs",
+      "type": "FRAME",
+      "layout": "layout_C60MKD",
+      "children": [
+        {
+          "id": "259:2444",
+          "name": "Frame 2131328722",
+          "type": "FRAME",
+          "layout": "layout_8QXDN3",
+          "opacity": 0.5,
+          "children": [
+            {
+              "id": "259:2440",
+              "name": "Главная",
+              "type": "TEXT",
+              "layout": "layout_60DB51",
+              "text": "Главная",
+              "textStyle": "style_15CGVO",
+              "fills": "4"
+            },
+            {
+              "id": "259:2443",
+              "name": "Frame 2131328721",
+              "type": "IMAGE-SVG",
+              "layout": "layout_OKZXP9"
+            },
+            {
+              "id": "259:2441",
+              "name": "Врачи",
+              "type": "TEXT",
+              "layout": "layout_60DB51",
+              "text": "Врачи",
+              "textStyle": "style_15CGVO",
+              "fills": "4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalVars": {
+    "styles": {
+      "4": ["#191E35"],
+      "style_15CGVO": {
+        "fontFamily": "Gilroy",
+        "fontWeight": 500,
+        "fontSize": 14,
+        "lineHeight": 1.177,
+        "letterSpacing": "-1%",
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP"
+      }
+    },
+    "layouts": {
+      "layout_C60MKD": {
+        "mode": "none",
+        "dimensions": { "width": 1440, "height": 44 }
+      },
+      "layout_8QXDN3": {
+        "mode": "row",
+        "alignItems": "center",
+        "gap": 10,
+        "sizing": { "horizontal": "hug", "vertical": "hug" },
+        "locationRelativeToParent": { "x": 29.37, "y": 14 }
+      },
+      "layout_60DB51": {
+        "mode": "none",
+        "sizing": { "horizontal": "hug", "vertical": "hug" }
+      },
+      "layout_OKZXP9": {
+        "mode": "none",
+        "sizing": { "horizontal": "fixed", "vertical": "fixed" },
+        "dimensions": { "width": 4, "height": 8 }
+      }
+    }
+  }
+}

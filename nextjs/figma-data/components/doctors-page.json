@@ -1,0 +1,93 @@
+{
+  "nodeId": "258:1040",
+  "name": "doctors/ 1440",
+  "type": "FRAME",
+  "description": "Страница «Врачи» (viewport 1440px)",
+  "source": "full-figma-data-2026-02-04.yaml",
+  "structure": {
+    "258:1040": {
+      "name": "doctors/ 1440",
+      "type": "FRAME",
+      "fills": "9",
+      "children": [
+        {
+          "id": "258:1474",
+          "name": "Menu",
+          "type": "INSTANCE",
+          "componentId": "109:133",
+          "description": "Шапка: логотип УниДент, навигация (Услуги, О клинике, Врачи, Акции, Кейсы, Цены, Отзывы, Пациентам, Контакты), поиск, контакты, рейтинг 5,0"
+        },
+        {
+          "id": "259:2439",
+          "name": "Breadcumbs",
+          "type": "FRAME",
+          "children": [
+            { "id": "259:2440", "name": "Главная", "type": "TEXT" },
+            { "id": "259:2443", "name": "Frame 2131328721", "type": "IMAGE-SVG", "description": "Разделитель breadcrumb" },
+            { "id": "259:2441", "name": "Врачи", "type": "TEXT" }
+          ]
+        },
+        {
+          "id": "259:2445",
+          "name": "Врачи",
+          "type": "TEXT",
+          "textStyle": "H2",
+          "description": "Заголовок страницы"
+        },
+        {
+          "id": "262:2459",
+          "name": "Frame 2131328723",
+          "type": "FRAME",
+          "description": "Фильтр по специальности: кнопки",
+          "children": [
+            { "id": "260:2447", "name": "Button", "text": "Все врачи", "fills": "3", "borderRadius": "15px" },
+            { "id": "262:2449", "name": "Button", "text": "Хирург-имплантолог", "fills": "6" },
+            { "id": "262:2451", "name": "Button", "text": "Стоматолог-ортопед", "fills": "6" },
+            { "id": "440:4226", "name": "Button", "text": "Стоматолог-ортопед", "fills": "6" },
+            { "id": "440:4223", "name": "Button", "text": "Ортодент", "fills": "6" },
+            { "id": "262:2457", "name": "Button", "text": "Ортодент", "fills": "6" },
+            { "id": "440:4229", "name": "Button", "text": "+5", "fills": "2", "description": "Ещё специальности" }
+          ]
+        },
+        {
+          "id": "398:2168",
+          "name": "Frame 2131328725",
+          "type": "FRAME",
+          "description": "Фильтр по филиалам",
+          "children": [
+            { "id": "398:2169", "name": "Button", "text": "Все филиалы", "fills": "3" },
+            { "id": "398:2171", "name": "Button", "text": "Название улицы", "fills": "6" },
+            { "id": "398:2173", "name": "Button", "text": "Название улицы", "fills": "6" }
+          ]
+        },
+        {
+          "id": "262:3132",
+          "name": "Frame 2131328724",
+          "type": "FRAME",
+          "description": "Сетка карточек врачей",
+          "children": [
+            { "id": "262:2588", "name": "doctor_card", "type": "INSTANCE", "componentId": "123:909" },
+            { "id": "262:2589", "name": "doctor_card", "type": "INSTANCE", "componentId": "123:909" }
+          ]
+        }
+      ]
+    }
+  },
+  "keyNodes": {
+    "pageRoot": "258:1040",
+    "menu": "258:1474",
+    "breadcrumbs": "259:2439",
+    "breadcrumbSeparator": "259:2443",
+    "pageTitle": "259:2445",
+    "specialtyFilter": "262:2459",
+    "clinicFilter": "398:2168",
+    "doctorsGrid": "262:3132",
+    "doctorCardInstance": "262:2588"
+  },
+  "textContent": {
+    "breadcrumbs": ["Главная", "Врачи"],
+    "pageTitle": "Врачи",
+    "specialtyButtons": ["Все врачи", "Хирург-имплантолог", "Стоматолог-ортопед", "Ортодент", "+5"],
+    "clinicButtons": ["Все филиалы", "Название улицы"]
+  }
+}

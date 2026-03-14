@@ -1,0 +1,18 @@
+{
+  "name": "acf/unident-list",
+  "title": "Нумерованный / Маркированный список",
+  "description": "Список с переключением между нумерованным и маркированным, repeater элементов, ссылки на услуги",
+  "category": "unident-blocks",
+  "icon": "editor-ol",
+  "keywords": ["список", "нумерованный", "маркированный", "list"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true
+  }
+}

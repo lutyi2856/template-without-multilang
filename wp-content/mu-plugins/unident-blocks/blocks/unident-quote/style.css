@@ -1,0 +1,33 @@
+/**
+ * Block: Цитата (unident-quote)
+ */
+
+.unident-quote {
+	margin: 0;
+}
+
+.unident-quote .unident-blockquote {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.unident-quote .unident-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0 0 20px 0;
+}
+
+.unident-quote .unident-title:last-child {
+	margin-bottom: 0;
+}
+
+.unident-quote .unident-text {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0;
+}

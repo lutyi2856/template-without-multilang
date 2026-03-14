@@ -1,0 +1,79 @@
+name: Deploy Next.js to VPS
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          command_timeout: 25m
+          script: |
+            set -e
+            cd /opt/wp-nextjs || { echo "FATAL: /opt/wp-nextjs not found"; exit 1; }
+
+            echo "=== Preparing working tree ==="
+            [ -f override.yml ] && cp override.yml /tmp/override.yml.bak
+            git reset --hard HEAD
+            git clean -fd
+            [ -f /tmp/override.yml.bak ] && mv /tmp/override.yml.bak override.yml
+
+            echo "=== Pulling latest code ==="
+            git pull origin main
+
+            [ -f docker-compose.production.yml ] || { echo "FATAL: docker-compose.production.yml missing after pull"; exit 1; }
+
+            echo "=== Checking disk space ==="
+            AVAIL=$(df / --output=avail -BG | tail -1 | tr -dc '0-9')
+            echo "Available: ${AVAIL}GB"
+            if [ "$AVAIL" -lt 3 ]; then
+              echo "Low disk (${AVAIL}GB)! Aggressive cleanup..."
+              journalctl --vacuum-size=50M 2>/dev/null || true
+              docker system prune -af 2>/dev/null || true
+              docker builder prune -af 2>/dev/null || true
+              AVAIL=$(df / --output=avail -BG | tail -1 | tr -dc '0-9')
+              echo "After cleanup: ${AVAIL}GB"
+              if [ "$AVAIL" -lt 1 ]; then
+                echo "FATAL: Not enough disk space for build (${AVAIL}GB free)"
+                exit 1
+              fi
+            else
+              docker builder prune -af --filter "until=24h"
+            fi
+
+            COMPOSE_FILES="-f docker-compose.production.yml"
+            [ -f override.yml ] && COMPOSE_FILES="$COMPOSE_FILES -f override.yml"
+            echo "=== Using: $COMPOSE_FILES ==="
+
+            echo "=== Building WordPress and Next.js ==="
+            docker compose $COMPOSE_FILES build wordpress-new nextjs
+
+            echo "=== Stopping old containers ==="
+            docker compose $COMPOSE_FILES stop nextjs wordpress-new 2>/dev/null || true
+            docker compose $COMPOSE_FILES rm -f nextjs wordpress-new 2>/dev/null || true
+
+            echo "=== Starting full stack (wordpress, nextjs) ==="
+            if ! docker compose $COMPOSE_FILES up -d wordpress-new nextjs; then
+              echo "WARNING: Start failed, doing full restart..."
+              docker compose $COMPOSE_FILES down --remove-orphans 2>/dev/null || true
+              docker compose $COMPOSE_FILES up -d
+            fi
+
+            echo "=== Waiting for startup ==="
+            sleep 15
+
+            echo "=== Health check ==="
+            curl -sf http://localhost:3000 > /dev/null || exit 1
+            echo "OK: Deploy successful"

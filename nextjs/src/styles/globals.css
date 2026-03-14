@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Шрифты загружаются через next/font/local в layout.tsx
+ *
+ * Gilroy — локальный шрифт (gilroyfont.com, free for commercial use).
+ * Geometric sans-serif, поддержка кириллицы.
+ * CSS-переменная --font-gilroy задаётся next/font на html.
+ */
+
+@layer base {
+  :root {
+    /* === ДИЗАЙН-СИСТЕМА УНИДЕНТ === */
+    /* Шрифты: --font-gilroy задаётся next/font/local в layout.tsx */
+    
+    /* Цвета из Figma - основные */
+    --color-primary: #526AC2;          /* Основной синий (кнопки, ссылки) */
+    --color-dark: #191E35;             /* Темный текст */
+    --color-white: #FFFFFF;            /* Белый */
+    
+    /* Цвета фонов из Figma */
+    --color-bg-light-blue: #D9E4F7;    /* Светлый голубой (бейдж рейтинга) */
+    --color-bg-light-gray: #EEF3F9;    /* Светлый серый (бейдж стажа) */
+    --color-footer: #2F375F;           /* Цвет футера */
+    
+    /* Цвета границ */
+    --color-border-gray: #D8D8D8;      /* Серая рамка карточек */
+    
+    /* Дополнительные цвета */
+    --color-primary-light: #607BD4;    /* Светлый синий */
+    --color-bg-topbar: #F9F9F9;        /* Фон топбара */
+    --color-bg-elements: #F5F7F9;      /* Фон элементов (поиск) */
+    --color-text-gray: #8F8F8F;        /* Серый текст */
+    
+    /* Переопределение Shadcn переменных под дизайн УниДент */
+    --background: 0 0% 100%;
+    --foreground: 227 33% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 227 33% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 227 33% 15%;
+    --primary: 230 53% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 227 33% 15%;
+    --muted: 210 25% 97%;
+    --muted-foreground: 0 0% 56%;
+    --accent: 210 25% 97%;
+    --accent-foreground: 227 33% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 230 53% 58%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-montserrat);
+  }
+
+  /* Убираем горизонтальный скролл — clip вместо hidden, чтобы не ломать position: sticky */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  /* Типографика из Figma */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-gilroy);
+    font-weight: 600;
+  }
+}
+
+/* Скроллбар таблицы цен — Figma: ползунок #526AC2, дорожка #F5F7F9 */
+.price-table-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.price-table-scroll::-webkit-scrollbar-track {
+  background: #f5f7f9;
+  border-radius: 4px;
+}
+.price-table-scroll::-webkit-scrollbar-thumb {
+  background: #526ac2;
+  border-radius: 4px;
+}
+.price-table-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #526ac2 #f5f7f9;
+}
+
+/* Горизонтальный скроллбар секции цен — тонкий, цвет unident-primary */
+.price-table-horizontal-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.price-table-horizontal-scroll::-webkit-scrollbar-track {
+  background: #f5f7f9;
+  border-radius: 4px;
+}
+.price-table-horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #526ac2;
+  border-radius: 4px;
+}
+.price-table-horizontal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #526ac2 #f5f7f9;
+}
+
+/* Скроллбар мобильного меню услуг — синий ползунок, узкий */
+.mobile-menu-services-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.mobile-menu-services-scroll::-webkit-scrollbar-track {
+  background: #f5f7f9;
+  border-radius: 4px;
+}
+.mobile-menu-services-scroll::-webkit-scrollbar-thumb {
+  background: #526ac2;
+  border-radius: 4px;
+}
+.mobile-menu-services-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #526ac2 #f5f7f9;
+}
+
+/* Скроллбар выпадающего списка поиска — узкий, синий */
+.search-suggestions-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.search-suggestions-scroll::-webkit-scrollbar-track {
+  background: #f5f7f9;
+  border-radius: 4px;
+}
+.search-suggestions-scroll::-webkit-scrollbar-thumb {
+  background: #526ac2;
+  border-radius: 4px;
+}
+.search-suggestions-scroll::-webkit-scrollbar-button {
+  background: #526ac2;
+  height: 8px;
+}
+.search-suggestions-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #526ac2 #f5f7f9;
+}
+
+/* Скрыть скроллбар (сайдбар блога/услуг без видимого скроллбара) */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Градиент промо-баннера (Figma 886:4523 fill_MNMSMN) — fluid-layout: вынесен из inline style */
+.bg-promo-banner-gradient {
+  background: linear-gradient(90deg, rgba(238, 243, 249, 1) 0%, rgba(124, 124, 189, 1) 100%);
+}
+

@@ -1,0 +1,230 @@
+{
+  "id": "93:302",
+  "name": "price",
+  "type": "FRAME",
+  "description": "Секция с таблицей цен на услуги и формой записи",
+  "structure": {
+    "heading": {
+      "id": "78:4",
+      "name": "Сколько стоит забота о себе 🩺",
+      "type": "TEXT",
+      "textStyle": "style_NPKHXQ",
+      "fills": "4"
+    },
+    "table": {
+      "id": "93:301",
+      "name": "Frame 2131328566",
+      "type": "FRAME",
+      "description": "Таблица с категориями услуг и ценами",
+      "header": {
+        "id": "93:270",
+        "columns": [
+          {
+            "id": "78:10",
+            "name": "Услуга",
+            "textStyle": "style_AE2FT0",
+            "opacity": 0.3
+          },
+          {
+            "id": "78:11",
+            "name": "Наша цена",
+            "textStyle": "style_AE2FT0",
+            "opacity": 0.3
+          },
+          {
+            "id": "78:12",
+            "name": "Средняя в городе",
+            "textStyle": "style_AE2FT0",
+            "opacity": 0.3
+          }
+        ]
+      },
+      "categories": [
+        {
+          "id": "92:167",
+          "name": "Frame 2131328558",
+          "type": "FRAME",
+          "fills": "8",
+          "borderRadius": "16px",
+          "categoryName": {
+            "id": "78:9",
+            "text": "Имплантация зубов",
+            "textStyle": "4"
+          },
+          "services": [
+            {
+              "name": "Установка импланта Osteem",
+              "ourPrice": "60 000 Р",
+              "cityPrice": "70 000 Р"
+            },
+            {
+              "name": "Установка импланта Neodent",
+              "ourPrice": "60 000 Р",
+              "cityPrice": "70 000 Р"
+            },
+            {
+              "name": "Установка импланта Straumann",
+              "ourPrice": "60 000 Р",
+              "cityPrice": "70 000 Р"
+            }
+          ],
+          "divider": {
+            "id": "79:95",
+            "name": "Vector 153",
+            "type": "IMAGE-SVG",
+            "strokeDashes": [4, 4],
+            "description": "Пунктирная линия разделитель"
+          }
+        }
+      ]
+    },
+    "promotionCard": {
+      "id": "78:8",
+      "name": "Frame 2131328544",
+      "type": "FRAME",
+      "fills": "6",
+      "borderRadius": "25px",
+      "description": "Карточка с акцией на имплантацию OSSTEM",
+      "badge": {
+        "id": "93:281",
+        "text": "Горячее предложение",
+        "fills": "2",
+        "textFills": "9",
+        "borderRadius": "27px"
+      },
+      "title": {
+        "id": "79:77",
+        "text": "Выгодная цена на имплантацию OSSTEM",
+        "textStyle": "style_RKLBOB",
+        "fills": "4"
+      },
+      "description": {
+        "id": "79:83",
+        "text": "Пока удерживаем «старую» цену на складские запасы. Хватит ненадолго.",
+        "textStyle": "style_K0XODS",
+        "fills": "4"
+      },
+      "price": {
+        "id": "79:94",
+        "text": "17 900Р",
+        "textStyle": "style_56952B",
+        "fills": "4"
+      }
+    },
+    "appointmentCard": {
+      "id": "93:273",
+      "name": "Frame 2131328558",
+      "type": "FRAME",
+      "fills": "7",
+      "borderRadius": "25px",
+      "description": "Форма записи на консультацию",
+      "title": {
+        "id": "93:275",
+        "text": "Запись на консультацию в Унидент",
+        "textStyle": "style_RKLBOB",
+        "fills": "4"
+      },
+      "description": {
+        "id": "93:278",
+        "text": "Оставьте свой номер, мы свяжемся и подберём для вас удобное время приёма. Или позвоните нам сами — +7 999 999-99-99",
+        "textStyle": "style_3DPEQ1",
+        "fills": "4"
+      },
+      "buttons": [
+        {
+          "id": "93:289",
+          "type": "outline",
+          "text": "Телефон",
+          "fills": "9",
+          "textFills": "10",
+          "textStyle": "style_DOLR4O",
+          "borderRadius": "15px"
+        },
+        {
+          "id": "93:292",
+          "type": "primary",
+          "text": "Записаться",
+          "fills": "3",
+          "textFills": "9",
+          "textStyle": "style_OQJCVA",
+          "borderRadius": "15px"
+        }
+      ],
+      "decoration": {
+        "id": "256:1070",
+        "name": "Frame 56",
+        "type": "IMAGE-SVG",
+        "description": "Декоративное изображение"
+      }
+    },
+    "viewAllButton": {
+      "id": "93:271",
+      "name": "Frame 54",
+      "text": "Смотреть все цены",
+      "fills": "3",
+      "textFills": "9",
+      "textStyle": "style_OQJCVA",
+      "borderRadius": "15px"
+    }
+  },
+  "colors": {
+    "4": "#191E35",
+    "6": "#F9F9F9",
+    "7": "#EEF3F9",
+    "8": "#F5F7F9",
+    "9": "#FFFFFF",
+    "10": "#8F8F8F",
+    "2": "#607BD4",
+    "3": "#526AC2"
+  },
+  "typography": {
+    "style_NPKHXQ": "Заголовок H2 - 45px, Gilroy SemiBold",
+    "style_AE2FT0": "Заголовки таблицы - 18px, Gilroy Regular",
+    "style_RKLBOB": "Заголовок карточки - 28px, Gilroy SemiBold",
+    "style_K0XODS": "Описание - 16px, Gilroy Regular",
+    "style_56952B": "Цена - 24px, Gilroy Bold",
+    "style_3DPEQ1": "Описание формы - 16px, Gilroy Regular",
+    "style_DOLR4O": "Текст кнопки outline - 16px, Gilroy Medium",
+    "style_OQJCVA": "Текст кнопки primary - 16px, Gilroy SemiBold",
+    "style_XWV3QH": "Наша цена - 18px, Gilroy SemiBold",
+    "style_E0IIUV": "Средняя цена - 18px, Gilroy Regular",
+    "style_YJ38WB": "Категория услуги - 20px, Gilroy SemiBold",
+    "style_N55239": "Название услуги - 16px, Gilroy Regular",
+    "style_LSCAMY": "Текст бейджа - 14px, Gilroy SemiBold"
+  },
+  "imageElements": [
+    {
+      "id": "79:95",
+      "name": "Vector 153",
+      "type": "IMAGE-SVG",
+      "description": "Пунктирная линия разделитель в таблице",
+      "needsDownload": true
+    },
+    {
+      "id": "256:1070",
+      "name": "Frame 56",
+      "type": "IMAGE-SVG",
+      "description": "Декоративное изображение в форме записи",
+      "needsDownload": true
+    }
+  ],
+  "layout": {
+    "layout_MV40JO": "Основной контейнер секции price",
+    "layout_LZTD23": "Таблица с ценами",
+    "layout_O9B5IS": "Карточка категории услуг",
+    "borderRadius": {
+      "section": "25px",
+      "categoryCard": "16px",
+      "button": "15px",
+      "badge": "27px"
+    }
+  },
+  "metadata": {
+    "retrievedAt": "2026-02-04",
+    "sourceFile": "full-figma-data-2026-02-04.yaml",
+    "figmaFileKey": "JPVOauS3F3bEIy1msJXPeR",
+    "nodeUrl": "https://www.figma.com/design/JPVOauS3F3bEIy1msJXPeR/Шаблон-сайта?node-id=93-302",
+    "startLine": 1963,
+    "endLine": 2750
+  }
+}

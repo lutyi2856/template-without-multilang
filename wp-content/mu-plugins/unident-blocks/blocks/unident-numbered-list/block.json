@@ -1,0 +1,19 @@
+{
+  "name": "acf/unident-numbered-list",
+  "title": "Нумерованный список (KB)",
+  "description": "Блок с заголовками H2/H3/H4 и нумерованным/маркированным списком",
+  "category": "unident-blocks",
+  "icon": "editor-ol",
+  "keywords": ["список", "нумерованный", "numbered", "list"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true
+  },
+  "style": ["file:./style.css"]
+}

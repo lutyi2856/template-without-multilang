@@ -1,0 +1,79 @@
+/**
+ * Block: STA с логотипом (unident-sta-logo)
+ */
+
+.unident-sta-logo {
+	margin: 0;
+}
+
+.unident-sta-logo .unident-sta-inner {
+	background: var(--color-bg-elements, #F5F7F9);
+	border-radius: 25px;
+	padding: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.unident-sta-logo .unident-sta-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.unident-sta-logo .unident-sta-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0 0 16px 0;
+}
+
+.unident-sta-logo .unident-sta-desc {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0 0 24px 0;
+}
+
+.unident-sta-logo .unident-sta-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.unident-sta-logo .unident-sta-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 24px;
+	border-radius: 15px;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background 0.2s;
+}
+
+.unident-sta-logo .unident-sta-btn-paid,
+.unident-sta-logo .unident-sta-btn-oms {
+	background: var(--color-primary, #526AC2);
+	color: #fff;
+}
+
+.unident-sta-logo .unident-sta-btn-callback {
+	background: transparent;
+	border: 2px solid var(--color-primary, #526AC2);
+	color: var(--color-primary, #526AC2);
+}
+
+.unident-sta-logo .unident-sta-logo-area {
+	flex-shrink: 0;
+}
+
+.unident-sta-logo .unident-sta-img {
+	max-width: 200px;
+	height: auto;
+	display: block;
+}

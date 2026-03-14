@@ -1,0 +1,91 @@
+{
+  "fileKey": "yBZgnbOnRjEiRDRBcz6NtR",
+  "nodeId": "838:4147",
+  "name": "service 1440",
+  "figmaUrl": "https://www.figma.com/design/yBZgnbOnRjEiRDRBcz6NtR/Шаблон-сайта--Copy-?node-id=838-4147",
+  "dateExtracted": "2026-03-08",
+  "lastDataRefresh": "2026-03-08",
+  "sources": {
+    "metadata": "user-Figma Desktop get_metadata",
+    "designContext": "user-Figma Desktop get_design_context (по подблокам)",
+    "variableDefs": "user-Figma Desktop get_variable_defs",
+    "screenshot": "user-Figma Desktop get_screenshot",
+    "framelink": "user-Framelink MCP for Figma get_figma_data (838:4147), download_figma_images (2026-03-08)"
+  },
+  "framelinkRawFile": "components/service-page-838-4147-framelink.yaml",
+  "designContextMetadataFile": "components/service-page-838-4147-design-context.txt",
+  "dimensions": {
+    "width": 1440,
+    "height": 10988
+  },
+  "variableDefs": {
+    "colors": {
+      "1": "#D9E4F7",
+      "2": "#607BD4",
+      "3": "#526AC2",
+      "4": "#191E35",
+      "5": "",
+      "6": "#F9F9F9",
+      "7": "#EEF3F9",
+      "8": "#F5F7F9",
+      "9": "#FFFFFF",
+      "10": "#8F8F8F",
+      "Borders": "#D8D8D8"
+    },
+    "typography": {
+      "H2": "Font(family: Gilroy, style: SemiBold, size: 45, weight: 600, lineHeight: 100, letterSpacing: -1)"
+    }
+  },
+  "keyNodes": {
+    "menu": "838:4148",
+    "breadcrumbs": "838:4149",
+    "sidebarInfo": "838:4192",
+    "mainContent": "838:4204",
+    "articleCardHero": "886:4479",
+    "promoFrame": "886:4524",
+    "doctors": "897:4677",
+    "cta": "838:4347",
+    "footer": "838:4360",
+    "blog": "838:4361"
+  },
+  "designContextBlocks": {
+    "886:4479": "article_card — hero карточка услуги (Имплантация зубов под ключ)",
+    "838:4347": "cta — CTA баннер (Консультация, снимок и план лечения бесплатно)",
+    "838:4192": "info (fixed) — сайдбар: оглавление + форма «Прикинуть стоимость лечения»"
+  },
+  "mainContentSections": [
+    {"id": "838:4230", "name": "4", "y": 0, "height": 747},
+    {"id": "838:4257", "name": "2", "y": 822, "height": 278},
+    {"id": "887:4408", "name": "7", "y": 1175, "height": 482},
+    {"id": "897:4398", "name": "8", "y": 1732, "height": 632},
+    {"id": "838:7626", "name": "Section", "y": 2439, "height": 1475, "title": "Этапы"},
+    {"id": "838:4261", "name": "3", "y": 3989, "height": 178},
+    {"id": "838:4265", "name": "1", "y": 4242, "height": 452, "title": "Методы лечения"},
+    {"id": "897:4565", "name": "10", "y": 4769, "height": 895, "title": "Цены"},
+    {"id": "838:4302", "name": "5", "y": 5739, "height": 432},
+    {"id": "838:4314", "name": "6", "y": 6246, "height": 324},
+    {"id": "897:4412", "name": "9", "y": 6645, "height": 821, "title": "Часто задаваемые вопросы"}
+  ],
+  "imageNodes": [
+    {"nodeId": "886:4480", "name": "image", "in": "886:4479"},
+    {"nodeId": "838:4256", "name": "image", "in": "838:4230"},
+    {"nodeId": "887:4417", "name": "image", "in": "887:4408"},
+    {"nodeId": "897:4409", "name": "image", "in": "897:4398"},
+    {"nodeId": "838:7687", "name": "Picture → Хирургия", "in": "838:7626"},
+    {"nodeId": "838:4306", "name": "108934 1", "in": "838:4302"},
+    {"nodeId": "838:4309", "name": "doc-picture", "in": "838:4302"},
+    {"nodeId": "887:4407", "name": "jnjyi3ei0r1e83959ovy8599l1szf7b5...", "in": "886:4524"},
+    {"nodeId": "897:4850", "name": "Picture → Карпов Антон Сергеевич", "in": "838:4347"}
+  ],
+  "downloadedAssets": [
+    "6bf751dc5f686cba5f837810a0977a6a19201756.png",
+    "44d54fe3ea87e5fc315a1b3f1b1f2734d951a9d3.png",
+    "hero-article-card.png",
+    "surgery-picture.png",
+    "quote-image.png",
+    "promo-people.png",
+    "cta-doctor.png",
+    "article-card-icon.png"
+  ],
+  "notes": "Страница услуги «Имплантация зубов». Desktop-only (1440px). Многие компоненты (Menu, footer, doctor_card) — instances, уже реализованы. get_design_context для корня 838:4147 вернул sparse metadata — дизайн слишком большой; код получен для подблоков 886:4479, 838:4347, 838:4192."
+}

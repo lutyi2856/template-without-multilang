@@ -1,0 +1,584 @@
+{
+  "metadata": {
+    "name": "rating",
+    "nodeId": "143:1782",
+    "type": "FRAME",
+    "dateExtracted": "2026-01-30",
+    "description": "Блок отзывов с заголовком, слайдером карточек отзывов и кнопкой 'Все отзывы'"
+  },
+  "structure": {
+    "rating": {
+      "id": "143:1782",
+      "type": "FRAME",
+      "layout": "layout_GJTZ74",
+      "children": [
+        {
+          "id": "143:1897",
+          "name": "Frame 2131328709",
+          "type": "FRAME",
+          "layout": "layout_NBU42W",
+          "description": "Основной контейнер контента",
+          "children": [
+            {
+              "id": "143:1896",
+              "name": "Frame 2131328708",
+              "type": "FRAME",
+              "layout": "layout_SEGXKP",
+              "description": "Контейнер заголовка и карточек",
+              "children": [
+                {
+                  "id": "143:1779",
+                  "name": "Frame 2131328706",
+                  "type": "FRAME",
+                  "layout": "layout_4SD0V6",
+                  "description": "Заголовок и кнопка",
+                  "children": [
+                    {
+                      "id": "143:1780",
+                      "name": "Отзывы без сахара 👇",
+                      "type": "TEXT",
+                      "layout": "layout_89HVJN",
+                      "text": "Отзывы без сахара 👇",
+                      "textStyle": "style_2C3IFG",
+                      "fills": "4"
+                    },
+                    {
+                      "id": "143:1898",
+                      "name": "slider",
+                      "type": "IMAGE-SVG",
+                      "layout": "layout_X5QFO7",
+                      "description": "Слайдер/навигация (стрелки влево-вправо)"
+                    },
+                    {
+                      "id": "143:2457",
+                      "name": "Button",
+                      "type": "FRAME",
+                      "layout": "layout_F8AKV2",
+                      "strokes": "3",
+                      "strokeWeight": "1px",
+                      "borderRadius": "15px",
+                      "children": [
+                        {
+                          "id": "143:2458",
+                          "name": "Все отзывы",
+                          "type": "TEXT",
+                          "layout": "layout_VP86SX",
+                          "text": "Все отзывы",
+                          "textStyle": "style_Y5EL9U",
+                          "fills": "3"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "122:537",
+                  "name": "Review",
+                  "type": "INSTANCE",
+                  "layout": "layout_0OF1IY",
+                  "fills": "8",
+                  "borderRadius": "25px",
+                  "componentId": "122:536",
+                  "description": "Карточка отзыва (инстанс компонента Review)",
+                  "children": [
+                    {
+                      "id": "I122:537;143:1945",
+                      "name": "Frame 2131328712",
+                      "type": "FRAME",
+                      "layout": "layout_7AQT0X",
+                      "description": "Контейнер содержимого отзыва",
+                      "children": [
+                        {
+                          "id": "I122:537;143:1899",
+                          "name": "Frame 2131328711",
+                          "type": "FRAME",
+                          "layout": "layout_169J4Z",
+                          "description": "Отзыв и ответ",
+                          "children": [
+                            {
+                              "id": "I122:537;122:493",
+                              "name": "Бабушке сделали протезирование на 4 имплантах, все прошло быстро",
+                              "type": "TEXT",
+                              "layout": "layout_BGW59N",
+                              "text": "Бабушке сделали протезирование на 4 имплантах, все прошло быстро",
+                              "textStyle": "style_B5B05M",
+                              "fills": "4",
+                              "description": "Заголовок отзыва"
+                            },
+                            {
+                              "id": "I122:537;95:1503",
+                              "type": "TEXT",
+                              "layout": "layout_BHWMVY",
+                              "text": "Мне все понравилось: на консультации все было понятно рассказано...",
+                              "textStyle": "style_CZ3UNP",
+                              "fills": "4",
+                              "description": "Текст отзыва (длинный)"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "I122:537;122:516",
+                          "name": "answer",
+                          "type": "FRAME",
+                          "layout": "layout_134T7T",
+                          "fills": "9",
+                          "borderRadius": "25px",
+                          "description": "Ответ клиники",
+                          "children": [
+                            {
+                              "id": "I122:537;122:518",
+                              "name": "Frame 2131328635",
+                              "type": "IMAGE-SVG",
+                              "layout": "layout_N8NGCS",
+                              "fills": "3",
+                              "borderRadius": "1000px",
+                              "description": "Аватар клиники (круглый)"
+                            },
+                            {
+                              "id": "I122:537;122:521",
+                              "type": "TEXT",
+                              "layout": "layout_1R123G",
+                              "text": "Здравствуйте, Виктория! Спасибо за вашу обратную связь...",
+                              "textStyle": "style_9Y9EI9",
+                              "fills": "4",
+                              "description": "Текст ответа"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "I122:537;143:1996",
+                      "name": "Frame 2131328713",
+                      "type": "FRAME",
+                      "layout": "layout_E0BH11",
+                      "description": "Информация об отзыве",
+                      "children": [
+                        {
+                          "id": "I122:537;122:514",
+                          "name": "info",
+                          "type": "FRAME",
+                          "layout": "layout_A3ZZRD",
+                          "description": "Автор и логотип",
+                          "children": [
+                            {
+                              "id": "I122:537;122:495",
+                              "name": "Group 42342",
+                              "type": "IMAGE-SVG",
+                              "layout": "layout_VU3ZN3",
+                              "borderRadius": "0px",
+                              "description": "Аватар автора"
+                            },
+                            {
+                              "id": "I122:537;122:506",
+                              "name": "Logo",
+                              "type": "IMAGE-SVG",
+                              "layout": "layout_94J8B4",
+                              "fills": "9",
+                              "description": "Логотип платформы"
+                            },
+                            {
+                              "id": "I122:537;122:515",
+                              "name": "Виктория Н, 25.05.2025",
+                              "type": "TEXT",
+                              "layout": "layout_VP86SX",
+                              "text": "Виктория Н, 25.05.2025",
+                              "textStyle": "style_JY7OQ5",
+                              "fills": "10"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "I122:537;123:842",
+                          "name": "Frame 2131328648",
+                          "type": "FRAME",
+                          "layout": "layout_5GPM1K",
+                          "description": "Лечащие врачи и оказанные услуги",
+                          "children": [
+                            {
+                              "id": "I122:537;122:531",
+                              "name": "Frame 2131328638",
+                              "type": "FRAME",
+                              "layout": "layout_2GZD1H",
+                              "description": "Лечащие врачи",
+                              "children": [
+                                {
+                                  "id": "I122:537;392:2201",
+                                  "name": "Frame 2131328730",
+                                  "type": "FRAME",
+                                  "layout": "layout_GEA87P",
+                                  "children": [
+                                    {
+                                      "id": "I122:537;392:2089",
+                                      "name": "doctors",
+                                      "type": "FRAME",
+                                      "layout": "layout_D044BM",
+                                      "children": [
+                                        {
+                                          "id": "I122:537;95:1505",
+                                          "name": "Лечащие врачи",
+                                          "type": "TEXT",
+                                          "layout": "layout_VP86SX",
+                                          "text": "Лечащие врачи ",
+                                          "textStyle": "style_JY7OQ5",
+                                          "fills": "10"
+                                        },
+                                        {
+                                          "id": "I122:537;392:2242",
+                                          "name": "slider",
+                                          "type": "IMAGE-SVG",
+                                          "layout": "layout_7A903A",
+                                          "description": "Слайдер врачей"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "I122:537;122:530",
+                                  "name": "Frame 2131328637",
+                                  "type": "FRAME",
+                                  "layout": "layout_BKGV9N",
+                                  "children": [
+                                    {
+                                      "id": "I122:537;122:524",
+                                      "name": "doctor",
+                                      "type": "IMAGE-SVG",
+                                      "layout": "layout_KK1KOJ",
+                                      "fills": "9",
+                                      "borderRadius": "117.97684478759766px",
+                                      "description": "Фото врача (круглое)"
+                                    },
+                                    {
+                                      "id": "I122:537;122:529",
+                                      "name": "Frame 2131328636",
+                                      "type": "FRAME",
+                                      "layout": "layout_M3P19J",
+                                      "children": [
+                                        {
+                                          "id": "I122:537;122:527",
+                                          "name": "Любимов Павел Олегович",
+                                          "type": "TEXT",
+                                          "layout": "layout_H8NLBL",
+                                          "text": "Любимов Павел Олегович",
+                                          "textStyle": "style_9Y9EI9",
+                                          "fills": "4"
+                                        },
+                                        {
+                                          "id": "I122:537;122:528",
+                                          "name": "врач",
+                                          "type": "TEXT",
+                                          "layout": "layout_H8NLBL",
+                                          "text": "врач",
+                                          "textStyle": "style_WWRUMN",
+                                          "fills": "10"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": "I122:537;123:539",
+                              "name": "Frame 2131328647",
+                              "type": "FRAME",
+                              "layout": "layout_QQJT8R",
+                              "description": "Оказанные услуги",
+                              "children": [
+                                {
+                                  "id": "I122:537;392:2334",
+                                  "name": "text",
+                                  "type": "FRAME",
+                                  "layout": "layout_6W86SL",
+                                  "children": [
+                                    {
+                                      "id": "I122:537;122:494",
+                                      "name": "Оказанные услуги",
+                                      "type": "TEXT",
+                                      "layout": "layout_VP86SX",
+                                      "text": "Оказанные услуги",
+                                      "textStyle": "style_JY7OQ5",
+                                      "fills": "10"
+                                    },
+                                    {
+                                      "id": "I122:537;392:2271",
+                                      "name": "slider",
+                                      "type": "IMAGE-SVG",
+                                      "layout": "layout_7A903A",
+                                      "description": "Слайдер услуг"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "I122:537;122:535",
+                                  "name": "Frame 2131328640",
+                                  "type": "FRAME",
+                                  "layout": "layout_BKGV9N",
+                                  "children": [
+                                    {
+                                      "id": "I122:537;95:1501",
+                                      "name": "Frame 2131328592",
+                                      "type": "FRAME",
+                                      "layout": "layout_UDF5RI",
+                                      "fills": "9",
+                                      "borderRadius": "10px",
+                                      "children": [
+                                        {
+                                          "id": "I122:537;95:1500",
+                                          "name": "Frame 2131328591",
+                                          "type": "FRAME",
+                                          "layout": "layout_51RV8S",
+                                          "children": [
+                                            {
+                                              "id": "I122:537;95:1497",
+                                              "name": "Имплантация зубов",
+                                              "type": "TEXT",
+                                              "layout": "layout_VP86SX",
+                                              "text": "Имплантация зубов",
+                                              "textStyle": "style_CH1GXB",
+                                              "fills": "4"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "I122:537;122:532",
+                                      "name": "Frame 2131328639",
+                                      "type": "FRAME",
+                                      "layout": "layout_WKKUVX",
+                                      "fills": "9",
+                                      "borderRadius": "10px",
+                                      "children": [
+                                        {
+                                          "id": "I122:537;122:533",
+                                          "name": "Frame 2131328591",
+                                          "type": "FRAME",
+                                          "layout": "layout_51RV8S",
+                                          "children": [
+                                            {
+                                              "id": "I122:537;122:534",
+                                              "name": "Лечение кариеса",
+                                              "type": "TEXT",
+                                              "layout": "layout_VP86SX",
+                                              "text": "Лечение кариеса",
+                                              "textStyle": "style_CH1GXB",
+                                              "fills": "4"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "122:595",
+              "name": "Frame 2131328641",
+              "type": "IMAGE-SVG",
+              "layout": "layout_L0VKA4",
+              "fills": "9",
+              "description": "Изображение внизу секции (декоративное)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "typography": {
+    "style_2C3IFG": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 600,
+      "fontSize": 45,
+      "lineHeight": "1.193em",
+      "letterSpacing": "-3%",
+      "textAlign": "LEFT",
+      "usage": "Заголовок H2 (Отзывы без сахара 👇)"
+    },
+    "style_Y5EL9U": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 600,
+      "fontSize": 16,
+      "lineHeight": "1.193em",
+      "letterSpacing": "-1%",
+      "textAlign": "LEFT",
+      "usage": "Кнопка (Все отзывы)"
+    },
+    "style_B5B05M": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 28,
+      "lineHeight": "1.3em",
+      "textAlign": "LEFT",
+      "usage": "Заголовок отзыва"
+    },
+    "style_CZ3UNP": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 400,
+      "fontSize": 18,
+      "lineHeight": "1.3em",
+      "textAlign": "LEFT",
+      "usage": "Текст отзыва"
+    },
+    "style_9Y9EI9": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 18,
+      "lineHeight": "1.3em",
+      "textAlign": "LEFT",
+      "usage": "Текст ответа клиники, имя врача"
+    },
+    "style_JY7OQ5": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 14,
+      "lineHeight": "1.3em",
+      "textAlign": "LEFT",
+      "usage": "Метаданные (дата, автор), метки разделов"
+    },
+    "style_WWRUMN": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 12,
+      "lineHeight": "1.3em",
+      "textAlign": "LEFT",
+      "usage": "Должность врача (маленький текст)"
+    },
+    "style_CH1GXB": {
+      "fontFamily": "Gilroy",
+      "fontWeight": 500,
+      "fontSize": 16,
+      "lineHeight": "1.177em",
+      "textAlign": "LEFT",
+      "usage": "Названия услуг"
+    }
+  },
+  "colors": {
+    "fills": {
+      "1": "#D9E4F7",
+      "2": "#607BD4",
+      "3": "#526AC2",
+      "4": "#191E35",
+      "5": "linear-gradient(180deg, rgba(46, 54, 93, 1) 0%, rgba(70, 85, 157, 1) 100%)",
+      "6": "#F9F9F9",
+      "7": "#EEF3F9",
+      "8": "#F5F7F9",
+      "9": "#FFFFFF",
+      "10": "#8F8F8F"
+    },
+    "usage": {
+      "заголовок": "4 (#191E35)",
+      "текст_отзыва": "4 (#191E35)",
+      "текст_ответа": "4 (#191E35)",
+      "кнопка_текст": "3 (#526AC2)",
+      "кнопка_border": "3 (#526AC2)",
+      "карточка_фон": "8 (#F5F7F9)",
+      "ответ_фон": "9 (#FFFFFF)",
+      "аватар_фон": "3 (#526AC2)",
+      "метаданные_текст": "10 (#8F8F8F)",
+      "услуги_фон": "9 (#FFFFFF)"
+    }
+  },
+  "images": {
+    "svg_elements": [
+      {
+        "nodeId": "143:1898",
+        "name": "slider",
+        "usage": "Навигация слайдера (стрелки влево-вправо)",
+        "suggestedFilename": "review-slider-controls.svg"
+      },
+      {
+        "nodeId": "I122:537;122:518",
+        "name": "Frame 2131328635",
+        "usage": "Аватар клиники в ответе (круглый)",
+        "suggestedFilename": "clinic-avatar.svg"
+      },
+      {
+        "nodeId": "I122:537;122:495",
+        "name": "Group 42342",
+        "usage": "Аватар автора отзыва",
+        "suggestedFilename": "user-avatar.svg"
+      },
+      {
+        "nodeId": "I122:537;122:506",
+        "name": "Logo",
+        "usage": "Логотип платформы отзывов",
+        "suggestedFilename": "review-platform-logo.svg"
+      },
+      {
+        "nodeId": "I122:537;392:2242",
+        "name": "slider",
+        "usage": "Слайдер врачей",
+        "suggestedFilename": "doctors-slider-controls.svg"
+      },
+      {
+        "nodeId": "I122:537;122:524",
+        "name": "doctor",
+        "usage": "Фото врача (круглое)",
+        "suggestedFilename": "doctor-photo.svg"
+      },
+      {
+        "nodeId": "I122:537;392:2271",
+        "name": "slider",
+        "usage": "Слайдер услуг",
+        "suggestedFilename": "services-slider-controls.svg"
+      },
+      {
+        "nodeId": "122:595",
+        "name": "Frame 2131328641",
+        "usage": "Декоративное изображение внизу секции",
+        "suggestedFilename": "rating-section-bottom-decoration.svg"
+      }
+    ]
+  },
+  "content": {
+    "heading": "Отзывы без сахара 👇",
+    "buttonText": "Все отзывы",
+    "sampleReview": {
+      "title": "Бабушке сделали протезирование на 4 имплантах, все прошло быстро",
+      "text": "Мне все понравилось: на консультации все было понятно рассказано. Мне показали, какие результаты будут, меня это поразило. Я не думал, что возможно сделать операцию без болевых ощущений вообще. Уехал из клиники сам, за рулем. Все прошло для меня незаметно, врачи грамотно и профессионально сделали свою работу. Теперь можно зевать, улыбаться и не стесняться своей улыбки. Появились совсем другие вкусовые ощущения. Качество в клинике «Мандарин» не уступает европейскому. Самые положительные отзывы и эмоции!» — делится впечатлениями Владимир после имплантации.",
+      "author": "Виктория Н",
+      "date": "25.05.2025",
+      "clinicAnswer": "Здравствуйте, Виктория! Спасибо за вашу обратную связь. Мы стараемся сочетать высокое качество услуг с индивидуальным подходом к клиенту. Если у вас появятся вопросы – будем рады помочь.",
+      "doctor": {
+        "name": "Любимов Павел Олегович",
+        "title": "врач"
+      },
+      "services": [
+        "Имплантация зубов",
+        "Лечение кариеса"
+      ]
+    }
+  },
+  "layout": {
+    "borderRadius": {
+      "section": "не указан (FRAME)",
+      "reviewCard": "25px",
+      "button": "15px",
+      "answer": "25px",
+      "avatar": "1000px (круглый)",
+      "servicesBadge": "10px"
+    },
+    "strokes": {
+      "button": "1px, цвет 3 (#526AC2)"
+    }
+  },
+  "notes": [
+    "Блок содержит слайдер карточек отзывов",
+    "Review (122:537) - это инстанс компонента 122:536",
+    "Карточка отзыва включает: заголовок, текст, автор, дату, ответ клиники, врачей, услуги",
+    "Используются 3 типа слайдеров: основной, врачей, услуг",
+    "Фото/аватары представлены как IMAGE-SVG (нужно скачать)",
+    "Декоративное изображение внизу (122:595) - IMAGE-SVG"
+  ]
+}

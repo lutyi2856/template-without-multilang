@@ -1,0 +1,77 @@
+{
+  "nodeId": "392:2371",
+  "name": "footer",
+  "type": "INSTANCE",
+  "componentId": "131:1618",
+  "source": "full-figma-data-2026-02-04.yaml",
+  "figmaUrl": "https://www.figma.com/design/JPVOauS3F3bEIy1msJXPeR/?node-id=392-2371",
+  "layout": "layout_OPH6SV",
+  "fills": "fill_CV8QNJ",
+  "effects": "effect_U1BLYO",
+  "structure": {
+    "Group 1 (95:1227)": {
+      "УниДент (95:1228)": "TEXT",
+      "Vector (95:1229)": "IMAGE-SVG"
+    },
+    "Frame 46 (95:1230)": {
+      "Frame 47 (95:1231)": {
+        "Frame 66 (95:1232)": "IMAGE-SVG",
+        "Услуги (95:1237)": "TEXT"
+      },
+      "Frame 49 (95:1238)": {
+        "О клинике (95:1239)": "TEXT",
+        "Vector 39 (95:1240)": "IMAGE-SVG"
+      },
+      "Врачи (95:1241)": "TEXT",
+      "Frame 50 (95:1242)": { "Акции (95:1243)": "TEXT" },
+      "Кейсы (95:1248)": "TEXT"
+    },
+    "Frame 2131328630 (96:379)": {
+      "Цены (95:1249)": "TEXT",
+      "Frame 51 (95:1250)": { "Отзывы (95:1251)": "TEXT" },
+      "Frame 48 (95:1256)": {
+        "Пациентам (95:1257)": "TEXT",
+        "Vector 39 (95:1258)": "IMAGE-SVG"
+      },
+      "Контакты (95:1259)": "TEXT"
+    },
+    "Frame 2131328667 (131:856)": {
+      "Frame 74 (95:1265)": "кнопка Связаться с нами",
+      "Frame 2131328631 (131:853)": "кнопка Записаться на прием",
+      "copyright (96:380)": "TEXT",
+      "disclaimer (131:860)": "TEXT",
+      "policy (96:381)": "TEXT",
+      "Vector 162 (131:857)": "IMAGE-SVG",
+      "social media (131:863)": {
+        "Frame 2131328698 (131:894)": {
+          "Frame 2131328629 (96:378)": "адрес/телефон/часы + Frame 2131328697 (131:893)": "IMAGE-SVG"
+        }
+      }
+    }
+  },
+  "imageSvgNodes": [
+    { "nodeId": "95:1229", "name": "Vector", "description": "Иконка рядом с логотипом УниДент", "fills": "9" },
+    { "nodeId": "95:1232", "name": "Frame 66", "description": "Иконка меню Услуги", "fills": null },
+    { "nodeId": "95:1240", "name": "Vector 39", "description": "Стрелка dropdown (О клинике)", "fills": "9", "strokes": "9" },
+    { "nodeId": "95:1258", "name": "Vector 39", "description": "Стрелка dropdown (Пациентам)", "fills": "9", "strokes": "9" },
+    { "nodeId": "131:857", "name": "Vector 162", "description": "Разделительная линия", "strokes": "10" },
+    { "nodeId": "95:1267", "name": "Frame 70", "description": "Иконка Адрес/Схема проезда", "fills": "2" },
+    { "nodeId": "95:1275", "name": "Frame 70", "description": "Иконка Телефон", "fills": "2" },
+    { "nodeId": "95:1282", "name": "Frame 70", "description": "Иконка Часы работы", "fills": "2" },
+    { "nodeId": "131:893", "name": "Frame 2131328697", "description": "Блок соцсетей (группа иконок)", "type": "IMAGE-SVG" }
+  ],
+  "typography": {
+    "logo": "style_0LIYZ3",
+    "navItem": "style_IYZ3U7 (18px, fills 9)",
+    "button": "style_OQJCVA",
+    "copyright": "style_4AM294, opacity 0.5",
+    "contactLabel": "style_LSCAMY, fill_5YG3ZJ"
+  },
+  "colors": {
+    "fills": "fill_CV8QNJ (footer bg #2F375F)",
+    "text": "fills '9' (white)",
+    "textMuted": "opacity 0.5",
+    "accent": "fills '2' (#607BD4)",
+    "stroke": "strokes '8', '10'"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "nodeId": "93:697",
+  "name": "services",
+  "type": "FRAME",
+  "description": "Блок с сеткой карточек услуг и заголовком 'Мы рядом, чтобы помочь'",
+  "metadata": {
+    "dateRetrieved": "2026-01-30",
+    "figmaFileKey": "JPVOauS3F3bEIy1msJXPeR",
+    "figmaUrl": "https://www.figma.com/design/JPVOauS3F3bEIy1msJXPeR/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD-%D1%81%D0%B0%D0%B9%D1%82%D0%B0?node-id=93-697"
+  },
+  "styles": {
+    "layout": "layout_3WZ23E",
+    "fills": "7",
+    "fillsColor": "#EEF3F9",
+    "borderRadius": "25px"
+  },
+  "structure": {
+    "header": {
+      "nodeId": "95:2678",
+      "type": "FRAME",
+      "name": "Frame 2131328621",
+      "children": [
+        {
+          "nodeId": "93:698",
+          "type": "TEXT",
+          "name": "Мы рядом, чтобы помочь",
+          "text": "Мы рядом, чтобы помочь",
+          "textStyle": "H2",
+          "fills": "4",
+          "fillsColor": "#191E35",
+          "typography": {
+            "fontSize": "45px",
+            "fontFamily": "Gilroy",
+            "fontWeight": "600",
+            "lineHeight": "1.193",
+            "letterSpacing": "-1%"
+          }
+        }
+      ]
+    },
+    "buttons": {
+      "nodeId": "125:870",
+      "type": "FRAME",
+      "name": "buttins",
+      "children": [
+        {
+          "nodeId": "96:372",
+          "type": "FRAME",
+          "name": "Button",
+          "borderRadius": "15px",
+          "fills": "3",
+          "fillsColor": "#526AC2",
+          "children": [
+            {
+              "nodeId": "96:373",
+              "type": "TEXT",
+              "name": "Все услуги",
+              "text": "Все услуги",
+              "textStyle": "style_GOHU8F",
+              "fills": "9",
+              "fillsColor": "#FFFFFF",
+              "typography": {
+                "fontSize": "16px",
+                "fontFamily": "Gilroy",
+                "fontWeight": "600",
+                "lineHeight": "1.193",
+                "letterSpacing": "-1%"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servicesGrid": {
+      "nodeId": "125:869",
+      "type": "FRAME",
+      "name": "services",
+      "componentId": "125:776",
+      "componentName": "service_card",
+      "instances": [
+        "125:777",
+        "125:787",
+        "125:797",
+        "125:808",
+        "125:809",
+        "125:810",
+        "125:838",
+        "125:839",
+        "125:840"
+      ],
+      "serviceCardStructure": {
+        "borderRadius": "25px",
+        "children": [
+          {
+            "type": "GROUP",
+            "name": "Group 380288",
+            "children": [
+              {
+                "type": "RECTANGLE",
+                "name": "Rectangle 515",
+                "fills": "9",
+                "fillsColor": "#FFFFFF",
+                "borderRadius": "7.962047100067139px",
+                "effects": "effect_RHQ2H3"
+              },
+              {
+                "nodeId": "125:769",
+                "type": "IMAGE-SVG",
+                "name": "arrow",
+                "description": "Стрелка в карточке услуги",
+                "strokes": "9",
+                "strokeWeight": "2px",
+                "borderRadius": "55px",
+                "downloadAs": "service-arrow.svg"
+              },
+              {
+                "type": "TEXT",
+                "name": "Стоматология города",
+                "textStyle": "style_6GWXCF",
+                "fills": "4",
+                "fillsColor": "#191E35",
+                "typography": {
+                  "fontSize": "23px",
+                  "fontFamily": "Gilroy",
+                  "fontWeight": "500",
+                  "lineHeight": "1.25"
+                }
+              },
+              {
+                "nodeId": "125:772",
+                "type": "IMAGE-SVG",
+                "name": "Frame 2131328654",
+                "description": "Иконка услуги",
+                "downloadAs": "service-icon.svg"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "imagesToDownload": [
+    {
+      "nodeId": "125:769",
+      "fileName": "service-arrow.svg",
+      "description": "Стрелка в карточке услуги"
+    },
+    {
+      "nodeId": "125:772",
+      "fileName": "service-icon.svg",
+      "description": "Иконка услуги (может быть несколько вариантов)"
+    }
+  ],
+  "colors": {
+    "background": "#EEF3F9",
+    "text": "#191E35",
+    "button": "#526AC2",
+    "buttonText": "#FFFFFF",
+    "cardBackground": "#FFFFFF"
+  },
+  "notes": [
+    "Блок содержит заголовок H2, кнопку 'Все услуги' и сетку карточек услуг",
+    "Каждая карточка - инстанс компонента service_card (125:776)",
+    "В кэше FIGMA_CACHE.md уже есть информация о компоненте service_card",
+    "IMAGE-SVG ноды нужно скачать отдельно через download_figma_images"
+  ]
+}

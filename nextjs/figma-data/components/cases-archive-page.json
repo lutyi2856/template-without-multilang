@@ -1,0 +1,210 @@
+{
+  "nodeId": "406:5648",
+  "name": "cases/ 1440",
+  "fileKey": "eEN4I9HdQ3JiW708BuOMRc",
+  "date": "2026-02-21",
+  "sources": {
+    "designContext": "user-Figma get_design_context",
+    "screenshot": "user-Figma get_screenshot",
+    "variableDefs": "user-Figma get_variable_defs",
+    "framelinkLayout": "user-Framelink MCP get_figma_data (2026-02-21)",
+    "framelinkImages": "user-Framelink MCP download_figma_images (2026-02-21)",
+    "structure": "full-figma-data-2026-02-04.yaml"
+  },
+  "structure": {
+    "page": "406:5648",
+    "menu": "406:5649",
+    "breadcrumbs": "406:5650",
+    "titleBlock": "406:5656",
+    "title": "406:5657",
+    "tags": "406:5670",
+    "casesGrid": "406:6019",
+    "loadMoreButton": "406:5666",
+    "footer": "406:5658",
+    "caseCards": ["406:6217", "406:6314"]
+  },
+  "keyNodes": {
+    "406:5648": {
+      "name": "cases/ 1440",
+      "type": "FRAME",
+      "layout": "layout_Z1RUJ9",
+      "fills": "9"
+    },
+    "406:5650": {
+      "name": "Breadcumbs",
+      "children": ["406:5652 Главная", "406:5653 Frame 2131328721 (IMAGE-SVG)", "406:5655 Кейсы"],
+      "layout": "layout_WP6UWH"
+    },
+    "406:5656": {
+      "name": "Frame 2131328757",
+      "description": "Блок заголовка",
+      "children": ["406:5657 Наши кейсы"]
+    },
+    "406:5657": {
+      "name": "Наши кейсы",
+      "type": "TEXT",
+      "style": "H2",
+      "typography": "45px Gilroy SemiBold (600), line-height 1.19, letter-spacing -1%",
+      "fills": "4"
+    },
+    "406:5670": {
+      "name": "tags",
+      "description": "Фильтры категорий",
+      "layout": "layout_QIYVAW",
+      "children": [
+        "406:5671 Button «Все кейсы» (active, fills 3)",
+        "406:5673-406:5679 Button Имплантация, Диагностика (inactive, fills 6)"
+      ]
+    },
+    "406:5666": {
+      "name": "Button",
+      "description": "Загрузить больше",
+      "children": ["406:5667 streamline-ultimate:loading-bold IMAGE-SVG", "406:5669 Загрузить больше TEXT"],
+      "borderRadius": 15,
+      "stroke": "3"
+    },
+    "406:6019": {
+      "name": "cases",
+      "description": "Сетка карточек кейсов",
+      "layout": "layout_28JQSO",
+      "children": ["406:6217", "406:6314"],
+      "componentId": "123:416"
+    },
+    "406:6217": {
+      "name": "case",
+      "componentId": "123:416",
+      "type": "COMPONENT",
+      "dimensions": "см. components/case.json",
+      "borderRadius": 25,
+      "fills": "8"
+    }
+  },
+  "typography": {
+    "title": "45px Gilroy SemiBold (600), line-height 1.19, letter-spacing -1%",
+    "breadcrumbs": "14px Gilroy Medium (500), line-height 1.177, letter-spacing -1%",
+    "filterActive": "16px Gilroy Medium (500)",
+    "filterInactive": "16px Gilroy Medium (500), fills 10",
+    "loadMoreButton": "16px Gilroy SemiBold (600)",
+    "caseCard": "см. components/case.json"
+  },
+  "colors": {
+    "fills": {
+      "1": "#D9E4F7",
+      "2": "#607BD4",
+      "3": "#526AC2",
+      "4": "#191E35",
+      "6": "#F9F9F9",
+      "8": "#F5F7F9",
+      "9": "#FFFFFF",
+      "10": "#8F8F8F"
+    },
+    "borderRadius": {
+      "card": 25,
+      "filterButton": 15,
+      "loadMoreButton": 15
+    }
+  },
+  "variableDefs": {
+    "1": "#D9E4F7",
+    "2": "#607BD4",
+    "3": "#526AC2",
+    "4": "#191E35",
+    "6": "#F9F9F9",
+    "8": "#F5F7F9",
+    "9": "#FFFFFF",
+    "10": "#8F8F8F",
+    "H2": "Font(family: Gilroy, style: SemiBold, size: 45, weight: 600, lineHeight: 100, letterSpacing: -1)"
+  },
+  "layout": {
+    "page": {
+      "dimensions": "1440×2439",
+      "layout": "layout_7FCMHQ"
+    },
+    "breadcrumbs": {
+      "dimensions": "1440×44",
+      "y": 179.69,
+      "innerFrame": {
+        "mode": "row",
+        "gap": 10,
+        "x": 29.38,
+        "y": 14
+      }
+    },
+    "titleBlock": {
+      "mode": "column",
+      "gap": 20,
+      "width": 881,
+      "x": 29,
+      "y": 254.13
+    },
+    "tags": {
+      "mode": "row",
+      "gap": 15,
+      "x": 26.34,
+      "y": 328.13,
+      "activeButton": {
+        "dimensions": "154×48",
+        "gap": 5,
+        "borderRadius": 15,
+        "fills": "3"
+      },
+      "inactiveButton": {
+        "fills": "6",
+        "borderRadius": 15
+      }
+    },
+    "loadMoreButton": {
+      "dimensions": "250×60",
+      "gap": 10,
+      "borderRadius": 15,
+      "stroke": "3",
+      "x": 595,
+      "y": 2036.73
+    },
+    "casesGrid": {
+      "mode": "row",
+      "wrap": true,
+      "gap": 20,
+      "width": 1386,
+      "x": 26,
+      "y": 575.72,
+      "layout": "layout_1HV8XG"
+    },
+    "caseCard": {
+      "mode": "column",
+      "gap": 20,
+      "width": 683,
+      "borderRadius": 25,
+      "sliderHeight": 345.51
+    }
+  },
+  "imageNodes": {
+    "forDownload": [
+      {
+        "nodeId": "406:5653",
+        "description": "Breadcrumb separator (Frame 2131328721)",
+        "fileName": "breadcrumb-separator-cases.svg",
+        "downloaded": true,
+        "dimensions": "5×8"
+      },
+      {
+        "nodeId": "406:5667",
+        "description": "Loading icon в кнопке «Загрузить больше»",
+        "fileName": "load-more-icon.svg",
+        "downloaded": true,
+        "dimensions": "22×22"
+      }
+    ]
+  },
+  "textContent": {
+    "title": "Наши кейсы",
+    "breadcrumbs": ["Главная", "Кейсы"],
+    "filters": ["Все кейсы", "Имплантация", "Диагностика"],
+    "loadMore": "Загрузить больше"
+  },
+  "relatedComponents": {
+    "case": "123:416 (components/case.json)",
+    "Menu": "109:133 (header)",
+    "footer": "131:1618"
+  }
+}

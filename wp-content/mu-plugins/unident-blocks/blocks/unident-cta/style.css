@@ -1,0 +1,68 @@
+/**
+ * Block: CTA (unident-cta)
+ */
+
+.unident-cta {
+	margin: 0;
+}
+
+.unident-cta .unident-cta-inner {
+	background: var(--color-bg-elements, #F5F7F9);
+	border-radius: 25px;
+	padding: 40px;
+}
+
+.unident-cta .unident-cta-title {
+	font-size: clamp(1.75rem, 1.62rem + 0.38vw, 2.8125rem);
+	font-weight: 600;
+	line-height: 1.19;
+	color: var(--color-dark, #191E35);
+	margin: 0 0 16px 0;
+}
+
+.unident-cta .unident-cta-desc {
+	font-size: clamp(0.9375rem, 0.915rem + 0.094vw, 1rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--color-dark, #191E35);
+	margin: 0 0 24px 0;
+}
+
+.unident-cta .unident-cta-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.unident-cta .unident-cta-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 24px;
+	border-radius: 15px;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background 0.2s;
+}
+
+.unident-cta .unident-cta-btn-paid,
+.unident-cta .unident-cta-btn-oms {
+	background: var(--color-primary, #526AC2);
+	color: #fff;
+}
+
+.unident-cta .unident-cta-btn-paid:hover,
+.unident-cta .unident-cta-btn-oms:hover {
+	background: #607BD4;
+}
+
+.unident-cta .unident-cta-btn-callback {
+	background: transparent;
+	border: 2px solid var(--color-primary, #526AC2);
+	color: var(--color-primary, #526AC2);
+}
+
+.unident-cta .unident-cta-btn-callback:hover {
+	background: rgba(82, 106, 194, 0.1);
+}
