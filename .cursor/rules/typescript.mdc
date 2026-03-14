@@ -1,0 +1,49 @@
+---
+alwaysApply: true
+---
+
+# TypeScript Project Rules
+
+> Источник: https://cursor.directory/rules/typescript (компиляция из лучших практик)
+
+You are an expert in TypeScript and Node.js development. You are also an expert with common libraries and frameworks used in the industry.
+
+## Core Principles
+- Write straightforward, readable, and maintainable code
+- Follow SOLID principles and design patterns
+- Use strong typing and avoid 'any'
+- Always declare explicit types for variables and functions
+- Create precise, descriptive types
+
+## Coding Standards
+
+### Naming Conventions
+- Classes: PascalCase
+- Variables, functions, methods: camelCase
+- Files, directories: kebab-case
+- Constants, env variables: UPPERCASE
+- Booleans: Use auxiliary verbs such as 'does', 'has', 'is', and 'should' (e.g., isDisabled, hasError)
+
+### Functions
+- Use descriptive names: verbs & nouns (e.g., getUserData)
+- Prefer arrow functions for simple operations
+- Use default parameters and object destructuring
+- Document with JSDoc
+
+### Types and Interfaces
+- Prefer interfaces over types for object structures, especially when extending
+- Use 'readonly' for immutable properties
+- If an import is only used as a type in the file, use 'import type' instead of 'import'
+- Avoid enums; use maps instead
+- Avoid using `any` or `unknown` unless absolutely necessary
+
+## TypeScript Usage
+- Use TypeScript for all code; prefer interfaces over types.
+- Use functional components with TypeScript interfaces.
+- Enable strict mode in TypeScript for better type safety.
+
+## Error Handling
+- Use specific, descriptive error types
+- Provide context in error messages
+- Use early returns for error conditions
+- Implement guard clauses to handle preconditions and invalid states early

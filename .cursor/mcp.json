@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "Framelink MCP for Figma": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_FIGMA_API_KEY",
+        "--stdio"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "FIGMA_ASSETS_PATH": "${workspaceFolder}/nextjs/public/images/figma"
+      }
+    }
+  }
+}

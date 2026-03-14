@@ -1,0 +1,672 @@
+---
+alwaysApply: true
+---
+
+# HTML/JSX Patterns - УниДент Project
+
+> Правила работы с HTML/JSX в Next.js + React проекте
+> Дата создания: 2026-02-05
+> Статус: ✅ Активно
+
+You are an expert in React JSX, TypeScript, and modern Next.js development with semantic HTML.
+
+## 🎯 Основные принципы
+
+**Это НЕ HTMX проект!** Используется:
+- **JSX/TSX** (TypeScript + React)
+- **Next.js Server Components** по умолчанию
+- **Tailwind CSS** для стилей
+- **Design System компоненты** для типографики и UI
+
+---
+
+## 1️⃣ JSX Syntax Rules
+
+### Декларативный JSX
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// Декларативный подход
+export function DoctorCard({ doctor }: Props) {
+  return (
+    <Card>
+      <Heading level={3}>{doctor.name}</Heading>
+      <Text variant="doctor-description">{doctor.specialty}</Text>
+      {doctor.isAvailable && <Badge variant="available">Доступен</Badge>}
+    </Card>
+  );
+}
+```
+
+**❌ НЕПРАВИЛЬНО:**
+
+```tsx
+// Императивный подход
+function DoctorCard({ doctor }: Props) {
+  let html = '';
+  if (doctor.isAvailable) {
+    html = '<span>Доступен</span>';
+  }
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+}
+```
+
+### Условный рендеринг
+
+**✅ ПРАВИЛЬНО - короткий синтаксис:**
+
+```tsx
+{isLoading && <Spinner />}
+{error ? <ErrorMessage /> : <Content />}
+{items.length > 0 && <List items={items} />}
+```
+
+**❌ НЕПРАВИЛЬНО - избыточный синтаксис:**
+
+```tsx
+{isLoading === true ? <Spinner /> : null}
+{error ? <ErrorMessage /> : <></>}
+```
+
+### Списки и ключи
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+<ul>
+  {doctors.map(doctor => (
+    <li key={doctor.id}>
+      <DoctorCard doctor={doctor} />
+    </li>
+  ))}
+</ul>
+```
+
+**❌ НЕПРАВИЛЬНО:**
+
+```tsx
+<ul>
+  {doctors.map((doctor, index) => (
+    <li key={index}> {/* Не используй index как key! */}
+      <DoctorCard doctor={doctor} />
+    </li>
+  ))}
+</ul>
+```
+
+---
+
+## 2️⃣ Component Structure
+
+### Порядок элементов в файле
+
+```typescript
+// 1. Импорты
+import { Card, Heading, Text } from '@/components/design-system';
+import type { Doctor } from '@/types';
+
+// 2. Основной экспортируемый компонент
+export function DoctorCard({ doctor }: Props) {
+  return (
+    <Card>
+      <DoctorHeader doctor={doctor} />
+      <DoctorBody doctor={doctor} />
+    </Card>
+  );
+}
+
+// 3. Подкомпоненты
+function DoctorHeader({ doctor }: Props) {
+  return <Heading level={3}>{doctor.name}</Heading>;
+}
+
+function DoctorBody({ doctor }: Props) {
+  return <Text variant="doctor-description">{doctor.specialty}</Text>;
+}
+
+// 4. Вспомогательные функции
+function formatExperience(years: number): string {
+  return `${years} лет опыта`;
+}
+
+// 5. TypeScript типы
+interface Props {
+  doctor: Doctor;
+}
+```
+
+### Named exports
+
+**✅ ПРАВИЛЬНО:**
+
+```typescript
+export function DoctorCard({ doctor }: Props) { ... }
+export function DoctorList({ doctors }: Props) { ... }
+```
+
+**❌ ИЗБЕГАЙ default exports:**
+
+```typescript
+export default function DoctorCard({ doctor }: Props) { ... } // Плохо!
+```
+
+---
+
+## 3️⃣ Styling Rules
+
+### Tailwind классы (НЕ inline styles)
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+<div className="bg-unident-primary text-white rounded-[15px] px-6 py-3 hover:bg-unident-primaryLight">
+  Контент
+</div>
+```
+
+**❌ ЗАПРЕЩЕНО - inline styles:**
+
+```tsx
+<div style={{ backgroundColor: '#526AC2', color: '#fff' }}> {/* Неправильно! */}
+  Контент
+</div>
+```
+
+### Design Tokens для цветов
+
+**✅ ПРАВИЛЬНО - используй переменные:**
+
+```tsx
+<div className="bg-unident-primary text-unident-dark border-unident-borderGray">
+```
+
+**❌ ЗАПРЕЩЕНО - хардкод цветов:**
+
+```tsx
+<div className="bg-[#526AC2] text-[#191E35] border-[#D8D8D8]"> {/* Неправильно! */}
+```
+
+### Responsive design
+
+**✅ ПРАВИЛЬНО - mobile-first:**
+
+```tsx
+<div className="flex flex-col md:flex-row gap-4 p-4 md:p-6">
+  <div className="w-full md:w-1/2">Левая колонка</div>
+  <div className="w-full md:w-1/2">Правая колонка</div>
+</div>
+```
+
+---
+
+## 4️⃣ Design System Integration
+
+### Typography компоненты
+
+**✅ ПРАВИЛЬНО - через Design System:**
+
+```tsx
+import { Text, Heading } from '@/components/design-system';
+
+<Heading level={1} variant="page-title">Заголовок страницы</Heading>
+<Heading level={2} variant="section-title">Заголовок секции</Heading>
+<Heading level={3} variant="card-title">Заголовок карточки</Heading>
+
+<Text variant="doctor-description">Описание врача</Text>
+<Text variant="clinic-name" as="span">Название клиники</Text>
+```
+
+**❌ ЗАПРЕЩЕНО - нативные теги с хардкодом:**
+
+```tsx
+<h1 className="text-[48px] font-bold">Заголовок</h1> {/* Неправильно! */}
+<h3 className="text-[22px] font-semibold">Подзаголовок</h3> {/* Неправильно! */}
+<p className="text-[16px] font-normal">Текст</p> {/* Неправильно! */}
+```
+
+### UI компоненты
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+import { Button, Card, Badge } from '@/components/design-system';
+
+<Button unidentVariant="primary" onClick={handleClick}>
+  Записаться
+</Button>
+
+<Card variant="bordered">
+  <Heading level={3} variant="card-title">Заголовок</Heading>
+  <Text variant="default">Контент карточки</Text>
+</Card>
+
+<Badge variant="rating">4.7 ★</Badge>
+<Badge variant="experience">36 лет</Badge>
+```
+
+---
+
+## 5️⃣ Semantic HTML
+
+### Правильные HTML теги через `as` prop
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// Inline текст - используй span
+<Text as="span" variant="clinic-name">Клиника на Новослободской</Text>
+
+// Label для форм
+<Text as="label" variant="label" htmlFor="name">Имя</Text>
+
+// Параграфы (по умолчанию)
+<Text variant="default">Обычный текст в параграфе</Text>
+```
+
+**❌ НЕПРАВИЛЬНО:**
+
+```tsx
+// Блочный элемент внутри inline (ошибка!)
+<span>
+  <Text>Текст</Text> {/* <p> по умолчанию - блочный! */}
+</span>
+
+// Нужен span, но забыли указать as
+<Text variant="clinic-name">Клиника</Text> {/* Будет <p> внутри inline контекста */}
+```
+
+### Доступность (a11y)
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// Alt текст для изображений
+<Image src={doctor.avatar} alt={`Фото врача ${doctor.name}`} />
+
+// ARIA labels
+<button aria-label="Закрыть модальное окно" onClick={onClose}>
+  ×
+</button>
+
+// Семантические роли
+<nav role="navigation" aria-label="Основная навигация">
+  <ul>
+    <li><Link href="/services">Услуги</Link></li>
+  </ul>
+</nav>
+```
+
+### Семантические теги для структуры
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+<main>
+  <section aria-labelledby="doctors-heading">
+    <Heading level={2} id="doctors-heading">Наши врачи</Heading>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {doctors.map(doctor => (
+        <article key={doctor.id}>
+          <DoctorCard doctor={doctor} />
+        </article>
+      ))}
+    </div>
+  </section>
+</main>
+```
+
+---
+
+## 6️⃣ Server Components First
+
+### Server Components (по умолчанию)
+
+**✅ ПРАВИЛЬНО - Server Component:**
+
+```tsx
+// НЕТ 'use client' - Server Component по умолчанию
+async function DoctorPage({ params }: Props) {
+  const doctor = await fetchDoctor(params.id); // Fetch на сервере
+  
+  return (
+    <main>
+      <Heading level={1}>{doctor.name}</Heading>
+      <Text variant="doctor-description">{doctor.specialty}</Text>
+      <BookingButton doctorId={doctor.id} /> {/* Client Component для интерактивности */}
+    </main>
+  );
+}
+```
+
+### Client Components (только для интерактивности)
+
+**✅ ПРАВИЛЬНО - Client Component только где нужно:**
+
+```tsx
+'use client'
+
+// Маленький Client Component для интерактивности
+export function BookingButton({ doctorId }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Записаться</Button>
+      {isOpen && <BookingModal doctorId={doctorId} onClose={() => setIsOpen(false)} />}
+    </>
+  );
+}
+```
+
+**❌ НЕПРАВИЛЬНО - Client Component для всего:**
+
+```tsx
+'use client'
+
+// Весь компонент Client, хотя можно разделить
+function DoctorPage({ params }: Props) {
+  const [doctor, setDoctor] = useState(null);
+  
+  useEffect(() => {
+    fetchDoctor(params.id).then(setDoctor); // Fetch на клиенте - плохо!
+  }, [params.id]);
+  
+  if (!doctor) return <Spinner />;
+  
+  return (
+    <main>
+      <h1>{doctor.name}</h1> {/* Статика в Client Component - плохо! */}
+    </main>
+  );
+}
+```
+
+---
+
+## 7️⃣ Forms и Inputs
+
+### Controlled components
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+'use client'
+
+function AppointmentForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    date: '',
+  });
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">
+        <Text as="span" variant="label">Имя</Text>
+      </label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        value={formData.name}
+        onChange={handleChange}
+        className="border border-unident-borderGray rounded-[10px] px-4 py-2"
+        required
+      />
+      
+      <Button type="submit" unidentVariant="primary">
+        Отправить
+      </Button>
+    </form>
+  );
+}
+```
+
+---
+
+## 8️⃣ Performance Optimization
+
+### next/image для изображений
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+import Image from 'next/image';
+
+<Image
+  src={doctor.avatar}
+  alt={doctor.name}
+  width={300}
+  height={300}
+  loading="lazy"
+  placeholder="blur"
+  blurDataURL={doctor.blurDataURL}
+/>
+```
+
+**❌ НЕПРАВИЛЬНО:**
+
+```tsx
+<img src={doctor.avatar} alt={doctor.name} /> {/* Не оптимизировано! */}
+```
+
+### Dynamic imports для тяжелых компонентов
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+import dynamic from 'next/dynamic';
+
+const ChartComponent = dynamic(() => import('./chart'), {
+  loading: () => <Skeleton />,
+  ssr: false // Browser-only
+});
+```
+
+### Inline SVG для иконок
+
+**✅ ПРАВИЛЬНО - inline SVG (zero HTTP requests):**
+
+```tsx
+function PhoneIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" className="inline">
+      <path d="..." fill="currentColor" />
+    </svg>
+  );
+}
+
+// Использование
+<a href="tel:+7900">
+  <PhoneIcon />
+  <Text as="span">+7 900 123-45-67</Text>
+</a>
+```
+
+**❌ НЕПРАВИЛЬНО - next/image для иконок:**
+
+```tsx
+<Image src="/icons/phone.svg" width={24} height={24} /> {/* Лишний HTTP request! */}
+```
+
+---
+
+## 9️⃣ Примеры правильных паттернов
+
+### Пример 1: Карточка врача (полная)
+
+```tsx
+import { Card, Heading, Text, Badge, Button } from '@/components/design-system';
+import Image from 'next/image';
+import type { Doctor } from '@/types';
+
+// Server Component
+export async function DoctorCard({ doctorId }: Props) {
+  const doctor = await fetchDoctor(doctorId);
+  
+  return (
+    <Card variant="bordered">
+      <article className="flex flex-col gap-4">
+        <Image
+          src={doctor.avatar}
+          alt={`Фото врача ${doctor.name}`}
+          width={300}
+          height={300}
+          className="rounded-[15px]"
+        />
+        
+        <Heading level={3} variant="card-title">
+          {doctor.name}
+        </Heading>
+        
+        <Text variant="doctor-description">
+          {doctor.specialty}
+        </Text>
+        
+        <div className="flex gap-2">
+          <Badge variant="experience">
+            {doctor.experience} лет опыта
+          </Badge>
+          <Badge variant="rating">
+            {doctor.rating} ★
+          </Badge>
+        </div>
+        
+        <BookingButton doctorId={doctor.id} /> {/* Client Component */}
+      </article>
+    </Card>
+  );
+}
+
+// Client Component для интерактивности
+'use client'
+function BookingButton({ doctorId }: { doctorId: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <Button unidentVariant="primary" onClick={() => setIsOpen(true)}>
+      Записаться на прием
+    </Button>
+  );
+}
+
+interface Props {
+  doctorId: string;
+}
+```
+
+### Пример 2: Список с фильтрацией
+
+```tsx
+// Server Component
+async function DoctorsPage({ searchParams }: Props) {
+  const doctors = await fetchDoctors({
+    specialty: searchParams.specialty,
+    page: searchParams.page || 1
+  });
+  
+  return (
+    <main>
+      <Heading level={1} variant="page-title">Наши врачи</Heading>
+      
+      <SpecialtyFilter /> {/* Client Component */}
+      
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {doctors.map(doctor => (
+          <DoctorCard key={doctor.id} doctorId={doctor.id} />
+        ))}
+      </section>
+      
+      <Pagination pageInfo={doctors.pageInfo} />
+    </main>
+  );
+}
+```
+
+---
+
+## 🚫 Что ЗАПРЕЩЕНО
+
+### ❌ Inline styles
+
+```tsx
+<div style={{ color: 'red', fontSize: '16px' }}> // ЗАПРЕЩЕНО!
+```
+
+### ❌ Хардкод цветов в className
+
+```tsx
+<div className="bg-[#526AC2] text-[#191E35]"> // ЗАПРЕЩЕНО!
+```
+
+### ❌ Нативные HTML теги с типографикой
+
+```tsx
+<h1 className="text-[48px] font-bold">Заголовок</h1> // ЗАПРЕЩЕНО!
+<p className="text-[16px]">Текст</p> // ЗАПРЕЩЕНО!
+```
+
+### ❌ 'use client' для data fetching
+
+```tsx
+'use client'
+function Page() {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch('/api/data').then(r => r.json()).then(setData); // ЗАПРЕЩЕНО!
+  }, []);
+}
+```
+
+### ❌ Index как key в списках
+
+```tsx
+{items.map((item, index) => (
+  <div key={index}>{item}</div> // ЗАПРЕЩЕНО!
+))}
+```
+
+### ❌ Обычный <img> вместо next/image
+
+```tsx
+<img src="/photo.jpg" alt="Photo" /> // ЗАПРЕЩЕНО!
+```
+
+---
+
+## ✅ Checklist перед commit
+
+- [ ] ✅ Используются компоненты из Design System (`Text`, `Heading`, `Button`)
+- [ ] ✅ Нет inline styles или хардкода цветов
+- [ ] ✅ Server Components по умолчанию, `'use client'` только где нужно
+- [ ] ✅ Правильные HTML теги через `as` prop
+- [ ] ✅ `next/image` для фотографий, inline SVG для иконок
+- [ ] ✅ Правильные `key` в списках (не index)
+- [ ] ✅ TypeScript типы для всех props
+- [ ] ✅ Semantic HTML (article, section, main, nav)
+- [ ] ✅ Accessibility атрибуты (alt, aria-label, htmlFor)
+
+---
+
+## 📚 Связанные правила
+
+- **Design System**: `.cursor/rules/design-system-philosophy.mdc`
+- **Performance**: `.cursor/rules/performance-philosophy.mdc`
+- **TypeScript**: `.cursor/rules/typescript.mdc`
+- **Next.js**: `.cursor/rules/nextjs.mdc`
+- **Tailwind**: `.cursor/rules/tailwindcss.mdc`
+
+---
+
+**Статус:** ✅ КРИТИЧЕСКОЕ ПРАВИЛО - ВСЕГДА ПРИМЕНЯТЬ
+**Приоритет:** 🔴 МАКСИМАЛЬНЫЙ
+**Версия:** 1.0.0
+**Дата:** 2026-02-05

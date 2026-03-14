@@ -1,0 +1,1199 @@
+---
+alwaysApply: true
+---
+
+# Performance-First Philosophy - УниДент Project
+
+> Философия производительности для headless WordPress + Next.js
+> Дата создания: 2026-01-13
+> Статус: ✅ Активно
+
+You are an expert in building high-performance headless WordPress + Next.js applications with a "performance-first" mindset.
+
+## 🎯 Философия проекта
+
+### Почему производительность критична
+
+**Для медицинского сайта УниДент:**
+- Пользователи ищут срочную информацию (боль, неотложные услуги)
+- SEO: Google Core Web Vitals напрямую влияют на ранжирование
+- Конверсия: каждые 100ms задержки снижают конверсию на 7%
+- Доверие: быстрый сайт = профессиональная клиника
+
+### Принцип "Performance First"
+
+**Производительность - это не afterthought, а requirement:**
+- Каждая feature должна быть оптимальной по умолчанию
+- Если есть выбор между функциональностью и производительностью - искать баланс, но не жертвовать скоростью
+- Измерять производительность перед завершением задачи
+- Code review через призму производительности
+
+---
+
+## 1️⃣ Server Components First
+
+### Философия
+
+**Server Components по умолчанию для всего:**
+- Server Components = zero JavaScript на клиенте
+- Client Components только когда абсолютно необходимо
+- Минимизация JavaScript bundle size
+
+### Правила использования 'use client'
+
+**✅ РАЗРЕШЕНО использовать 'use client' для:**
+- Интерактивность: `onClick`, `onChange`, `onSubmit`
+- Browser APIs: `localStorage`, `window`, `document`
+- React hooks: `useState`, `useEffect`, `useContext`
+- Third-party libraries требующие client-side: Swiper, Chart.js
+- Animations и transitions (Framer Motion, GSAP)
+
+**❌ ЗАПРЕЩЕНО использовать 'use client' для:**
+- Data fetching (использовать Server Components)
+- Статический контент (текст, заголовки, параграфы)
+- SEO-критичный контент (meta tags, structured data)
+- Images, videos (использовать next/image, next/video)
+- Styling (Tailwind CSS работает в Server Components)
+
+### Паттерн: Server/Client Separation
+
+**Разделяй логику на:**
+- **Server Component** → data fetching, статика
+- **Client Component** → интерактивность, state
+
+**Пример:**
+
+```typescript
+// ✅ ХОРОШО - Server Component для data
+// app/doctors/[id]/page.tsx
+async function DoctorPage({ params }: Props) {
+  const doctor = await fetchDoctor(params.id); // На сервере
+  return <DoctorCardClient doctor={doctor} />;
+}
+
+// components/doctor-card-client.tsx
+'use client'
+function DoctorCardClient({ doctor }: Props) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  return (
+    <div onClick={() => setIsExpanded(!isExpanded)}>
+      {/* Интерактивность */}
+    </div>
+  );
+}
+```
+
+**❌ ПЛОХО - Всё в Client Component:**
+
+```typescript
+'use client'
+function DoctorPage({ params }: Props) {
+  const [doctor, setDoctor] = useState(null);
+  useEffect(() => {
+    fetchDoctor(params.id).then(setDoctor); // Fetch на клиенте!
+  }, []);
+  // ...
+}
+```
+
+### Оптимизация Client Components
+
+**Если Client Component необходим:**
+1. Сделай его максимально маленьким
+2. Вынеси статику в Server Components
+3. Используй `React.memo()` для тяжелых компонентов
+4. Используй `dynamic()` с `ssr: false` для browser-only кода
+
+**Пример:**
+
+```typescript
+// ✅ ХОРОШО - Маленький Client Component
+'use client'
+function ExpandButton({ onClick }: Props) {
+  return <button onClick={onClick}>Развернуть</button>;
+}
+
+// Server Component использует маленький клиентский компонент
+async function DoctorCard({ id }: Props) {
+  const doctor = await fetchDoctor(id);
+  return (
+    <div>
+      <h2>{doctor.name}</h2>
+      <p>{doctor.bio}</p>
+      <ExpandButton onClick={...} />
+    </div>
+  );
+}
+```
+
+### Suspense и Skeleton
+
+**Асинхронные списки и блоки** оборачивать в `<Suspense>` с единообразным fallback (скелетон), чтобы не блокировать отрисовку страницы и улучшить LCP/streaming:
+
+```tsx
+// Страница со списком врачей
+export default async function DoctorsPage() {
+  return (
+    <main>
+      <Heading level={1}>Врачи</Heading>
+      <Suspense fallback={<SkeletonList count={6} />}>
+        <DoctorsList />
+      </Suspense>
+    </main>
+  );
+}
+
+async function DoctorsList() {
+  const doctors = await fetchDoctors();
+  return (
+    <div className="grid ...">
+      {doctors.map(d => <DoctorCard key={d.id} doctor={d} />)}
+    </div>
+  );
+}
+```
+
+**Правила:**
+- Использовать единый компонент fallback для списков (например `SkeletonList` или карточки-скелетоны), чтобы не было CLS при появлении контента.
+- Вешать Suspense на границах асинхронных данных (списки, виджеты), а не на всей странице.
+- Streaming: пока один блок грузится, остальные уже отрисованы; fallback должен по форме соответствовать контенту (список скелетонов для списка карточек).
+
+---
+
+## 2️⃣ Data Fetching Optimization
+
+### GraphQL Queries Optimization
+
+**Fetch only necessary fields:**
+
+```typescript
+// ❌ ПЛОХО - Избыточные поля
+query GetDoctors {
+  doctors {
+    ...DoctorFullFragment # 50+ полей!
+  }
+}
+
+// ✅ ХОРОШО - Только нужные поля
+query GetDoctors {
+  doctors {
+    id
+    name
+    specialty
+    avatar {
+      url
+      width
+      height
+    }
+  }
+}
+```
+
+**Use GraphQL fragments для переиспользования:**
+
+```typescript
+// lib/wordpress/fragments/doctor.ts
+export const DOCTOR_CARD_FRAGMENT = `
+  fragment DoctorCard on Doctor {
+    id
+    name
+    specialty
+    experience
+    avatar {
+      url
+      width
+      height
+    }
+  }
+`;
+
+// Использование
+const query = `
+  query GetDoctors {
+    doctors {
+      ...DoctorCard
+    }
+  }
+  ${DOCTOR_CARD_FRAGMENT}
+`;
+```
+
+**Implement pagination:**
+
+```typescript
+// ✅ ХОРОШО - Pagination для списков
+query GetDoctors($first: Int = 50, $after: String) {
+  doctors(first: $first, after: $after) {
+    edges {
+      node { ...DoctorCard }
+      cursor
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+```
+
+**Batch queries где возможно:**
+
+```typescript
+// ✅ ХОРОШО - Параллельные запросы
+const [doctors, services, promotions] = await Promise.all([
+  fetchDoctors(),
+  fetchServices(),
+  fetchPromotions()
+]);
+
+// ❌ ПЛОХО - Последовательные запросы (waterfall)
+const doctors = await fetchDoctors();
+const services = await fetchServices(); // Ждет doctors!
+const promotions = await fetchPromotions(); // Ждет services!
+```
+
+### Caching Strategy
+
+**Next.js fetch() caching:**
+
+```typescript
+// Static content - кэш без ревалидации
+const response = await fetch(GRAPHQL_ENDPOINT, {
+  method: 'POST',
+  body: JSON.stringify({ query }),
+  next: { revalidate: false } // Статично
+});
+
+// Dynamic content - ревалидация каждый час
+const response = await fetch(GRAPHQL_ENDPOINT, {
+  method: 'POST',
+  body: JSON.stringify({ query }),
+  next: { revalidate: 3600 } // 1 час
+});
+
+// Real-time content - без кэша
+const response = await fetch(GRAPHQL_ENDPOINT, {
+  method: 'POST',
+  body: JSON.stringify({ query }),
+  cache: 'no-store'
+});
+```
+
+**Apollo Client caching:**
+
+```typescript
+// apollo-client.ts
+const client = new ApolloClient({
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          doctors: {
+            // Merge pagination results
+            keyArgs: ['where'],
+            merge(existing, incoming) {
+              return incoming;
+            }
+          }
+        }
+      }
+    }
+  }),
+  defaultOptions: {
+    query: {
+      fetchPolicy: 'cache-first', // Default
+    }
+  }
+});
+```
+
+### Preload Pattern
+
+**Avoid request waterfalls:**
+
+```typescript
+// ✅ ХОРОШО - Preload pattern
+async function DoctorPage({ params }: Props) {
+  // Параллельные запросы
+  const [doctor, relatedDoctors] = await Promise.all([
+    fetchDoctor(params.id),
+    fetchRelatedDoctors(params.specialty)
+  ]);
+  
+  return <DoctorProfile doctor={doctor} related={relatedDoctors} />;
+}
+
+// ❌ ПЛОХО - Waterfall
+async function DoctorPage({ params }: Props) {
+  const doctor = await fetchDoctor(params.id);
+  const relatedDoctors = await fetchRelatedDoctors(doctor.specialty); // Ждет doctor!
+  
+  return <DoctorProfile doctor={doctor} related={relatedDoctors} />;
+}
+```
+
+---
+
+## 3️⃣ Image & Assets Optimization
+
+### Inline SVG vs next/image (КРИТИЧНО!)
+
+**ПРАВИЛО:** Для иконок ВСЕГДА используй inline SVG, для фото - next/image
+
+**✅ INLINE SVG для:**
+- Иконки соц. сетей (< 5KB)
+- UI иконки (стрелки, галочки)
+- Логотипы
+- Декоративная графика
+
+**✅ next/image для:**
+- Фотографии врачей
+- Hero images
+- Product images
+- Контентные изображения
+
+**Пример правильного подхода:**
+
+```typescript
+// ✅ ПРАВИЛЬНО - Inline SVG для иконок (zero HTTP requests)
+interface SocialLink {
+  name: string;
+  icon: string; // '<svg>...</svg>'
+  url: string;
+}
+
+function SocialLinks({ links }: { links: SocialLink[] }) {
+  return (
+    <div className="flex gap-2">
+      {links.map((link, idx) => (
+        <a key={idx} href={link.url}>
+          {/* Inline SVG - zero HTTP requests */}
+          <div dangerouslySetInnerHTML={{ __html: link.icon }} />
+        </a>
+      ))}
+    </div>
+  );
+}
+```
+
+**❌ НЕПРАВИЛЬНО - next/image для иконок:**
+
+```typescript
+// ❌ ПЛОХО - создает HTTP request на КАЖДУЮ иконку!
+import Image from 'next/image';
+
+<Image src="/icons/telegram.svg" width={20} height={20} /> // ❌ 1 HTTP request
+<Image src="/icons/whatsapp.svg" width={20} height={20} /> // ❌ 1 HTTP request
+<Image src="/icons/vk.svg" width={20} height={20} />       // ❌ 1 HTTP request
+```
+
+**Почему inline SVG для иконок:**
+- ✅ **Zero HTTP requests** - иконки встроены в HTML
+- ✅ **Instant rendering** - нет задержки загрузки
+- ✅ **Smaller total size** - нет overhead отдельных файлов
+- ✅ **No FOUC** - иконки появляются сразу с HTML
+
+**Performance сравнение:**
+```
+Inline SVG (5 иконок): 0 HTTP requests, ~10KB HTML
+next/image (5 иконок): 5 HTTP requests, ~5KB files + latency
+```
+
+### Next.js Image Component (для фото)
+
+**Используй `next/image` для фотографий:**
+
+```typescript
+// ✅ ХОРОШО - next/image для фотографий
+import Image from 'next/image';
+
+<Image
+  src={doctor.avatar.url}
+  alt={doctor.name}
+  width={300}
+  height={300}
+  loading="lazy" // Для below-the-fold
+  placeholder="blur"
+  blurDataURL={doctor.avatar.blurDataURL}
+/>
+
+// ❌ ПЛОХО - обычный img tag
+<img src={doctor.avatar.url} alt={doctor.name} />
+```
+
+**Правила для next/image (фотографии):**
+1. **Всегда указывай `width` и `height`** → предотвращает CLS
+2. **Формат WebP/AVIF** → автоматически через Next.js
+3. **`loading="lazy"`** для изображений below-the-fold
+4. **`priority`** для LCP images (hero images)
+5. **`placeholder="blur"`** для лучшего UX
+
+**Пример для hero image:**
+
+```typescript
+<Image
+  src="/images/hero.jpg"
+  alt="УниДент - Стоматологическая клиника"
+  width={1920}
+  height={1080}
+  priority // LCP image!
+  quality={90}
+/>
+```
+
+### Icons & SVG
+
+**Inline SVG для критичных иконок:**
+
+```typescript
+// ✅ ХОРОШО - Inline SVG (<2KB)
+export function PhoneIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <path d="..." />
+    </svg>
+  );
+}
+```
+
+**SVG sprites для повторяющихся иконок:**
+
+```typescript
+// public/icons/sprite.svg
+<svg>
+  <symbol id="icon-phone">...</symbol>
+  <symbol id="icon-email">...</symbol>
+</svg>
+
+// Использование
+<svg><use href="/icons/sprite.svg#icon-phone" /></svg>
+```
+
+**Iconify для icon library:**
+
+```typescript
+// ✅ ХОРОШО - Tree shaking
+import { Icon } from '@iconify/react';
+
+<Icon icon="mdi:phone" width={24} />
+```
+
+### Fonts
+
+**Используй `next/font`:**
+
+```typescript
+// app/layout.tsx
+import { Inter, Roboto_Mono } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap', // FOUT вместо FOIT
+  variable: '--font-inter',
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+});
+
+export default function RootLayout({ children }: Props) {
+  return (
+    <html className={`${inter.variable} ${robotoMono.variable}`}>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+**Variable fonts где возможно:**
+- Inter Variable вместо Inter (multiple weights)
+- Экономия 50%+ размера шрифтов
+
+---
+
+## 4️⃣ Bundle Optimization
+
+### Code Splitting
+
+**Dynamic imports для некритичных компонентов:**
+
+```typescript
+// ✅ ХОРОШО - Dynamic import для модала
+import dynamic from 'next/dynamic';
+
+const AppointmentModal = dynamic(
+  () => import('@/components/appointment-modal'),
+  {
+    loading: () => <Skeleton />,
+    ssr: false // Browser-only component
+  }
+);
+
+function DoctorPage() {
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShowModal(true)}>Записаться</button>
+      {showModal && <AppointmentModal />}
+    </>
+  );
+}
+```
+
+**Route-based code splitting:**
+- App Router делает автоматически
+- Каждая `page.tsx` = отдельный chunk
+
+**Component-based splitting:**
+
+```typescript
+// ✅ ХОРОШО - Lazy load тяжелого компонента
+const ChartComponent = dynamic(() => import('react-chartjs-2'), {
+  ssr: false,
+  loading: () => <Skeleton />
+});
+```
+
+### Tree Shaking
+
+**Named imports вместо default:**
+
+```typescript
+// ✅ ХОРОШО - Tree shaking работает
+import { Button, Card, Badge } from '@/components/ui';
+
+// ❌ ПЛОХО - Импортирует всё
+import * as UI from '@/components/ui';
+```
+
+**Avoid barrel exports для крупных библиотек:**
+
+```typescript
+// ❌ ПЛОХО - components/ui/index.ts
+export * from './button';
+export * from './card';
+export * from './badge';
+// ... 50+ компонентов
+
+// ✅ ХОРОШО - Прямые импорты
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+```
+
+**Use `sideEffects: false` в package.json:**
+
+```json
+{
+  "sideEffects": false
+}
+```
+
+### Dependencies Audit
+
+**Перед добавлением библиотеки:**
+
+1. **Проверь bundle size:** < 50KB gzipped
+   ```bash
+   npm install -g bundlephobia
+   bundlephobia <package-name>
+   ```
+
+2. **Prefer smaller alternatives:**
+   - `date-fns` вместо `moment` (17KB vs 70KB)
+   - `day.js` вместо `moment` (2KB vs 70KB)
+   - `zustand` вместо `redux` (3KB vs 50KB)
+
+3. **Use dynamic imports для тяжелых deps:**
+   ```typescript
+   const Swiper = dynamic(() => import('swiper/react'), { ssr: false });
+   ```
+
+4. **Check tree-shaking support:**
+   - Библиотека должна экспортировать ES modules
+   - `"module": "dist/index.esm.js"` в package.json
+
+---
+
+## 5️⃣ WordPress Backend Performance
+
+### WPGraphQL Optimization
+
+**Index ACF fields:**
+
+```sql
+-- Добавить индексы для часто запрашиваемых ACF полей
+ALTER TABLE wp_postmeta ADD INDEX (meta_key, meta_value(50));
+ALTER TABLE wp_postmeta ADD INDEX (post_id, meta_key);
+```
+
+**Limit query depth:**
+
+```php
+// functions.php
+add_filter('graphql_query_depth', function() {
+    return 5; // Max 5 levels nesting
+});
+```
+
+**Use query complexity limits:**
+
+```php
+// functions.php
+add_filter('graphql_query_complexity', function() {
+    return 500; // Max complexity
+});
+```
+
+**Cache GraphQL responses:**
+
+```php
+// Use Transients API
+function get_doctors_cached() {
+    $cache_key = 'doctors_list';
+    $doctors = get_transient($cache_key);
+    
+    if (false === $doctors) {
+        $doctors = fetch_doctors_from_db();
+        set_transient($cache_key, $doctors, HOUR_IN_SECONDS);
+    }
+    
+    return $doctors;
+}
+```
+
+### Database Queries
+
+**Use WordPress query caching:**
+
+```php
+// ❌ ПЛОХО - Прямой SQL
+$results = $wpdb->get_results("SELECT * FROM wp_posts WHERE ...");
+
+// ✅ ХОРОШО - WP_Query с кэшированием
+$query = new WP_Query([
+    'post_type' => 'doctor',
+    'posts_per_page' => 50,
+    'orderby' => 'title',
+    'order' => 'ASC',
+]);
+```
+
+**Optimize SQL queries:**
+
+```sql
+-- Добавить индексы для custom queries
+ALTER TABLE wp_posts ADD INDEX idx_post_type_status (post_type, post_status);
+ALTER TABLE wp_posts ADD INDEX idx_post_date (post_date);
+```
+
+**Avoid N+1 queries:**
+
+```php
+// ❌ ПЛОХО - N+1 query
+$doctors = get_posts(['post_type' => 'doctor']);
+foreach ($doctors as $doctor) {
+    $specialty = get_field('specialty', $doctor->ID); // N queries!
+}
+
+// ✅ ХОРОШО - Batch load
+$doctors = get_posts(['post_type' => 'doctor']);
+$doctor_ids = wp_list_pluck($doctors, 'ID');
+$specialties = get_fields_batch($doctor_ids, 'specialty'); // 1 query
+```
+
+### WordPress Caching
+
+**Multi-level caching:**
+
+1. **Object Cache (Redis):**
+   ```php
+   // wp-config.php
+   define('WP_REDIS_HOST', 'redis');
+   define('WP_CACHE', true);
+   ```
+
+2. **Transients API:**
+   ```php
+   set_transient('key', $value, HOUR_IN_SECONDS);
+   ```
+
+3. **Opcode Cache (OPcache):**
+   ```ini
+   ; php.ini
+   opcache.enable=1
+   opcache.memory_consumption=128
+   opcache.max_accelerated_files=10000
+   ```
+
+---
+
+## 6️⃣ Caching Strategy (Multi-level)
+
+### Уровни кэширования
+
+#### 1. CDN/Edge Cache (Vercel Edge, Cloudflare)
+
+```typescript
+// next.config.js
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=3600, stale-while-revalidate',
+          },
+        ],
+      },
+    ];
+  },
+};
+```
+
+#### 2. Next.js Cache
+
+```typescript
+// Server Components - ISR
+export const revalidate = 3600; // 1 hour
+
+async function DoctorsPage() {
+  const doctors = await fetchDoctors(); // Cached for 1 hour
+  return <DoctorsList doctors={doctors} />;
+}
+
+// Client fetch - SWR
+import useSWR from 'swr';
+
+function DoctorsList() {
+  const { data } = useSWR('/api/doctors', fetcher, {
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    dedupingInterval: 60000, // 1 minute
+  });
+}
+```
+
+#### 2.1 Redis для Next.js (Фаза 2, по необходимости)
+
+Когда имеет смысл подключать Redis как кэш второго уровня в Next.js:
+
+- Несколько инстансов приложения (вертикальное/горизонтальное масштабирование), чтобы кэш был общим.
+- Тяжёлые запросы (например к WPGraphQL или агрегации), результат которых удобно кэшировать по ключу с TTL.
+
+**Ключи:** формировать стабильный ключ от параметров запроса (например хэш от объекта фильтров: `doctors:${hash(filters)}`), чтобы одни и те же параметры давали один и тот же ключ.
+
+**TTL:** задавать в зависимости от частоты обновления данных (например 300–3600 секунд). Инвалидацию по событию (публикация в CMS) делать через webhook и `revalidateTag` в Next.js; при использовании Redis дополнительно удалять или перезаписывать ключи по тегу/паттерну, если нужно.
+
+**Когда не подключать:** один инстанс и встроенного кэша Next.js (fetch + tags) достаточно — не усложнять стек без необходимости.
+
+#### 3. WordPress Cache (Redis)
+
+```php
+// wp-content/mu-plugins/cache-graphql.php
+add_filter('graphql_pre_resolve_field', function($result, $source, $args, $context, $info) {
+    $cache_key = 'graphql_' . md5(serialize([$info->fieldName, $args]));
+    $cached = wp_cache_get($cache_key);
+    
+    if (false !== $cached) {
+        return $cached;
+    }
+    
+    // ... resolve field
+    wp_cache_set($cache_key, $result, '', HOUR_IN_SECONDS);
+    return $result;
+}, 10, 5);
+```
+
+#### 4. Browser Cache
+
+```typescript
+// Service Worker (optional)
+// public/sw.js
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});
+```
+
+### Cache Invalidation
+
+**WordPress webhook → Next.js revalidation:**
+
+```php
+// functions.php
+add_action('save_post', function($post_id) {
+    $post_type = get_post_type($post_id);
+    
+    // Trigger Next.js revalidation
+    wp_remote_post('https://unident.com/api/revalidate', [
+        'body' => [
+            'secret' => REVALIDATE_SECRET,
+            'path' => "/{$post_type}/{$post_id}",
+        ],
+    ]);
+});
+```
+
+```typescript
+// app/api/revalidate/route.ts
+import { revalidatePath } from 'next/cache';
+
+export async function POST(request: Request) {
+  const { secret, path } = await request.json();
+  
+  if (secret !== process.env.REVALIDATE_SECRET) {
+    return Response.json({ message: 'Invalid secret' }, { status: 401 });
+  }
+  
+  revalidatePath(path);
+  return Response.json({ revalidated: true });
+}
+```
+
+---
+
+## 7️⃣ Performance Monitoring
+
+### Core Web Vitals Targets
+
+**Целевые метрики:**
+- **LCP** (Largest Contentful Paint): **< 2.5s**
+- **FID** (First Input Delay): **< 100ms**
+- **CLS** (Cumulative Layout Shift): **< 0.1**
+- **TTFB** (Time to First Byte): **< 600ms**
+
+### Инструменты мониторинга
+
+**Lighthouse CI в GitHub Actions:**
+
+```yaml
+# .github/workflows/lighthouse.yml
+name: Lighthouse CI
+on: [pull_request]
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: |
+            https://preview.unident.com
+            https://preview.unident.com/doctors
+          uploadArtifacts: true
+```
+
+**Vercel Analytics:**
+
+```typescript
+// app/layout.tsx
+import { Analytics } from '@vercel/analytics/react';
+
+export default function RootLayout({ children }: Props) {
+  return (
+    <html>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}
+```
+
+**Real User Monitoring (RUM):**
+
+```typescript
+// app/components/web-vitals.tsx
+'use client'
+import { useReportWebVitals } from 'next/web-vitals';
+
+export function WebVitals() {
+  useReportWebVitals((metric) => {
+    // Отправить в аналитику
+    console.log(metric);
+  });
+}
+```
+
+### Performance Budget
+
+**Жесткие лимиты:**
+- **JavaScript bundle:**
+  - Main bundle: **< 200KB** (gzipped)
+  - Page bundle: **< 50KB** (gzipped)
+- **Initial load:** **< 3s на 3G**
+- **Images:** WebP/AVIF, **< 200KB** per image
+- **CSS:** **< 50KB** (включая Tailwind)
+
+**Автоматическая проверка:**
+
+```json
+// package.json
+{
+  "scripts": {
+    "analyze": "ANALYZE=true next build",
+    "check-bundle": "npm run analyze && bundlesize"
+  },
+  "bundlesize": [
+    {
+      "path": ".next/static/chunks/*.js",
+      "maxSize": "200 kB"
+    }
+  ]
+}
+```
+
+---
+
+## 8️⃣ Checklist перед деплоем
+
+**Перед каждым деплоем проверь:**
+
+- [ ] **Server Components** по умолчанию
+- [ ] **'use client'** только где необходимо (интерактивность)
+- [ ] **Images** используют `next/image` с `width`/`height`
+- [ ] **Fonts** загружаются через `next/font`
+- [ ] **GraphQL queries** оптимизированы (только нужные поля)
+- [ ] **Caching** настроен на всех уровнях (CDN, Next.js, WordPress)
+- [ ] **Bundle size** проверен (`npm run analyze`)
+- [ ] **Lighthouse score** > 90 (mobile & desktop)
+- [ ] **Core Web Vitals** в зеленой зоне (< 2.5s LCP, < 100ms FID, < 0.1 CLS)
+- [ ] **Performance budget** не превышен (< 200KB JS)
+
+---
+
+## 9️⃣ Best Practices
+
+### Do's ✅
+
+- **Измеряй производительность** перед завершением задачи
+- **Профилируй** перед оптимизацией (не оптимизируй наугад)
+- **Cache агрессивно** (но с правильной стратегией инвалидации)
+- **Lazy load** всё что не критично для first paint
+- **Preload** критичные ресурсы (fonts, hero images)
+- **Monitor** производительность в production (RUM)
+- **Test** на медленных устройствах и сетях (Slow 3G)
+
+### Don'ts ❌
+
+- ❌ **НЕ используй** `'use client'` для data fetching
+- ❌ **НЕ используй** `<img>` тег (только `next/image`)
+- ❌ **НЕ добавляй** библиотеки без проверки bundle size
+- ❌ **НЕ fetch** данные в `useEffect` (используй Server Components)
+- ❌ **НЕ игнорируй** Lighthouse warnings
+- ❌ **НЕ создавай** request waterfalls (используй `Promise.all`)
+- ❌ **НЕ используй** inline styles (Tailwind CSS)
+
+---
+
+## 🎓 Примеры из практики
+
+### Пример 1: Doctor Card Component
+
+**❌ ПЛОХО - Client Component с fetch:**
+
+```typescript
+'use client'
+function DoctorCard({ id }: Props) {
+  const [doctor, setDoctor] = useState(null);
+  
+  useEffect(() => {
+    fetch(`/api/doctors/${id}`)
+      .then(res => res.json())
+      .then(setDoctor);
+  }, [id]);
+  
+  if (!doctor) return <Spinner />;
+  
+  return (
+    <div>
+      <img src={doctor.avatar} /> {/* CLS! */}
+      <h2>{doctor.name}</h2>
+    </div>
+  );
+}
+```
+
+**✅ ХОРОШО - Server Component:**
+
+```typescript
+// Server Component
+async function DoctorCard({ id }: Props) {
+  const doctor = await fetchDoctor(id); // На сервере, с кэшем
+  
+  return (
+    <div>
+      <Image
+        src={doctor.avatar}
+        alt={doctor.name}
+        width={300}
+        height={300}
+        loading="lazy"
+      />
+      <h2>{doctor.name}</h2>
+      <BookingButton doctorId={id} /> {/* Маленький Client Component */}
+    </div>
+  );
+}
+
+// Маленький Client Component для интерактивности
+'use client'
+function BookingButton({ doctorId }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+  return <button onClick={() => setIsOpen(true)}>Записаться</button>;
+}
+```
+
+### Пример 2: Services List with Pagination
+
+**❌ ПЛОХО - Весь список сразу:**
+
+```typescript
+async function ServicesPage() {
+  const services = await fetchAllServices(); // 500+ услуг!
+  
+  return (
+    <div>
+      {services.map(service => (
+        <ServiceCard key={service.id} service={service} />
+      ))}
+    </div>
+  );
+}
+```
+
+**✅ ХОРОШО - Pagination + ISR:**
+
+```typescript
+export const revalidate = 3600; // ISR 1 hour
+
+async function ServicesPage({ searchParams }: Props) {
+  const page = searchParams.page || 1;
+  const { services, pageInfo } = await fetchServices({
+    first: 50, // 50 услуг за раз
+    after: getCursor(page)
+  });
+  
+  return (
+    <div>
+      {services.map(service => (
+        <ServiceCard key={service.id} service={service} />
+      ))}
+      <Pagination pageInfo={pageInfo} />
+    </div>
+  );
+}
+```
+
+### Пример 3: GraphQL Query Optimization
+
+**❌ ПЛОХО - Избыточный запрос:**
+
+```graphql
+query GetDoctors {
+  doctors {
+    id
+    databaseId
+    title
+    content
+    excerpt
+    slug
+    uri
+    date
+    modified
+    author {
+      node {
+        name
+        email
+        avatar
+        description
+      }
+    }
+    featuredImage {
+      node {
+        sourceUrl
+        altText
+        title
+        caption
+        description
+        mediaDetails {
+          width
+          height
+          file
+          sizes {
+            name
+            width
+            height
+            sourceUrl
+          }
+        }
+      }
+    }
+    # ... еще 30 полей
+  }
+}
+```
+
+**✅ ХОРОШО - Только нужные поля:**
+
+```graphql
+query GetDoctors {
+  doctors(first: 50) {
+    edges {
+      node {
+        id
+        title
+        specialty
+        experience
+        featuredImage {
+          node {
+            sourceUrl(size: MEDIUM)
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+---
+
+## 📚 Ресурсы
+
+**Официальная документация:**
+- [Next.js Performance](https://nextjs.org/docs/app/building-your-application/optimizing)
+- [React Server Components](https://react.dev/reference/react/use-server)
+- [Web.dev Performance](https://web.dev/performance/)
+
+**Инструменты:**
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+- [WebPageTest](https://www.webpagetest.org/)
+- [Bundle Analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+- [Bundlephobia](https://bundlephobia.com/)
+
+---
+
+**Статус:** ✅ Активно применять ко ВСЕМ чатам
+**Приоритет:** 🔴 МАКСИМАЛЬНЫЙ
+**Версия:** 1.0.0

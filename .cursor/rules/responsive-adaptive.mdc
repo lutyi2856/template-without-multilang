@@ -1,0 +1,243 @@
+---
+alwaysApply: true
+---
+
+# Responsive Adaptive Design - Desktop-First (УниДент)
+
+> Правила адаптации под планшет и мобильные. Источники: cursor.directory/ui-ux-design-best-practices, cursor.directory/html-and-css-best-practices, cursor.directory/rules/responsive-design, cursor.directory/rules/tailwind-css
+
+## Контекст: Figma = только desktop
+
+Figma содержит только desktop-макеты. Mobile и tablet адаптируются «на глаз» по соображениям команды, без отдельных макетов. Исходная точка — desktop, адаптация идёт «вниз».
+
+## Подход: Desktop-First
+
+Десктопная версия готова и не меняется. Адаптация идет "вниз" для меньших экранов.
+
+**Tailwind desktop-first:** базовые стили = desktop. Для меньших экранов использовать модификаторы `max-*:`:
+- `max-xl:` — viewport < 1280px
+- `max-lg:` — viewport < 1024px
+- `max-md:` — viewport < 768px
+- `max-sm:` — viewport < 640px
+- `max-xs:` — viewport < 375px (если добавлен breakpoint xs)
+
+**Альтернатива (mobile-first):** если компонент новый или переписывается — базовые стили для мобильных, затем `md:`, `lg:`, `xl:` для desktop. Для существующих компонентов предпочтительнее `max-*:` чтобы не трогать рабочий desktop.
+
+## Breakpoints проекта
+
+| Breakpoint | Min-width | Устройства |
+|------------|-----------|------------|
+| xs | 375px | iPhone SE, узкие телефоны |
+| sm | 640px | Телефоны горизонтально |
+| md | 768px | iPad Mini, маленькие планшеты |
+| tablet | 820px | iPad стандартный |
+| lg | 1024px | iPad Pro, планшеты горизонтально |
+| xl | 1280px | Desktop (текущая версия) |
+| 2xl | 1536px | Большой desktop |
+
+## Обязательные паттерны
+
+### Layout
+- **Фиксированные ширины:** заменять `w-[330px]` на `w-full max-w-[330px] lg:w-[330px]` или `w-full max-md:w-full lg:w-[330px]`
+- **Grid:** `grid-cols-1 md:grid-cols-2 lg:grid-cols-3` — 1 колонка mobile, 2 tablet, 3 desktop
+- **Flex:** `flex-col md:flex-row` — стек на мобильных, ряд на desktop
+- **Overflow:** запрещен горизонтальный скролл — `overflow-x-hidden` на body/контейнерах при необходимости
+
+### Touch Targets (cursor.directory/ui-ux-design-best-practices)
+- Минимум **44x44px** для интерактивных элементов на мобильных
+- `min-h-[44px] min-w-[44px]` или `p-3` (12px padding) для кнопок
+- Расстояние между touch targets — минимум 8px
+
+### Typography
+- Уменьшать font-size на мобильных: `text-base max-md:text-sm` или через Design System responsive variant
+- Line-height и letter-spacing — читаемость на маленьких экранах
+- Заголовки: `text-2xl max-md:text-xl max-sm:text-lg`
+
+### Fluid Typography (все text tokens)
+
+Плавное масштабирование font-size через `clamp()` для **всех** text tokens (body, heading, figma). Заменяет скачки на breakpoints на линейное изменение.
+
+- **Viewport:** 375px (mobile) → 1440px (desktop). Desktop = max значение
+- **Формула:** `clamp(minRem, preferredRem + vwMultiplier, maxRem)`
+- **Реализация:** все токены в `nextjs/src/design-tokens/typography.ts` используют fluid clamp
+
+```tsx
+// Было: скачок на 768px
+"page-title": "text-[48px] max-md:text-[36px] font-bold ..."
+
+// Стало: плавное масштабирование
+"page-title": "text-[clamp(2.25rem,1.99rem+1.13vw,3rem)] font-bold ..."
+```
+
+Skill: `.cursor/skills/fluid-typography/SKILL.md`
+
+### Images
+- `w-full` на мобильных, `object-cover` для сохранения пропорций
+- next/image с `sizes` для responsive loading
+- Никаких фиксированных `w-[280px]` без `max-md:w-full`
+
+### Navigation
+- Hamburger menu на мобильных (уже есть в header)
+- Полная навигация на desktop
+- Sticky header для доступа к меню на мобильных
+
+### Footer
+- `flex-col` на мобильных, `flex-row` / grid на desktop
+- Колонки стекаются вертикально
+- Логотип, контакты, соцсети — `w-full` на мобильных
+
+### Forms
+- Поля `w-full` на мобильных
+- Кнопки на всю ширину или `min-w-[44px]`
+- Inline validation, четкие сообщения об ошибках
+
+### Section Header Pattern (главная страница)
+
+Единый паттерн заголовка секции: заголовок + описание слева, кнопка + стрелки справа.
+
+```tsx
+<div className="flex flex-row max-md:flex-col max-md:items-stretch md:items-start md:justify-between mb-12 max-md:mb-[30px] gap-6">
+  <div className="flex-1">
+    <Heading level={2}>...</Heading>
+    <p className="text-[18px]">...</p>
+  </div>
+  <div className="flex flex-row max-md:flex-col max-md:items-center gap-4 w-full max-md:w-full md:w-auto">
+    <Link href="..." className="w-full max-md:w-full md:w-auto md:order-2">
+      <Button className="w-full max-md:w-full md:min-w-[160px]">Все услуги</Button>
+    </Link>
+    <SliderNavigation className="max-md:self-end md:order-1 md:self-auto" />
+  </div>
+</div>
+```
+
+**Параметры:** `mb-12 max-md:mb-[30px]`, `gap-6`, кнопка `w-full` на mobile, `md:order-2` для кнопки, `md:order-1` для стрелок. Skill: `.cursor/skills/main-page-section-header-pattern/SKILL.md`
+
+## Fluid Layout (между breakpoints)
+
+Layout ломается между breakpoints (1440→1024, 1024→768). Паттерны для плавной адаптации:
+
+- **Desktop First:** на ширине Figma (1440px) layout не меняется. Правки — только для меньших viewport.
+- **flex-wrap:** для flex-контейнеров с несколькими элементами в ряд — `flex-wrap` вместо `flex-nowrap`. На desktop не вызывает перенос (хватает места), на меньших — переносит.
+- **min-w-0:** для flex-детей, которые должны сжиматься при нехватке места (search input, длинный текст).
+- **Относительные единицы:** `%`, `min()`, `clamp()` вместо фиксированных px где возможно — без изменения desktop.
+- **shrink-0:** только для logo/иконок; остальное — позволять shrink.
+- **overflow-hidden:** запрещён на flex-контейнерах с контентом, который может обрезаться (header, top-bar и т.п.).
+
+**Паттерн flex-ряда:**
+```tsx
+<div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+  <div className="shrink-0 whitespace-nowrap">Logo/Icon</div>
+  <div className="flex flex-wrap gap-2 min-w-0 flex-1">...</div>
+  <div className="ml-auto shrink-0">...</div>
+</div>
+```
+
+**Гибкая ширина вместо фиксированной:**
+```tsx
+// Было: w-[301px]
+// Стало: min-w-[200px] max-w-[301px] flex-1 или w-full max-w-[301px]
+```
+
+### clamp(), min(), max() — fluid между breakpoints
+
+На desktop (широкий viewport) clamp даёт max-значение; при сужении — плавное уменьшение. Desktop вид не меняется.
+
+```tsx
+// Fluid typography — desktop = 2rem, при сужении плавно до 1rem
+<p className="text-[clamp(1rem,2.5vw,2rem)]">...</p>
+
+// Fluid spacing — desktop = 4rem, при сужении до 1rem
+<div className="p-[clamp(1rem,5vw,4rem)]">...</div>
+
+// Гибкие ширины (web.dev)
+<div className="w-[min(75ch,100%)]">...</div>
+<div className="w-[max(45ch,50%)]">...</div>
+```
+
+### Figma px → % (будущее)
+
+Контейнер desktop = 1380px (Figma). Формула: `300px` → `21.74%` (300/1380).
+
+- Использовать `min-w`, `max-w` с % для fluid; desktop вид сохраняется
+- Не фиксировать `w-[300px]` без `max-w-full` и fluid-fallback
+
+```tsx
+// Было: w-[720px] (52.17% от 1380)
+// Стало: w-[52.17%] max-w-[720px] — fluid без изменения desktop
+```
+
+### Container Queries vs Viewport
+
+**Viewport** (`lg:`, `xl:`, `max-lg:`): header, nav, footer — layout зависит от ширины экрана.
+
+**Container Queries**: картинка+текст, карточки в sidebar — layout зависит от ширины родительского блока. Desktop-First: на desktop контейнер широкий (1380px) → row; при сужении → column.
+
+- Tailwind v3: плагин `@tailwindcss/container-queries`; `@container` на родителе
+- Arbitrary: `@[400px]:flex-row` (v3), не `@min-[400px]:` (v4). Если `@min-[Npx]:` не срабатывает → `@[Npx]:`
+- Base = `flex-col`, `@[400px]:flex-row` — при широком контейнере (desktop) row
+
+```tsx
+<div className="@container">
+  <div className="flex flex-col @[400px]:flex-row gap-4">
+    <img className="..." />
+    <div>...</div>
+  </div>
+</div>
+```
+
+Skill: `.cursor/skills/container-queries-pattern/SKILL.md`
+
+### Гибкость (соц. иконки, навигация)
+
+- `flex-wrap` по умолчанию — на desktop все в ряд; при сужении — перенос (6 иконок → 3+3)
+- Не `flex-nowrap` — допускать перенос без горизонтального скролла
+
+```tsx
+// Соц. иконки — переносятся при нехватке места
+<div className="flex flex-wrap gap-2">
+  {socialLinks.map(link => (...))}
+</div>
+```
+
+Skill: `.cursor/skills/fluid-layout-pattern/SKILL.md`
+
+## Запрещено
+
+- Фиксированные ширины `w-[Npx]` без responsive-fallback
+- `overflow-x: auto` без явной необходимости (карусели — исключение)
+- Touch targets < 44px на мобильных
+- Игнорирование breakpoints при добавлении новых компонентов
+
+## Тестирование
+
+Проверять на размерах: **375px**, **768px**, **1024px**, **1280px** (Chrome DevTools Responsive Mode).
+
+## Skills (адаптация и fluid)
+
+При работе с адаптацией, responsive layout, типографикой или fluid — использовать соответствующий skill:
+
+| Задача | Skill | Путь |
+|--------|-------|------|
+| Фильтры архива (врачи, акции): desktop чипы, mobile Sheet | archive-filters-mobile-ui | .cursor/skills/archive-filters-mobile-ui/SKILL.md |
+| Fluid типография (clamp, H1–H4, body, figma) | fluid-typography | .cursor/skills/fluid-typography/SKILL.md |
+| Flex-ряд, соц. иконки, header (viewport lg/xl), перенос элементов | fluid-layout-pattern | .cursor/skills/fluid-layout-pattern/SKILL.md |
+| Картинка+текст по контейнеру, не viewport | container-queries-pattern | .cursor/skills/container-queries-pattern/SKILL.md |
+| Заголовок секции (кнопка + стрелки) | main-page-section-header-pattern | .cursor/skills/main-page-section-header-pattern/SKILL.md |
+| Слайдер 1/2/3 карточек по viewport | responsive-slider-cards-per-viewport | .cursor/skills/responsive-slider-cards-per-viewport/SKILL.md |
+| Аудит главной, breakpoints, паттерны | responsive-adaptive-design, responsive-global-patterns | .cursor/skills/ |
+| Figma px → %, clamp, min/max | fluid-layout-pattern, responsive-global-patterns | .cursor/skills/ |
+
+**Ручной вызов:** `/` в чате Agent → ввести имя skill (например `fluid-typography`).
+
+**Примечание:** Skills загружаются при запуске Cursor. После добавления новых skills — перезапустить Cursor (или открыть новый чат после перезапуска).
+
+## Источники
+
+1. [UI/UX Design Best Practices](https://cursor.directory/ui-ux-design-best-practices) — Bence Csernak
+2. [HTML and CSS Best Practices](https://cursor.directory/html-and-css-best-practices) — Ravi Kumar E
+3. [Rules for Responsive Design](https://cursor.directory/rules/responsive-design)
+4. [Rules for Tailwind CSS](https://cursor.directory/rules/tailwind-css)
+5. [web.dev: min(), max(), clamp()](https://web.dev/articles/min-max-clamp) — fluid typography, spacing
+6. [MDN: Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries)
+7. [Tailwind: Container Queries](https://tailwindcss.com/docs/responsive-design#container-queries)
+8. [Fractaled Mind: flex-wrap](https://fractaledmind.github.io/2024/12/12/responsive-design-tip-flex-wrap/)

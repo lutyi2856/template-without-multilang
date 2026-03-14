@@ -1,0 +1,53 @@
+---
+alwaysApply: true
+---
+
+# JetFormBuilder Forms (Next.js Headless)
+
+> Правила для форм JetFormBuilder в headless Next.js. Use when creating or integrating forms with JetFormBuilder, CallbackForm, or /api/jetform-submit.
+
+## Forms Stack
+
+- **react-hook-form** + **zodResolver** — для управления состоянием и валидации
+- **Zod** — схемы валидации и типизация данных формы
+
+## Trigger Forms
+
+Триггерные формы (обратный звонок, запись на консультацию):
+
+- Отправлять на `/api/jetform-submit` (не напрямую на WordPress)
+- Имена полей в body должны совпадать с `name` в JetFormBuilder (например `phone`)
+
+## Field Names
+
+Имена полей формы в Next.js **должны совпадать** с `name` в JetFormBuilder:
+
+```ts
+body: JSON.stringify({ phone: data.phone }) // phone — то же имя, что в форме WP
+```
+
+## Components
+
+- **CallbackForm** — для форм «телефон + Записаться» (`variant="cta"` или `variant="default"`)
+- Конфиг форм: `nextjs/src/data/forms.json`
+
+## Consent Block (Роспатребнадзор, Минздрав)
+
+Под каждой кнопкой формы — блок согласия:
+
+- **Checkbox + текст в одну строку** (`flex items-start gap-2` или аналог)
+- **Checkbox по умолчанию** — не нажата (`defaultValues: { consent: false }`)
+- **Текст** с кликабельными ссылками на Политику в отношении обработки и защиты персональных данных
+- **Валидация**: `consent` обязателен для отправки (Zod: `.refine(val => val === true, "Необходимо дать согласие")`)
+
+```ts
+// Schema
+consent: z.boolean().refine(val => val === true, "Необходимо дать согласие")
+// defaultValues
+{ consent: false }
+```
+
+## References
+
+- Skill: `.cursor/skills/jetform-headless-forms/SKILL.md`
+- Skill: `.cursor/skills/jetform-builder-acf/SKILL.md`

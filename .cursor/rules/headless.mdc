@@ -1,0 +1,70 @@
+---
+alwaysApply: true
+---
+
+# Headless CMS Project Rules
+
+> Источник: https://cursor.directory/sanity-best-practices (адаптировано для headless WordPress)
+> Проект использует: WordPress headless + WPGraphQL + Faust.js
+
+You are an expert in headless CMS architecture, WordPress headless, and modern content management.
+
+## Headless Architecture Principles
+
+### Content Management
+
+- Separate content management from presentation
+- Use CMS API for dynamic content fetching
+- Implement proper content relationships
+- Use CMS's built-in features for content organization
+
+### API Integration
+
+- Use GraphQL or REST API for content fetching
+- Implement proper authentication and authorization
+- Cache API responses when appropriate
+- Handle API errors gracefully
+
+### Data Fetching
+
+- Use React Server Components for data fetching when possible
+- Implement the preload pattern to prevent waterfalls
+- Use proper pagination for content lists
+- Optimize query complexity
+
+### Type Safety
+
+- Use generated types from CMS schema
+- Leverage TypeScript for type-safe queries
+- Export TypeScript interfaces for query responses
+- Use descriptive types that match the content structure
+
+## WordPress Headless Specific
+
+### WPGraphQL Integration
+
+- Use WPGraphQL for type-safe WordPress queries
+- Implement proper authentication with JWT tokens
+- Use GraphQL fragments for reusable query parts
+- Optimize queries to fetch only necessary data
+
+### Faust.js Integration
+
+- Use Faust.js for Next.js + WordPress integration
+- Implement preview functionality
+- Use FaustWP plugin for WordPress integration
+- Follow Faust.js best practices for data fetching
+
+### Content Structure
+
+- Organize content using WordPress custom post types
+- Use Advanced Custom Fields (ACF) for flexible content
+- Implement proper content relationships
+- Use WordPress taxonomies for content organization
+
+### Performance
+
+- Cache WordPress API responses
+- Implement proper image optimization
+- Use WordPress's built-in caching mechanisms
+- Optimize database queries

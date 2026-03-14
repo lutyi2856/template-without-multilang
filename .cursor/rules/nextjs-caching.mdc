@@ -1,0 +1,89 @@
+---
+alwaysApply: true
+---
+
+# Next.js Caching — tags и revalidateTag (УниДент)
+
+> Когда использовать теги кэша и инвалидацию по тегу. Use when configuring fetch cache, on-demand revalidation, or webhook/API invalidation.
+
+## Когда применять tags vs revalidate
+
+- **`next: { revalidate: seconds }`** — инвалидация по времени (ISR). Подходит для страниц/данных, которые обновляются редко и предсказуемо.
+- **`next: { tags: ['tag-name'] }`** — инвалидация по тегу. Подходит когда нужно инвалидировать все запросы с этим тегом по событию (публикация поста, обновление в WordPress).
+
+## Теги при fetch
+
+Указывать теги при fetch, чтобы потом инвалидировать по ним:
+
+```ts
+// Один тег
+const res = await fetch(url, {
+  next: { tags: ['doctors'] }
+})
+
+// Несколько тегов
+const res = await fetch(url, {
+  next: { tags: ['doctors', 'list'] }
+})
+```
+
+Разные запросы (разные страницы или компоненты) могут использовать один и тот же тег: при вызове `revalidateTag('doctors')` инвалидируются все запросы с тегом `'doctors'`.
+
+## revalidateTag
+
+Инвалидирует весь кэш запросов, помеченных указанным тегом:
+
+```ts
+import { revalidateTag } from 'next/cache'
+
+revalidateTag('doctors')
+```
+
+Использовать в:
+- Server Actions (после обновления данных)
+- API routes (например webhook от WordPress после публикации/обновления поста)
+
+## revalidatePath vs revalidateTag
+
+- **revalidatePath(path)** — инвалидирует конкретный путь (страницу/сегмент). Другие страницы, использующие те же данные по тегам, останутся в кэше, пока не вызвать revalidateTag.
+- **revalidateTag(tag)** — инвалидирует все fetch-запросы с этим тегом на всём сайте.
+
+Часто используют вместе: обновить данные в БД → `revalidatePath('/doctors')` для страницы списка → `revalidateTag('doctors')` для всех мест, где запрашиваются врачи (виджеты, другие страницы).
+
+## Инвалидация из API route (webhook)
+
+Пример: WordPress при сохранении поста вызывает webhook Next.js:
+
+```ts
+// app/api/revalidate/route.ts
+import { revalidateTag } from 'next/cache'
+import { NextResponse } from 'next/server'
+
+export async function POST(request: Request) {
+  const secret = request.headers.get('x-revalidate-secret')
+  if (secret !== process.env.REVALIDATE_SECRET) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+  const body = await request.json()
+  const tag = body.tag // например 'doctors' | 'services' | 'promotions'
+  if (tag) {
+    revalidateTag(tag)
+  }
+  return NextResponse.json({ revalidated: true })
+}
+```
+
+На стороне WordPress: при сохранении CPT (doctor, service и т.д.) отправлять POST на этот route с нужным `tag`.
+
+## Именование тегов
+
+- Использовать константы или enum для тегов, чтобы не дублировать строки.
+- Примеры: `'doctors'`, `'services'`, `'promotions'`, `'clinics'`, `'prices'`.
+- При необходимости гранулярности: `doctors-list`, `doctor-${slug}` (осторожно с большим числом уникальных тегов).
+
+## Checklist
+
+- [ ] Fetch для данных, которые обновляются по событию, помечать тегами `next: { tags: ['...'] }`.
+- [ ] При обновлении контента (CMS, админка) вызывать `revalidateTag(tag)` (Server Action или API route).
+- [ ] Для webhook инвалидации: проверять секрет, принимать tag в body и вызывать `revalidateTag(tag)`.
+- [ ] При необходимости обновить и путь, и все данные — использовать и `revalidatePath`, и `revalidateTag`.

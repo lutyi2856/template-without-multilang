@@ -1,0 +1,109 @@
+---
+alwaysApply: true
+---
+
+# Zod Validation (УниДент)
+
+> Валидация и типизация входных данных: фильтры, формы, env. Use when validating searchParams, form data, env vars, or API inputs.
+
+## Когда применять
+
+- Параметры фильтров (после парсинга nuqs): диапазоны, enum-значения, форматы
+- Переменные окружения (NEXT_PUBLIC_*, server-only)
+- Данные форм и API-ответы
+- Совместно с nuqs: парсер nuqs даёт сырые значения, Zod проверяет ограничения
+
+## Импорты
+
+```ts
+import { z } from 'zod'
+```
+
+## Базовые схемы
+
+```ts
+z.string()
+z.number().min(0).max(100)
+z.coerce.number() // Number(input)
+z.boolean()
+z.literal('asc').or(z.literal('desc'))
+z.enum(['therapist', 'surgeon', 'orthodontist'])
+z.array(z.string())
+z.object({ page: z.number(), specialty: z.string().optional() })
+```
+
+## safeParse на сервере
+
+На сервере использовать `.safeParse()`, не `.parse()`, чтобы не бросать исключения:
+
+```ts
+// Server Component или API route
+const result = filterSchema.safeParse(parsedFromNuqs)
+if (!result.success) {
+  // Обработать: вернуть дефолты, notFound(), или 400
+  const defaults = { page: 1, specialty: '' }
+  return useDefaults(defaults)
+}
+const { page, specialty } = result.data
+```
+
+При ошибке валидации: логировать при необходимости, возвращать безопасные дефолты или явную ошибку (404/400).
+
+## Схемы для фильтров
+
+Типичная схема для фильтров (после nuqs или createLoader):
+
+```ts
+const filtersSchema = z.object({
+  page: z.coerce.number().int().min(1).default(1),
+  specialty: z.string().optional(),
+  sort: z.enum(['rating', 'experience']).default('rating')
+})
+
+type Filters = z.infer<typeof filtersSchema>
+```
+
+Использование в page:
+
+```ts
+const parsed = searchParamsCache.parse(searchParams)
+const result = filtersSchema.safeParse(parsed)
+const filters = result.success ? result.data : { page: 1, specialty: undefined, sort: 'rating' as const }
+```
+
+## Переменные окружения
+
+Схема для env при старте приложения (например в отдельном модуле `env.ts`):
+
+```ts
+const envSchema = z.object({
+  NEXT_PUBLIC_GRAPHQL_ENDPOINT: z.string().url(),
+  NEXT_PUBLIC_SITE_URL: z.string().url().optional()
+})
+
+const parsed = envSchema.safeParse(process.env)
+if (!parsed.success) {
+  console.error('Invalid env:', parsed.error.flatten())
+  throw new Error('Invalid environment variables')
+}
+export const env = parsed.data
+```
+
+Не экспортировать сырой `process.env` для ключевых переменных — только после валидации.
+
+## Совместно с nuqs
+
+- nuqs парсеры не валидируют (например положительные числа, enum). После `searchParamsCache.parse()` или в API route передавать объект в Zod и вызывать `.safeParse()`.
+- Общие типы можно выводить из Zod: `z.infer<typeof filtersSchema>` и использовать в компонентах и запросах.
+
+## Формы и API
+
+- Для форм: схема полей, затем `schema.safeParse(formData)` перед отправкой или в Server Action.
+- Для API: валидировать body/query через Zod и возвращать 400 с `error.flatten()` при неуспехе.
+
+## Checklist
+
+- [ ] На сервере использовать `.safeParse()`, обрабатывать `result.success` и дефолты/ошибки
+- [ ] Схемы для фильтров с дефолтами и ограничениями (min/max, enum)
+- [ ] Env валидировать при инициализации и не экспортировать невалидированный process.env
+- [ ] При использовании с nuqs: nuqs для парсинга query, Zod для валидации и типов

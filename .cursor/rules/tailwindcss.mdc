@@ -1,0 +1,48 @@
+---
+alwaysApply: true
+---
+
+# TailwindCSS Project Rules
+
+> Источник: https://cursor.directory/nextjs-typescript-tailwindcss-supabase-cursor-rules
+
+You are an expert in Tailwind CSS and modern utility-first styling.
+
+## Tailwind CSS Best Practices
+
+### Utility-First Approach
+- Use Tailwind utility classes extensively in your templates
+- Leverage Tailwind's responsive design utilities
+- Utilize Tailwind's color palette and spacing scale
+- Implement custom theme extensions when necessary
+- Never use @apply directive in production
+
+### Responsive Design
+- Use **Desktop-First** for УниДент: base styles = desktop, override with `max-*:` for smaller screens (see responsive-adaptive.mdc)
+- Implement responsive design with Tailwind CSS
+- Use `max-xl:`, `max-lg:`, `max-md:`, `max-sm:` for desktop-first; or `sm:`, `md:`, `lg:`, `xl:` for mobile-first
+- Ensure proper spacing and layout across all screen sizes
+
+### Component Integration
+- Use Tailwind CSS with Shadcn UI and Radix UI components
+- Follow consistent design patterns using Tailwind CSS classes
+- Implement dark mode using Tailwind's dark mode features
+- Use Tailwind's built-in utilities for common patterns
+
+### Performance
+- Optimize Tailwind build for production
+- Use Tailwind's purge/content configuration to remove unused styles
+- Implement proper asset loading strategies
+- Use Tailwind's JIT mode for faster development
+
+### Accessibility
+- Ensure color contrast ratios meet WCAG standards for readability
+- Use Tailwind's accessibility utilities (focus:, aria-*, etc.)
+- Implement proper ARIA labels and roles for components
+- Ensure keyboard navigation support
+
+## Integration with Next.js
+- Use Tailwind CSS for styling components
+- Implement responsive design with Tailwind CSS
+- Use Desktop-First for УниДент (Figma = desktop only); see responsive-adaptive.mdc
+- Optimize images: use WebP format, include size data, implement lazy loading

@@ -1,0 +1,619 @@
+---
+alwaysApply: true
+---
+
+# Apollo Client - УниДент Project
+
+> Правила работы с Apollo Client для WPGraphQL
+> Источник: cursor.directory + Apollo официальная документация
+> Дата создания: 2026-02-05
+> Статус: ✅ Активно
+
+You are an expert in Apollo Client, GraphQL, and optimizing data fetching for React and Next.js applications.
+
+## 🎯 Когда применять
+
+**Используется в проекте:**
+```json
+"@apollo/client": "^3.8.0"
+```
+
+**Для подключения к:**
+- WordPress WPGraphQL endpoint
+- Custom post types (Doctors, Services, Prices, Clinics)
+- ACF fields через GraphQL
+
+---
+
+## 1️⃣ Apollo Client Configuration
+
+### Setup для Next.js 14 App Router
+
+**✅ ПРАВИЛЬНО - singleton instance:**
+
+```typescript
+// lib/apollo-client.ts
+import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
+import { registerApolloClient } from '@apollo/experimental-nextjs-app-support/rsc';
+
+export const { getClient } = registerApolloClient(() => {
+  return new ApolloClient({
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            // Pagination merge strategy
+            doctors: {
+              keyArgs: ['where'],
+              merge(existing = { edges: [] }, incoming) {
+                return {
+                  ...incoming,
+                  edges: [...existing.edges, ...incoming.edges],
+                };
+              },
+            },
+          },
+        },
+      },
+    }),
+    link: new HttpLink({
+      uri: process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT,
+      fetchOptions: { cache: 'no-store' }, // Для Server Components
+    }),
+  });
+});
+```
+
+### Client Component wrapper
+
+**Для Client Components:**
+
+```typescript
+// lib/apollo-wrapper.tsx
+'use client'
+import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink } from '@apollo/client';
+
+function makeClient() {
+  return new ApolloClient({
+    cache: new InMemoryCache(),
+    link: new HttpLink({
+      uri: process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT,
+    }),
+  });
+}
+
+export function ApolloWrapper({ children }: { children: React.ReactNode }) {
+  const client = makeClient();
+  return <ApolloProvider client={client}>{children}</ApolloProvider>;
+}
+```
+
+---
+
+## 2️⃣ Query Patterns
+
+### Server Components (предпочтительно)
+
+**✅ ПРАВИЛЬНО - fetch в Server Component:**
+
+```typescript
+// app/doctors/page.tsx
+import { getClient } from '@/lib/apollo-client';
+import { gql } from '@apollo/client';
+
+const GET_DOCTORS = gql`
+  query GetDoctors($first: Int = 50) {
+    doctors(first: $first) {
+      edges {
+        node {
+          id
+          title
+          doctorFields {
+            specialty
+            experience
+            rating
+            avatar {
+              sourceUrl
+              mediaDetails { width height }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default async function DoctorsPage() {
+  const { data } = await getClient().query({
+    query: GET_DOCTORS,
+    variables: { first: 50 },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 3600 }, // ISR 1 hour
+      },
+    },
+  });
+  
+  return (
+    <main>
+      {data.doctors.edges.map(({ node: doctor }) => (
+        <DoctorCard key={doctor.id} doctor={doctor} />
+      ))}
+    </main>
+  );
+}
+```
+
+### Client Components (когда нужна интерактивность)
+
+**✅ ПРАВИЛЬНО - useQuery в Client Component:**
+
+```tsx
+'use client'
+import { useQuery, gql } from '@apollo/client';
+import { Suspense } from 'react';
+
+const GET_DOCTOR = gql`
+  query GetDoctor($id: ID!) {
+    doctor(id: $id) {
+      id
+      title
+      doctorFields {
+        specialty
+        bio
+      }
+    }
+  }
+`;
+
+function DoctorDetail({ doctorId }: Props) {
+  const { data, loading, error } = useQuery(GET_DOCTOR, {
+    variables: { id: doctorId },
+    fetchPolicy: 'cache-first', // Используй кэш
+  });
+  
+  if (loading) return <Skeleton />;
+  if (error) return <ErrorMessage error={error} />;
+  
+  return <DoctorProfile doctor={data.doctor} />;
+}
+
+// Обернуть в Suspense
+export function DoctorDetailWrapped(props: Props) {
+  return (
+    <Suspense fallback={<Skeleton />}>
+      <DoctorDetail {...props} />
+    </Suspense>
+  );
+}
+```
+
+---
+
+## 3️⃣ Cache Policies
+
+### fetchPolicy options
+
+**Выбирай правильную стратегию:**
+
+```typescript
+// 1. cache-first (по умолчанию) - для статичного контента
+const { data } = useQuery(GET_DOCTORS, {
+  fetchPolicy: 'cache-first', // Используй кэш, если есть
+});
+
+// 2. network-only - для динамического контента
+const { data } = useQuery(GET_APPOINTMENTS, {
+  fetchPolicy: 'network-only', // Всегда с сервера
+});
+
+// 3. cache-and-network - для UX оптимизации
+const { data } = useQuery(GET_DOCTORS, {
+  fetchPolicy: 'cache-and-network', // Покажи кэш → обнови с сервера
+});
+
+// 4. no-cache - для real-time данных
+const { data } = useQuery(GET_AVAILABLE_SLOTS, {
+  fetchPolicy: 'no-cache', // Не кэшировать
+});
+```
+
+### Стратегия для УниДент
+
+**По типам данных:**
+
+```typescript
+// Статичные данные (врачи, услуги) - КЭШИРОВАТЬ
+fetchPolicy: 'cache-first'
+revalidate: 3600 // 1 час
+
+// Динамические данные (доступные слоты) - БЕЗ КЭША
+fetchPolicy: 'network-only'
+
+// Критичные данные (цены, акции) - КЭШИРОВАТЬ С ОБНОВЛЕНИЕМ
+fetchPolicy: 'cache-and-network'
+revalidate: 1800 // 30 минут
+```
+
+---
+
+## 4️⃣ Mutations
+
+### useMutation pattern
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+'use client'
+import { useMutation, gql } from '@apollo/client';
+
+const CREATE_APPOINTMENT = gql`
+  mutation CreateAppointment($input: CreateAppointmentInput!) {
+    createAppointment(input: $input) {
+      appointment {
+        id
+        date
+        time
+        doctor {
+          id
+          title
+        }
+      }
+    }
+  }
+`;
+
+function BookingForm({ doctorId }: Props) {
+  const [createAppointment, { data, loading, error }] = useMutation(
+    CREATE_APPOINTMENT,
+    {
+      // Обновить кэш после мутации
+      update(cache, { data }) {
+        cache.modify({
+          fields: {
+            appointments(existing = []) {
+              return [...existing, data.createAppointment.appointment];
+            },
+          },
+        });
+      },
+      // Или refetch queries
+      refetchQueries: ['GetAppointments'],
+    }
+  );
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      await createAppointment({
+        variables: {
+          input: { doctorId, date, time }
+        }
+      });
+      
+      toast.success('Запись создана!');
+    } catch (err) {
+      toast.error('Ошибка записи');
+    }
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Форма */}
+      <Button type="submit" disabled={loading}>
+        {loading ? 'Записываем...' : 'Записаться'}
+      </Button>
+    </form>
+  );
+}
+```
+
+---
+
+## 5️⃣ Fragments для переиспользования
+
+### Создание fragments
+
+**✅ ПРАВИЛЬНО - DRY principle:**
+
+```typescript
+// lib/graphql/fragments/doctor.ts
+import { gql } from '@apollo/client';
+
+export const DOCTOR_CARD_FRAGMENT = gql`
+  fragment DoctorCard on Doctor {
+    id
+    title
+    slug
+    doctorFields {
+      specialty
+      experience
+      rating
+      avatar {
+        sourceUrl
+        mediaDetails {
+          width
+          height
+        }
+      }
+    }
+  }
+`;
+
+export const DOCTOR_FULL_FRAGMENT = gql`
+  fragment DoctorFull on Doctor {
+    ...DoctorCard
+    content
+    doctorFields {
+      bio
+      education
+      certifications
+      clinics {
+        ... on Clinic {
+          id
+          title
+        }
+      }
+    }
+  }
+  ${DOCTOR_CARD_FRAGMENT}
+`;
+```
+
+### Использование fragments
+
+**✅ ПРАВИЛЬНО:**
+
+```typescript
+import { DOCTOR_CARD_FRAGMENT } from '@/lib/graphql/fragments/doctor';
+
+const GET_DOCTORS = gql`
+  query GetDoctors {
+    doctors(first: 50) {
+      edges {
+        node {
+          ...DoctorCard
+        }
+      }
+    }
+  }
+  ${DOCTOR_CARD_FRAGMENT}
+`;
+```
+
+---
+
+## 6️⃣ Error Handling
+
+### Graceful degradation
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+'use client'
+function DoctorsList() {
+  const { data, loading, error, refetch } = useQuery(GET_DOCTORS);
+  
+  // Loading state
+  if (loading) {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <Skeleton key={i} className="h-[400px]" />
+        ))}
+      </div>
+    );
+  }
+  
+  // Error state
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <Text variant="large" className="text-red-600 mb-4">
+          Не удалось загрузить список врачей
+        </Text>
+        <Button onClick={() => refetch()} unidentVariant="outline">
+          Попробовать снова
+        </Button>
+      </div>
+    );
+  }
+  
+  // Empty state
+  if (!data?.doctors?.edges?.length) {
+    return (
+      <Text variant="large">Врачи не найдены</Text>
+    );
+  }
+  
+  // Success state
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {data.doctors.edges.map(({ node: doctor }) => (
+        <DoctorCard key={doctor.id} doctor={doctor} />
+      ))}
+    </div>
+  );
+}
+```
+
+---
+
+## 7️⃣ Optimization
+
+### Batch queries
+
+**✅ ПРАВИЛЬНО - параллельные запросы:**
+
+```typescript
+const [doctorsResult, servicesResult] = await Promise.all([
+  getClient().query({ query: GET_DOCTORS }),
+  getClient().query({ query: GET_SERVICES }),
+]);
+```
+
+### Query только нужных полей
+
+**✅ ПРАВИЛЬНО - минимальная выборка:**
+
+```graphql
+query GetDoctors {
+  doctors(first: 50) {
+    edges {
+      node {
+        id
+        title
+        doctorFields {
+          specialty  # Только нужные поля!
+          experience
+        }
+      }
+    }
+  }
+}
+```
+
+**❌ НЕПРАВИЛЬНО - избыточная выборка:**
+
+```graphql
+query GetDoctors {
+  doctors {
+    edges {
+      node {
+        id
+        databaseId
+        title
+        content # Не нужно для карточки!
+        excerpt
+        date
+        modified
+        # ... еще 20 полей
+      }
+    }
+  }
+}
+```
+
+### WPGraphQL taxQuery и metaQuery (фильтрация)
+
+Для фильтрации по таксономиям (категории, теги, кастомные таксономии) и по meta-полям в WPGraphQL используется аргумент `where` с вложенными `taxQuery` и `metaQuery`. Это требует плагинов на стороне WordPress:
+
+- **wp-graphql-tax-query** (или встроенная поддержка в WPGraphQL, если есть): позволяет передавать в запрос `where: { taxQuery: { ... } }` для фильтрации по терминам таксономий.
+- **wp-graphql-meta-query**: позволяет использовать `where: { metaQuery: { ... } }` для фильтрации по ACF/meta полям.
+
+**Когда подключать:** если в фильтрах списков (врачи, услуги, клиники) нужна фильтрация по таксономии (например специальность) или по meta (рейтинг, опыт), и стандартного `where` по полям поста недостаточно.
+
+**Пример структуры where (после настройки плагинов):**
+
+```graphql
+query GetDoctors($where: RootQueryToDoctorConnectionWhereArgs) {
+  doctors(first: 50, where: $where) {
+    edges { node { id title } }
+  }
+}
+# variables: { where: { taxQuery: { ... }, metaQuery: { ... } } }
+```
+
+Синтаксис `taxQuery`/`metaQuery` зависит от установленных плагинов; проверять документацию плагина и схему WPGraphQL (Introspection).
+
+---
+
+## 8️⃣ TypeScript Integration
+
+### Generated types
+
+**Используй codegen для типов:**
+
+```bash
+npm install -D @graphql-codegen/cli @graphql-codegen/typescript
+```
+
+**codegen.yml:**
+
+```yaml
+schema: ${WORDPRESS_GRAPHQL_ENDPOINT}
+documents: 'src/**/*.{ts,tsx}'
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+```
+
+**Использование:**
+
+```typescript
+import { useGetDoctorsQuery } from '@/generated/graphql';
+
+function DoctorsList() {
+  const { data, loading } = useGetDoctorsQuery({
+    variables: { first: 50 },
+  });
+  // TypeScript types автоматически!
+}
+```
+
+---
+
+## 🚫 Запрещенные паттерны
+
+### ❌ useEffect для data fetching
+
+```tsx
+// ❌ ПЛОХО
+'use client'
+function DoctorsList() {
+  const [doctors, setDoctors] = useState([]);
+  
+  useEffect(() => {
+    fetch('/api/doctors')
+      .then(r => r.json())
+      .then(setDoctors);
+  }, []);
+}
+
+// ✅ ХОРОШО - Server Component с getClient()
+async function DoctorsList() {
+  const { data } = await getClient().query({ query: GET_DOCTORS });
+  return <div>{/* render */}</div>;
+}
+```
+
+### ❌ Избыточные refetchQueries
+
+```tsx
+// ❌ ПЛОХО - refetch всего
+useMutation(CREATE_APPOINTMENT, {
+  refetchQueries: [
+    'GetDoctors',
+    'GetServices', 
+    'GetPrices' // Не связано с appointment!
+  ]
+});
+
+// ✅ ХОРОШО - refetch только связанного
+useMutation(CREATE_APPOINTMENT, {
+  refetchQueries: ['GetAppointments'], // Только нужное
+});
+```
+
+---
+
+## ✅ Checklist
+
+- [ ] ✅ Apollo Client настроен с правильным `fetchPolicy`
+- [ ] ✅ Используются fragments для переиспользования
+- [ ] ✅ Queries оптимизированы (только нужные поля)
+- [ ] ✅ Error handling для всех queries
+- [ ] ✅ Loading states для всех queries
+- [ ] ✅ TypeScript types (через codegen или вручную)
+- [ ] ✅ Cache policies настроены правильно
+- [ ] ✅ Server Components для data fetching где возможно
+
+---
+
+**Статус:** ✅ КРИТИЧЕСКОЕ ПРАВИЛО
+**Приоритет:** 🔴 ВЫСОКИЙ
+**Версия:** 1.0.0

@@ -1,0 +1,651 @@
+---
+alwaysApply: true
+---
+
+# SEO - УниДент Project
+
+> SEO правила для медицинского сайта (Next.js + WordPress)
+> Источник: Next.js SEO best practices + Schema.org
+> Дата создания: 2026-02-05
+> Статус: ✅ Активно
+
+You are an expert in SEO optimization, structured data, and building search-engine-friendly Next.js applications.
+
+## 🎯 Почему SEO критично
+
+**Для медицинской клиники:**
+- Пациенты ищут через Google: "стоматолог москва", "лечение кариеса"
+- Local SEO - показываться в Google Maps
+- Core Web Vitals влияют на ранжирование
+- Structured data для rich snippets (рейтинги, цены)
+
+**Целевые метрики:**
+- Google PageSpeed Insights: **>90** (mobile & desktop)
+- Core Web Vitals: **LCP <2.5s, FID <100ms, CLS <0.1**
+- Indexed pages: **100% критичных страниц**
+
+---
+
+## 1️⃣ Metadata (Next.js 14 App Router)
+
+### Root Layout metadata
+
+**✅ ПРАВИЛЬНО:**
+
+```typescript
+// app/layout.tsx
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://unident.ru'),
+  
+  title: {
+    default: 'УниДент - Стоматологическая клиника в Москве',
+    template: '%s | УниДент', // Для вложенных страниц
+  },
+  
+  description: 'Профессиональные стоматологические услуги в Москве. Опытные врачи, современное оборудование, доступные цены. Запись онлайн.',
+  
+  keywords: [
+    'стоматология москва',
+    'стоматологическая клиника',
+    'лечение зубов',
+    'имплантация',
+    'протезирование',
+    'терапия',
+    'хирургия'
+  ],
+  
+  authors: [{ name: 'УниДент' }],
+  creator: 'УниДент',
+  publisher: 'УниДент',
+  
+  openGraph: {
+    type: 'website',
+    locale: 'ru_RU',
+    url: 'https://unident.ru',
+    siteName: 'УниДент',
+    title: 'УниДент - Стоматологическая клиника в Москве',
+    description: 'Профессиональные стоматологические услуги',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'УниДент стоматология',
+      }
+    ],
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: 'УниДент - Стоматология в Москве',
+    description: 'Профессиональные стоматологические услуги',
+    images: ['/og-image.jpg'],
+  },
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+  },
+};
+```
+
+### Dynamic metadata для страниц
+
+**✅ ПРАВИЛЬНО - generateMetadata:**
+
+```typescript
+// app/doctors/[slug]/page.tsx
+import type { Metadata } from 'next';
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const doctor = await fetchDoctor(params.slug);
+  
+  return {
+    title: `${doctor.name} - ${doctor.specialty}`,
+    description: `Запись на прием к ${doctor.specialty.toLowerCase()} ${doctor.name}. Стаж ${doctor.experience} лет, рейтинг ${doctor.rating}. Клиника УниДент, Москва.`,
+    
+    keywords: [
+      doctor.name,
+      doctor.specialty,
+      'стоматолог москва',
+      doctor.specialty.toLowerCase(),
+    ],
+    
+    openGraph: {
+      title: `${doctor.name} - ${doctor.specialty} | УниДент`,
+      description: `Опытный ${doctor.specialty.toLowerCase()} с стажем ${doctor.experience} лет`,
+      images: [
+        {
+          url: doctor.avatar,
+          width: 800,
+          height: 600,
+          alt: `Фото врача ${doctor.name}`,
+        }
+      ],
+      type: 'profile',
+    },
+    
+    alternates: {
+      canonical: `https://unident.ru/doctors/${params.slug}`,
+    },
+  };
+}
+```
+
+### Гибридные SEO-маршруты (динамический сегмент vs query)
+
+Когда часть вариантов фильтра (например «топ-N специальностей») должна быть отдельными URL для SEO, а остальные — через query:
+
+- **Динамический сегмент** (например `/doctors/[specialtySlug]`): использовать для ограниченного набора «важных» значений (топ-N специальностей, популярные категории). Каждый такой URL — отдельная страница с собственным canonical, metadata и записью в sitemap.
+- **Query** (например `/doctors?specialty=...`): для остальных значений фильтра. Canonical для страницы списка врачей — без query или с нормализованным набором параметров (по договорённости); в sitemap включать только базовый путь `/doctors` (или топ-N сегментов), не все комбинации query.
+
+**Правила:**
+- Не дублировать контент: для одного и того же набора данных не должно быть двух равнозначных URL (один сегмент и один query с тем же смыслом). Выбрать один канонический вариант и в другом случае делать redirect на него или указывать canonical на выбранный URL.
+- Canonical для страниц с сегментом: `https://unident.ru/doctors/${specialtySlug}`. Для страницы с query — либо базовый `/doctors`, либо один стабильный формат query (если индексируем его).
+- Sitemap: включать только URL, которые хотим индексировать (статика, динамические сегменты топ-N, базовые пути списков). Не перечислять все возможные query.
+
+---
+
+## 2️⃣ Structured Data (JSON-LD)
+
+### Organization schema
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// app/layout.tsx или components/structured-data.tsx
+export function OrganizationSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Dentist',
+    '@id': 'https://unident.ru/#organization',
+    name: 'УниДент',
+    url: 'https://unident.ru',
+    logo: 'https://unident.ru/logo.png',
+    image: 'https://unident.ru/og-image.jpg',
+    
+    description: 'Стоматологическая клиника в Москве',
+    
+    telephone: '+7 900 123-45-67',
+    email: 'info@unident.ru',
+    
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'ул. Примерная, д. 1',
+      addressLocality: 'Москва',
+      addressCountry: 'RU',
+      postalCode: '123456',
+    },
+    
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 55.751244,
+      longitude: 37.618423,
+    },
+    
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '20:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday'],
+        opens: '10:00',
+        closes: '18:00',
+      }
+    ],
+    
+    priceRange: '$$',
+    
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '127',
+    },
+  };
+  
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+```
+
+### Doctor (Person) schema
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// app/doctors/[slug]/page.tsx
+function DoctorStructuredData({ doctor }: Props) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `https://unident.ru/doctors/${doctor.slug}#person`,
+    
+    name: doctor.name,
+    image: doctor.avatar,
+    jobTitle: doctor.specialty,
+    
+    worksFor: {
+      '@type': 'Dentist',
+      name: 'УниДент',
+      url: 'https://unident.ru',
+    },
+    
+    description: doctor.bio,
+    
+    alumniOf: doctor.education,
+    
+    ...(doctor.rating && {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: doctor.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+      }
+    }),
+  };
+  
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+```
+
+### Service (MedicalProcedure) schema
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+function ServiceStructuredData({ service }: Props) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalProcedure',
+    '@id': `https://unident.ru/services/${service.slug}#service`,
+    
+    name: service.title,
+    description: service.description,
+    
+    ...(service.price && {
+      offers: {
+        '@type': 'Offer',
+        price: service.price.toString(),
+        priceCurrency: 'RUB',
+      }
+    }),
+    
+    provider: {
+      '@type': 'Dentist',
+      name: 'УниДент',
+    },
+  };
+  
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+```
+
+---
+
+## 3️⃣ Sitemap
+
+### Dynamic sitemap
+
+**✅ ПРАВИЛЬНО:**
+
+```typescript
+// app/sitemap.ts
+import { MetadataRoute } from 'next';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = 'https://unident.ru';
+  
+  // Статичные страницы
+  const staticPages = [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+  ];
+  
+  // Динамические страницы врачей
+  const doctors = await fetchAllDoctors();
+  const doctorPages = doctors.map(doctor => ({
+    url: `${baseUrl}/doctors/${doctor.slug}`,
+    lastModified: new Date(doctor.modified),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+  
+  // Динамические страницы услуг
+  const services = await fetchAllServices();
+  const servicePages = services.map(service => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(service.modified),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+  
+  return [...staticPages, ...doctorPages, ...servicePages];
+}
+```
+
+---
+
+## 4️⃣ robots.txt
+
+**✅ ПРАВИЛЬНО:**
+
+```typescript
+// app/robots.ts
+import { MetadataRoute } from 'next';
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/_next/',
+          '/private/',
+        ],
+      },
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+        crawlDelay: 0,
+      },
+      {
+        userAgent: 'Yandex',
+        allow: '/',
+        crawlDelay: 0,
+      },
+    ],
+    sitemap: 'https://unident.ru/sitemap.xml',
+    host: 'https://unident.ru',
+  };
+}
+```
+
+---
+
+## 5️⃣ Performance для SEO
+
+### Core Web Vitals
+
+**Правила из performance-philosophy.mdc:**
+- **LCP < 2.5s** - hero image с `priority`
+- **FID < 100ms** - минимизировать 'use client'
+- **CLS < 0.1** - width/height для images
+
+**✅ ПРАВИЛЬНО - LCP optimization:**
+
+```tsx
+// app/page.tsx - Hero image
+import Image from 'next/image';
+
+<Image
+  src="/images/hero.jpg"
+  alt="УниДент - стоматологическая клиника"
+  width={1920}
+  height={1080}
+  priority // Для LCP!
+  quality={90}
+/>
+```
+
+---
+
+## 6️⃣ Local SEO
+
+### Google Business Profile integration
+
+**✅ ПРАВИЛЬНО - LocalBusiness schema:**
+
+```tsx
+function LocalBusinessSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': ['Dentist', 'LocalBusiness', 'MedicalBusiness'],
+    '@id': 'https://unident.ru/#localbusiness',
+    
+    name: 'УниДент',
+    description: 'Стоматологическая клиника в Москве',
+    
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'ул. Новослободская, д. 1',
+      addressLocality: 'Москва',
+      addressRegion: 'Москва',
+      postalCode: '127055',
+      addressCountry: 'RU',
+    },
+    
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 55.779641,
+      longitude: 37.600891,
+    },
+    
+    telephone: '+7 900 123-45-67',
+    priceRange: '$$',
+    
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '20:00',
+      }
+    ],
+    
+    url: 'https://unident.ru',
+    image: 'https://unident.ru/clinic-photo.jpg',
+  };
+  
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+```
+
+---
+
+## 7️⃣ Canonical URLs
+
+**✅ ПРАВИЛЬНО:**
+
+```typescript
+// app/doctors/[slug]/page.tsx
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return {
+    alternates: {
+      canonical: `https://unident.ru/doctors/${params.slug}`,
+    },
+  };
+}
+```
+
+---
+
+## 8️⃣ Open Graph Images
+
+### Динамические OG images (Next.js)
+
+**✅ ПРАВИЛЬНО:**
+
+```typescript
+// app/doctors/[slug]/opengraph-image.tsx
+import { ImageResponse } from 'next/og';
+
+export const runtime = 'edge';
+export const alt = 'Врач УниДент';
+export const size = { width: 1200, height: 630 };
+export const contentType = 'image/png';
+
+export default async function OgImage({ params }: Props) {
+  const doctor = await fetchDoctor(params.slug);
+  
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          background: 'white',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <img src={doctor.avatar} width={400} height={400} />
+        <div>
+          <h1>{doctor.name}</h1>
+          <p>{doctor.specialty}</p>
+        </div>
+      </div>
+    ),
+    { ...size }
+  );
+}
+```
+
+---
+
+## 9️⃣ Breadcrumbs
+
+**✅ ПРАВИЛЬНО - BreadcrumbList schema:**
+
+```tsx
+function Breadcrumbs({ items }: Props) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.label,
+      item: `https://unident.ru${item.href}`,
+    })),
+  };
+  
+  return (
+    <>
+      <nav aria-label="Breadcrumb">
+        <ol className="flex gap-2">
+          {items.map((item, index) => (
+            <li key={item.href} className="flex items-center gap-2">
+              {index > 0 && <span>/</span>}
+              {index === items.length - 1 ? (
+                <Text as="span" variant="small">{item.label}</Text>
+              ) : (
+                <Link href={item.href}>
+                  <Text as="span" variant="small">{item.label}</Text>
+                </Link>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </>
+  );
+}
+
+// Использование
+<Breadcrumbs items={[
+  { label: 'Главная', href: '/' },
+  { label: 'Врачи', href: '/doctors' },
+  { label: doctor.name, href: `/doctors/${doctor.slug}` },
+]} />
+```
+
+---
+
+## 🔟 Checklist перед деплоем
+
+### Проверки SEO
+
+- [ ] ✅ `metadata` настроен в layout.tsx и всех страницах
+- [ ] ✅ Structured data (JSON-LD) для Organization, Doctors, Services
+- [ ] ✅ `sitemap.xml` генерируется динамически
+- [ ] ✅ `robots.txt` разрешает индексацию
+- [ ] ✅ Canonical URLs для всех страниц
+- [ ] ✅ Open Graph images (статичные или динамические)
+- [ ] ✅ Alt текст для всех images
+- [ ] ✅ Heading hierarchy (H1 → H2 → H3)
+- [ ] ✅ Core Web Vitals >90 (Lighthouse)
+- [ ] ✅ Mobile-friendly (Google Mobile-Friendly Test)
+
+### Инструменты проверки
+
+```bash
+# Lighthouse audit
+npm run lighthouse -- --only-categories=seo,performance
+
+# Google Search Console
+# https://search.google.com/search-console
+
+# Yandex Webmaster
+# https://webmaster.yandex.ru
+```
+
+---
+
+## 📚 Ресурсы
+
+- **Next.js Metadata**: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+- **Schema.org**: https://schema.org/
+- **Google Search Console**: https://search.google.com/search-console
+- **Performance Rules**: `.cursor/rules/performance-philosophy.mdc`
+
+---
+
+**Статус:** ✅ КРИТИЧЕСКОЕ ПРАВИЛО
+**Приоритет:** 🔴 МАКСИМАЛЬНЫЙ
+**Версия:** 1.0.0

@@ -1,0 +1,217 @@
+---
+alwaysApply: true
+---
+
+# Skill Generation - ОБЯЗАТЕЛЬНЫЕ ТРЕБОВАНИЯ
+
+> Правила для AI при использовании команды /Generate Skill
+
+## 🚨 КРИТИЧЕСКОЕ ПРАВИЛО #1: ВСЕГДА использовать правильную структуру
+
+**При создании ЛЮБОГО skill файла в .cursor/skills/:**
+
+### ОБЯЗАТЕЛЬНАЯ структура файла:
+
+```yaml
+---
+name: skill-name-in-kebab-case
+description: Clear description of when to use this skill. Use when [trigger conditions].
+---
+
+# Skill Title
+
+## Section 1
+
+Content...
+
+## Section 2
+
+Content...
+```
+
+### ❌ НИКОГДА не создавать без frontmatter:
+
+```markdown
+# Skill Title  ← НЕПРАВИЛЬНО! Без frontmatter!
+
+Content...
+```
+
+---
+
+## 📋 Checklist при /Generate Skill
+
+**Перед созданием файла skill:**
+
+- [ ] Создать папку `.cursor/skills/skill-name/`
+- [ ] Файл называется `SKILL.md` (именно так!)
+- [ ] В начале файла frontmatter с `name` и `description`
+- [ ] Имя папки в kebab-case (например: `git-github-operations`)
+- [ ] Description объясняет когда использовать skill
+
+---
+
+## 🎯 Шаблон для ВСЕХ новых skills
+
+**ВСЕГДА использовать этот шаблон:**
+
+```markdown
+---
+name: skill-name
+description: Brief description of skill purpose. Use when [specific triggers like "working with X", "debugging Y", "implementing Z"].
+---
+
+# Skill Title
+
+## When to Use
+
+[Описание ситуаций когда применять]
+
+## Quick Reference
+
+[Краткая справка для быстрого использования]
+
+## Detailed Instructions
+
+### Step 1: [Action]
+
+```code
+example code
+```
+
+### Step 2: [Action]
+
+```code
+example code
+```
+
+## Common Errors
+
+### Error: "error message"
+
+**Cause:** [причина]
+**Fix:** [решение]
+
+## Best Practices
+
+### ✅ DO:
+
+1. Good practice 1
+2. Good practice 2
+
+### ❌ DON'T:
+
+1. Bad practice 1
+2. Bad practice 2
+```
+
+---
+
+## 📍 Расположение файлов
+
+```
+.cursor/
+  skills/
+    skill-name/           ← папка с kebab-case именем
+      SKILL.md            ← файл ВСЕГДА называется SKILL.md
+```
+
+**Примеры:**
+
+```
+✅ Правильно:
+.cursor/skills/git-github-operations/SKILL.md
+.cursor/skills/acf-relationships/SKILL.md
+.cursor/skills/nextjs-caching/SKILL.md
+
+❌ Неправильно:
+.cursor/skills/git-github-operations.md       ← нет папки!
+.cursor/skills/GitHubOperations/SKILL.md      ← не kebab-case!
+.cursor/skills/git-github-operations/skill.md ← lowercase!
+```
+
+---
+
+## 🎓 Когда создавать Skill
+
+### ✅ Создавать skill когда:
+
+1. **Повторяющийся паттерн** - решили проблему, которая может возникнуть снова
+2. **Сложный workflow** - много шагов, легко забыть
+3. **Специфичные знания проекта** - конфигурации, API, структуры
+4. **Debugging patterns** - частые ошибки и их решения
+5. **Integration patterns** - как соединять части системы
+
+### ❌ НЕ создавать skill когда:
+
+1. **Одноразовая задача** - не повторится
+2. **Слишком общие знания** - уже есть в документации
+3. **Простые действия** - не требуют инструкции
+
+---
+
+## 📝 Как извлекать skills из чата
+
+### Шаг 1: Определить паттерны
+
+Искать в чате:
+- Проблемы, которые долго решались
+- Workarounds и обходные пути
+- Конфигурации, которые работают
+- Последовательности действий
+
+### Шаг 2: Структурировать знания
+
+1. **Problem** → Что решали?
+2. **Solution** → Как решили?
+3. **Steps** → Какие шаги?
+4. **Pitfalls** → Какие ошибки избегать?
+
+### Шаг 3: Создать skill
+
+1. Создать папку `.cursor/skills/skill-name/`
+2. Создать файл `SKILL.md` с правильным frontmatter
+3. Заполнить разделы по шаблону
+4. Проверить что description содержит триггеры использования
+
+---
+
+## 🔍 Примеры хороших descriptions
+
+```yaml
+# ✅ Хорошо - четкие триггеры:
+description: Git workflow, GitHub API integration, PR automation. Use when committing changes, creating PRs, pushing to remote, or automating GitHub operations.
+
+# ✅ Хорошо - специфичные ситуации:
+description: Debug WPGraphQL issues with ACF fields. Use when working with WPGraphQL queries, ACF integration, or "Cannot query field" errors.
+
+# ❌ Плохо - слишком общее:
+description: How to work with Git.
+
+# ❌ Плохо - нет триггеров:
+description: GitHub operations skill.
+```
+
+---
+
+## 🚀 После создания skill
+
+### Проверить:
+
+1. ✅ Файл в правильном месте (`.cursor/skills/name/SKILL.md`)
+2. ✅ Frontmatter содержит `name` и `description`
+3. ✅ Description содержит "Use when..." триггеры
+4. ✅ Структура следует шаблону
+5. ✅ Код примеры актуальны и работают
+
+### Commit (если нужно):
+
+```bash
+git add .cursor/skills/skill-name/
+git commit -m "feat: add skill-name skill for [purpose]"
+```
+
+---
+
+**Статус:** ✅ КРИТИЧЕСКОЕ - ВСЕГДА СОБЛЮДАТЬ
+**Приоритет:** 🔴 МАКСИМАЛЬНЫЙ

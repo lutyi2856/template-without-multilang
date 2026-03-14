@@ -1,0 +1,505 @@
+---
+alwaysApply: true
+---
+
+# Design System Philosophy - УниДент Project
+
+> Философия дизайн-системы для headless WordPress + Next.js
+> Дата создания: 2026-01-15
+> Статус: ✅ Активно
+
+You are an expert in building scalable, maintainable design systems with modern approaches.
+
+## 🎯 Философия
+
+### Основные принципы
+
+1. **Все через переменные** (цвета и типографика)
+2. **Универсальные компоненты** (не создавать H1, H2, H3 отдельно)
+3. **Design Tokens подход** (Single Source of Truth)
+4. **Consistency первее гибкости**
+5. **Performance-first** (связь с performance-philosophy)
+
+---
+
+## 1️⃣ Все через переменные
+
+### Цвета
+
+**❌ ЗАПРЕЩЕНО - Хардкод цветов:**
+
+```tsx
+// ❌ ПЛОХО
+<div className="bg-[#526AC2] text-[#191E35]">
+<button style={{ backgroundColor: '#526AC2' }}>
+```
+
+**✅ ПРАВИЛЬНО - Использовать переменные:**
+
+```tsx
+// ✅ ХОРОШО
+<div className="bg-unident-primary text-unident-dark">
+<button className="bg-unident-primary">
+```
+
+**Доступные цвета:**
+- `bg-unident-primary` - основной синий (#526AC2)
+- `bg-unident-dark` - темный текст (#191E35)
+- `bg-unident-white` - белый
+- `bg-unident-bgLightBlue` - светлый голубой (бейдж рейтинга)
+- `bg-unident-bgLightGray` - светлый серый (бейдж стажа)
+- `bg-unident-bgTopbar` - фон топбара
+- `bg-unident-footer` - цвет футера
+- `border-unident-borderGray` - серая рамка
+- `text-unident-textGray` - серый текст
+
+### Типографика
+
+**❌ ЗАПРЕЩЕНО - Хардкод стилей:**
+
+```tsx
+// ❌ ПЛОХО
+<p className="text-[16px] font-normal leading-[1.25]">
+<h3 className="text-[22px] font-semibold leading-[1.19] tracking-[-0.02em]">
+```
+
+**✅ ПРАВИЛЬНО - Использовать Design Tokens через компоненты:**
+
+```tsx
+// ✅ ХОРОШО
+<Text variant="doctor-description">
+<Heading level={3} variant="card-title">
+```
+
+---
+
+## 2️⃣ Универсальные компоненты
+
+### Text компонент вместо P, Span, Div
+
+**❌ ПЛОХО - Создавать отдельные компоненты:**
+
+```tsx
+// ❌ НЕ делать так
+export function Paragraph() { ... }
+export function SmallText() { ... }
+export function LargeText() { ... }
+```
+
+**✅ ХОРОШО - Один универсальный компонент:**
+
+```tsx
+// ✅ Универсальный Text компонент
+<Text variant="default">Обычный текст</Text>
+<Text variant="small">Маленький текст</Text>
+<Text variant="doctor-description">Описание врача</Text>
+<Text as="span" variant="clinic-name">Название клиники</Text>
+```
+
+**Props:**
+- `variant` - стиль из Design Tokens
+- `as` - какой HTML тег использовать (p, span, div, label)
+- `className` - дополнительные стили если нужно
+
+### Heading компонент вместо H1, H2, H3, H4, H5, H6
+
+**❌ ПЛОХО:**
+
+```tsx
+// ❌ НЕ создавать отдельные компоненты
+export function H1() { ... }
+export function H2() { ... }
+export function H3() { ... }
+```
+
+**✅ ХОРОШО:**
+
+```tsx
+// ✅ Универсальный Heading компонент
+<Heading level={1} variant="page-title">Заголовок страницы</Heading>
+<Heading level={2} variant="section-title">Заголовок секции</Heading>
+<Heading level={3} variant="card-title">Заголовок карточки</Heading>
+<Heading level={3}>Заголовок карточки</Heading> // variant по умолчанию для level={3}
+```
+
+**Props:**
+- `level` - уровень заголовка (1-6) для SEO и семантики
+- `variant` - стиль из Design Tokens (если не указан, используется дефолтный для level)
+- `className` - дополнительные стили если нужно
+
+---
+
+## 3️⃣ Design Tokens подход
+
+### Что такое Design Tokens?
+
+**Design Tokens = словарь стилей с семантическими именами**
+
+Все типографические стили хранятся в **одном файле**: `design-tokens/typography.ts`
+
+```typescript
+// design-tokens/typography.ts - Single Source of Truth
+export const typography = {
+  figma: {
+    'doctor-name': 'text-[22px] font-semibold leading-[1.19] tracking-[-0.02em]',
+    'doctor-description': 'text-[16px] font-normal leading-[1.25]',
+    'clinic-name': 'text-[16px] font-medium leading-[1.18]',
+  }
+}
+```
+
+### Как использовать?
+
+**❌ ПЛОХО - Копировать Tailwind классы везде:**
+
+```tsx
+// ❌ Дублирование - если дизайнер изменит размер, нужно менять в 100 местах
+<p className="text-[16px] font-normal leading-[1.25]">Описание 1</p>
+<p className="text-[16px] font-normal leading-[1.25]">Описание 2</p>
+<p className="text-[16px] font-normal leading-[1.25]">Описание 3</p>
+```
+
+**✅ ХОРОШО - Использовать semantic variant:**
+
+```tsx
+// ✅ Single Source of Truth - изменение в одном месте работает везде
+<Text variant="doctor-description">Описание 1</Text>
+<Text variant="doctor-description">Описание 2</Text>
+<Text variant="doctor-description">Т</Text>
+```
+
+### Преимущества:
+
+1. **Масштабируемость** - изменение в одном месте → работает везде
+2. **Семантика** - `variant="doctor-description"` понятнее чем `text-[16px]...`
+3. **TypeScript автокомплит** - IDE подсказывает доступные варианты
+4. **Связь с Figma** - явное соответствие дизайну
+5. **Нет дублирования** - DRY принцип
+
+### Когда добавлять новый токен?
+
+**Добавляй новый токен когда:**
+
+1. Стиль используется в **2+ местах**
+2. Стиль имеет **семантическое значение** из Figma (например, "заголовок карточки услуги")
+3. Стиль может **измениться в будущем** и нужно изменить его везде сразу
+
+**НЕ добавляй токен если:**
+
+1. Стиль используется только **1 раз** и уникален
+2. Это **кастомизация** существующего стиля (используй `className` prop)
+
+### Добавление нового токена:
+
+```typescript
+// 1. Добавить в design-tokens/typography.ts
+figma: {
+  'service-title': 'text-[20px] font-semibold leading-tight', // Новый!
+}
+
+// 2. Использовать в компонентах
+<Text variant="service-title">Название услуги</Text>
+```
+
+---
+
+## 4️⃣ Design-system vs Shadcn/ui
+
+### Когда использовать design-system/ компоненты
+
+**ВСЕГДА используй design-system/ для:**
+
+1. **Typography** - Text, Heading
+   ```tsx
+   import { Text, Heading } from '@/components/design-system';
+   ```
+
+2. **Layout** - Container, Section
+   ```tsx
+   import { Container, Section } from '@/components/design-system';
+   ```
+
+3. **Basics** - Button, Card, Badge (с preset стилями УниДент)
+   ```tsx
+   import { Button, Card, Badge } from '@/components/design-system';
+   <Button unidentVariant="primary">Записаться</Button>
+   <Card variant="bordered">...</Card>
+   <Badge variant="rating">4.7 ★</Badge>
+   ```
+
+### Когда использовать shadcn/ui напрямую
+
+**Используй shadcn/ui напрямую для сложных UI компонентов:**
+
+- Dialog, DropdownMenu, Select, Popover
+- Sheet, Separator, Label, Input
+- Avatar, NavigationMenu
+
+```tsx
+// ✅ Shadcn/ui напрямую - это нормально для сложных компонентов
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Select, SelectContent, SelectItem } from '@/components/ui/select';
+```
+
+### Когда оборачивать shadcn/ui в design-system/
+
+**Оборачивай только если:**
+
+1. Компонент используется **часто** (10+ раз)
+2. Нужны **preset стили** УниДент (цвета, скругления, отступы)
+3. Нужна **дополнительная логика** специфичная для проекта
+
+**Пример - Button обернут:**
+
+```typescript
+// design-system/button.tsx
+import { Button as ShadcnButton } from '@/components/ui/button';
+
+const unidentVariants = {
+  primary: 'bg-unident-primary hover:bg-unident-primaryLight rounded-[15px]',
+  // preset стили УниДент
+};
+
+export function Button({ unidentVariant, ...props }) {
+  return <ShadcnButton className={unidentVariants[unidentVariant]} {...props} />;
+}
+```
+
+---
+
+## 5️⃣ Consistency первее гибкости
+
+### Предпочитай готовые варианты
+
+**❌ ПЛОХО - Override через className:**
+
+```tsx
+// ❌ Обходим дизайн-систему
+<Button className="bg-red-500 text-white rounded-full px-10">
+  Кастомная кнопка
+</Button>
+```
+
+**✅ ХОРОШО - Добавить variant в компонент:**
+
+```typescript
+// 1. Добавить в design-system/button.tsx
+const unidentVariants = {
+  danger: 'bg-red-500 text-white rounded-[15px] px-6', // Новый variant!
+};
+
+// 2. Использовать
+<Button unidentVariant="danger">Удалить</Button>
+```
+
+### Если нужен новый стиль
+
+**Алгоритм действий:**
+
+1. **Проверь** - может такой variant уже есть?
+2. **Спроси** - это разовая кастомизация или паттерн?
+3. **Если паттерн** → добавь variant в компонент/токены
+4. **Если разовое** → используй `className` prop (это OK!)
+
+```tsx
+// ✅ Разовая кастомизация - OK использовать className
+<Text variant="default" className="mb-4 italic">
+  Единственный курсивный текст на сайте
+</Text>
+```
+
+### Избегай arbitrary values
+
+**❌ ИЗБЕГАЙ (но не запрещено):**
+
+```tsx
+// ⚠️ Arbitrary values - используй только если нет в дизайн-системе
+<div className="w-[347px] h-[521px] bg-[#526AC2]">
+```
+
+**✅ ПРЕДПОЧИТАЙ:**
+
+```tsx
+// ✅ Используй переменные и стандартные значения
+<div className="w-[350px] h-[520px] bg-unident-primary">
+// или еще лучше:
+<div className="w-full max-w-sm h-[520px] bg-unident-primary">
+```
+
+---
+
+## 6️⃣ Performance-first
+
+### Связь с performance-philosophy.mdc
+
+Дизайн-система должна быть **производительной**:
+
+1. **Server Components по умолчанию**
+   ```tsx
+   // ✅ Text, Heading, Card - все Server Components
+   // НЕТ 'use client' если не нужна интерактивность
+   ```
+
+2. **Не создавать лишние компоненты**
+   ```tsx
+   // ❌ ПЛОХО - 100 мелких компонентов
+   <DoctorNameText>, <DoctorDescriptionText>, <ClinicNameText>
+   
+   // ✅ ХОРОШО - Один универсальный с variants
+   <Text variant="doctor-name">
+   <Text variant="doctor-description">
+   <Text variant="clinic-name">
+   ```
+
+3. **Использовать существующие паттерны**
+   - Не изобретать велосипед
+   - Следовать конвенциям Next.js
+   - Использовать Tailwind эффективно
+
+---
+
+## 📚 Примеры паттернов
+
+### Пример 1: Карточка врача
+
+**❌ ПЛОХО - До рефакторинга:**
+
+```tsx
+<div className="bg-white border-2 border-[#D8D8D8] rounded-[25px] p-6">
+  <h3 className="text-[#191E35] text-[22px] font-semibold leading-[1.19]">
+    Иванов Иван Иванович
+  </h3>
+  <p className="text-[#191E35] text-[16px] font-normal leading-[1.25]">
+    Стоматолог-терапевт, ортопед
+  </p>
+  <div className="bg-[#D9E4F7] text-[#191E35] px-3 py-1.5 rounded-[10px]">
+    4.7 ★
+  </div>
+</div>
+```
+
+**✅ ХОРОШО - После рефакторинга:**
+
+```tsx
+import { Card, Heading, Text, Badge } from '@/components/design-system';
+
+<Card variant="bordered">
+  <Heading level={3} variant="card-title">
+    Иванов Иван Иванович
+  </Heading>
+  <Text variant="doctor-description">
+    Стоматолог-терапевт, ортопед
+  </Text>
+  <Badge variant="rating">
+    4.7 ★
+  </Badge>
+</Card>
+```
+
+### Пример 2: Кнопка записи
+
+**❌ ПЛОХО:**
+
+```tsx
+<button className="bg-[#526AC2] hover:bg-[#607BD4] text-white font-[Gilroy] font-semibold text-[16px] px-6 py-3 rounded-[15px]">
+  Записаться
+</button>
+```
+
+**✅ ХОРОШО:**
+
+```tsx
+import { Button } from '@/components/design-system';
+
+<Button unidentVariant="primary">
+  Записаться
+</Button>
+```
+
+### Пример 3: Название клиники
+
+**❌ ПЛОХО:**
+
+```tsx
+<span className="text-[#191E35] text-[16px] font-medium leading-[1.18]">
+  Клиника на Новослободской
+</span>
+```
+
+**✅ ХОРОШО:**
+
+```tsx
+import { Text } from '@/components/design-system';
+
+<Text variant="clinic-name" as="span">
+  Клиника на Новослободской
+</Text>
+```
+
+---
+
+## 🚫 Что ЗАПРЕЩЕНО
+
+### 1. Хардкод цветов
+
+```tsx
+// ❌ ЗАПРЕЩЕНО
+className="bg-[#526AC2]"
+style={{ color: '#191E35' }}
+```
+
+### 2. Хардкод типографики без токенов
+
+```tsx
+// ❌ ЗАПРЕЩЕНО напрямую (только через компоненты)
+className="text-[22px] font-semibold leading-[1.19]"
+```
+
+### 3. Создание отдельных компонентов для каждого варианта
+
+```tsx
+// ❌ ЗАПРЕЩЕНО
+export function H1() { ... }
+export function H2() { ... }
+export function Paragraph() { ... }
+export function SmallText() { ... }
+```
+
+### 4. Игнорирование дизайн-системы
+
+```tsx
+// ❌ ЗАПРЕЩЕНО - обход дизайн-системы
+<div className="bg-[#526AC2] text-white font-bold text-xl px-8 py-4 rounded-2xl">
+  Вместо использования <Button>
+</div>
+```
+
+---
+
+## ✅ Checklist перед commit
+
+Перед каждым commit проверь:
+
+- [ ] ✅ Нет хардкода цветов `bg-[#...]` (используй `bg-unident-*`)
+- [ ] ✅ Нет хардкода типографики напрямую (используй `<Text variant="...">`)
+- [ ] ✅ Используешь компоненты из `@/components/design-system`
+- [ ] ✅ Все стили соответствуют Figma макету
+- [ ] ✅ Нет дублирования стилей (используй Design Tokens)
+- [ ] ✅ TypeScript типы корректны (автокомплит работает)
+- [ ] ✅ Server Components где возможно (без `'use client'`)
+
+---
+
+## 📖 Дополнительные ресурсы
+
+- **Документация проекта**: `nextjs/DESIGN_SYSTEM.md`
+- **Design Tokens**: `nextjs/src/design-tokens/typography.ts`
+- **Компоненты**: `nextjs/src/components/design-system/`
+- **Performance**: `.cursor/rules/performance-philosophy.mdc`
+
+---
+
+**Статус:** ✅ КРИТИЧЕСКОЕ ПРАВИЛО - ВСЕГДА ПРИМЕНЯТЬ
+**Приоритет:** 🔴 МАКСИМАЛЬНЫЙ
+**Версия:** 1.0.0
+**Дата:** 2026-01-15

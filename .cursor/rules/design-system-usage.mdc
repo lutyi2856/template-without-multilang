@@ -1,0 +1,315 @@
+---
+alwaysApply: true
+---
+
+# Design System Usage - УниДент
+
+> Правило для работы с Design Tokens и универсальными компонентами
+> Применяется автоматически при работе с UI компонентами
+
+## 🎯 Когда применять
+
+**Автоматически применяется когда:**
+- Создаешь новый UI компонент
+- Рефакторишь существующий компонент
+- Видишь хардкод цветов `bg-[#526AC2]` или типографики `text-[22px]`
+- Работаешь с текстом, заголовками, кнопками, карточками
+
+---
+
+## 📦 Quick Reference
+
+### Импорты
+
+```typescript
+// Typography (универсальные компоненты)
+import { Text, Heading } from '@/components/design-system';
+
+// Basics (preset компоненты)
+import { Button, Card, Badge } from '@/components/design-system';
+
+// Layout (контейнеры)
+import { Container, Section } from '@/components/design-system';
+```
+
+### Базовое использование
+
+```tsx
+// Text - для всего текста
+<Text variant="default">Обычный текст</Text>
+<Text variant="doctor-description">Описание врача</Text>
+<Text variant="clinic-name" as="span">Название клиники</Text>
+
+// Heading - для всех заголовков
+<Heading level={1}>Заголовок страницы</Heading>
+<Heading level={3} variant="card-title">Заголовок карточки</Heading>
+
+// Button - кнопки с preset стилями
+<Button unidentVariant="primary">Записаться</Button>
+<Button unidentVariant="outline">Отменить</Button>
+
+// Card - карточки
+<Card variant="bordered">Содержимое</Card>
+
+// Badge - бейджи
+<Badge variant="rating">4.7 ★</Badge>
+<Badge variant="experience">36 лет</Badge>
+```
+
+---
+
+## 🎨 Typography Design Tokens
+
+### Body варианты (базовый текст)
+
+```typescript
+variant="default"  // 16px, font-normal - обычный текст
+variant="large"    // 18px, font-normal - крупный текст
+variant="small"    // 14px, font-normal - маленький текст
+variant="xs"       // 12px, font-normal - очень маленький текст
+```
+
+### Heading варианты (заголовки)
+
+```typescript
+variant="page-title"     // 48px, font-bold - H1
+variant="section-title"  // 32px, font-bold - H2
+variant="card-title"     // 22px, font-semibold - H3
+variant="subsection"     // 20px, font-semibold - H4
+```
+
+### Figma варианты (специфичные для дизайна)
+
+```typescript
+// Doctor Card
+variant="doctor-name"         // 22px, font-semibold
+variant="doctor-description"  // 16px, font-normal
+variant="clinic-name"         // 16px, font-medium
+
+// Badges
+variant="experience-number"   // 19px, font-medium
+variant="rating-number"       // 17px, font-medium
+
+// UI элементы
+variant="button-text"         // 16px, font-semibold
+variant="nav-link"            // 16px, font-medium
+```
+
+---
+
+## 🎨 Цвета (unident-*)
+
+### Основные цвета
+
+```typescript
+bg-unident-primary       // #526AC2 - основной синий
+bg-unident-white         // #FFFFFF - белый
+bg-unident-dark          // #191E35 - темный текст
+```
+
+### Фоны
+
+```typescript
+bg-unident-bgTopbar      // #F9F9F9 - топбар
+bg-unident-bgElements    // #F5F7F9 - элементы
+bg-unident-bgLightGray   // #EEF3F9 - светло-серый (experience badge)
+bg-unident-bgLightBlue   // #D9E4F7 - светло-синий (rating badge)
+bg-unident-footer        // #2F375F - футер
+```
+
+### Границы и текст
+
+```typescript
+border-unident-borderGray  // #D8D8D8 - границы
+text-unident-textGray      // #8F8F8F - вторичный текст
+```
+
+---
+
+## ✅ DO: Правильные паттерны
+
+### 1. Создание нового компонента
+
+```tsx
+// ✅ ПРАВИЛЬНО - используй Design System
+import { Card, Heading, Text, Button } from '@/components/design-system';
+
+export function DoctorCard({ name, description }: Props) {
+  return (
+    <Card variant="bordered">
+      <Heading level={3} variant="card-title">
+        {name}
+      </Heading>
+      <Text variant="doctor-description">
+        {description}
+      </Text>
+      <Button unidentVariant="primary">
+        Записаться
+      </Button>
+    </Card>
+  );
+}
+```
+
+### 2. Семантические варианты
+
+```tsx
+// ✅ ПРАВИЛЬНО - используй семантические имена
+<Text variant="doctor-description">{description}</Text>
+<Text variant="clinic-name" as="span">{clinic}</Text>
+<Heading level={3} variant="card-title">{title}</Heading>
+```
+
+### 3. Правильный HTML тег через `as`
+
+```tsx
+// ✅ ПРАВИЛЬНО - укажи правильный тег
+<Text variant="clinic-name" as="span">Клиника</Text>
+<Text variant="label" as="label">Имя</Text>
+```
+
+### 4. Preset компоненты для стандартных элементов
+
+```tsx
+// ✅ ПРАВИЛЬНО - используй preset компоненты
+<Button unidentVariant="primary">Записаться</Button>
+<Card variant="bordered">Содержимое</Card>
+<Badge variant="rating">4.7 ★</Badge>
+```
+
+### 5. Добавление новых токенов при необходимости
+
+```typescript
+// ✅ ПРАВИЛЬНО - добавь в design-tokens/typography.ts
+figma: {
+  'service-title': 'text-[20px] font-medium leading-[1.2]',
+}
+
+// Затем используй
+<Text variant="service-title">Услуга</Text>
+```
+
+---
+
+## ❌ DON'T: Антипаттерны
+
+### 1. Хардкод цветов
+
+```tsx
+// ❌ НЕПРАВИЛЬНО - хардкод цвета
+<div className="bg-[#526AC2] text-[#191E35] border-[#D8D8D8]">
+
+// ✅ ПРАВИЛЬНО - через Design Tokens
+<div className="bg-unident-primary text-unident-dark border-unident-borderGray">
+```
+
+### 2. Хардкод типографики
+
+```tsx
+// ❌ НЕПРАВИЛЬНО - хардкод типографики
+<p className="text-[16px] font-normal leading-[1.25]">
+  Описание
+</p>
+
+// ✅ ПРАВИЛЬНО - через компонент
+<Text variant="doctor-description">
+  Описание
+</Text>
+```
+
+### 3. Создание специфичных компонентов
+
+```tsx
+// ❌ НЕПРАВИЛЬНО - специфичные компоненты
+function DoctorNameText({ children }: Props) {
+  return <h3 className="text-[22px] font-semibold">{children}</h3>;
+}
+
+function PrimaryButton({ children }: Props) {
+  return <button className="bg-[#526AC2]">{children}</button>;
+}
+
+// ✅ ПРАВИЛЬНО - универсальные компоненты
+<Heading level={3} variant="card-title">{name}</Heading>
+<Button unidentVariant="primary">Текст</Button>
+```
+
+### 4. Неправильный HTML тег
+
+```tsx
+// ❌ НЕПРАВИЛЬНО - <p> внутри inline элемента
+<span>
+  <Text>Текст</Text> {/* по умолчанию <p> - блочный! */}
+</span>
+
+// ✅ ПРАВИЛЬНО - укажи правильный тег
+<span>
+  <Text as="span">Текст</Text>
+</span>
+```
+
+### 5. Игнорирование существующих вариантов
+
+```tsx
+// ❌ НЕПРАВИЛЬНО - используется default вместо семантического
+<Text>{doctorDescription}</Text>
+
+// ✅ ПРАВИЛЬНО - указан семантический вариант
+<Text variant="doctor-description">{doctorDescription}</Text>
+```
+
+---
+
+## 🔄 Быстрая миграция
+
+### Checklist рефакторинга:
+
+```tsx
+// ❌ БЫЛО - хардкод
+<div className="bg-white border-2 border-[#D8D8D8] rounded-[25px] p-6">
+  <h3 className="text-[22px] font-semibold text-[#191E35]">
+    Иванов Иван Иванович
+  </h3>
+  <p className="text-[16px] text-[#191E35]">
+    Стоматолог-терапевт
+  </p>
+  <button className="bg-[#526AC2] text-white px-6 py-3 rounded-[15px]">
+    Записаться
+  </button>
+</div>
+
+// ✅ СТАЛО - через Design System
+<Card variant="bordered">
+  <Heading level={3} variant="card-title">
+    Иванов Иван Иванович
+  </Heading>
+  <Text variant="doctor-description">
+    Стоматолог-терапевт
+  </Text>
+  <Button unidentVariant="primary">
+    Записаться
+  </Button>
+</Card>
+```
+
+**Шаги:**
+1. ✅ Найти хардкод: `bg-[#...]`, `text-[#...]`, `text-[22px]`
+2. ✅ Заменить `<h1-h6>` → `<Heading level={...} variant="...">`
+3. ✅ Заменить `<p>`, `<span>`, `<div>` с текстом → `<Text variant="...">`
+4. ✅ Заменить хардкод цветов → `bg-unident-*`, `text-unident-*`
+5. ✅ Использовать `<Card>`, `<Button>`, `<Badge>` для стандартных элементов
+
+---
+
+## 📚 Ресурсы
+
+- **Полная документация**: `nextjs/DESIGN_SYSTEM.md`
+- **Философия**: `.cursor/rules/design-system-philosophy.mdc`
+- **Design Tokens**: `nextjs/src/design-tokens/typography.ts`
+- **Компоненты**: `nextjs/src/components/design-system/`
+
+---
+
+**Статус:** ✅ Активно применяется ко всем чатам  
+**Приоритет:** 🔴 ВЫСОКИЙ  
+**Версия:** 1.0.0

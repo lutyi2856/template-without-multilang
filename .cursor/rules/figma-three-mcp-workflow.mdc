@@ -1,0 +1,64 @@
+---
+alwaysApply: true
+---
+
+# Figma: три MCP для pixel-perfect реализации
+
+> Роли Framelink, Figma Remote и Figma Desktop при реализации блоков из Figma. Use when implementing components from Figma, verifying layout, or when layout numbers differ from design.
+
+## Server Identifiers
+
+| Логическое имя | Server Identifier | Приоритет |
+|----------------|-------------------|-----------|
+| Figma Remote | `user-Figma` | PRIMARY — основной рабочий сервер |
+| Figma Desktop | `user-Figma_Desktop` | PRIMARY — для работы с открытым Figma |
+| Framelink | `user-Framelink MCP for Figma` | PRIMARY — точные layout-числа, загрузка изображений |
+| ~~plugin-figma-figma~~ | `plugin-figma-figma` | Требует Pro/Org план (Starter = 6 вызовов/месяц) |
+
+**Примечание о плагине:** `plugin-figma-figma` и `plugin-figma-figma-desktop` привязаны к Figma аккаунту на Starter плане (6 вызовов в месяц). Использовать `user-Figma` и `user-Figma_Desktop` — они работают через API token без ограничений плана.
+
+При вызове инструментов Figma (get_design_context, get_screenshot, get_variable_defs) вызывать серверы `user-Figma` или `user-Figma_Desktop`.
+
+## Роли MCP
+
+| Задача | MCP | Инструмент |
+|--------|-----|------------|
+| Размеры, позиции, gap, padding, borderRadius, типографика | **Framelink** | `get_figma_data(fileKey, nodeId)` |
+| Загрузка SVG/изображений | **Framelink** | `download_figma_images` |
+| Черновик кода, переменные (React+Tailwind) | **Figma Remote** | `get_design_context`, `get_variable_defs` |
+| Визуальная проверка (скриншот макета) | **Figma Desktop** или **Figma Remote** | `get_screenshot` |
+| NodeId по выделению в приложении | **Figma Desktop** | — |
+
+**Framelink** — единственный источник точных layout-чисел (dimensions, gap, padding из globalVars). Summarized JSON (например `doctor-page.json`) не содержит этих значений.
+
+**Fallback:** если Figma MCP (Remote или Desktop) не подключён — использовать только Framelink. Будет точные числа, но не будет черновика кода; реализация строится по данным из Framelink.
+
+## Порядок вызовов (pixel-perfect)
+
+**Два MCP:** Framelink (числа, картинки) и Figma (черновик кода, скриншот). Данные разные, дополняют друг друга. Для каждого источника: сначала проверить кэш (`FIGMA_CACHE.md`, `figma-data/`). Если данные этого источника по узлу есть в кэше — использовать кэш; если нет — вызвать соответствующий MCP (Framelink или Figma). Всегда иметь данные от обоих источников.
+
+**Всегда получать оба источника сразу:** точные данные (Framelink) и черновик кода (Figma). Не «можно вызвать», а вызывать оба — затем сопоставлять и брать лучшее (структура из черновика, числа из Framelink).
+
+1. **Framelink** `get_figma_data` — эталонные числа для блока (nodeId блока, не всей страницы). Вызов обязателен.
+2. **Figma Remote** `get_design_context` (или Figma Desktop с `dirForAssetWrites`) — черновик структуры/кода (React+Tailwind). Вызов обязателен. При расхождении чисел с Framelink подставлять значения из Framelink.
+3. **Framelink** `download_figma_images` — скачать изображения/иконки одним batch. `localPath: "nextjs/public/images/figma"`. Если файлы попали в `C:\Users\[user]\nextjs\...` — скопировать в `D:\template\nextjs\public\images\figma`.
+4. **Figma Desktop** или **Figma Remote** `get_screenshot` — сравнить скриншот макета с рендером в браузере.
+
+## Framelink: путь для download_figma_images
+
+Framelink разрешает только относительный `localPath` (абсолютный даёт "Directory traversal"). Путь разрешается относительно cwd MCP. В проекте задан `cwd: "${workspaceFolder}"` в mcp.json — при старте из корня проекта файлы сохраняются в `nextjs/public/images/figma`. Если cwd иной — проверять `C:\Users\[user]\nextjs\public\images\figma` и копировать в проект.
+
+## Figma Desktop: обязательный параметр
+
+При каждом вызове **Figma Desktop** `get_design_context` передавать:
+
+```
+dirForAssetWrites: "D:/template/nextjs/public/images/figma"
+```
+
+## File Keys
+
+- Оригинал: `JPVOauS3F3bEIy1msJXPeR`
+- Copy (активный): `eEN4I9HdQ3JiW708BuOMRc`
+
+Подробности: `.cursor/skills/working-with-figma/SKILL.md`, `nextjs/figma-data/FIGMA_CACHE.md`.

@@ -1,0 +1,766 @@
+---
+alwaysApply: true
+---
+
+# Shadcn UI & Radix UI - УниДент Project
+
+> Правила работы с Shadcn UI и Radix UI компонентами
+> Источник: cursor.directory + официальная документация
+> Дата создания: 2026-02-05
+> Статус: ✅ Активно
+
+You are an expert in Shadcn UI, Radix UI, and building accessible component libraries with React.
+
+## 🎯 Когда применять
+
+**Используется в проекте:**
+```json
+"@radix-ui/react-avatar": "^1.1.11",
+"@radix-ui/react-dialog": "^1.1.15",
+"@radix-ui/react-dropdown-menu": "^2.1.16",
+"@radix-ui/react-navigation-menu": "^1.2.14",
+"@radix-ui/react-select": "^2.2.6"
+```
+
+---
+
+## 1️⃣ Философия использования
+
+### Design System vs Shadcn/Radix напрямую
+
+**✅ Используй design-system/ для:**
+- Typography (Text, Heading)
+- Layout (Container, Section)
+- Basics с preset стилями (Button, Card, Badge)
+
+**✅ Используй shadcn/radix напрямую для:**
+- Сложные интерактивные компоненты
+- Dialog, DropdownMenu, Select, Popover
+- NavigationMenu, Avatar, Separator
+- Label, Input (если нет в design-system)
+
+**🔄 Оборачивай в design-system/ только если:**
+- Компонент используется **10+ раз**
+- Нужны **preset стили** УниДент
+- Нужна **дополнительная логика**
+
+---
+
+## 2️⃣ Shadcn UI Components
+
+### Установка компонентов
+
+**НЕ устанавливай через shadcn CLI!** Компоненты уже в проекте:
+
+```
+nextjs/src/components/ui/
+├── button.tsx
+├── card.tsx
+├── dialog.tsx
+├── dropdown-menu.tsx
+├── navigation-menu.tsx
+├── select.tsx
+└── ...
+```
+
+### Импорты
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// Shadcn компоненты
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Select, SelectContent, SelectItem } from '@/components/ui/select';
+import { DropdownMenu, DropdownMenuContent } from '@/components/ui/dropdown-menu';
+
+// Design System компоненты (обертки)
+import { Button, Card, Badge } from '@/components/design-system';
+```
+
+---
+
+## 3️⃣ Паттерны использования
+
+### Dialog (Modal)
+
+**✅ ПРАВИЛЬНО - полный a11y:**
+
+```tsx
+'use client'
+import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
+import { Button } from '@/components/design-system';
+
+function AppointmentModal({ open, onOpenChange }: Props) {
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent>
+        <DialogTitle>Запись на прием</DialogTitle>
+        <DialogDescription>
+          Заполните форму для записи к врачу
+        </DialogDescription>
+        
+        <form>
+          {/* Форма */}
+        </form>
+        
+        <DialogClose asChild>
+          <Button unidentVariant="outline">Закрыть</Button>
+        </DialogClose>
+      </DialogContent>
+    </Dialog>
+  );
+}
+```
+
+**ВАЖНО:**
+- Всегда используй `DialogTitle` (для screen readers)
+- Всегда используй `DialogDescription` (контекст)
+- `DialogClose` для доступного закрытия
+
+### Select (Dropdown)
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+'use client'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+
+function SpecialtyFilter() {
+  return (
+    <Select onValueChange={handleChange}>
+      <SelectTrigger 
+        className="w-[200px]"
+        aria-label="Выберите специальность врача"
+      >
+        <SelectValue placeholder="Все специальности" />
+      </SelectTrigger>
+      
+      <SelectContent>
+        <SelectItem value="therapist">Терапевт</SelectItem>
+        <SelectItem value="surgeon">Хирург</SelectItem>
+        <SelectItem value="orthodontist">Ортодонт</SelectItem>
+      </SelectContent>
+    </Select>
+  );
+}
+```
+
+### DropdownMenu
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+'use client'
+import { 
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuTrigger,
+  DropdownMenuSeparator
+} from '@/components/ui/dropdown-menu';
+
+function UserMenu() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" aria-label="Меню пользователя">
+          <Avatar src={user.avatar} />
+        </Button>
+      </DropdownMenuTrigger>
+      
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={goToProfile}>
+          Мой профиль
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={goToAppointments}>
+          Мои записи
+        </DropdownMenuItem>
+        
+        <DropdownMenuSeparator />
+        
+        <DropdownMenuItem onClick={logout}>
+          Выйти
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+```
+
+### Popover
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+'use client'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Button } from '@/components/design-system';
+
+function InfoPopover() {
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button 
+          variant="ghost" 
+          size="sm"
+          aria-label="Дополнительная информация"
+        >
+          <InfoIcon />
+        </Button>
+      </PopoverTrigger>
+      
+      <PopoverContent className="w-80">
+        <Text variant="small">
+          Информация о враче...
+        </Text>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+
+---
+
+## 4️⃣ Кастомизация стилей
+
+### Через className (Tailwind)
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+import { Button } from '@/components/ui/button';
+
+<Button 
+  className="bg-unident-primary hover:bg-unident-primaryLight rounded-[15px]"
+>
+  Записаться
+</Button>
+```
+
+### Через CVA (Class Variance Authority)
+
+**Для создания вариантов в design-system:**
+
+```typescript
+// components/design-system/button.tsx
+import { cva, type VariantProps } from 'class-variance-authority';
+import { Button as ShadcnButton } from '@/components/ui/button';
+
+const buttonVariants = cva(
+  'rounded-[15px] font-semibold transition-colors', // base
+  {
+    variants: {
+      unidentVariant: {
+        primary: 'bg-unident-primary hover:bg-unident-primaryLight text-white',
+        outline: 'border-2 border-unident-primary text-unident-primary hover:bg-unident-bgLightBlue',
+        ghost: 'hover:bg-unident-bgElements text-unident-dark',
+      },
+      size: {
+        default: 'px-6 py-3',
+        sm: 'px-4 py-2',
+        lg: 'px-8 py-4',
+      }
+    },
+    defaultVariants: {
+      unidentVariant: 'primary',
+      size: 'default'
+    }
+  }
+);
+
+export function Button({ unidentVariant, size, className, ...props }: Props) {
+  return (
+    <ShadcnButton
+      className={cn(buttonVariants({ unidentVariant, size }), className)}
+      {...props}
+    />
+  );
+}
+```
+
+---
+
+## 5️⃣ Композиция компонентов
+
+### asChild pattern
+
+**✅ ПРАВИЛЬНО - использовать asChild:**
+
+```tsx
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+
+// asChild позволяет рендерить Link вместо button
+<Button asChild>
+  <Link href="/doctors">Наши врачи</Link>
+</Button>
+
+// DialogClose с custom кнопкой
+<DialogClose asChild>
+  <Button unidentVariant="outline">Закрыть</Button>
+</DialogClose>
+```
+
+**❌ НЕПРАВИЛЬНО - вложенные кнопки:**
+
+```tsx
+<Button> {/* button внутри button - невалидно! */}
+  <Link href="/doctors">Наши врачи</Link>
+</Button>
+```
+
+---
+
+## 6️⃣ Server Components & Client Components
+
+### Radix компоненты требуют 'use client'
+
+**✅ ПРАВИЛЬНО - выносить в отдельные Client Components:**
+
+```tsx
+// components/appointment-dialog.tsx
+'use client'
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+
+export function AppointmentDialog({ doctor, ...props }: Props) {
+  return (
+    <Dialog {...props}>
+      <DialogContent>
+        {/* Форма записи */}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+// app/doctors/[id]/page.tsx
+// Server Component
+async function DoctorPage({ params }: Props) {
+  const doctor = await fetchDoctor(params.id);
+  
+  return (
+    <main>
+      <Heading level={1}>{doctor.name}</Heading>
+      <AppointmentDialog doctor={doctor} /> {/* Client Component */}
+    </main>
+  );
+}
+```
+
+---
+
+## 7️⃣ Best Practices
+
+### DO ✅
+
+1. **Используй Radix primitives напрямую** для сложных компонентов
+   ```tsx
+   import { Dialog } from '@/components/ui/dialog';
+   ```
+
+2. **Оборачивай только частоиспользуемые** компоненты в design-system
+   ```tsx
+   // Button, Card используются везде → оборачиваем
+   // Dialog используется 2-3 раза → напрямую
+   ```
+
+3. **Всегда указывай aria-label** для иконок без текста
+   ```tsx
+   <Button aria-label="Закрыть">
+     <XIcon />
+   </Button>
+   ```
+
+4. **Используй asChild** для композиции
+   ```tsx
+   <Button asChild>
+     <Link href="...">Text</Link>
+   </Button>
+   ```
+
+5. **Минимизируй 'use client'** - только где нужна интерактивность
+   ```tsx
+   // ✅ Выноси Dialog в отдельный компонент с 'use client'
+   // ❌ НЕ делай весь page 'use client'
+   ```
+
+### DON'T ❌
+
+1. ❌ **НЕ вкладывай интерактивные элементы**
+   ```tsx
+   <button><a href="...">Link</a></button> // Невалидно!
+   ```
+
+2. ❌ **НЕ модифицируй Radix behavior** без понимания
+   ```tsx
+   // Radix управляет focus, keyboard nav - не ломай это!
+   ```
+
+3. ❌ **НЕ забывай про accessibility**
+   ```tsx
+   <Dialog> {/* Обязательно DialogTitle! */}
+     <DialogContent>
+       <p>Content</p> // ❌ Нет DialogTitle
+     </DialogContent>
+   </Dialog>
+   ```
+
+4. ❌ **НЕ дублируй стили** - используй CVA для вариантов
+
+5. ❌ **НЕ импортируй из @radix-ui** напрямую
+   ```tsx
+   import { Dialog } from '@radix-ui/react-dialog'; // ❌ Плохо
+   import { Dialog } from '@/components/ui/dialog'; // ✅ Хорошо
+   ```
+
+---
+
+## 8️⃣ Примеры интеграции
+
+### Appointment Booking Flow
+
+```tsx
+// components/appointment-booking.tsx
+'use client'
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Select, SelectContent, SelectItem } from '@/components/ui/select';
+import { Button } from '@/components/design-system';
+
+export function AppointmentBooking({ doctor, open, onOpenChange }: Props) {
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="sm:max-w-md">
+        <DialogTitle>Запись к {doctor.name}</DialogTitle>
+        
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="date">Дата приема</label>
+            <Select value={date} onValueChange={setDate}>
+              <SelectTrigger id="date">
+                <SelectValue placeholder="Выберите дату" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="2026-02-06">6 февраля</SelectItem>
+                <SelectItem value="2026-02-07">7 февраля</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div>
+            <label htmlFor="time">Время</label>
+            <Select value={time} onValueChange={setTime}>
+              <SelectTrigger id="time">
+                <SelectValue placeholder="Выберите время" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="10:00">10:00</SelectItem>
+                <SelectItem value="11:00">11:00</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="flex gap-2 justify-end">
+            <Button 
+              type="button" 
+              unidentVariant="outline"
+              onClick={() => onOpenChange(false)}
+            >
+              Отменить
+            </Button>
+            <Button type="submit" unidentVariant="primary">
+              Записаться
+            </Button>
+          </div>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+}
+```
+
+### Navigation Menu with Dropdowns
+
+```tsx
+'use client'
+import { 
+  NavigationMenu, 
+  NavigationMenuContent, 
+  NavigationMenuItem, 
+  NavigationMenuLink, 
+  NavigationMenuList, 
+  NavigationMenuTrigger 
+} from '@/components/ui/navigation-menu';
+import Link from 'next/link';
+
+export function MainNav() {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Услуги</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-4 md:w-[400px]">
+              <li>
+                <NavigationMenuLink asChild>
+                  <Link 
+                    href="/services/therapy"
+                    className="block p-3 rounded-[10px] hover:bg-unident-bgElements"
+                  >
+                    <Text variant="card-title" as="div">Терапия</Text>
+                    <Text variant="small" className="text-unident-textGray">
+                      Лечение кариеса, пломбы
+                    </Text>
+                  </Link>
+                </NavigationMenuLink>
+              </li>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+}
+```
+
+### Dropdown Menu (User Actions)
+
+```tsx
+'use client'
+import { 
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger 
+} from '@/components/ui/dropdown-menu';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+
+function UserDropdown({ user }: Props) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button className="rounded-full focus:ring-2" aria-label="Меню пользователя">
+          <Avatar>
+            <AvatarImage src={user.avatar} alt={user.name} />
+            <AvatarFallback>{user.initials}</AvatarFallback>
+          </Avatar>
+        </button>
+      </DropdownMenuTrigger>
+      
+      <DropdownMenuContent align="end" className="w-56">
+        <DropdownMenuLabel>Мой профиль</DropdownMenuLabel>
+        
+        <DropdownMenuSeparator />
+        
+        <DropdownMenuItem onClick={goToProfile}>
+          <UserIcon className="mr-2 h-4 w-4" />
+          <span>Профиль</span>
+        </DropdownMenuItem>
+        
+        <DropdownMenuItem onClick={goToAppointments}>
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          <span>Мои записи</span>
+        </DropdownMenuItem>
+        
+        <DropdownMenuSeparator />
+        
+        <DropdownMenuItem onClick={logout}>
+          <LogoutIcon className="mr-2 h-4 w-4" />
+          <span>Выйти</span>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+```
+
+---
+
+## 9️⃣ Styling с Tailwind
+
+### Интеграция с Design Tokens
+
+**✅ ПРАВИЛЬНО - Design Tokens в Shadcn компонентах:**
+
+```tsx
+<DialogContent className="bg-white border-unident-borderGray rounded-[25px]">
+  <DialogTitle>
+    <Heading level={3} variant="card-title">Заголовок</Heading>
+  </DialogTitle>
+  
+  <Text variant="default">Контент</Text>
+  
+  <Button unidentVariant="primary">Кнопка</Button>
+</DialogContent>
+```
+
+### Mobile-first responsive
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+<DialogContent className="w-full max-w-md sm:max-w-lg p-4 sm:p-6">
+  <NavigationMenuContent className="grid gap-3 p-4 md:w-[500px] md:grid-cols-2">
+```
+
+---
+
+## 🔟 Performance
+
+### Dynamic imports для модалов
+
+**✅ ПРАВИЛЬНО - lazy load dialogs:**
+
+```tsx
+import dynamic from 'next/dynamic';
+
+const AppointmentDialog = dynamic(
+  () => import('@/components/appointment-dialog'),
+  {
+    loading: () => <Skeleton className="w-full h-[400px]" />,
+    ssr: false // Dialog не нужен для SSR
+  }
+);
+
+function DoctorPage() {
+  const [showDialog, setShowDialog] = useState(false);
+  
+  return (
+    <>
+      <Button onClick={() => setShowDialog(true)}>Записаться</Button>
+      {showDialog && <AppointmentDialog />}
+    </>
+  );
+}
+```
+
+---
+
+## 1️⃣1️⃣ Common Patterns
+
+### Confirmation Dialog
+
+```tsx
+'use client'
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
+
+function DeleteConfirmation({ open, onConfirm, onCancel }: Props) {
+  return (
+    <AlertDialog open={open}>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Вы уверены?</AlertDialogTitle>
+          <AlertDialogDescription>
+            Это действие нельзя отменить. Запись будет удалена.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        
+        <AlertDialogFooter>
+          <AlertDialogCancel onClick={onCancel}>
+            Отменить
+          </AlertDialogCancel>
+          <AlertDialogAction 
+            onClick={onConfirm}
+            className="bg-red-600 hover:bg-red-700"
+          >
+            Удалить
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
+}
+```
+
+### Form with Label + Input
+
+```tsx
+'use client'
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+
+function ContactForm() {
+  return (
+    <form className="space-y-4">
+      <div>
+        <Label htmlFor="name">Ваше имя</Label>
+        <Input 
+          id="name"
+          type="text"
+          placeholder="Иван Иванов"
+          required
+        />
+      </div>
+      
+      <div>
+        <Label htmlFor="phone">Телефон</Label>
+        <Input 
+          id="phone"
+          type="tel"
+          placeholder="+7 900 123-45-67"
+          pattern="[+]?[0-9]{11}"
+          required
+        />
+      </div>
+    </form>
+  );
+}
+```
+
+---
+
+## 1️⃣2️⃣ Troubleshooting
+
+### Проблема: Dialog не закрывается на Escape
+
+**Решение:**
+```tsx
+<Dialog 
+  open={open} 
+  onOpenChange={onOpenChange} // Обязательно!
+>
+```
+
+### Проблема: Select не работает в Dialog
+
+**Решение:**
+```tsx
+// Добавить portal для Select
+<DialogContent>
+  <Select>
+    <SelectTrigger>...</SelectTrigger>
+    <SelectContent 
+      position="popper" // Важно!
+      sideOffset={5}
+    >
+      ...
+    </SelectContent>
+  </Select>
+</DialogContent>
+```
+
+### Проблема: Focus trap в Dialog
+
+**Решение:**
+```tsx
+// Radix автоматически управляет focus
+// НЕ управляй focus вручную внутри Dialog!
+```
+
+---
+
+## 📚 Ресурсы
+
+- **Shadcn UI Docs**: https://ui.shadcn.com
+- **Radix UI Docs**: https://www.radix-ui.com
+- **Design System**: `nextjs/DESIGN_SYSTEM.md`
+- **Accessibility**: `.cursor/rules/accessibility.mdc`
+
+---
+
+**Статус:** ✅ КРИТИЧЕСКОЕ ПРАВИЛО
+**Приоритет:** 🔴 ВЫСОКИЙ
+**Версия:** 1.0.0

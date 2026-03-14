@@ -1,0 +1,58 @@
+---
+alwaysApply: true
+---
+
+# Cursor Plugins Registry
+
+> Реестр плагинов Cursor с server identifiers. Use when choosing which MCP server to call — всегда вызывать инструменты указанного сервера, не дублирующих user-MCP.
+
+## Figma
+
+- **Server (PRIMARY):** `user-Figma`, `user-Figma_Desktop` — основные рабочие серверы
+- **Tools:** `get_design_context`, `get_screenshot`, `get_variable_defs` и др.
+- **Использовать когда:** реализация компонентов из Figma, черновик кода (React+Tailwind), скриншот макета.
+- **Framelink** (точные layout-числа, загрузка изображений): `user-Framelink MCP for Figma`
+
+**⚠️ plugin-figma-figma / plugin-figma-figma-desktop:**
+- Привязаны к Figma аккаунту на Starter плане (6 вызовов в месяц)
+- Code Connect требует Developer seat на Organization/Enterprise плане
+- Не использовать пока план не upgraded
+
+## Context7 vs Ref MCP (документация)
+
+**Когда использовать Context7** (`plugin-context7-plugin-context7`):
+- Нужна актуальная документация по библиотеке: Next.js, Tailwind, React, Apollo, Radix, WPGraphQL.
+- Нужен поиск по версии пакета (resolve-library-id → query-docs).
+- Примеры кода и API из официальной доки библиотеки.
+
+**Когда использовать Ref MCP** (`user-Ref`):
+- Поиск по документации через `ref_search_documentation` (общий поиск).
+- Чтение конкретного URL через `ref_read_url`.
+- Первый выбор для «найти в документации», если не нужна привязка к версии библиотеки.
+
+**Порядок:** Сначала Ref (ref_search_documentation). Если нужна дока по конкретной библиотеке/версии — Context7 (resolve-library-id, query-docs). Не вызывать оба для одного и того же запроса.
+
+## Context7 — автоматический вызов
+
+При вопросах о Next.js, Apollo Client, Radix, WPGraphQL, Tailwind, nuqs, zod:
+
+1. Вызвать `resolve-library-id` (query + libraryName)
+2. Вызвать `query-docs` (libraryId + вопрос)
+3. Использовать результат в ответе
+
+Не полагаться на память — проверять актуальность API через Context7.
+
+## Parallel (superpowers)
+
+- **Server:** определяется плагином (superpowers).
+- **Использовать когда:** веб-поиск, deep research, извлечение контента — когда Ref/Context7 не дали ответа или нужен свежий поиск.
+
+## Ref MCP (user-Ref)
+
+- **Server:** `user-Ref`
+- **Tools:** `ref_search_documentation`, `ref_read_url`
+- **Использовать когда:** поиск по официальной документации, чтение конкретного URL. Первый выбор для документации до Context7 по библиотекам.
+
+## Continual Learning
+
+- Плагин работает автоматически (запоминает предпочтения из транскриптов). Отдельный rule не требуется.

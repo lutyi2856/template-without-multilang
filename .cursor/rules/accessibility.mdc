@@ -1,0 +1,869 @@
+---
+alwaysApply: true
+---
+
+# Accessibility (a11y) - УниДент Project
+
+> Правила доступности для медицинского веб-сайта
+> Источник: cursor.directory + WCAG 2.1 AA стандарт
+> Дата создания: 2026-02-05
+> Статус: ✅ Активно
+
+You are an expert in web accessibility (a11y), WCAG standards, and creating inclusive user experiences.
+
+## 🎯 Почему a11y критично для медицинского сайта
+
+**Медицинские услуги должны быть доступны всем:**
+- Пациенты с нарушениями зрения
+- Пожилые пациенты (снижение зрения, моторики)
+- Пациенты с временными ограничениями (травмы рук)
+- Screen reader пользователи
+- Keyboard-only навигация
+
+**Юридические требования:**
+- WCAG 2.1 Level AA - минимальный стандарт
+- Законодательство РФ о доступности сайтов
+
+---
+
+## 1️⃣ Semantic HTML
+
+### Правильные теги для структуры
+
+**✅ ПРАВИЛЬНО - семантические теги:**
+
+```tsx
+<main>
+  <section aria-labelledby="doctors-heading">
+    <Heading level={2} id="doctors-heading">Наши врачи</Heading>
+    
+    <nav aria-label="Фильтры врачей">
+      <ul>
+        <li><a href="/doctors?specialty=therapist">Терапевты</a></li>
+        <li><a href="/doctors?specialty=surgeon">Хирурги</a></li>
+      </ul>
+    </nav>
+    
+    <article>
+      <Heading level={3}>Иванов Иван Иванович</Heading>
+      <Text variant="doctor-description">Стоматолог-терапевт</Text>
+    </article>
+  </section>
+  
+  <aside aria-label="Контактная информация">
+    <Heading level={2}>Связаться с нами</Heading>
+    <a href="tel:+79001234567">+7 900 123-45-67</a>
+  </aside>
+</main>
+```
+
+**❌ НЕПРАВИЛЬНО - divs вместо семантики:**
+
+```tsx
+<div> {/* Должен быть <main> */}
+  <div> {/* Должен быть <section> */}
+    <h2>Наши врачи</h2>
+    
+    <div> {/* Должен быть <nav> */}
+      <div onClick={...}>Терапевты</div> {/* Должна быть <a> */}
+    </div>
+    
+    <div> {/* Должен быть <article> */}
+      <h3>Иванов Иван Иванович</h3>
+    </div>
+  </div>
+</div>
+```
+
+### Landmarks для screen readers
+
+**Используй landmarks:**
+
+```tsx
+<header role="banner">
+  <nav role="navigation" aria-label="Основная навигация">...</nav>
+</header>
+
+<main role="main">
+  <article role="article">...</article>
+</main>
+
+<aside role="complementary" aria-label="Дополнительная информация">...</aside>
+
+<footer role="contentinfo">...</footer>
+```
+
+---
+
+## 2️⃣ Keyboard Navigation
+
+### Все интерактивные элементы доступны с клавиатуры
+
+**✅ ПРАВИЛЬНО - button для кликов:**
+
+```tsx
+'use client'
+function BookingButton() {
+  return (
+    <Button 
+      unidentVariant="primary"
+      onClick={handleBooking}
+      aria-label="Записаться на прием к врачу"
+    >
+      Записаться
+    </Button>
+  );
+}
+```
+
+**❌ НЕПРАВИЛЬНО - div с onClick:**
+
+```tsx
+<div onClick={handleBooking}> {/* НЕТ keyboard support! */}
+  Записаться
+</div>
+```
+
+### Focus styles
+
+**✅ ПРАВИЛЬНО - видимый focus:**
+
+```tsx
+<Button className="focus:ring-2 focus:ring-unident-primary focus:ring-offset-2">
+  Записаться
+</Button>
+
+<a 
+  href="/doctors"
+  className="focus:outline-none focus:ring-2 focus:ring-unident-primary"
+>
+  Наши врачи
+</a>
+```
+
+**❌ ЗАПРЕЩЕНО - убирать focus:**
+
+```tsx
+<button className="focus:outline-none"> {/* БЕЗ альтернативного focus! */}
+  Записаться
+</button>
+```
+
+### Tab order
+
+**✅ ПРАВИЛЬНО - логичный порядок:**
+
+```tsx
+<form>
+  <input tabIndex={1} />
+  <input tabIndex={2} />
+  <button type="submit" tabIndex={3}>Отправить</button>
+</form>
+```
+
+**Избегай `tabIndex > 0`** (нарушает естественный порядок):
+
+```tsx
+<div>
+  <button tabIndex={3}>Третья</button> {/* Плохо! */}
+  <button tabIndex={1}>Первая</button>
+  <button tabIndex={2}>Вторая</button>
+</div>
+```
+
+---
+
+## 3️⃣ ARIA Attributes
+
+### ARIA labels для описания элементов
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// Кнопка закрытия
+<button 
+  onClick={onClose}
+  aria-label="Закрыть модальное окно"
+>
+  <XIcon /> {/* Иконка без текста */}
+</button>
+
+// Кнопка с иконкой
+<button aria-label="Позвонить в клинику">
+  <PhoneIcon />
+  +7 900 123-45-67
+</button>
+
+// Навигация
+<nav aria-label="Основная навигация сайта">
+  <ul>
+    <li><a href="/services" aria-current="page">Услуги</a></li>
+  </ul>
+</nav>
+
+// Search
+<form role="search" aria-label="Поиск врачей">
+  <input 
+    type="search"
+    aria-label="Введите имя врача или специальность"
+  />
+</form>
+```
+
+### ARIA live regions для динамических изменений
+
+**✅ ПРАВИЛЬНО - уведомления для screen readers:**
+
+```tsx
+'use client'
+function BookingForm() {
+  const [status, setStatus] = useState('');
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" aria-label="Ваше имя" />
+      
+      {/* Screen reader объявит изменения */}
+      <div 
+        role="status" 
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {status}
+      </div>
+      
+      <button type="submit">Записаться</button>
+    </form>
+  );
+}
+```
+
+### ARIA для сложных компонентов
+
+**Modal dialog:**
+
+```tsx
+'use client'
+function AppointmentModal({ isOpen, onClose }: Props) {
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+      >
+        <DialogTitle id="modal-title">
+          Запись на прием
+        </DialogTitle>
+        <DialogDescription id="modal-description">
+          Заполните форму для записи
+        </DialogDescription>
+        
+        <button 
+          onClick={onClose}
+          aria-label="Закрыть модальное окно"
+        >
+          ×
+        </button>
+      </DialogContent>
+    </Dialog>
+  );
+}
+```
+
+**Accordion:**
+
+```tsx
+<div>
+  <button
+    onClick={toggle}
+    aria-expanded={isExpanded}
+    aria-controls="content-1"
+  >
+    Подробнее о враче
+  </button>
+  
+  <div 
+    id="content-1"
+    role="region"
+    hidden={!isExpanded}
+  >
+    {content}
+  </div>
+</div>
+```
+
+---
+
+## 4️⃣ Images & Media
+
+### Alt текст для изображений
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+import Image from 'next/image';
+
+// Контентное изображение
+<Image
+  src={doctor.avatar}
+  alt={`Фотография врача ${doctor.name}, ${doctor.specialty}`}
+  width={300}
+  height={300}
+/>
+
+// Декоративное изображение
+<Image
+  src="/decorations/bg-pattern.svg"
+  alt="" // Пустой alt для декоративных!
+  width={100}
+  height={100}
+  aria-hidden="true"
+/>
+
+// Логотип
+<Image
+  src="/logo.svg"
+  alt="УниДент - стоматологическая клиника в Москве"
+  width={150}
+  height={50}
+/>
+```
+
+**❌ НЕПРАВИЛЬНО:**
+
+```tsx
+<Image src={doctor.avatar} alt="фото" /> // Не информативно!
+<Image src={doctor.avatar} alt="Врач" /> // Слишком общее!
+<Image src="/logo.svg" alt="логотип" /> // Должно быть название клиники!
+```
+
+### Icons с текстом
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// Иконка С видимым текстом - aria-hidden
+<a href="tel:+79001234567">
+  <PhoneIcon aria-hidden="true" />
+  <Text as="span">+7 900 123-45-67</Text>
+</a>
+
+// Иконка БЕЗ текста - aria-label
+<button onClick={onCall} aria-label="Позвонить в клинику">
+  <PhoneIcon />
+</button>
+```
+
+### Video accessibility
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+<video controls>
+  <source src="/videos/clinic-tour.mp4" type="video/mp4" />
+  <track
+    kind="subtitles"
+    src="/videos/clinic-tour-ru.vtt"
+    srcLang="ru"
+    label="Русский"
+    default
+  />
+  <track
+    kind="captions"
+    src="/videos/clinic-tour-captions.vtt"
+    srcLang="ru"
+    label="Русский (субтитры)"
+  />
+</video>
+```
+
+---
+
+## 5️⃣ Forms & Inputs
+
+### Labels для всех inputs
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+<form>
+  <label htmlFor="name">
+    <Text as="span" variant="label">Ваше имя</Text>
+  </label>
+  <input
+    id="name"
+    name="name"
+    type="text"
+    aria-required="true"
+    aria-invalid={hasError}
+    aria-describedby={hasError ? 'name-error' : undefined}
+  />
+  {hasError && (
+    <Text 
+      id="name-error" 
+      variant="small" 
+      className="text-red-600"
+      role="alert"
+    >
+      Пожалуйста, введите ваше имя
+    </Text>
+  )}
+</form>
+```
+
+**❌ НЕПРАВИЛЬНО:**
+
+```tsx
+<input placeholder="Ваше имя" /> {/* Нет label! */}
+```
+
+### Error messages
+
+**✅ ПРАВИЛЬНО - связь с input через aria-describedby:**
+
+```tsx
+<input
+  id="phone"
+  aria-invalid={phoneError ? 'true' : 'false'}
+  aria-describedby="phone-error"
+/>
+{phoneError && (
+  <span id="phone-error" role="alert">
+    {phoneError}
+  </span>
+)}
+```
+
+### Required fields
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+<label htmlFor="name">
+  Имя <span aria-label="обязательное поле">*</span>
+</label>
+<input 
+  id="name"
+  required
+  aria-required="true"
+/>
+```
+
+---
+
+## 6️⃣ Color Contrast
+
+### WCAG 2.1 AA стандарт
+
+**Минимальные требования:**
+- **Обычный текст** (< 18px): контраст **4.5:1**
+- **Крупный текст** (≥ 18px или bold ≥ 14px): контраст **3:1**
+- **UI компоненты** (кнопки, границы): контраст **3:1**
+
+### Проверка цветов УниДент
+
+**Текущие цвета:**
+
+```typescript
+// Проверить контраст на https://webaim.org/resources/contrastchecker/
+
+// ✅ ХОРОШО - достаточный контраст
+bg-unident-white (#FFFFFF) + text-unident-dark (#191E35) = 14.7:1 ✅
+
+bg-unident-primary (#526AC2) + text-white = 4.6:1 ✅
+
+// ⚠️ ПРОВЕРИТЬ - может быть недостаточно
+text-unident-textGray (#8F8F8F) + bg-white = ? 
+// Если контраст < 4.5:1 → сделать темнее
+```
+
+### Не полагаться только на цвет
+
+**✅ ПРАВИЛЬНО - цвет + иконка/текст:**
+
+```tsx
+// Статус с иконкой
+<Badge variant="success">
+  <CheckIcon aria-hidden="true" />
+  <Text as="span">Доступен</Text>
+</Badge>
+
+// Ошибка с иконкой
+<div className="text-red-600">
+  <AlertIcon aria-hidden="true" />
+  <Text as="span">Ошибка: введите корректный телефон</Text>
+</div>
+```
+
+**❌ НЕПРАВИЛЬНО - только цвет:**
+
+```tsx
+<span className="text-green-500">Доступен</span> {/* Плохо для дальтоников! */}
+<span className="text-red-500">Занят</span>
+```
+
+---
+
+## 7️⃣ Touch Targets
+
+### Минимальный размер: 44x44 пикселя
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// Кнопка
+<Button className="min-w-[44px] min-h-[44px] px-6 py-3">
+  Записаться
+</Button>
+
+// Ссылка
+<a 
+  href="/doctors"
+  className="inline-block py-3 px-4 min-h-[44px]"
+>
+  Врачи
+</a>
+
+// Checkbox
+<label className="flex items-center gap-2 py-2">
+  <input 
+    type="checkbox"
+    className="w-6 h-6" // 24x24 + padding = 44x44
+  />
+  <Text as="span">Согласен с условиями</Text>
+</label>
+```
+
+### Spacing между touch targets
+
+**✅ ПРАВИЛЬНО - минимум 8px между элементами:**
+
+```tsx
+<div className="flex gap-4"> {/* 16px между кнопками */}
+  <Button>Отменить</Button>
+  <Button>Подтвердить</Button>
+</div>
+```
+
+---
+
+## 8️⃣ Screen Reader Support
+
+### Скрывать декоративные элементы
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// Декоративная иконка
+<div aria-hidden="true">
+  <StarIcon />
+</div>
+
+// Декоративный фон
+<div 
+  className="absolute inset-0 bg-pattern"
+  aria-hidden="true"
+/>
+```
+
+### Текст для screen readers (visually hidden)
+
+**✅ ПРАВИЛЬНО - sr-only класс:**
+
+```tsx
+// Tailwind sr-only класс
+<a href="/doctors">
+  <span className="sr-only">Перейти к списку врачей</span>
+  <ArrowRightIcon />
+</a>
+
+// Навигация с иконками
+<nav>
+  <a href="/services">
+    <ServicesIcon />
+    <span className="sr-only">Услуги</span>
+  </a>
+  <a href="/doctors">
+    <DoctorsIcon />
+    <span className="sr-only">Врачи</span>
+  </a>
+</nav>
+```
+
+### Skip links
+
+**✅ ПРАВИЛЬНО - skip to main content:**
+
+```tsx
+// app/layout.tsx
+<body>
+  <a 
+    href="#main-content"
+    className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-unident-primary text-white px-4 py-2 rounded-[10px]"
+  >
+    Перейти к основному содержимому
+  </a>
+  
+  <Header />
+  
+  <main id="main-content">
+    {children}
+  </main>
+</body>
+```
+
+---
+
+## 9️⃣ Динамический контент
+
+### Live regions для обновлений
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+'use client'
+function AppointmentStatus() {
+  const [status, setStatus] = useState('');
+  
+  return (
+    <div>
+      <Button onClick={checkStatus}>Проверить статус</Button>
+      
+      {/* Screen reader объявит изменения */}
+      <div 
+        role="status"
+        aria-live="polite" // Не прерывает чтение
+        aria-atomic="true" // Прочитает весь текст
+      >
+        {status}
+      </div>
+    </div>
+  );
+}
+```
+
+**`aria-live` уровни:**
+- `polite` - объявит после завершения текущего чтения
+- `assertive` - объявит немедленно (для критичных уведомлений)
+
+### Loading states
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+{isLoading && (
+  <div 
+    role="status"
+    aria-live="polite"
+    aria-label="Загрузка списка врачей"
+  >
+    <Spinner aria-hidden="true" />
+    <span className="sr-only">Загрузка...</span>
+  </div>
+)}
+```
+
+---
+
+## 🔟 Next.js Specific
+
+### Metadata для accessibility
+
+**✅ ПРАВИЛЬНО:**
+
+```typescript
+// app/layout.tsx
+export const metadata: Metadata = {
+  title: 'УниДент - Стоматологическая клиника в Москве',
+  description: 'Профессиональные стоматологические услуги. Опытные врачи, современное оборудование.',
+  openGraph: {
+    locale: 'ru_RU',
+    type: 'website',
+  },
+  other: {
+    'accessibility': 'WCAG 2.1 AA compliant',
+  }
+};
+```
+
+### Language attribute
+
+**✅ ПРАВИЛЬНО:**
+
+```tsx
+// app/layout.tsx
+<html lang="ru">
+  <body>{children}</body>
+</html>
+```
+
+### Page titles
+
+**✅ ПРАВИЛЬНО - описательные заголовки:**
+
+```typescript
+// app/doctors/[slug]/page.tsx
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const doctor = await fetchDoctor(params.slug);
+  
+  return {
+    title: `${doctor.name} - ${doctor.specialty} | УниДент`,
+    description: `Запись на прием к ${doctor.specialty.toLowerCase()} ${doctor.name}. Стаж ${doctor.experience} лет.`,
+  };
+}
+```
+
+---
+
+## 1️⃣1️⃣ Checklist перед деплоем
+
+### Автоматические проверки
+
+```bash
+# Lighthouse accessibility audit
+npm run lighthouse -- --only-categories=accessibility
+
+# axe DevTools в браузере
+# https://www.deque.com/axe/devtools/
+```
+
+### Ручные проверки
+
+- [ ] ✅ Keyboard navigation работает (Tab, Enter, Space, Arrow keys)
+- [ ] ✅ Focus styles видимы на всех интерактивных элементах
+- [ ] ✅ Screen reader тестирование (NVDA, JAWS, VoiceOver)
+- [ ] ✅ Все images имеют alt текст (или `alt=""` + `aria-hidden`)
+- [ ] ✅ Формы имеют labels для всех inputs
+- [ ] ✅ Color contrast ≥ 4.5:1 для текста
+- [ ] ✅ Touch targets ≥ 44x44 пикселя
+- [ ] ✅ Semantic HTML (main, nav, section, article)
+- [ ] ✅ ARIA attributes корректны
+- [ ] ✅ Skip links работают
+
+---
+
+## 🚫 Запрещенные паттерны
+
+### ❌ div/span вместо button
+
+```tsx
+<div onClick={handleClick}>Нажми</div> // ❌ НЕТ keyboard support
+<span onClick={handleClick}>Нажми</span> // ❌ НЕТ keyboard support
+```
+
+### ❌ Убирать outline без альтернативы
+
+```tsx
+button:focus { outline: none; } // ❌ БЕЗ альтернативного focus
+```
+
+### ❌ Полагаться только на цвет
+
+```tsx
+<span className="text-red-500">Ошибка</span> // ❌ Только цвет
+```
+
+### ❌ onClick на не-интерактивных элементах
+
+```tsx
+<div onClick={...}>Click me</div> // ❌ Используй <button>
+<p onClick={...}>Click me</p> // ❌ Используй <button>
+```
+
+### ❌ Missing alt текст
+
+```tsx
+<Image src={...} /> // ❌ Должен быть alt
+<img src={...} alt={undefined} /> // ❌ Должен быть alt
+```
+
+---
+
+## 📚 Инструменты проверки
+
+### Browser DevTools
+
+1. **Lighthouse** (встроен в Chrome)
+   - Accessibility score
+   - Best practices
+   - SEO
+
+2. **axe DevTools** (расширение)
+   - https://www.deque.com/axe/devtools/
+   - Детальный анализ a11y проблем
+
+3. **WAVE** (расширение)
+   - https://wave.webaim.org/extension/
+   - Визуальная проверка доступности
+
+### Screen Readers
+
+- **Windows**: NVDA (бесплатный), JAWS
+- **macOS**: VoiceOver (встроен)
+- **Mobile**: TalkBack (Android), VoiceOver (iOS)
+
+### Contrast checkers
+
+- WebAIM: https://webaim.org/resources/contrastchecker/
+- Встроен в Chrome DevTools
+
+---
+
+## 🎓 Примеры правильных компонентов
+
+### Doctor Card (полный a11y)
+
+```tsx
+async function DoctorCard({ doctorId }: Props) {
+  const doctor = await fetchDoctor(doctorId);
+  
+  return (
+    <Card variant="bordered">
+      <article aria-labelledby={`doctor-${doctor.id}`}>
+        <Image
+          src={doctor.avatar}
+          alt={`Фотография врача ${doctor.name}`}
+          width={300}
+          height={300}
+        />
+        
+        <Heading level={3} id={`doctor-${doctor.id}`}>
+          {doctor.name}
+        </Heading>
+        
+        <Text variant="doctor-description">
+          {doctor.specialty}
+        </Text>
+        
+        <div className="flex gap-2" role="list">
+          <Badge variant="experience" role="listitem">
+            <span className="sr-only">Стаж работы:</span>
+            {doctor.experience} лет
+          </Badge>
+          
+          <Badge variant="rating" role="listitem">
+            <span className="sr-only">Рейтинг:</span>
+            {doctor.rating} <StarIcon aria-hidden="true" />
+          </Badge>
+        </div>
+        
+        <Button 
+          unidentVariant="primary"
+          aria-label={`Записаться на прием к ${doctor.name}`}
+        >
+          Записаться
+        </Button>
+      </article>
+    </Card>
+  );
+}
+```
+
+---
+
+**Статус:** ✅ КРИТИЧЕСКОЕ ПРАВИЛО
+**Приоритет:** 🔴 МАКСИМАЛЬНЫЙ
+**Стандарт:** WCAG 2.1 AA
+**Версия:** 1.0.0

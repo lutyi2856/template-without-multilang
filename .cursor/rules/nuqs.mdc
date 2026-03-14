@@ -1,0 +1,153 @@
+---
+alwaysApply: true
+---
+
+# nuqs - URL Search Params State (УниДент)
+
+> Управление состоянием через URL query в Next.js App Router. Use when implementing filters, pagination, or any URL-synced state.
+
+## Когда применять
+
+- Фильтры (специальность, клиника, рейтинг) с отражением в URL
+- Пагинация (page, limit) в query
+- Сортировка и прочие параметры, которые должны быть shareable и SEO-релевантны
+
+## Импорты
+
+```ts
+// Client components
+import { useQueryState, useQueryStates, parseAsInteger, parseAsString, parseAsStringLiteral } from 'nuqs'
+
+// Server components, createSearchParamsCache, loaders
+import { createSearchParamsCache, createLoader, createSerializer, parseAsInteger, parseAsString } from 'nuqs/server'
+```
+
+## Парсеры (parsers)
+
+Используй встроенные парсеры для типизации и дефолтов:
+
+```ts
+import {
+  parseAsString,
+  parseAsInteger,
+  parseAsFloat,
+  parseAsBoolean,
+  parseAsArrayOf,
+  parseAsStringLiteral,
+  parseAsIsoDateTime
+} from 'nuqs'
+
+// С дефолтом
+parseAsInteger.withDefault(1)
+parseAsString.withDefault('')
+parseAsStringLiteral(['asc', 'desc'] as const).withDefault('asc')
+
+// Кастомный парсер
+{
+  parse: (query: string) => parseInt(query, 10),
+  serialize: (value: number) => value.toString()
+}
+```
+
+## Client: useQueryState и useQueryStates
+
+**Один параметр:**
+
+```tsx
+'use client'
+import { useQueryState, parseAsInteger } from 'nuqs'
+
+const [page, setPage] = useQueryState('page', parseAsInteger.withDefault(1))
+```
+
+**Несколько связанных параметров:**
+
+```tsx
+'use client'
+import { useQueryStates, parseAsInteger, parseAsStringLiteral } from 'nuqs'
+
+const [filters, setFilters] = useQueryStates(
+  {
+    page: parseAsInteger.withDefault(1),
+    specialty: parseAsString.withDefault(''),
+    sort: parseAsStringLiteral(['rating', 'experience'] as const).withDefault('rating')
+  },
+  { history: 'push' }
+)
+// setFilters({ page: 2, specialty: 'therapist' })
+```
+
+## Server: createSearchParamsCache
+
+Для типобезопасного доступа к searchParams в Server Components (в т.ч. вложенных):
+
+```tsx
+// lib/search-params.ts
+import { createSearchParamsCache, parseAsInteger, parseAsString } from 'nuqs/server'
+
+export const searchParamsCache = createSearchParamsCache({
+  page: parseAsInteger.withDefault(1),
+  specialty: parseAsString.withDefault('')
+})
+
+// page.tsx
+export default async function Page({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const params = await searchParamsCache.parse(searchParams)
+  const { page, specialty } = params
+  return <Results page={page} specialty={specialty} />
+}
+
+// В дочернем Server Component:
+function Results() {
+  const page = searchParamsCache.get('page')
+  return <span>Page {page}</span>
+}
+```
+
+В page обязательно вызывать `searchParamsCache.parse(searchParams)` один раз; в детях использовать `.get()` или `.all()`.
+
+## Shallow и сервер
+
+- По умолчанию `shallow: true` — обновление URL без запроса к серверу (клиентский рендер).
+- Для перезапроса данных на сервере при смене query: `shallow: false` (и при необходимости `startTransition` для loading).
+
+```tsx
+const [query, setQuery] = useQueryState('q', {
+  shallow: false,
+  startTransition: startTransitionFromUseTransition
+})
+```
+
+## Интеграция с page и searchParams
+
+- В `page.tsx` (Server Component) получать `searchParams` из props и парсить через `createSearchParamsCache` или `createLoader`.
+- Общую конфигурацию парсеров хранить в одном модуле (например `lib/search-params.ts`) и использовать и в `createSearchParamsCache` (server), и в `useQueryStates` (client) для единой типизации.
+
+## Loaders (одноразовый парсинг)
+
+```tsx
+import { createLoader } from 'nuqs/server'
+
+const loadSearchParams = createLoader({
+  page: parseAsInteger.withDefault(1),
+  q: parseAsString
+})
+const { page, q } = loadSearchParams(searchParams)
+```
+
+## Валидация
+
+Парсеры nuqs не валидируют данные. Для строгой валидации (например диапазоны, форматы) передавать результат парсера в Zod (или аналог) и использовать `.safeParse` на сервере.
+
+## SEO и canonical
+
+- Если query — только локальное состояние (например UI-фильтры, которые не меняют контент для индексации), задавать canonical без query string.
+- Если query определяет контент страницы (например фильтр «специальность»), включать релевантные параметры в canonical (см. пример с `createSerializer` в документации nuqs).
+
+## Checklist
+
+- [ ] Парсеры из `nuqs`/`nuqs/server` с дефолтами где нужно
+- [ ] Client: `useQueryState` / `useQueryStates` только в 'use client'
+- [ ] Server: один раз `searchParamsCache.parse(searchParams)` в page, в детях — `.get()` / `.all()`
+- [ ] Общая конфигурация парсеров для client и server
+- [ ] При необходимости валидация через Zod после парсинга

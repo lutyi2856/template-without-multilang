@@ -1,0 +1,92 @@
+---
+alwaysApply: true
+---
+
+# WordPress/PHP Project Rules
+
+> Источник: https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/
+
+You are an expert in WordPress development, PHP coding standards, and WordPress best practices.
+
+## WordPress Coding Standards
+
+### PHP Syntax
+- Always use full PHP tags: `<?php ... ?>` (never shorthand `<? ?>`)
+- Remove trailing whitespace at end of lines
+- Omit closing PHP tag at end of files (prevents trailing whitespace issues)
+- Use single quotes when not evaluating variables, double quotes when evaluating
+
+### Naming Conventions
+- Variables and functions: `lowercase_with_underscores` (never camelCase)
+- Classes: `Capitalized_Words_With_Underscores` (e.g., `WP_Error`, `Walker_Category`)
+- Constants: `ALL_UPPERCASE_WITH_UNDERSCORES`
+- Files: `lowercase-with-hyphens.php`
+- Class files: `class-capitalized-words.php` (e.g., `class-wp-error.php`)
+
+### Formatting
+- Use real tabs (not spaces) for indentation
+- One space on both sides of operators: `$foo === $bar`
+- Always use braces for control structures, even single statements
+- Use Yoda conditions for comparisons: `if ( 'value' === $variable )`
+- Use `elseif`, not `else if`
+- Arrays: Use long array syntax `array( 1, 2, 3 )` (not short syntax `[ 1, 2, 3 ]`)
+
+### Object-Oriented Programming
+- One class/interface/trait per file
+- Always declare visibility (`public`, `protected`, `private`)
+- Never use `var` keyword (use visibility modifiers)
+- Trait use statements at top of class with proper spacing
+- Object instantiation: Always use parentheses `new Class_Name()`
+
+### Functions
+- Use descriptive names: `function_name_with_underscores()`
+- Prefer string values over booleans for function flags (readability)
+- Avoid using `extract()` function (security and maintainability)
+- Don't use `eval()` or `create_function()` (security risk)
+- Avoid error control operator `@` (use proper error handling)
+
+### Database Queries
+- Avoid direct database queries - use WordPress functions when available
+- Use `$wpdb->prepare()` for all SQL queries with user input
+- Always escape output: `esc_html()`, `esc_attr()`, `esc_url()`, `esc_js()`
+- Always sanitize input: `sanitize_text_field()`, `sanitize_email()`, etc.
+- Validate data before using it
+
+### Security Best Practices
+- Never trust user input - always validate and sanitize
+- Use nonces for forms and AJAX requests
+- Check user capabilities with `current_user_can()`
+- Escape all output: HTML, attributes, URLs, JavaScript
+- Use prepared statements for database queries
+- Don't expose sensitive data in error messages
+
+### WordPress-Specific Patterns
+- Use WordPress hooks (actions and filters) for extensibility
+- Prefix all functions, classes, and constants with unique prefix
+- Use `plugin_dir_path()` and `plugin_dir_url()` for paths
+- Use `__()` and `_e()` for translatable strings (with text domain)
+- Use WordPress conditional tags: `is_admin()`, `is_front_page()`, etc.
+- Use `get_option()`, `update_option()`, `delete_option()` for settings
+
+### Headless WordPress Specific
+- Use WPGraphQL for API endpoints (not REST API)
+- Create custom post types for content organization
+- Use Advanced Custom Fields (ACF) for flexible content structure
+- Implement proper GraphQL schema extensions
+- Use WordPress hooks to extend WPGraphQL schema
+- Cache GraphQL queries appropriately
+
+### Performance
+- Use WordPress transients for caching
+- Implement proper pagination for queries
+- Use `WP_Query` efficiently with specific fields
+- Avoid querying in loops (use `pre_get_posts` filter)
+- Use object caching for expensive operations
+- Optimize database queries (use indexes, avoid LIKE with leading wildcard)
+
+### Code Organization
+- Use namespaces for plugins (e.g., `Vendor\Plugin_Name`)
+- Implement autoloading with Composer when possible
+- Separate concerns: models, views, controllers
+- Use dependency injection for testability
+- Follow WordPress file structure conventions
